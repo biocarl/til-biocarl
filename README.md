@@ -1,38 +1,26 @@
 # Things to learn and investigate
+
 -   Get updated what is available for vim emulation in IntelliJ, see [Changelog](https://github.com/JetBrains/ideavim/blob/master/CHANGES.md)
 -   Privacy engineering, read [link](https://www.ipc.on.ca/wp-content/uploads/resources/7foundationalprinciples.pdf)
 -   research value of limiting amount of open tabs
 -   Do the [OWASP Juice workshop](https://owasp.org/www-project-juice-shop/)
-
 -   learn about different ways of teaching [link](https://www.youtube.com/watch?v=L0xTXGahEus)
-
 -   Do a proper scrum vs kanban write-up (pros/cons)
-
 -   Read what it means to be a tech lead [here](https://noidea.dog/glue)
-
 -   Learn about thread-safety and extend existing TIL based on this [here](https://www.baeldung.com/java-thread-safety)
-
 -   Next to DRY, there is also the WET and AHA principle (see [here](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself))
-
 -   watch [Patterns of Effective Teams](https://www.youtube.com/watch?v=lvs7VEsQzKY) and Dreyfus model matrix for pairing
-
 -   Learn more about https, [tls handshake](https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/) and [Fingerprinting](https://daniel.haxx.se/blog/2022/09/02/curls-tls-fingerprint/)
-
 -   read about cycles of group development in software teams, [paper](https://www.researchgate.net/publication/247720440_Software_Team_Formation_and_Decay_Extending_the_Standard_Model_for_Small_Groups)
-
 -   Introduce syntax
-
     -   manually label (hierachical)
         -   whenever you define a new label you need to specify the parent label
             -   `tag1<tag2`
         -   you can tag entire entries or single bullet points
     -   in the end you would have a single graph of hierachical labels and forest with entities (childs are backlinks)
-
 -   other ideas
-
     -   generate edit links so you do not have to scroll down when editing old entries?
     -   how to integrate Anki into this (batch-upload from time to time)
-
 -   🎧: [brown noise](https://www.youtube.com/watch?v=RqzGzwTY-6w) and [rainymood](https://rainymood.com/)
 
 ---
@@ -3190,17 +3178,16 @@ $$ LANGUAGE plproxy;
 ```
 
 # 📅 29.06.2021 You can patch a deployment and also inject spring variables like so
-
 -   [source](https://github.com/spring-projects/spring-boot/wiki/Relaxed-Binding-2.0#lists-1)
+- `zkubectl patch deployment $DEPLOYMENT --patch "$(cat sharding-patch.yaml)"`
 
-`zkubectl patch deployment $DEPLOYMENT --patch "$(cat sharding-patch.yaml)"`
+# 📅 25.06.2021 Change local host reference to maschine host in docker image
+- `docker exec -u 0 $CONTAINER /bin/sh -c 'sed "s/127.0.0.1/$(dig +short host.docker.internal)/g" /etc/hosts > tmp.txt && cat tmp.txt > /etc/hosts'`
 
-# 📅 25.06.2021 Change local host reference to maschine host in docker image `docker exec -u 0 $CONTAINER /bin/sh -c 'sed "s/127.0.0.1/$(dig +short host.docker.internal)/g" /etc/hosts > tmp.txt && cat tmp.txt > /etc/hosts'`
-
-# 📅 11.06.2021 Show previous stashes `git stash show -p stash@{3}`
+# 📅 11.06.2021 Show previous stashes
+- `git stash show -p stash@{3}`
 
 # 📅 11.06.2021 Java collectors and teeing operator
-
 -   Combine two collectors
 
 ``` {.python}
@@ -3817,7 +3804,8 @@ $ edit syntax
 
 -   `nl file.txt` == `awk 'print NR,$0'`
 
-# 📅 10.05.2020 vim: Use surround.vim (default in evil-mode) In order to swap brackets or any flanking symbol (e.g. \" \", {}, \[\]) press `cs` `+` **(** for **(** as flanking symbol.
+# 📅 10.05.2020 vim: Use surround.vim (default in evil-mode)
+- In order to swap brackets or any flanking symbol (e.g. \" \", {}, \[\]) press `cs` `+` **(** for **(** as flanking symbol.
 
 # 📅 07.05.2020 Trivia: Linguistics 101
 
@@ -3898,10 +3886,10 @@ First time I found a use case for partials. I proudly present my helper function
 
 ```
 
-# 📅 30.04.2020 Spacemacs: Replace Clojure expression through its result , e w
+# 📅 30.04.2020 Spacemacs: Replace Clojure expression through its result
+- , e w
 
 # 📅 30.04.2020 Git: Delete last commit locally (with changes in working dir)
-
 -   `git reset HEAD`
 
 # 📅 30.04.2020 Clojure: Rprewalk-replace Use clojure.walk/prewalk-replace to globally replace a object in arbitrarily nested object
