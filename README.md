@@ -1,11 +1,7 @@
 # Things to learn and investigate
-
 -   Get updated what is available for vim emulation in IntelliJ, see [Changelog](https://github.com/JetBrains/ideavim/blob/master/CHANGES.md)
-
 -   Privacy engineering, read [link](https://www.ipc.on.ca/wp-content/uploads/resources/7foundationalprinciples.pdf)
-
 -   research value of limiting amount of open tabs
-
 -   Do the [OWASP Juice workshop](https://owasp.org/www-project-juice-shop/)
 
 -   learn about different ways of teaching [link](https://www.youtube.com/watch?v=L0xTXGahEus)
