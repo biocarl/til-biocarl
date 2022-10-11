@@ -1749,7 +1749,8 @@ in mvn use: `mvn test -Dgroups=group3,group2`
 
         f\) Additionally you can also come up with low-hanging fruit (things which are easy to accomplish e.g. adding a health check)
 
-# 📅 13.04.2022 Infrastructure: Jenkins 101 [source](https://joostvdg.github.io/jenkins-pipeline/core-concepts/)
+# 📅 13.04.2022 Infrastructure: Jenkins 101
+- [source](https://joostvdg.github.io/jenkins-pipeline/core-concepts/)
 
 -   `Step`: A single task
 -   `Built-In vs Agents`
