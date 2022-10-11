@@ -3749,81 +3749,44 @@ $ edit syntax
 # 📅 11.05.2020 Unix: awk commands
 
 -   (awk) Basic commands
-
 -   1.  Basic structure: `pattern {action}`
-
 -   When the pattern matches the action is executed.
-
 -   Either one of them can be ommited, resulting implicitly in a) in match all lines (default pattern) b) print whole line (default action)
-
 -   `{print $2}` print second row of each line (implicit pattern)
-
 -   `$3 == 10` print whole line which has 10 at the third row (implicit action)
-
 -   1.  Built-in variables
-
 -   **NF** := number of fields of current line
-
 -   **NR** := nth line
-
 -   Default delimiter is whitespace (for splitting (**FS**) and joining (**OFS**))
-
 -   You can even change the definition of what a line is: **RS** - defaults to \"`\n`{=latex}\" (with the join analog **ORS**)
-
--   1.  Syntax for patterns
-
+-   2.  Syntax for patterns
 -   `/regex/` without \$, results implicitley in \$0 (whole line)
-
 -   `$1 ~ /regex /` runs the regex on first column of the line
-
 -   `NR=10, NR=20` example for ranges (executes action on lines 10 to 20)
-
--   1.  Some useful actions
-
+-   3.  Some useful actions
 -   String functions like gsub, substring
-
 -   `{gsub (/pattern/, "to subsitute"); print}`
-
 -   String concat: `{print $1 $2}` -\> one string \|\| `{print $1,$2}` -\> joined with OFS
-
 -   You can execute external commands: `awk /Hallo/ {system ("touch " $2)}` text.txt
-
 -   Append prints to specific files `{print $0 >>"file.txt"}` // pipe also works
-
 -   we can define global variables: `{chars += length; print chars}`
-
 -   Extended structure: `BEGIN {action} pattern {action} END {action}`
-
 -   `awk '{chars += length;print} END {print "Total amount of chars: ",chars}' text.txt`
-
--   1.  Equivalent unix commands
-
+-   4.  Equivalent unix commands
 -   `cat file.txt` == `awk '{print}'` (defaults to print \$0)
-
 -   `grep /pattern/ file.txt` == `awk '/pattern/'`
-
 -   `nl file.txt` == `awk 'print NR,$0'`
 
 # 📅 10.05.2020 vim: Use surround.vim (default in evil-mode)
 - In order to swap brackets or any flanking symbol (e.g. \" \", {}, \[\]) press `cs` `+` **(** for **(** as flanking symbol.
 
 # 📅 07.05.2020 Trivia: Linguistics 101
-
--   (Linguistics) Some definitions
-
-For some side project of mine I need to learn some specifics how syntax and semantics of a sentence play together.
-
--   Transitivity of verbs
-
-A intransitive verb does not allow a direct object. Whereas a transitive verb requires at least one object.
-
--   Topic-prominent language
-
-A language which is syntactically structured in a way so that it focus on the topic (the given, old information), followed by a comment (for instance how that changes into a new on information)
+- For some side project of mine I need to learn some specifics how syntax and semantics of a sentence play together.
+-   Transitivity of verbs := A intransitive verb does not allow a direct object. Whereas a transitive verb requires at least one object.
+-   Topic-prominent language := A language which is syntactically structured in a way so that it focus on the topic (the given, old information), followed by a comment (for instance how that changes into a new on information)
 
 # 📅 06.05.2020 Clojure: Implement atom? for clj/cljs using reader conditionals
-
-Some language features are not implemented the same way in clojure and clojurescript. To use the same code base for both one might use reader conditionals.
+- Some language features are not implemented the same way in clojure and clojurescript. To use the same code base for both one might use reader conditionals.
 
 ``` {.clojure}
 (defn atom? [x]
@@ -3837,20 +3800,15 @@ Some language features are not implemented the same way in clojure and clojuresc
 **Bonus:** To make this work you need to change the file extension from `.clj/.cljs` to `.cljc`
 
 # 📅 05.05.2020 Currying vs partial application
-
-**Partial application** means creating an intermediate function by already defining part of its arguments **Currying** means breaking down a function in a bunch of intermediate functions which take only one argument.
-
-*Partial application is when you curry a function, and use some, but not all of the resulting functions.* \~ [SpoonMaiser](https://stackoverflow.com/questions/218025/what-is-the-difference-between-currying-and-partial-application#comment87580_218055)
+- **Partial application** means creating an intermediate function by already defining part of its arguments **Currying** means breaking down a function in a bunch of intermediate functions which take only one argument.
+- *Partial application is when you curry a function, and use some, but not all of the resulting functions.* \~ [SpoonMaiser](https://stackoverflow.com/questions/218025/what-is-the-difference-between-currying-and-partial-application#comment87580_218055)
 
 # 📅 04.05.2020 vim: Start using the jump list This is a huge productivity booster: Use `Ctrl-o` and `Ctrl-i` (in command mode) to move forwards/backwards through the jumplist. The jumplist is maintained project wide!
-
-With `:jumps` you can see where you are currently located in the jumplist. The relative number `N` of jumps allows you to go directly to a jump of interest `N` `Ctrl-o`.
-
-**Bonus:** If you are using this in Spacemacs a split window will open with the jump list and you can just click on the item - maintaining the split layout. I love this 💚
+- With `:jumps` you can see where you are currently located in the jumplist. The relative number `N` of jumps allows you to go directly to a jump of interest `N` `Ctrl-o`.
+- **Bonus:** If you are using this in Spacemacs a split window will open with the jump list and you can just click on the item - maintaining the split layout. I love this 💚
 
 # 📅 03.05.2020 Clojure: How to use quote and break out of it (unquote-splicing).
-
-Super useful when you want to write clojure/clojurescript into a file.
+- Super useful when you want to write clojure/clojurescript into a file.
 
 ``` {.clojure}
 (eval (read-string (str `(+ ~@(take 10 (range)))))) ;; 45
@@ -3866,11 +3824,10 @@ set -o emacs (default)
 # 📅 03.03.2020 intellij: Debugging 101
 
 -   `Frames`: lets you navigate in call stacks of the threads.
-    -   this is especially useful if you set a debug point in a method and want to know which params passed in parent evocations
+-   this is especially useful if you set a debug point in a method and want to know which params passed in parent evocations
 
 # 📅 01.05.2020 Clojure: Compute 2-dimensional matrix
-
-First time I found a use case for partials. I proudly present my helper function I made:
+- First time I found a use case for partials. I proudly present my helper function I made:
 
 ``` {.clojure}
 (defn map-matrix [transducer m l]
