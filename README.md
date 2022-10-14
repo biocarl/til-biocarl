@@ -11,6 +11,7 @@
 -   Next to DRY, there is also the WET and AHA principle (see [here](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself))
 -   watch [Patterns of Effective Teams](https://www.youtube.com/watch?v=lvs7VEsQzKY) and Dreyfus model matrix for pairing
 -   Learn more about https, [tls handshake](https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/) and [Fingerprinting](https://daniel.haxx.se/blog/2022/09/02/curls-tls-fingerprint/)
+-   Encoding and emojjs [here](https://www.smashingmagazine.com/2016/11/character-sets-encoding-emoji/)
 -   read about cycles of group development in software teams, [paper](https://www.researchgate.net/publication/247720440_Software_Team_Formation_and_Decay_Extending_the_Standard_Model_for_Small_Groups)
 -   Introduce syntax
     -   manually label (hierachical)
