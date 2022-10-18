@@ -26,6 +26,9 @@
 
 ---
 
+# 📅 18.10.2022 Mac: Shortcut for emoji dialog
+- `Strg` + `Command` + `Space`
+
 # 📅 28.09.2022 python: Spin-Up local server for serving files
 
 -   useful if you want to link local files in a Google Doc document
