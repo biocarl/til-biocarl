@@ -26,6 +26,13 @@
 
 ---
 
+
+# 📅 18.10.2022 Clojure: Access javascript objects from clojurescript
+- `(. js/document -body)`: For attributes
+- `(. js/document -toString)`: For functions
+- `(.. js/document -location -href -length)`: For nested attributes
+
+
 # 📅 18.10.2022 Mac: Shortcut for emoji dialog
 - `Strg` + `Command` + `Space`
 
