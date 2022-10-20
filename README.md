@@ -28,8 +28,8 @@
 
 
 # 📅 18.10.2022 Clojure: Access javascript objects from clojurescript
-- `(. js/document -body)`: For attributes
-- `(. js/document -toString)`: For functions
+- `(.-body js/document)`: For attributes
+- `(.toString js/document)`: For functions
 - `(.. js/document -location -href -length)`: For nested attributes
 
 
