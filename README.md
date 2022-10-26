@@ -26,6 +26,31 @@
 
 ---
 
+# 📅 26.10.2022 training: How to make live-coding more effective?
+- [source](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006023)
+- Do not spend too much time on writing boilerplate code which is not related to the core idea you want to teach, use starter/template code instead
+- Have students make predictions of certain outcomes of the live-coding (engages with the problem and results in more learning when guess was wrong)
+
+# 📅 26.10.2022 training: Why is live coding so effective?
+- [source](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006023)
+- Easier to catch more explorative questions of the 'what-if' kind
+- Instructor ends up teaching a lot of implicit concepts he was not consciously aware of (like editor commands)
+- Forces the trainer to present topics slower (compared to skimming throught the slides)
+- Oberserving and learning how instructor runs into problems (very valuable knowledge for beginners)
+- Observing how intructor mentally deals with mistakes (hopefully in a positive, kind way)
+
+# 📅 26.10.2022 training: How to use peer instructions?
+- [source](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006023)
+- by Eric Mazur at Harvard
+- provides "one-to-one mentorship in a scalable way"
+- Steps
+    1. Brief introduction of the topic
+    2. Multiple choice question probing knowledge retention (ideally 40%–60% get the right answer)
+    3. Students discuss in small groups the results (several minutes)
+    4. Discuss in group if questions are still unclear
+- similiar to the Liberating Structure [1-2-4-all](https://www.liberatingstructures.com/1-1-2-4-all/)
+
+
 # 📅 26.10.2022 Fun: Joke for QA's
 
 ```plaintext
