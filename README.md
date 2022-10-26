@@ -26,6 +26,21 @@
 
 ---
 
+# 📅 26.10.2022 Fun: Joke for QA's
+
+```plaintext
+A QA engineer walks into a bar.
+Orders a beer.
+Orders 0 beers.
+Orders 99999999999 beers.
+Orders a lizard.
+Orders -1 beers.
+Orders a ueicbksjdhd. 
+
+First real customer walks in and asks where the bathroom is.
+The bar bursts into flames, killing everyone.
+```
+
 
 # 📅 18.10.2022 Clojure: Access javascript objects from clojurescript
 - `(.-body js/document)`: For attributes
