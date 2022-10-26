@@ -3815,7 +3815,8 @@ $ edit syntax
 - **Partial application** means creating an intermediate function by already defining part of its arguments **Currying** means breaking down a function in a bunch of intermediate functions which take only one argument.
 - *Partial application is when you curry a function, and use some, but not all of the resulting functions.* \~ [SpoonMaiser](https://stackoverflow.com/questions/218025/what-is-the-difference-between-currying-and-partial-application#comment87580_218055)
 
-# 📅 04.05.2020 vim: Start using the jump list This is a huge productivity booster: Use `Ctrl-o` and `Ctrl-i` (in command mode) to move forwards/backwards through the jumplist. The jumplist is maintained project wide!
+# 📅 04.05.2020 vim: Start using the jump list
+- This is a huge productivity booster: Use `Ctrl-o` and `Ctrl-i` (in command mode) to move forwards/backwards through the jumplist. The jumplist is maintained project wide!
 - With `:jumps` you can see where you are currently located in the jumplist. The relative number `N` of jumps allows you to go directly to a jump of interest `N` `Ctrl-o`.
 - **Bonus:** If you are using this in Spacemacs a split window will open with the jump list and you can just click on the item - maintaining the split layout. I love this 💚
 
