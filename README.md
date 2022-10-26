@@ -26,6 +26,42 @@
 
 ---
 
+# 📅 26.10.2022 training: What are scientic communities who research on computer science education?
+- [SIGCSE](http://sigcse.org/) := Technical Symposium on Computer Science Education 
+- [ITiCSE](http://iticse.acm.org/) := Conference on Innovation and Technology in Computer Science Education, 
+- [ICER](https://icer.hosting.acm.org) := International Computing Education Research Conference
+
+# 📅 26.10.2022 training: What are Parsons problems?
+- A parson problem usually consists of several code fragments which have to be arranged in the correct order to solve a certain problem
+- At the very beginning this can make sense to focus on controll-flow and algorithmic thinking and not syntax
+- Proofed to be more engaging than e.g. multiple choice exercises
+
+# 📅 26.10.2022 training: How to get into the beginner mindset?
+- Experienced developers usually do not need to do a lot of algorithmic thinking because most of the patterns are already memorized
+- Example: Determine the maximum of a list of integers
+    - beginner needs to remember syntax, how to iterate over a list, using a accumulator variable etc.
+    - this takes a lot of time
+- Example: Debugging
+    - is the process of analysing the discrepancy between what happens and what should happen
+    - beginners have to constantly recall what should happen while still having to search for the root cause
+
+# 📅 26.10.2022 training: How to design good exercises to practice with?
+- Goal: Moving from hard "hard and boring" to "easy and exciting" [source](http://ksiresearchorg.ipage.com/vlss/journal/VLSS2017/vlss17paper_10.pdf)
+- Design them with sub-goals in mind
+- Use authentic tasks (more engaging) working with video, audio, images
+- Whenever putting exercises in context be aware that this might put of certain students (e.g. some person might not identify with games or references to alcohol) 
+- Don't shy away to use boilerplate code to reduce complexity and increase fun
+
+# 📅 26.10.2022 training: Why are sub-goals for exercises so important?
+- [source](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006023)
+- helps with the frustration of tackling big problems with no solution in mind
+- helps recognizing patterns, that certain steps are very similiar between problems (isomorphism)
+- helps with communication between peers or instructor when referencing specific hurdles in the solution
+- Nice metaphor
+    - Beginners do not become a developer by just doing the same thing as developers but slower
+    - In the same way we do not teach reading by reading a classic novel but in slow pace
+    - We teach by "using shorter books with simpler words and larger print" ([source](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006023))
+
 # 📅 26.10.2022 training: How to make live-coding more effective?
 - [source](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006023)
 - Do not spend too much time on writing boilerplate code which is not related to the core idea you want to teach, use starter/template code instead
