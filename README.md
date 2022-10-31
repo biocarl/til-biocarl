@@ -103,6 +103,689 @@ The bar bursts into flames, killing everyone.
 ```
 - source: @brenankeller
 
+# 📅 09.10.2022 training: What is understood under Learning By Doing?
+- Also known by action learning
+- Speak from actual experience and prioritize content accordingly
+- Create increasingly difficult exercises
+
+# 📅 09.10.2022 training: Why is the growth mindset for learning so important?
+- [source](https://www.youtube.com/watch?v=hiiEeMN7vbQ)
+- Understand that you can grow through hard work, struggling with challenges
+- Instead of giving students a ‘failed’ mark, give them a ‘not-yet’ mark, they have to see them on a learning curve, path into the future
+- Move from the tyranny of now to the future of “yet”
+- opposite concept is the so called 'fixed mindset'
+- Why?
+    - More motivated, concentrated if they have the feeling that what they are doing is contributing to their growth
+    - Frame intelligence or talent not as fixed
+- How?
+    - Provide useful feedback continuously (e.g. actionable)
+    - Appreciate when they try but fail (create fail fast culture)
+    - Put students into reflection mode
+
+# 📅 09.10.2022 training: What formats enable Peer-to-peer learning?
+- One or more students (or coworkers) teach other students (or coworkers)
+- How?
+    - A lot of group activities and discussions with clear goals
+    - Let students review each other's work
+    - Encourage to help each other
+
+# 📅 09.10.2022 training: How to embedd the concept of life-long learning into teaching?
+- Learning happens all the time (not only formal setting) and during life-time
+- How?
+    - Stay in contact after learning format (e.g. alumnis)
+    - Share your own learning habits (e.g. books, podcasts) - be a role model
+    - Teaching mindset: You can’t know everything from start, will take time
+
+# 📅 09.10.2022 training: How to structure a training day?
+- General
+    - Always do breaks
+    - Mark very clearly when we enter which format of the day
+    - Repeat topics e.g. showing the same slides twice at a later stage
+    - Let the audience decide what to do next (e.g. repetition or new topic?)
+    - online: also do a check-in during the day
+    - online: also make clear how to communicate with each other, how to ask a question, or how to work in groups
+- Check-In in the morning
+    - Check attendance
+    - Summary of previous topics
+    - Room for open questions
+    - Emotional Check-In e.g. lake of feelings
+    - Present coming up-topics and learning outcomes
+- Check-Out
+    - How is everyone feeling? Can be also post-it, emoji summarizing the day
+    - Small evaluation, helping to structure the next day: Major questions we may want to tackle next time? (Colour codes on how well did they understand the topics)
+    - Connecting the dots, looking together at the learning outcomes
+    - Teaser what we will start next time
+    - 1 min of silence to write down what challenges they had today
+- Short presentation (< 20 min)
+    - What do students need to get started e.g. their own exercise?
+    - Also pose open questions e.g. a method they have to find by themselves
+- Practical exercise
+    - Keep exercise close to real life examples
+    - Share results of students and discuss them
+- Discussion
+    - Give a clear definition of the discussion topic
+    - Use formats like [1-1-2-4](https://www.liberatingstructures.com/1-1-2-4-all/) to structure exchange
+    - Role changes from teacher to facilitator
+    - Give summary at the very end
+- Do live polls
+    - Good opportunity for doing formative feedback - where are we heading?
+    - Tools you can use [mentimeter](https://www.mentimeter.com/) or simple poll in Teams [source](https://support.microsoft.com/en-us/office/poll-attendees-during-a-teams-meeting-9923b7d4-ea97-4aa2-b8b8-b45fefe7d454)
+- Group exercise with presentation afterwards
+    - Very motivating because you get feedback by your peers
+- Live-Coding
+    - Teacher solves some problems and students can code-along on their own machines
+    - Practice before doing this in front of class (not losing time with debugging)
+    - (-) Often too passive
+    - (+) Safe environment, increases muscle memory, creating time to think about it
+- Lightning talk (max 10 min)
+    - Short talks students can prepare (from a selected list of topics)
+    - (+) Challenge students which are more advanced than others
+- Blended learning
+    - Prepare the audience before presentation of a new topic with readings, tutorial, podcasts etc.
+    - Usually given as homework/prep work
+
+# 📅 08.10.2022 intellij: Navigation of window splits
+- If there is several split windows open you can drag and drop a tab into a certain window and it will appear there
+- in project menu select several at once and press `Shift + Ctrl + Enter` to open all files in different tabs and `Shift + Enter` to open them in separate windows
+
+
+# 📅 08.10.2022 intellij: Rename variable/class/interface
+- `(Fn)` + `⇧` + `F6`: Rename variable/class/interface
+- `Command` + `Option` + `L`: Format class
+- `Command` + `N`: Generate
+
+
+# 📅 08.10.2022 intellij: Live templates for Java
+- `main`: generate main
+``` java
+public static void main(String[] args){
+
+
+}
+```
+- `psfs`: generate either string, int
+``` java
+public static final String
+```
+- `sout`: print line
+``` java
+System.out.println();
+```
+- `soutm`: print current class and method
+``` java
+System.out.println(“currentClass.method”);
+```
+- `soutv`: print current value
+``` java
+System.out.println(“value=”+value);
+```
+- `fori`: for loop
+``` java
+for (int i = 0; i < ; i++) {
+
+
+}
+```
+- `iter`: iterate over collection by element
+``` java
+for (String s : someList) {
+            
+}
+```
+
+
+- `ifn`: null check
+``` java
+if (var == null) {
+
+
+}
+```
+
+
+
+# 📅 08.10.2022 java: How does import work in Java?
+- how that import is just a alias for a package path, show that you can also write package name in front of the class (instead of import)
+- two exceptions for imports: java.lang e.g. String, System
+- Is not something as include in Python
+
+
+# 📅 08.10.2022 java: exceptions: Checked vs unchecked Exceptions
+- checked exceptions: must be handled by code (try/catch or `throws` on method) - inherit from `Exception`
+- unchecked exceptions: do not need to be explicitly checked - inherit from `RuntimeException`
+  - runtime exceptions could have been avoided by the caller e.g. out-of-bound exception (check size first), NullPointerException (check if null first)
+- People usually prefer using a RuntimeException since it produces cleaner code and do not necessarily follow the original convention
+
+# 📅 08.10.2022 java: Chaining streams
+- Based on OO principle: Each class does one thing well
+- You can connect a Object stream to either a byte stream or something else
+- gives you the ability to mix and match different combinations of connection and chain streams, resulting a highly custom chains
+
+# 📅 08.10.2022 java: annotations: Purpose of `@Override` annotation
+- Not only a visual marker!
+- `@Override` serves as a marker for the compiler and will trigger an error if the annotated method actually does not overwrite a method of a super class e.g. if you have the method header wrong
+
+# 📅 08.10.2022 java: Boilerplate for CLI menu
+```java
+import java.util.Scanner;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+ 
+        Scanner scanner = new Scanner(System.in);
+ 
+        do {
+            System.out.println();
+            System.out.println("1 - Option A");
+            System.out.println("2 - Exit");
+            int option = scanner.nextInt(); 
+            if (option == 1) {
+                 System.out.println(“Option A”);
+            }
+else if (option == 4) {
+                System.out.println("Exiting...");
+                break;
+            }else{
+                System.out.println("Invalid option");
+}
+        } while (true);
+     }
+}
+```
+
+
+# 📅 08.10.2022 java: The two built-in math constants
+- Are only high-precision approximations
+```java
+import java.lang.Math;
+Math.PI;
+Math.E;
+```
+
+# 📅 08.10.2022 java: How to create a random integer?
+```java
+int randomNumber = ThreadLocalRandom.current().nextInt(1, 6); // from 1..5
+```
+
+# 📅 08.10.2022 java: How to use the Java scanner?
+- `nextXY()` just returns next token of that type, have to call several times for retrieving all entered tokens e.g. firstName and secondName
+- Scanner is only blocking on `next` if no token is present in the memory buffer
+```java
+import java.util.Scanner;
+Scanner scanner = new Scanner(System.in); //standard input == keyboard
+String response = scanner.next(); // program holds till input is received, also called blocking
+// different types
+scanner.nextInt();
+scanner.nextDouble();
+// retrieve the whole input line (potentially retrieving several tokens)
+String wholeResponse = scanner.nextLine();
+```
+
+
+# 📅 08.10.2022 java: Allowed characters for variable names
+- Letters, `_`, numbers, `$`
+- For example `int ____ = 4;` is valid Java
+
+# 📅 08.10.2022 java: Escape sequences
+- `\a`:		Alert (bell, alarm)
+- `\b`:		Backspace (deletes previous character) - useful for deleting last character of string
+- `\f`:		Form feed (new page)
+- `\n`:		New-line
+- `\r`:		Carriage return
+- `\t`:		Horizontal tab
+- `\v`:		Vertical tab
+- `\'`:		Single quotation mark
+- `\"`:		Double quotation mark
+- `\?`:		Question mark
+- `\\`:		Backslash
+
+
+# 📅 08.10.2022 java: What is understood under lexical scope?
+- Relates to context where you can use a variable
+- Local variable is bound to the scope where it is declared
+- Moving a declaration to a parent scope can give you access but does not guarantee that variable is initialized. Solution give it a default value.
+
+# 📅 08.10.2022 java: How to teach the first steps in Java?
+- [source](https://www.udemy.com/course/java-for-absolute-beginners)
+- Show a classic recipe and convert it step by step into a Java program
+    - Create method to create a cake, body, semicolons
+    - Semicolons are used to end statements in Java
+    - Add additional method to eat the cake (different method name or the computer gets confused)
+    - comments: little notes you can leave to yourself. Java know how to ignore comments because they  are not for the program to read but for you
+    - Main method is the starting point and therefore required, runs automatically when the program starts
+    - The Main class is the name of the recipe, everything needs to go inside a class
+- Explaining `System.out.print("");`
+    - It is like a file path like `Documents/Work/test.txt`
+    - The `.` is a little bit like `/`
+    - The folders are called packages in Java
+- Strings
+    - Quotation marks demark beginning and end of text
+
+# 📅 08.10.2022 psychology: Search Inside Yourself
+- Movement to bring mindfulness to work life
+- Example format: /Minute to Arrive/ - breath a minute before the next meeting
+
+
+# 📅 08.10.2022 training: HIIT workouts for the body vs HILT workouts for learning
+- [source](https://medium.com/@quixotic_scholar/studying-to-the-hilt-why-learning-should-look-more-like-exercise-cbfae517f14b)
+- In the same way HIIT workouts increase muscle growth by short bursts of very tiring exercise, it also works for memory
+- What strengthens memory is not the classic spaced repetition of facts but the difficulty/failure of retrieval. Space repetition is just one way to achieve this (“verge of forgetting”)
+- Other ways are: /question context, available cues, feedback timing, interference effects, modality, and generative task requirements/ (see Healy et al., 2014; Soderstrom & Bjork, 2015)
+- Ideal /high intensity learning trials (HILT)/ would include the following elements
+    - Short sessions with high mental effort
+    - Increase difficulty of task based on previous results
+    - Breaks and recovery for ‘brain muscles’
+    - High failure rates are expected and desirable (also remember that failure increases neuroplasticity)
+    - Study questions would need to be new in a set of different memory recall influencing dimensions
+        - temporal features (e.g., time since last exposure)
+        - structural features (e.g., available cues/question structure)
+        - functional features (e.g., what generative activity is required)
+        - relational features (e.g., what questions preceded or followed [interleaving] and how knowledge components are connected)
+        - modality features (e.g., visual or auditory presentation)
+        - encoding features (e.g., depth of processing required)
+        - episodic features, fluency features (e.g., font type/readability)
+        - informational features (e.g., what feedback/hints/scaffolds are given and when)
+        - Benefits
+            - Broader context student can apply knowledge
+            - Based on feedback it can be focused on certain dimensions more
+            - More engaging (compare with same Anki card layout for each question)
+- How can you help with students' motivation, facing constant failure?
+    - Work on growth mindset: Students should focus on learning improvement and not performance. Easily to fall into the trap that current performance will be the same as in future (not considering that student is in the middle of learning)
+        - What helps: /latent learning gains more salient (Koriat et al., 2004; Kornell & Hausman, 2017)/ - show what  they’ve already learned along the way
+        - Analogy when doing a HIIT workout, that is so exhausting - a lot of muscles will grow out of this and not I will be always as weak as in this moment
+    - Driving indicator should be -brain burn- and not initial performance
+
+
+# 📅 08.10.2022 training: What types of feedback are important?
+- Formative feedback: happens during teaching, while you see students applying newly learned knowledge
+    - Monitor learnings from student, allowing to modify content if specific need is identified
+    - Motivate students to pay attention
+- Summative feedback: at the end, final learning outcome is tested for, often to account for external stakeholders
+
+# 📅 08.10.2022 training: How to formulate learning outcomes
+- European Quality Framework (EQF) := europe learning outcomes-based framework which helps to translate between the national qualifications frameworks
+- A learning outcome is defined by EQF as follows
+    - Knowledge: Person has to understand and remember
+    - Skills: Person has to understand how to do something and do it
+    - Competence: Person has to independently do it, in various contexts
+- EQF defines 8 maturity levels of learning outcomes - see [source](https://europa.eu/europass/en/description-eight-eqf-levels)
+
+
+# 📅 08.10.2022 training: What is understood under Accelerated Learning?
+- Keep your lessons short (15 - 20 mins)
+- Prepare lesson well so you can react to specific needs in the lesson
+- Start the lesson with learning outcomes and why they are important (motivation)
+- Activities after subject  matter (not only consuming but also applying knowledge)
+- End the learning unit with a summary - bridge to the learning outcomes (let it summarize)
+    - More in-depth reading [source](https://fs.blog/learning/)
+
+
+# 📅 02.10.2022 java: oop: inheritance: Why does a constructor from a child class always have to first call the parent constructor?
+- Because a constructor should ensure that an object is ready for use before anything else, as a child class we need to fulfill the requirements of the parent class
+- if you call super afterwards and first call `someMethodOnSuper();` you run into the risk to an `//ERROR some super field not yet constructed`
+- if you do not call super, it automatically tries to call the super empty constructor (forces you to use a specific one if no default is available)
+
+# 📅 02.10.2022 java: oop: inheritance: What are some ways of prohibiting inheritance?
+- `final` class or method
+- Don't make public class (just omit, only accessible within the package)
+- Only private constructors (this is the reason why you can’t inherit from a singleton)
+
+# 📅 02.10.2022 java: oop: inheritance: What is the motivation of prohibiting inheritance with the final keyword?
+- Make sure that people do not subclass a class of an instance you expect as parameters and then break your internals (see also Liskov Substitution Principle and design by contract). Example would be to make valiations more strict than the one of the superclass
+- By for example making the class final you effectively force the consumer to use composition since inheritance is not possible
+
+# 📅 02.10.2022 java: oop: inheritance: What can I do if I want to avoid calling an overwritten method in the parent but still want to use the original one?
+- You should not allow to overwrite the method in the first place
+- Make the method final and define a method like `methodImpl` which can be overwritten and call it from the final method
+- for more details also look at Template method pattern and here: [source](https://stackoverflow.com/a/43210059)
+
+# 📅 02.10.2022 java: oop: inheritance: What is understood under the diamond problem in Java?
+- If you inherit from multiple classes (`Class A,B`) which have a conflict e.g. both have the same method `methodA`.
+- If `ClassC extends ClassA, ClassB` the compiler would not know if `ClassA.method` or `ClassB.methodA` should be taken when calling `ClassC`
+- This is the reason why up to Java 8, only single inheritance was allowed, with default methods for interfaces this becomes possible for example:
+```java
+interface InterfaceA {
+    default void printSomething() {
+        System.out.println("I am inside A interface");
+    }
+}
+
+
+public interface InterfaceB {
+    default void printSomething() {
+        System.out.println("I am inside B interface");
+    }
+}
+
+
+public class Main implements InterfaceA, InterfaceB {
+         // resulting in a compile error
+}
+
+
+// possible solution is overwriting and resolve ambiguity 
+public class Main implements InterfaceA, InterfaceB {
+    @Override
+    public void printSomething() {
+        // either call both methods or use custom implementation
+        InterfaceA.super.printSomething();
+        InterfaceB.super.printSomething();
+    }
+}
+```
+
+
+# 📅 02.10.2022 java: oop: polymorphism: What is polymorphism?
+- Simply put: Object can take its form of one of his super types
+- Polymorphism := Can have many forms, treat something based on a minimal set of things you need to know (smallest common denominator) but the implementation of those methods are as specific as possible (dynamic dispatch)
+-  By inheriting from the superclass you define a contract for all subclasses (smallest common denominator)
+- `Dog dog = new SpecialDog();`
+  - Dog is the reference type and defines the contract and therefore callable methods. This is because `dog` could hold all different subtypes which might not have the methods contained in `SpecialDog`. In other words Java can not guarantee which subtype the variable holds, therefore it plays safe and sticks to the general type
+  - SpecialDog is the object type and defines the method implementation (dynamic dispatch)
+- Reference type is about the what, object type is about the how
+
+
+# 📅 02.10.2022 java: oop: polymorphism: Where do we see the concept of polymorphism in the Java Standard library?
+- Superclass of every object is `Object`
+- `System.out.println(Object object)` would run the  `toString()` method, choosing the most specific implementation
+- Common scenario is having an array list of super types and we all process them based on the super type for example number
+
+
+# 📅 02.10.2022 java: oop: polymorphism: What is understood under dynamic dispatch?
+- Dynamic dispatch := In OO when a method is called on super type the last overwritten method in the line of inheritance will be called. Java is calling the method based on its object type not variable type. (this one is about implementation)
+- Polymorphism := Set of methods which can be called are defined by the variable type not object type. (this one is about which function names are exposed)
+- `Account account = new SpecialAccount();`
+  - `Account` is variable type
+- `SpecialAccount` is object type
+
+
+# 📅 02.10.2022 java: oop: polymorphism: How does dynamic dispatch work exactly?
+- Dynamics dispatch: JVM looks for lowest in class hierarchy tree, if lowest doesn't have that method looks at parent and so forth (looks for most specific version for that object)
+
+
+# 📅 02.10.2022 java: oop: polymorphism: How to do type conversion within class hierarchies?
+- you can convert the type back to a more specific class if we need to call methods which are not part of the superclass
+- but we need to verify during runtime that we actually have an object available for that subtype we want to cast to
+- you can only cast up and down not across types - results in a runtime error
+- can be done with `instanceof`
+
+
+# 📅 02.10.2022 java: oop: polymorphism: When is `instanceof` not considered a bad practice?
+- usually `instanceof` is considered bad practice: the whole point of polymorphism is to implement different behaviors in different types and not caring about the specific type
+- but there is exceptions to this rule: [source](https://stackoverflow.com/a/18456129)
+  - if you want to check for equality based on a specific class/interface in the hierarchy (though this is dangerous if subclass overwrites this behavior - dynamic dispatch)
+  - check if object needs to be transformed into specific type before returning (to fulfill certain method contract)
+  - try to take performance shortcut, for example checking size in `Iterables` if it is a collection (just  call `.size()`) and or else iterate over whole list to count
+- as a simple rule: if you use `instanceof` internally this should never be guessed from the outside. You should not react to certain types so you return something different. It is more like to take shortcuts or compensate for inconsistencies
+
+# 📅 02.10.2022 java: oop: encapsulation: What is the difference between abstraction and encapsulation?
+- Abstraction is the act of hiding complex logic from the outside, having relevant logic all contained in one place
+- Encapsulation is the fact of hiding information so outside entities can not change internal state without considering certain defined constraints. Usually you can only manipulate state through well defined methods which act like a gateway and dictate how and under which circumstances internal state can and should be modified
+
+
+# 📅 02.10.2022 java: oop: polymorphism: What is an abstract class?
+        - sometimes you want to write a class that can not be instantiated
+        - its main purpose is to be extended
+        - car example: vehicle abstract class, and boat and car can be initiated
+        - can also contain abstract methods, has no body - child classes are forced to overwrite that method (or they become abstract themselves)
+- car example: `move` method from vehicle class. There is no common movement which would make sense that child classes inherit
+
+
+# 📅 02.10.2022 java: oop: polymorphism: What are interfaces?
+        - in common language, a way in which two things interact (power plug)
+        - for instance when we create a class with public methods, we define an interface with the outside world (in contrary to the private methods which are not part of the interface)
+
+
+# 📅 02.10.2022 java: oop: polymorphism: Why use interfaces and not abstract classes?
+- so in some sense the interface does not really do a lot, all methods are abstract, so the class needs to implement it anyway. So you might be thinking … what is the whole point? Once again, polymorphic behavior - the interface can also be used as a type. But still, why not using abstract class? Because Java only allows single inheritance (see also diamond problem): You can implement as many interfaces as you want to
+
+
+
+# 📅 02.10.2022 java: oop: polymorphism: What is the difference between interface and an abstract class?
+        - they both
+- can not be instantiated
+- contain static variables
+- but an interface
+- can only contain abstract methods (not considering default methods since Java 8), abstract classes commonly contain also methods with implementation
+  - no instance instance variables (abstract class can have instance variables)
+  - interface also can’t have a constructor
+
+- java: What is purpose of default methods in interfaces?
+- default methods allows for having a method body (not abstract anymore)
+- advantages
+-  Before Java 8, all classes implementing a interface would break if a new method was added since abstract methods need to be implemented, default method is offering a fallback for that method if it was not overwritten yet
+- sometimes only implementation is necessary for a method defined in a interface, no need to define it in any implementing class. Example: Method which just logs that a class implementing logging interface was called
+
+# 📅 02.10.2022 intellij: Window split and navigation in vim
+- `:vsp` and `:sp`: for moving current window in vertical or horizontal split
+- `Ctrl-W` + `h/j/k/l`: for navigating between the windows
+- `Ctrl` + `ww`: For cycling through all windows
+
+
+
+
+# 📅 01.10.2022 java: oop: basics: What happens if you do not specify any access modifier on a Java class?
+- when not specifying any access modifier (like private/public) it evaluates to package-private access level
+- field can only accessed by other classes or child classes which are in the same package
+- if child class is different package it can’t be accessed
+
+# 📅 01.10.2022 java: oop: basics: What is abstraction?
+- Abstraction := Implementation hiding (do not expose complexity to user). He does not need to understand it in order to use it
+
+# 📅 01.10.2022 java: oop: basics: What is a constructor?
+- Is a method which runs if you create a new object
+- Must have the same name as the class and does not have a return type and must be public
+- if you do not declare a constructor, Java creates a default constructor
+- By having constructors with parameters you do not need to do call setters after creating the object but pass those values right away
+- or putting it differently, if you want to force the user that fields have to be assigned upon creation you introduce a constructor or setting default values
+- If constructor and setters need same invariant check you can use the setters in the constructor
+- we can also overload constructors
+
+# 📅 01.10.2022 java: oop: basics: What are the default values for non-initialized primitive-typed variables?
+- Default values are given when member variable or variable in length-only initialized array (like new int[4])
+- For local variable compiler always forces you to assign a value
+- byte: `0`
+- short: `0`
+- int: `0`
+- long: `0L`
+- float: `0.0f`
+- double: `0.0d`
+- char: `'\u0000'`
+- string (or any object): `null`
+- boolean: `false`
+
+# 📅 01.10.2022 java: oop: basics: What are the three variable types in OO and what is their lifetime/memory location?
+- member/instance variables (disappears with object, on heap)
+- local variables (disappears with method, on stack)
+- static/class variables (disappears at end of program, PermGen section of heap)
+
+# 📅 01.10.2022 java: oop: basics: When defining a custom constructor for a class the default one has to be explicitly defined. Why is this a good idea?
+- With a constructor you define what state you want to allow, you set up certain constraints. Still allowing a default constructor would circumvent the constraints
+
+# 📅 01.10.2022 java: oop: basics: What are some use cases of setting a static variable dynamically?
+- If you do this (at all), always keep those static variables private and thread-safe
+- A counter of created objects which increments in the constructor
+- Singleton pattern keeping one instance of an object instead of creating a new one upon request
+
+# 📅 01.10.2022 java: oop: basics: What is the difference between state and attribute of an object?
+- Attributes are considered immutable and only set upon creation and stay as such during object lifetime (in Java with final keyword) e.g. brandName of a car
+- State is mutable and exposed with setters or indirectly e.g. velocity of a car
+
+# 📅 01.10.2022 java: oop: basics: Why is the public static void main function static and not bound to an object?
+- Following the convention the JVM just needs to know the class with the main entrypoint and triggers that function first
+- if the function would be bound to an object the JVM would not know how to construct the object (which which arguments of the constructor) or several constructors make the construction ambiguous
+
+# 📅 01.10.2022 java: oop: encapsulation: What is encapsulation?
+- Encapsulation := Keep logic/behavior and data/state/attributes together which should be together: Modularize logic/state into object.
+- Allow/Restrict access (see access modifiers)
+- Keeping things private lets you change implementation without introducing breaking changes because consumers do not couple to internals
+- in other words: basic principle of information hiding (refer to DDD)
+- Putting logic into instance methods and data in private fields and exposing setters/getters to not access field data directly from the outside
+- When not specifying private or public it is per default package private - can be only access within the package
+
+
+# 📅 01.10.2022 java: oop: encapsulation: What are the different access modifiers for member/static fields?
+- public, all fields can be accessed from everywhere, even from an outside class
+- private, those fields do not get inherited (but are still there, just can’t be accessed)
+- protected, inherited but not accessed by outside classes
+- no modifier, package private access level: can only accessed by other classes or child classes which are in the same package
+
+# 📅 01.10.2022 java: oop: encapsulation: What is the advantage of having setters and getters and keeping fields private?
+- Object is in control of its own fields
+- Add validations and setters
+- “it is private because we do not want other classes to access it, at least not directly”
+
+# 📅 01.10.2022 java: oop: encapsulation: What is JavaBean?
+- A Java standard on how a data encapsulating class should look like.
+- All fields private
+- Getters/Setters
+- Serializable
+- Empty default constructor
+- A lot of libraries follow that standard.
+
+
+# 📅 01.10.2022 java: oop: encapsulation: Why is the concept of JavaBeans bad?
+    - Quote: "The JavaBeans pattern has serious disadvantages." — Joshua Bloch, Effective Java
+    - It encourages you to use objects with inconsistent state. You can create an object with an empty default constructor and no overarching constraint checking is done if all fields are populated one by one over setters.
+- Better use proper constructors and for more complex patterns a builder pattern or parameter objects.
+- The concept of setters also runs against the concept of immutability. To make sure you can modify state you can still use copy constructors e.g. `Person.withName(person)`
+- But still sometimes you have to live with JavaBeans when it comes to integrating with existing frameworks e.g. mapping a JSON to a DTO with Jackson requires a JavaBean (unless you go for records)
+
+
+# 📅 01.10.2022 java: oop: encapsulation: Why are mutable, public, static variables usually a bad idea?
+- Everyone can access and change those values and a reader never know when the state is changing ending up as a global variable
+- Global variables are bad because they are implicit arguments to every single function
+- Additionally they are not thread-safe if you do not make them so
+- further arguments: [source](http://wiki.c2.com/?GlobalVariablesAreBad)
+
+
+# 📅 01.10.2022 java: oop: encapsulation: Why is it a good idea to use setter in constructor?
+- Because you can allow for constraint checking which is then evaluated once you set a value or create an object with that value
+- But generally people agree of not reusing the setter and instead defining static evaluation rules which are used in constructor and setters in order to avoid that instance methods are used which maybe already assume a certain state of the object which might be not given in the constructor yet
+- read more here: [source](https://softwareengineering.stackexchange.com/a/329830)
+
+# 📅 01.10.2022 java: oop: composition: Why do you model things in different classes?
+- In real life you also have things which contain other things like a book has pages but also a employee has a manager (`hasA` relation)
+- Each entity you can represent as class
+- You can put all the fields into one class but sometimes a subset of fields coherently fit well together and you can extract them out into a separate class and pass them in from the outside
+- You start to associate classes with each other
+
+
+# 📅 01.10.2022 java: oop: composition: What is composition?
+- a composition is a special form of association relationship where the the other can’t without the other for instance a room can’t exist without a house
+
+# 📅 01.10.2022 java: oop: composition: What is the law of demeter?
+- Also called the law of least knowledge
+- One object should only have the least required knowledge about the immediate object it contains: only talk to immediate friends
+- Applied principle of information hiding
+- Layered architecture is law of demeter applied on a architecture level
+- `a.m().n()` is wrong, `a.m()` is correct
+- but this is not rule set in stone, Martin Fowler refers to it as  /Occasionally Useful Suggestion of Demeter/
+  - counter concept is called /method chaining/
+- Advantage: Easier to change nested objects without breaking caller
+- Disadvantage: End up writing a lot of wrapper methods which can actually introduce more coupling e.g. moving all chaining  logic `a.b().c()` into `a` instead of leaving the responsibility with the nested classes
+
+
+# 📅 01.10.2022 java: oop: composition: When to use method chaining?
+- You really should break the /law of demeter/ when you represent data as objects (e.g. `school.classroom().chairs()`) and if you expose fluid api of some kind
+
+# 📅 01.10.2022 java: oop: inheritance: What is inheritance?
+- Inheritance := One way of duplicating logic and data of classes and extend on it
+
+# 📅 01.10.2022 java: oop: inheritance: When to use inheritance?
+- Inheritance has two benefits
+  - Subtyping, acting like the same type - polymorphism
+  - Subclassing, reusing code by accessing fields and methods
+- When you need only subclassing, you probably should consider if this is not a `has-a` instead of a `is-a` relationship and go for composition
+- If it is about subtyping you can still consider introducing a common interface
+- But still if you go for composition you might have a lot of delegation methods (vs just inheriting the methods)
+
+# 📅 01.10.2022 java: oop: inheritance: When to do method overwriting?
+- Subclass can provide a different implementation of a method than its parent class
+- “If a subclass does not like how a inherited method works, it may change it”
+- If you still want to call the old/super method in the overwritten method (e.g. if you just want to add a counter before or after) you can reference it by calling `super.method()`
+
+
+
+# 📅 25.09.2022 java: arrays: Why to use dynamic arrays aka ArrayList?
+- Problem with array
+- Fixed size you define at the initialization of the array (often it is not known what size you need beforehand)
+- sometimes people make those arrays very big to be on the safe side
+- When deleting elements, unused null values can cause problems
+- `ArrayList<String> arrayList = new ArrayList<String>();`
+- is also reference type to object of type is ArrayList
+- … and then we have that weird angled brackets syntax, here we put the type of data we want to store in the array, denotes what we want to hold in the arrays
+- In newer versions of Java we do not need to specify `new ArrayList<String>()` the type because it will infer the type automatically
+- To add one element: `arrayList.add(“”):` will place the element at the first available position, for empty list `array[0] = “”;` is analog
+- If we want to delete an element in arraylist we just do `arrayList.delete(INDEX or OBJECT”)`, for normal array we can only do array[1] = null;` still maintaining the same size
+- Some methods available
+- `arrayList.indexOf(“someString”);`
+- `arrayList.contains(“someString”);`
+- `arrayList.get(0);`
+- `arrayList.set(1, “someString”);`
+- `arrayList.size();`
+- `arrayList.clear();`
+
+
+# 📅 25.09.2022 java: methods: Why do we use methods in Java?
+- Methods are discrete units of code, help you to break up large programs in manageable and reusable chunks and helps you to abstract away logic (e.g. complicated formula)
+- Method invocation = One method transfers control to some other method by calling it. Original method has to wait till the second is finished.
+
+# 📅 25.09.2022 java: methods: Why do we have parameters in methods?
+- Scope: A method can’t access variables from the calling context, therefore you need to pass variables through the method
+- Variable is declared in the method header
+- By this methods become very powerful: They are reusable by passing in different input parameters
+
+# 📅 25.09.2022 java: methods: What does it mean if we have pass-by-value semantics for method parameters?
+- All values you put are copied for the local scope of the function
+- reference types are also copied over by value, the address of the object. You now manipulate the same underlying object since it is still the same reference
+
+# 📅 25.09.2022 java: methods: What happens if you pass in an array to a method?
+- In the case of an array, which is also a reference type, the array reference is passed by value
+
+# 📅 25.09.2022 java: methods: How do we return values from a method?
+- Once the end of the method is reached it automatically returns to the caller, you can also manually trigger it by writing `return;` but this is not needed
+- If you put `return` before the end you get an error because you have defined code afterwards
+- Behind a condition this can be quite useful in the form of a guard clause
+  Instead of just returning from a method we can also return with a value
+
+# 📅 25.09.2022 java: methods: What is the difference between method and functions?
+- Function is a piece of code with a name and can accept parameters (needs to be explicitly passed in) and return something (would be a static function in Java). Sometimes also called class method since the function is associated with a class
+- Method is a piece of code which is always associated with an object and can access the object (would be non-static in Java)
+
+# 📅 25.09.2022 java: methods: How can you pass an unknown number of arguments to a function?
+- Possible with varargs and useful if you have to to deal with an indeterminate number of objects
+- famous example is `String.format()` or `System.out.printf()`
+- or another example:
+``` java
+  private void printAll(Object... msg) {
+      for (Object item : msg){
+System.out.println(item);
+      }
+  }
+```
+
+# 📅 25.09.2022 java: methods: recursion: How does recursion work?
+- Recursion in the end simulates loops and vice versa.
+- The state is just passed down to the next iteration by encoding some state in the method parameters. The execution condition of a loop can be compared with the base condition of a method
+- recursion also allows to branch of in several recursion trees which is much harder to project into simple loops
+
+# 📅 25.09.2022 java: methods: recursion: Why can method recursion potentially trigger a stackoverflow?
+- Stackoverflow in simple words
+- If one method calls the other which calls the first one - the calls are stuck in an infinite loop
+- But whenever a method is called it gets added to a area of memory called the stack which is at some point full and the program crashes
+- Stackoverflow slightly more complicated
+- when a method is called stack frame will be put on top (holding all the locally scoped vars and code itself) and is removed from the stack once the method returns
+- if program does not terminate it stacks up infinite number of local variables and function definitions without removing because there all methods are waiting for the previous one to return
+- to circumvent this there is also the approach of tail-recursive
+
+# 📅 25.09.2022 java: oop: basics: What are objects and classes and how are they connected to reference types?
+- Objects/instances are created from classes, class serves as a blueprint which you can create several objects/instances
+- Create a objects based on a class has the type of that class e.g. `Thing thing = new Thing();` → if we define a new class we also define a new type (reference type)
+
+
+
 
 # 📅 18.10.2022 Clojure: Access javascript objects from clojurescript
 - `(.-body js/document)`: For attributes
@@ -125,6 +808,94 @@ python3 -m http.server 8000
 
 -   this results in localhost links like `http://0.0.0.0:8000/some.pdf`
 -   for pdf\'s you can also link to a specific page like `http://0.0.0.0:8000/some.pdf#page=5`
+
+
+# 📅 24.09.2022 java: datatypes: strings: How does String pooling work?
+- String is a reference type and object always lies on the heap
+- A string either lies on the common heap or in the string pool (special section of heap)
+- When initializing with String literal it checks if the object already exists in String pool, if not it creates a new one in that pool
+- A string literal is not just syntax sugar for `new String ("")`!
+- When initializing with `new` then a new object in the general area of the heap and is created without checking for the String pool
+- See also this image here: [source](https://s1.o7planning.com/en/10217/images/20233.png)
+
+
+# 📅 24.09.2022 java: datatypes: strings: How should you care about the intern() method when it comes to String pooling?
+- One might think, I do not really think about String poolings because I just should not use the explicit String constructor and only use String literals to initialize Strings
+- that is not true, see here
+```java
+String value1 = "70";
+Integer someInt = 70;
+String value2 = someInt.toString(); // created without string pooling
+assertFalse(value2 == value1);
+assertTrue(value2.intern() == value1);
+```
+
+# 📅 24.09.2022 java: datatypes: strings: Why do certain unicode characters do not work in Java?
+        - The compiler interprets unicode literals very early in the process and for instance in the case of the linefeed/newline character it would interpret the character in the source code itself
+- char hello = `\u000a`; // does not compile but the escaped char analogon does compile: `\n`
+
+# 📅 24.09.2022 java: loops: For what are loops good for?
+- Enables you to repeat sections of code in your program
+
+# 📅 24.09.2022 java: loops: Which convention to follow for a for-loop condition?
+- `i < n` or `i <= n-1` in loop-condition?
+- First version cleaner: usually everyone knows that index starts at 0, so array[n] people know is creating a out-of-bound
+- Second version is extra work (although compile usually produces same bytecode)
+- Second one is good if you want to iterate only to a specific boundary and that boundary is inclusive
+
+# 📅 24.09.2022 java: loops: For what to use the break and the continue keyword in loops?
+- `break`: causes the program to jump out of the loop
+- `continue`: causes the program to only skip the current iteration
+
+
+# 📅 24.09.2022 java: loops: When do you use which loop?
+- while-loop
+    - Almost  like a if-statement replace `if` with `while`
+    - Instead the program continues after the end of the if-construct and will jump back up to the top. Will run the body again till the condition is false
+    - If-condition is always true it is called an infinite loop and will be going as fast  as your CPU allows. Show CPU usage which will increase quite a bit
+    - How to break this loop, by introducing a variable which acts as a counter. Show increment/decrement operator `i++/i--` and `i += 1`;
+- For - loop
+    - A more compact version of the while loop with incrementing variable
+    - While loop only holds the condition, but for loop holds condition (2),  variable (1) and incrementation (3)
+    - Differences
+    - increment is only happening after the body was run once
+    - counter variable can only be used within the for-loop
+- Do while loop
+    - Same as while loop but condition is checked last rather then first
+    - Need a semicolon at the end
+- forEach loop
+    - If you really just want to access elements of an array and you don’t need the index it makes code simpler to read
+
+# 📅 24.09.2022 java: arrays: What are good metaphors for multidimensional arrays?
+- A two dimensional array can be thought of a table with rows and columns
+- A three dimensional array can be thought of a table whereas each cell has a book with pages
+- A n-dimensional array can also be described as a nested folder structure and the actual elements are the files
+- In short: Multidimensional arrays, are arrays inside arrays
+
+# 📅 24.09.2022 java: arrays: What are some helper methods to work with arrays?
+- `Arrays.fill(array,2)`
+- `Arrays.binarySearch`
+- `Arrays.asList()`
+
+# 📅 24.09.2022 java: arrays: Where should you put the [] - after type or after variable name?
+- `String[] args` (more common, Java Standard)
+- `String args[]`
+- there are also other arguments in combination with generics where this can cause problems with the latter version (can’t find source)
+
+# 📅 24.09.2022 java: arrays: What are arrays and why to use them?
+- A variable up to now can only hold value at a time like `int firstElement; int secondElement`
+- Arrays can store multiple values at once `int[] array = {1, 2, 4};`
+- Each element can be identified by an index number
+
+# 📅 24.09.2022 java: arrays: What are the steps to array creation?
+- 1. Declare array with `int[] arr;`
+- 2. Create array = `arr = new int[10];` //initialized with default values,0
+- 3. Initialize with specific values via assignment `arr[0]=3;`
+- For creation and initialization there is a shortcut called ‘array initializer’
+- `int[] arr = {1, 2, 3};`
+  - This only works when declared at the same time
+  - To overwrite existing array use new keyword
+
 
 # 📅 24.09.2022 Fun: If the client does not pay for a website
 
@@ -177,6 +948,202 @@ public abstract ChildATest {}
 -   Meta annotation which tells compiler that annotated annotation will be inherited to child classes
 -   this is only valid for classes, on methods it is ignored.
 
+
+# 📅 18.09.2022 java: control-flow: What are the boolean operators in Java?
+- `||` evaluates as the logical true: at least one has to be true
+- `&&` evaluates as logical and: both have to be true. If first was is false, does not check the second one
+- they are called Short circuit operators: JVM only checks one part before moving to the next one (see also Short-circuit evaluation)
+
+# 📅 18.09.2022 java: control-flow: What are some clean code guidelines for boolean expressions?
+- Example: `if(isAgeOver70 || (isAgeOver18 && hasVipPass))`
+- Keep single boolean values first
+- When there are boolean values which are a logical unit, put `()` around it
+
+# 📅 18.09.2022 java: control-flow: What does the modern switch expression since Java 14 look like?
+- you can also use the yield keyword if having a multiline statement
+  #+BEGIN_SRC Java
+  DayOfWeek day = DayOfWeek.FRIDAY;
+
+int numOfLetters = switch (day)
+{
+case MONDAY, FRIDAY, SUNDAY -> 6;
+case TUESDAY                -> 7;
+case THURSDAY, SATURDAY     -> 8;
+case WEDNESDAY              -> 9;
+};
+#+END_SRC
+
+# 📅 18.09.2022 java: datatypes: strings: How are String represented in Java?
+        -  As immutable char array (!= final since you can also not modify single entries)
+        -  `new String(char[])` - you are essentially telling the compiler to autobox a String object around your array of characters
+
+# 📅 18.09.2022 java: datatypes: strings: What is a char and how does it relate to a unicode and code points?
+- Unicode is a mapping between code points (integers) and single graphemes: letter, digit, punctuation mark, whitespace, control characters
+- Why do we need a mapping anyway: computer thinks in numbers (it has to know what to paint to the screen, ideally you want that your painted letter looks the same on someone else's computer -> that is why you have a standart)
+- In java a char is stored in 16 bit integer type and allows to represent the normal set of Unicode: Basic Multilingual Plane (BMP), in hex: U+0000 to U+FFFF
+- Different ways how you can initialize a char in Java:
+```java
+// code point
+char char1 = 65;
+// char literal
+char char2 = 'A';
+// unicode literal
+char char3 = '\u0041'; // hex digits need to be padded
+// hex int
+char char4 = 0x41;
+System.out.printf("%c,%c,%c,%c%n", char1, char2, char3, char4);
+```
+
+# 📅 18.09.2022 java: datatypes: strings: What are the subsets and supersets of unicode?
+- Superset: There is also a an extension to Unicode called supplementary characters (U+FFFF - U+10FFFF) which can’t be stored anymore in a 16 bit char, requiring to use a `int` datatype
+- Subsets of unicode are
+  - ASCII: 128 code points
+  - ASCII extended: 256 code points
+# 📅 18.09.2022 java: datatypes: strings: How does Java deal with the fact that the encoding for String is UTF-16 but extensions of Unicode do not fit in 16 bit anymore?
+        - when single character just model it with int
+        - the methods of object wrapper allow for checking this: `Character.isLetter(0x2F81A)` returns true whereas `Character.isLetter('\uD840')` because it does not fit in char literal
+        - in String you can only use chars, the solution is to represent a >16 bit char with a pair of high-surrogates and low surrogates. Even though a single char would not be recognized as letter (see above) you can check for pairs with `Character.isSurrogate` and `Character.isSurrogatePair`
+
+# 📅 18.09.2022 java: datatypes: strings: Why can you add an integer to a char?
+- First of all, characters are also number types, precisely a 2 byte, unsigned integer number
+- 📝Explain what happens when you remove the brackets.
+  ```java
+      System.out.println('A'+('B'+ "C")); // ABC
+      System.out.println('A'+'B'+ "C"); // 131C
+  ```
+- The way how the `+` operator works, it always uses int when char,byte,short, int are the only operands (see JLS §5.6.2: Binary Numeric Promotion). The char is implicitly casted to an integer type (widening conversion), Proof:
+- 📝Explain what happens here.
+  ```java
+      System.out.println('A'+ 1); // 66 because result is still widened, int
+  ```
+- To retrieve a char we need to explicitly cast/assign it back to a char
+- 📝Explain what happens here.
+  ```java
+      // does not compile without cast (narrowing conversion)
+      int i = 1;
+      char char1 = (char) ('A' + i);
+      // this also works without cast because the compiler is clever enough to figure out the literals: JLS §5.2 Assignment Conversion: Narrowing conversions of constant expressions are allowed
+      char char2 = 'A' + 1;
+  ```
+
+# 📅 18.09.2022 java: datatypes: strings: Why do we obtain an int when adding to char’s?
+- Binary numeric promotion happens
+- if operand is of type double, the other is converted to double
+- if either operand is of type float, the other is converted to float
+- if either operand is of type long, the other is converted to long
+- Otherwise, both operands (e.g. chars, shorts, or bytes) are converted to type int
+- Affected operators: / , %, ,+ , -, <, <=, >,  >=, == ,!=,  &, ^
+- source: [source](https://docs.oracle.com/javase/specs/jls/se7/html/jls-5.html#jls-5.6.2)
+
+# 📅 18.09.2022 java: datatypes: strings: What are some useful applications for realizing that chars are just integers?
+- If you want to know where letter Y lies in the alphabet: `int position = ‘Y’ - ‘A’`
+
+# 📅 18.09.2022 java: datatypes: strings: Why should you use a StringBuilder when concating a string a lot of times?
+- everytime you create a concat something to a string it creates a new object on the heap
+- StringBuilder is implemented similar as an arrayList dynamically resizing, allowing also to manipulate characters in between without needing to allocate a new data structure
+- always prefer StringBuilder over StringBuffer (latter is slower but guarantees thread-safety)
+
+# 📅 18.09.2022 java: datatypes: strings: Why is StringBuilder implemented as an array and not a linked list?
+- Array super fast because continuous block (append, random access etc.). Even when it comes to insertion of the middle of the string, a linked list still needs to iterate to the middle of the list.
+
+# 📅 18.09.2022 What is the difference between binary and text files?
+- Everything in memory or written to a file is represented in bytes (4 bit)
+  When reading from a file we retrieve a continuous stream of bytes:
+- Text stream := stream on bytes which has some markers and conventions to be converted to a text encoding
+- Binary stream := a stream of bytes without any convention, you really need the knowledge how the information was encoded by the program in order to recover the information
+- Further reading: [source](https://www.nayuki.io/page/what-are-binary-and-text-files)
+
+# 📅 18.09.2022 java: datatypes: strings: How to format a String in Java? What comes closest to string interpolation?
+
+``` java
+String.format(“We have %d cats”, 7) // digit
+String.format(“We have %.3f cats”, 7.1111) // float with precision -> 7.111
+String.format(“We have 1 %.3s”, “dogs”) // precision also works with strings -> “dog”
+String.format(“We have %d%% cats”, 7) // digit and escape % -> 7% cats
+String.format(“We have %d cats”, 7) // digit
+String.format("%tD%n", dateOfBirth); // date
+String.format("%S%n",var1); prints String in uppercase letters 
+String.format("%S%n",var1); prints String in uppercase letters 
+String.format(“%h”, new String(“”)); //prints the hash code
+// other examples
+// %n -> newline: you should always use that one and not \n
+// %b -> boolean
+// %c -> character
+// %tA -> “sunday” (can do time and date)
+```
+
+# 📅 18.09.2022 java: datatypes: strings: How to format output in Java?
+- Instead of doing
+``` java
+System.out.println(String.format(“We have %d cats”, 7));  
+```
+- You can do
+``` java
+System.out.format(“We have %d cats%n”, 7); 
+System.out.printf(“We have %d cats%n”, 7); 
+```
+
+
+# 📅 17.09.2022 java: operators: What types of operators exist?
+- Arithmetic Operators
+- Unary Operators
+- Assignment Operator
+- Relational Operators
+- Logical Operators
+- Ternary Operator
+- Bitwise Operators
+- Shift Operators
+
+# 📅 17.09.2022 java: operators: What can you do with the modulo operator?
+- Gives you the remainder of the division (“Teilen mit Rest”), so not the main part but just the remainder
+
+# 📅 17.09.2022 java: operators: What is the difference between post/pre-in/decrement operators?
+        - called unary operators because they only need one operand
+- Post-increment operator: var++: Calculation and assignment happens before execution of next line
+- Pre-increment operator: --var: Calculation and assignment happens instantly
+- In short:  int x = 0; int z = ++x; //z=1; (x++//z=2;)
+- In short: int incMe =0; print(incMe++);//0 print(++incMe) //2
+
+# 📅 17.09.2022 java: operators: What are bitwise operators?
+- Work on integers by manipulation the binary representation
+- Operations: OR (|), AND (&), XOR (^), Complement (`)
+- You can also combine it with assignment operator e.g.  a &= b;
+
+# 📅 17.09.2022 java: operators: What are shift operators?
+- Shifting all bits to the left/right
+- Unsigned shift, is padded with zeros (only right shift exists)
+
+# 📅 17.09.2022 java: operators: What are some use cases for bitwise and shift operators?
+- Encode boolean array in integer e.g. set boolean on 7nth position to true
+-  `a |= (1 << 7);`
+- source: [source](https://www.geeksforgeeks.org/bit-manipulation-technique-to-replace-boolean-arrays-of-fixed-size-less-than-64/)
+- Toggle a boolean to true with xor assignment operator
+- theBoolean ^= true;
+- Decrease and increase or a number by 50% with bitshift
+- theInteger >> 1 and theInteger << 1 and
+- all of those tricks usually are not needed, hard to read or done by the compiler anyway
+
+# 📅 17.09.2022 java: operators: Which operators are overloaded in Java?
+- Overloaded `+` and `+=` is working differently for Strings and numeral types
+- `*`,`/` and `%` are overloaded for integer and double types
+- Java does not allow you to do custom defined operator overloading (only with some compiler extensions)
+
+# 📅 17.09.2022 java: control-flow: What do we understand under control flow and what are the basic elements of it?
+- Control flow is the order statements are executed in, it is like the path the program takes through the code
+- For example: If statements, switch statements and ternary operator
+
+# 📅 17.09.2022 java: control-flow: What is the basic idea of if-statements?
+- `If` statement evaluates a boolean as condition
+- With `else` you can frame it as a either-or situation
+- Can also add `else if` block but only one block will run of the overall `if-else` construct: as soon as the program finds one which is true it will skip all the others
+
+# 📅 17.09.2022 java: control-flow: What is the basic idea of switch-statements?
+- `switch` statement is based on cases and you do not need to write a equals/== condition each time
+- `default` acts as `else`
+- Removing `break` allows to go through several cases (if condition matches)
+- there is also a newer version which allows for assigning to a variable
+
+
 # 📅 12.09.2022 Gradle: Define custom gradle source sets
 
 -   `src/main/java` and `src/test/java` are assumed default source directories
@@ -223,6 +1190,81 @@ sourceSets{
 
 -   For more information on configuring test task see here [here](https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/testing/Test.html)
 
+# 📅 11.09.2022 java: datatypes: wrapper: Why is it called Integer and not Int?
+- Because classes naming convention favors no abbreviations
+- same goes for char/Character
+
+# 📅 11.09.2022 java: datatypes: wrapper: What are the issues of primitive object wrappers?
+- `Integer integerInstance = null; (5 == integerInstance)` results in null pointer exception when trying to unbox it. Primitives either need to be initialized or have a default value and can be never null
+
+# 📅 11.09.2022 java: datatypes: overflow: What happens when a primitive variable is overflowing?
+- Overflow-Metaphor: Datatypes are like cups, you spill in water, overflows
+- exceeding the range results in integer-wraparound (see also, signed bits, binary, two complements)
+- 📝Exercise:  Show what happens if int is overflowing. Compare this behavior with BigDecimal.
+
+```java
+int value = Integer.MAX_VALUE-1;
+for(int i = 0; i < 4; i++, value++) {
+System.out.println(value);
+}
+// Use BigInteger in comparison (only restricted by memory of jvm)
+BigInteger largeValue = new BigInteger(Integer.MAX_VALUE + "");
+for(int i = 0; i < 4; i++) {
+System.out.println(largeValue);
+largeValue = largeValue.add(BigInteger.ONE);
+}
+```
+- Overflow for double types remain at Double.MAX_VALUE if you add 1 (due to fixed number of significant bits) or if we do `MAX *2` to `Double.POSITIVE_INFINITY`
+
+# 📅 11.09.2022 java: datatypes: overflow: What happens when a double type underflows?
+- Usually does either return to negative number range exceeded or decimal places exceeded
+- underflow for double types results in Zero
+- 📝Exercise:  Show what happens if double is underflowing.
+```java
+for(int i = 1073; i <= 1076; i++) {
+    System.out.println("2^" + i + " = " + Math.pow(2, -i));
+}
+```
+
+# 📅 11.09.2022 java: datatypes: overflow: How to decide which datatype to use?
+- small numbers you know how they behave: int
+- always use double for decimal, but for currency use BigDecimal
+
+# 📅 11.09.2022 java: datatypes: overflow: How does the compiler deal with leading zeros of a binary literal?
+- For example you can have something like `byte data = 0b0000110011;`
+- because for the compiler it is just an int literal which happens to fit into byte even if byte itself does not have that many binary places
+
+# 📅 11.09.2022 java: datatypes: numbers: Why are calculations with double types often inaccurate?
+- Reason 1: Some numbers require an infinite number of decimals to be repeated like π.
+- in math real numbers are continuous, computers intrinsically know discrete math (0's and 1's)  e.g. 2π*r will always rendered and calculated as discrete points
+- Reason 2: Numbers like 0.1 are only approximations because of the way how floats are stored in binary: [source](https://en.wikipedia.org/wiki/Binary_number#Fractions)
+- when doing calculations, you also need to round at some point
+
+# 📅 11.09.2022 java: datatypes: numbers: How are floats represented in binary?
+- source [source](https://introcs.cs.princeton.edu/java/91float)
+- floats are represented in binary (32 bit), accumulating 2^32 real numbers. But of course not all, since there is infinite (even between 0-1)
+- 1 bit for sign of number, some bits for exponent (float 8, double 11), and some bits (float 23, double 52) for the mantisse
+- Example: 123.45 = 12345 (mantisse) × 10^−2 (exponent)
+- usually the mantisse is normalized to be between 0.5 - 1. That fraction is represented also in a binary
+- Example for a binary fraction: 0.1101 represents 1/2 + 1/4 + 1/16 = 13/16 = 0.8125
+- but it is not possible to represent 0.1 in binary only to approximate it with 0.09999 (you can only work with 1/(2^n) fractions to approximate that number. Approximation depends on the resolution, bits available for the mantisse
+
+# 📅 11.09.2022 java: datatypes: numbers: What is the difference between precision and accuracy?
+- Example: Approximation of π := 3.133333333 has a precision of 10 decimal digits but accuracy of only 2
+
+# 📅 11.09.2022 java: datatypes: numbers: What are some important rules when doing floating point arithmetics?
+- When comparing floats always compare them with a certain delta (unless you can be sure that they are multiples of exact representations e.g. 1/4)
+- In general, always prefer double over float (better accuracy), memory/speed won't be crucial most of the time
+- When working with currency, always use BigDecimal (you can control precision)
+- 1 != 0.1+0.1.. : Rounding errors, all depends on the precision. Try using BigDecimal if this resolves the issue?
+
+# 📅 11.09.2022 java: datatypes: numbers: How do arithmetic operators 'decide' which datatype to use?
+- In general: Always results in a data type which represents the datatype of the widest operand
+- but integer types (char, short, int) are always widened to default numeral type, int
+- this also means if you do ‘c’ + 12 it always happens this: ((int) ‘c’) + 12 (not course not if you concat with string, overloaded)
+- double/int ->double
+- if you do int var1 = (int) double/int; you lose that widening of course and result will be truncated
+
 # 📅 10.09.2022 mac: Repeat keys on long-press
 
 -   `defaults write -g ApplePressAndHoldEnabled -bool false`
@@ -233,6 +1275,61 @@ sourceSets{
 -   Edit with right click, `Edit key` and specifiy output and modifier
 -   Move file into `/Library/Keyboard Layouts/`, restart and select layout under keyboard preferences
 -   IntelliJ: If you want to use the option modifier key you need to select `Keymap` -\> `IntelliJ Idea Classic` (and not mac)
+
+# 📅 10.09.2022 java: datatypes: numbers: For what do you use the hexadecimal system?
+- base 16: Using: 0 - 9, A - F
+- presenting Unicode/ASCII characters, RGB colors (#  symbol): #66_92_E3 (r,g,b), MAC addresses, assembly, memory addresses
+
+# 📅 10.09.2022 java: datatypes: numbers: Why do we use hexadecimal representation if we know the decimal?
+- Because you can nicely represent e.g. 8 bit byte with two hex digits ranging from 00 - FF.
+- So for example: 5A means 5:101, A:10(base 10):1010 -> 1011010. In short it is easier to represent large numbers, maps conveniently to binary, and if you need to flip a bit, at max four bits need to change (maybe),  keeping it human readable
+
+# 📅 10.09.2022 java: datatypes: numbers: How to convert between binary, hex and octal in Java?
+- You do not really convert between the both because they are just different representations of the same thing. When you want to show them as a string you need conversion though because default is always decimal when printing.
+- To convert to String representation e.g.  `Integer::toHexString(int num)`
+- To parse e.g. hex string into int `Integer.parseInt("0xAB", 16)`
+
+# 📅 10.09.2022 java: datatypes: casting: What is an implicit typecast?
+- Implicit typecast := When one data type is widened to another datatype
+- Only happens if conversion is without data loss. (from int to -> long)
+- also called Widening Casting,  Automatic Type Conversion
+- also happens if you have cast to objects more up in the hierarchy (Child -> Parent)
+
+# 📅 10.09.2022 java: datatypes: casting: What is an explicit typecast?
+- Explicit typecast := Explicitly specify that conversion should be done and potentially losing data
+- e.g. `double a = 1.1; int b = (int) a;` will remove decimal part
+- in other words, chop of if data type can hold less
+- Narrowing Casting, Need Explicit Conversion
+- also needed if you want to move down into class hierarchy (Parent -> Child)
+
+# 📅 10.09.2022 java: datatypes: casting: Can you also cast booleans?
+- Not from integers: Java can't represent false as 0 or null and can't represent true as non-zero
+- But convert from String
+- returns boxed primitive: `Boolean.valueOf(“TrUe”);`, is case-insensitive
+- returns primitive: `Boolean.parseBoolean("true")`
+
+# 📅 10.09.2022 java: datatypes: wrapper: Why do we have object wrapper for primitives?
+- Consistent API e.g. toString(), convenient methods (in the spirit of OO, encapsulated)
+- We can only provide Object as a generic type, or more general: Polymorphism
+- We can have static util methods associated to it's type
+
+# 📅 10.09.2022 java: datatypes: wrapper: What is understood under auto/unboxing?
+- Convert primitive types back and forth to their object wrapper classes e.g. int -> Integer
+
+# 📅 10.09.2022 java: datatypes: wrapper: When does auto/unboxing happen?
+- Assignment of literal to object wrapper: e.g. here Character ch = 'a';
+- Passing as a parameter: ints to a ArrayList<Integer> it does not crash at runtime because at compile time it actually does this: list.add(Integer.valueOf(i))
+- Different example: i % 2 -> compile time: i.intValue() % 2)
+
+# 📅 10.09.2022 java: datatypes: wrapper: Can you do a widening conversion and autoboxing in the same assignment?
+- Example:
+- `Long var1 = 12;` // does not compile
+- `long var2 = 12;` // compiles
+- `Long var3 = 12L;` // compiles
+- According to JLS §5.2 Assignment Conversion, only one conversion is allowed at the time, except if the conversion is a narrowing conversion of a constant expression
+- `Short var1= 12;`
+- This is the case because you do not have literals of bytes or shorts, only of int. If you want to make this possible: `byte b = 0b0;` and not force the user to do this `byte b = (byte) 0;` you have to allow implicit narrowing conversion for literals
+
 
 # 📅 08.09.2022 github: Exclude filenames from search
 
@@ -370,6 +1467,99 @@ import static java.util.Optional.ofNullable;
 System.out.format("12:12:22+%s", ofNullable(timezone).orElse("\b"));
 ```
 
+# 📅 04.09.2022 java: datatypes: What datatype is an array?
+- "An object is a class instance or an array."
+
+# 📅 04.09.2022 java: datatypes: What are variables, type, declaration, initialization and assignment?
+- Very similar to variables in mathematics - writing it like `x = 10; ` is almost valid Java but we need to define what type it is
+- `=` called assignment operator, assigns the value on the right to the variable of the left
+- A variable first gets declared (so Java knows what type it is) and then initialized (which creates the actual data type with its value)
+-  Initialization is the first assignment to a variable, afterwards assignment is a synonym for replacing with new value
+
+# 📅 04.09.2022 java: datatypes: numbers: What is a bad joke regarding integers?
+- "Isn't this int-eresting?"
+
+# 📅 04.09.2022 java: datatypes: numbers:  What are integer types and double types?
+- Integer is another word for whole numbers, also sometime called integral, means that its spectrum is discrete and the smallest difference between any two distinct values is 1
+- integer types, but are different range
+- byte (8 bits): -128 … 127
+- short (2 bytes): -32,768 .. 32,767
+- int (4 bytes): -2,147,483,648 .. 2,147,483,647
+- long (8 bytes): -9,223,372,036,854,775,808 .. 9,223,372,036,854,775,807
+- Double types
+  - double types try to approximate the real numbers (which is a infinite set) with discrete set of units
+- float: varies in precision (single-precision (6-7 decimal digits))
+- double: varies in precision (double-precision (15-16 decimal digits)
+
+
+# 📅 04.09.2022 java: datatypes: numbers:  What does it mean that the char is an integer/integral type?
+- Chars are just small integers, precisely a 4 byte, unsigned integer number which also happen to map to a unicode symbol
+- You can also do this: `char char1 = 0b1111_1111_1000_0111;`
+
+# 📅 04.09.2022 java: datatypes: numbers: What is the default datatype for integer literals?
+- `int`, that is why the compiler complains if you want to assign a long without the `L`: e.g. `2147483648L`
+- you can also not do this: `Long x = 250;`, because this would need require two conversions (widening conversion int to long and autoboxing to Long), which is not allowed by spec
+
+# 📅 04.09.2022 java: datatypes: numbers: Can you also use the scientific notation in Java?
+- Yes, you can e.g. `1e+3`
+- you can also use `_` to e.g. triple group large numbers (for for visual separation)
+- for hexadecimal numbers you use p instead of e (since e is a hexadecimal digit)
+
+
+# 📅 04.09.2022 java: datatypes: numbers: How do positive and negative Zero behave in Java?
+source: [source](https://www.baeldung.com/java-overflow-underflow)
+- has the following ‘wired’ behavior
+
+``` java
+double a = +0f;
+double b = -0f;
+assertTrue(a == b);
+assertTrue(1/a == Double.POSITIVE_INFINITY);
+assertTrue(1/b == Double.NEGATIVE_INFINITY);
+```
+
+# 📅 04.09.2022 java: datatypes: numbers: Why can double data types result in NaN?
+- Math.sqrt(-3.0) (floats represent real and not complex numbers!) - test with Double.isNaN()
+- Also if you divide by zero. Follows the convention that arithmetic  operations do not throw an exception
+
+# 📅 04.09.2022 java: datatypes: numbers: What numeral representations are supported in Java?
+- decimal (base 10): 7
+- binary (base 2): 0b101
+- hexadecimal (base 16)
+- 0xAB, octal (base 8): 01
+
+# 📅 04.09.2022 java: datatypes: numbers: Can you also have bin, hex, octa numbers on other number types than int?
+- Yes and no
+- Yes, you can assign those to all integer types, including char
+- But also no because you are still using an int literal and Java does a narrowing conversion to char, short, byte… (see JLS §5.2 Assignment Conversion)
+- For numbers bigger than int you need to mark with e.g. with `0x..12L`, because the compiler interprets the literal as int first before doing the widening conversion
+
+# 📅 04.09.2022 java: datatypes: numbers: Why does a computer use a binary system but not a decimal system?
+- Computer runs using millions of electronic switches (transistors), representing either on or off
+- Those two states we can represent mathematically as binary numbers 0,1
+- Same goes for a hard drive
+- magnetic particles with a north or south direction
+- both states are corresponding to 0,1
+- the reader detects the directions and translates this to a byte stream and the writer reorients particles according to the byte stream input
+
+# 📅 04.09.2022 java: datatypes: numbers: What are bytes and bits?
+- binary system: the language of computers, base 2 (translates to Boolean logic, electric switch). "voltage applied" and "no voltage"
+- 1 byte  == 8 bits
+- Each bit (standing for binary digit) is a binary digit of 0 or 1
+- Highest number is 127 which can be represented by 1 byte: 0100_0000, the leading bit is reserved for the sign (unsigned 1 byte could hold 255)
+
+# 📅 04.09.2022 java: datatypes: numbers: Why are the numeral systems for decimal, hexadecimal etc. called “base” 10,16?
+- Because the available bit representations are calculated with base^#digits  e.g. 2^8 for a byte
+
+# 📅 04.09.2022 java: datatypes: numbers: How are negative numbers represented in binary?
+- Signed Magnitude Method: first bit position is reserved for sign(0 -> + and 1 -> -)
+- 2’s Complement: Invert all bits from the positive and then add one (used in Java)
+
+# 📅 04.09.2022 java: datatypes: numbers: For what octal is the representation good?
+- base 8 (good for describing power of 2 e.g. 2^3 (base 10) == 10 (base 8)
+
+
+
 # 📅 03.09.2022 InfoSec: Security by obscurity
 
 -   Concept of breaking standards to make it more difficult for an malicious user/hacker/bot to enter a system
@@ -378,6 +1568,90 @@ System.out.format("12:12:22+%s", ofNullable(timezone).orElse("\b"));
     -   Change admin login url of CMS
     -   Next to user agent also check for tls handshake e.g. you can fingerprint curl with this - see [here](https://daniel.haxx.se/blog/2022/09/02/curls-tls-fingerprint/)
 -   This strategy is usually only good for keeping unsophisticated bots out. But even they can [fusk](https://en.m.wikipedia.org/wiki/Fusker), crawl, brute force a lot of those mitigations
+
+# 📅 03.09.2022 vim: Delete everything from cursor to the beginning of the line
+- `d0`
+
+# 📅 03.09.2022 java: platform: What is a JDK and SDK in Java?
+- Java SE JDK or Java SDK usually contains everything you need: compiler, interpreter, documentation, debugger, disassembler
+
+# 📅 03.09.2022 java: platform: What are the steps a Java code goes through to run on a maschine?
+- javac (compiler): (1) Converts Java code into bytecode and does processing of annotations. Here a lot of language specifications are checked type and syntax checks and first optimizations
+- java (bytecode interpreter): (2) Runs .class files by starting runtime environment (JRE) and execution of specific main method and interprets this to maschine native code
+
+# 📅 03.09.2022 java: platform: What is the difference between JVM and JRE?
+- Java runtime environment (JRE) is Platform specific implementation of Java virtual Machine (JVM)
+- e.g. Oracle implementation of JVM is written in C
+- there is many implementations etc e.g. GraalVM
+- JRE (in addition of the JVM implementation) also contains core libraries and often a JIT compiler
+- JRE does not contain bytecode compiler and other development tools which makes it  a lot smaller than the JDK’s
+
+# 📅 03.09.2022 java: platform: Why does every Java .class file start with the magic bytes C0FEBABE?
+- magic number is for identifying the class file format (e.g. for JPEG it is FFD8)
+- origin trivia is is explained here: [source](https://news.ycombinator.com/item?id=33049423)
+- You can check this with `xxd` SomeClass.java in the CLI
+
+# 📅 03.09.2022 java: platform: What does a just-in-time (JIT) compiler do?
+- compiles bytecode to native machine code at runtime when possible or when there is time
+    - the rest is just interpreted normally from the JVM
+    - if there native code (provided by JIT) available the JVM would take that piece of code instead
+    - since time and memory is limited which us need by JIT to do its work the method calls to be optimized by keeping track of the numbers of calls and only is threshold is check it is attempted to optimize with JIT compiler (see also hot method)
+    - that is the reason why a program gets faster over time
+- if a method is called even more times, the JIT compiler tries to optimize the method even more (several levels of optimizations)
+
+
+# 📅 03.09.2022 java: platform: How do you package a program with source code?
+- Java Archive (JAR) := Compile Java classes to class files and point to class of main entrypoint in the manifest file. If you want to look at the original Java class file you need some decompiler
+
+# 📅 03.09.2022 java: platform: How to check the current vm?
+- `System.out.println(VM.current().details());`
+
+# 📅 03.09.2022 java: platform: What is the difference between heap and stack?
+- JVM divides memory (RAM) in those two areas
+- Stack
+    - static memory allocation
+    - primitives values of local scope of method
+    - reference values in local scope but still pointing to heap
+    - last-in-first-out principle (LIFO)
+    - all variables/data to one method is stored in one block and put on to the stack (stack frame)
+    - stack frame is flushed if method returns
+    - Access to this memory is very fast (compared to heap)
+    - thread safe because each thread has own stack
+    - if full: stack overflow exception
+- Heap
+    - for objects, references still stay on stack
+    - if no space left: OOM exception
+    - not thread-safe
+    - Strings are objects and therefore in the heap
+
+# 📅 03.09.2022 java: platform: How can threads access stack and heap?
+- heap is global access and all threads can access it
+- thread local area is a special area of the heap where each thread has can store objects which are not accessible by other threads
+- stack is bound to a specific thread (private scope)
+
+# 📅 03.09.2022 java: platform: What is the lifetime of stack and heap?
+- stack: once something in thread finishes execution like return when method   stackframe is removed
+- heap: Garbage collector takes care of it (only if no ref is pointing to it)
+
+# 📅 03.09.2022 java: platform: Can I skip all the bytecode intermediates and compile directly to native code?
+- Yes, you can do this with e.g. with GraalVm’s native image described here: [source](https://www.graalvm.org/native-image/)
+
+# 📅 03.09.2022 java: platform: Where to get the source of truth regarding Java spec?
+- Java Language Specification (JLS)
+- VM specs (easier to read): [source](https://docs.oracle.com/javase/specs/index.html)
+
+# 📅 03.09.2022 java: datatypes: What are the two different data types in Java?
+- Primitive types
+  - Primitive types are assigned by value e.g. `int a = 1; int b = a;`
+  - simply put: How much space we set aside in memory to store the data we want to store
+- if you tell it to use an int the Java program reserves a certain amount of bits/cells to store that information, independent of the actual value within the range
+- Reference types (pointing to object (instance of class or array structure // always combination of primitive types))
+  - is just some number in hex representation to give you the address of the object (remote control metaphor)
+  - in other words: It is merely a pointer pointing to a address in location where the actual elements lie e.g. `int[] a = {1,2}; int[] b = a;` where is `a,b` are just a reference to the same array `{1,2}`
+- Everything initialized with ` new` is a reference type (and String literals)
+- Reference types also hold if you pass a reference to a method
+
+
 
 # 📅 02.09.2022 Testing: Testing beforehand vs Improved observability
 
