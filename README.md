@@ -19,9 +19,10 @@
             -   `tag1<tag2`
         -   you can tag entire entries or single bullet points
     -   in the end you would have a single graph of hierachical labels and forest with entities (childs are backlinks)
--   other ideas
-    -   generate edit links so you do not have to scroll down when editing old entries?
-    -   how to integrate Anki into this (batch-upload from time to time)
+-   Things you can do with [draw.io](https://drawio-app.com/interactive-diagrams-with-custom-links-and-actions/)
+-   E-Macs Shortcuts you can use in macOS: [link1](https://jblevins.org/log/kbd)
+-   GSuite/Google Shortcuts: [Link](https://support.google.com/chat/answer/7649271?hl=en&authuser=0)
+-   Version manager for all kinds of languages/tools: [asdf](https://github.com/asdf-vm/asdf)
 -   🎧: [brown noise](https://www.youtube.com/watch?v=RqzGzwTY-6w) and [rainymood](https://rainymood.com/)
 
 ---
@@ -4300,8 +4301,7 @@ for ($i = 0; $i -lt $minutes; $i++) {
 -   [source](https://www.youtube.com/watch?v=jDchAEHIht0)
 -   Two phases of scanning
     -   1.  User configuration (`@Component`, `@Configuration`, `@Controller` etc.) - enable by `@ComponentScan`
-
-    -   1.  Auto configuration - enable by `@EnableAutoConfiguration`
+    -   2.  Auto configuration - enable by `@EnableAutoConfiguration`
             -   Only those things are configured which is not already configured in first step 1 (e.g. datasource)
 -   JUnit
     -   `@Rule` annotation allows you reference a `TestRule` class which is setup/tearn down after before/after each test
@@ -4309,8 +4309,7 @@ for ($i = 0; $i -lt $minutes; $i++) {
         -   `OutputCapture`: Captures stdout and allows to do assertions on it
 
 # 📅 16.08.2021 Security
-
--   **oAuth2**
+-   oAuth2
     -   original goal: allow 3rd party applications to access users (e.g. google) data without having their password, it now rediects to the original service (e.g. google) which then returns a access token
     -   further advantage: also all first party apps are more secure because there does exist only one oauth server which has to be secured e.g. gmail login redirects to accounts.google. Also easier to refactor (e.g. 2f-auth) because there is only one server
     -   `client` is requesting a `token` at `authorization server` which in turn allows access `resource server` which is owned by `resource owner` (often you)
@@ -4322,136 +4321,108 @@ for ($i = 0; $i -lt $minutes; $i++) {
         -   Spring security needs information what to check for authentication
         -   your Database and User representation is highly specific, a `UserDetailsService` abstracts this and only returns a `UserDetails` object
 
-# 📅 13.08.2021 Tools and learnings
+# 📅 12.08.2021 spring: Common data access abstractions
+- **JDBC**: All Java persistence is built on this. Lowest level
+- **JPA**: Agnostic way to do Java persistence without coupling your clients to Hibernate, etc.
+- **Hibernate**: object-relational mapping solution for Java environment
+- **Spring Data JPA**: Abstraction on top of Hibernate, e.g. no need to write DAO implementations
+- **DAO**: Data Access Object, you only create the DAO interface with method heads and the rest will be implemented
+- **DTO**: Data Transfer Object
+  - Is never a POJO since usually a framework provides the external system side formatting, e.g. @Entity (for db), @JsonProperty (for REST/JSON response)
+  - Decouple persistence models from API models: No messy attributes as @JSONIgnore, Mixing with persistence annotations, More difficult to create a Swagger out of it because you do not want to annotate your internal data model for the API description [source](https://stackoverflow.com/a/36175349)
 
--   Version manager for all kinds of languages/tools: [asdf](https://github.com/asdf-vm/asdf)
+# 📅 05.08.2021 terraform: More Terraform concepts
+- `locals`: like actual variables to resuse the same expression in the same module
+- first you need to enable certain api\'s for your project before you can create the ressources (`depends_on` needed)
+- `null_ressource`: A block of coded executed on a trigger or depends on statement
 
-# 📅 12.08.2021 Learnings and definitions around Spring
+# 📅 04.08.2021 gcp: Popular services
+- source: [Google Glossary](https://cloud.google.com/terms/services)
+- "Cloud Source Repositories": provides git version controll
+- "Cloud Build": built environment and publish artifact somewhere
+- "Cloud Logging": log aggregation with error reporting features, search for "logs explorer"
+- "Cloud Run: run stateless containers on a fully-managed environment, also manages thinks like replicas etc.
+- "Cloud Ressource Manager": Hierachical origanization of your Cloud resources, allows access controll and configuration settings
+- "Service Networking API": Set's up subnetworks, vpc's, DNS-Record Sets
 
--   Definitions
--   Exclude field vom JSON reponse: `@JsonProperty(access = Access.WRITE_ONLY)` over the field
--   **JDBC**: All Java persistence is built on this. Lowest level
--   **JPA**: Agnostic way to do Java persistence without coupling your clients to Hibernate, etc.
--   **Hibernate**: object-relational mapping solution for Java environment
--   **Spring Data JPA**: Abstraction on top of Hibernate, e.g. no need to write DAO implementations
--   **DAO**: Data Access Object, you only create the DAO interface with method heads and the rest will be implemented
--   **DTO**: Data Transfer Object
-    -   Is never a POJO since usually a framework provides the external system side formatting, e.g. @Entity (for db), @JsonProperty (for REST/JSON response)
-    -   Decouple persistence models from API models: No messy attributes as @JSONIgnore, Mixing with persistence annotations, More difficult to create a Swagger out of it because you do not want to annotate your internal data model for the API description [source](https://stackoverflow.com/a/36175349)
+# 📅 04.08.2021 terraform: Terraform 101
 
-# 📅 05.08.2021 Abbreviations
+- General idea
+- automate manage your infrastructure: platform and services
+- Steps
+  - first: infrastructure provisioning: like ec2 instances,users, docker installation, network, security, pipeline
+  - second: actual deployment
+- Terraform is used for the first step
+- Difference between Ansible and terraform:
+  - Terraform: mainly provisioning tool
+  - Ansible: only for configuration, more advanced/mature
+- Managing existing infrastructure
+  - create infrastructure
+  - changes to infrastructure
+  - replicating infrastructure (different environments)
+- How does Terraform connect to it\'s providers?
+  -  Elements
+   - CORE figures out based on: 1) Local TF-Configs 2) State
+   - PROVIDERS: Like AWS, Kubernetes etc. with each having ressources
+  -   Core then creates a execution plan to apply through providers
+- Commands
+  - `refresh`: Query providers to get current state
+  - `plan`: Creates an execution plan based in state
+  - `apply`: Execute plan
+  - `destroy`: Remove all ressources/infrastructures (e.g. for demo env)
+- Concepts - taken from [Terraform-Glossary](https://www.terraform.io/docs/glossary.html)
+- `ressource`: Representation of a provider ressource Terraform will create once declared
+- `data`: Retrieve data outside of Terraform, supplied to `ressource`
+- `module`: collection of Terraform configurations (can be parametrized via `variable`), a module has to be called by some other configuration in order to be applied to the state
+- `variable`: Key/Value pairs which can be injected into a module which is the used there (child module retrieves from parent module), Note: Never put hard-coded values in here. Also can be accessed via \"\${var.name}\" in all the modules
+- `backend`: Defines e.g. where the state is stored (allowing colloboration)
+- `output`: Module exporting data (can be shown to user or used by other module)
 
--   SA account: System administrator account
-
-# 📅 05.08.2021 GCloud - Ressources in terraform
-
--   `google_storage_bucket`: create bucket in cloud storage service
-
--   `google_project_service`: Enable access for a project to a specific Google API service e.g. container registry
-
--   Cloud Build has a worker pool for doing the actual builds. For being able to access private ressources in your network you spawn your own private worker pool
-
--   `google_cloud_run_service`: Set routes and configurations for a network service: rollout policy, team ressource ownership - acts as a orchestrator
-
--   Questions
-
--   Difference between container and artifact registry?
-
-# 📅 05.08.2021 More Terraform concepts
-
--   `locals`: like actual variables to resuse the same expression in the same module
--   first you need to enable certain api\'s for your project before you can create the ressources (`depends_on` needed)
--   `null_ressource`: A block of coded executed on a trigger or depends on statement
-
-# 📅 04.08.2021 GCloud
-
--   source: [Google Glossary](https://cloud.google.com/terms/services)
--   \"Cloud Source Repositories\": provides git version controll
--   \"Cloud Build\": built environment and publish artifact somewhere
--   \"Cloud Logging\": log aggregation with error reporting features, search for \"logs explorer\"
--   \"Cloud Run: run stateless containers on a fully-managed environment, also manages thinks like replicas etc.
--   \"Cloud Ressource Manager\": Hierachical origanization of your Cloud resources, allows access controll and configuration settings
--   \"Service Networking API\": Set\'s up subnetworks, vpc\'s, DNS-Record Sets
-
-# 📅 04.08.2021 Terraform
-
--   General idea
--   automate manage your infrastructure: platform and services
--   Steps
-    -   first: infrastructure provisioning: like ec2 instances,users, docker installation, network, security, pipeline
-    -   second: actual deployment
--   Terraform is used for the first step
--   Difference between Ansible and terraform:
-    -   Terraform: mainly provisioning tool
-    -   Ansible: only for configuration, more advanced/mature
--   Managing existing infrastructure
-    -   create infrastructure
-    -   changes to infrastructure
-    -   replicating infrastructure (different environments)
--   How does Terraform connect to it\'s providers?
-    -   Elements
-        -   CORE figures out based on: 1) Local TF-Configs 2) State
-        -   PROVIDERS: Like AWS, Kubernetes etc. with each having ressources
-    -   Core then creates a execution plan to apply through providers
--   Commands
-    -   `refresh`: Query providers to get current state
-    -   `plan`: Creates an execution plan based in state
-    -   `apply`: Execute plan
-    -   `destroy`: Remove all ressources/infrastructures (e.g. for demo env)
--   Concepts - taken from [Terraform-Glossary](https://www.terraform.io/docs/glossary.html)
--   `ressource`: Representation of a provider ressource Terraform will create once declared
--   `data`: Retrieve data outside of Terraform, supplied to `ressource`
--   `module`: collection of Terraform configurations (can be parametrized via `variable`), a module has to be called by some other configuration in order to be applied to the state
--   `variable`: Key/Value pairs which can be injected into a module which is the used there (child module retrieves from parent module), Note: Never put hard-coded values in here. Also can be accessed via \"\${var.name}\" in all the modules
--   `backend`: Defines e.g. where the state is stored (allowing colloboration)
--   `output`: Module exporting data (can be shown to user or used by other module)
-
-# 📅 29.06.2021 Mockito
-
--   Mock deeply nested object: `RETURNS_DEEP_STUPS`
+# 📅 29.06.2021 mockito: How to mock deeply nested object?
+- Verification only works with the last mock in the chain
+- Mock deeply nested object: `RETURNS_DEEP_STUPS`
+```java
+@Mock(answer = Answers.RETURNS_DEEP_STUBS)
+Object objectMock;
+```
 
 # 📅 29.06.2021 team: Agile routines I like
-
 -   Lake of feelings in [english](https://github.com/biocarl/img/blob/master/Lake%20of%20Feelings-english.png) and [german](https://github.com/biocarl/img/blob/master/Lake%20of%20Feelings.png)
 -   Inbox
 -   Walking the board
 -   Sign-Ups
 
-# 📅 29.06.2021 Tipps for facilitating retros\'s
-
+# 📅 29.06.2021 workshop: retro: Tipps for facilitating retros's
 -   Let people room to speak
--   Don\'t ask if it is ok what you are doing (you are the facilitator)
--   Don\'t ask closed question
+-   Don't ask if it is ok what you are doing (you are the facilitator)
+-   Don't ask closed question
 -   Make people speak as soon as possible
--   do less items
+-   Do less items
 
-# 📅 29.06.2021 IntelliJ Shortcuts
-
+# 📅 29.06.2021 intellij: Shortcuts
 -   Use F2 to navigate to next error (Fn + f2)
 -   Command E: Recent files
 -   2 x CTRL: Run script from anywhere
 -   Command + Shift + Enter: Fancy autocomplete
--   Controll T: See all refactor commands
--   Command P -\> show parameters
+-   Control + T: See all refactor commands
+-   Command P -> show parameters
 -   Multiple cursors ([source](https://stackoverflow.com/a/55221176))
     -   Go to vim emulation settings and set command G to Intelli
     -   Maybe set to hex input:
-    -   \<Control G\>: highlight next match as multiple cursors
-    -   \<Control + Command + G\>: Highlight them all at once
+    -   <Control G>: highlight next match as multiple cursors
+    -   <Control + Command + G>: Highlight them all at once
 
-# 📅 29.06.2021 Vim: Folding
-
+# 📅 29.06.2021 vim: Folding commands
 -   close single fold: `zc`
 -   open single fold: `zo`
 -   close all folds: `zR`
 -   open all folds: `zM`
 
-# 📅 29.06.2021 Prometheus
+# 📅 29.06.2021 Spring: Actuator: How to read out the heap from the jvm?
+- Available heap: `http://localhost:7979/metrics/jvm.memory.max?tag=area:heap`
+- Used heap space: `http://localhost:7979/metrics/jvm.memory.used?tag=area:heap`
 
--   Read local memory `http://localhost:7979/metrics/jvm.memory.max?tag=area:heap` and `http://localhost:7979/metrics/jvm.memory.used?tag=area:heap`
-
-# 📅 29.06.2021 How to find things // Data acquisition
-
+# 📅 29.06.2021 knowledge: How to find things aka. Data acquisition
 -   Cloudsearch
 -   Jira tickets from other teams
 -   Company Documentation (tech, confluence,...)
@@ -4459,40 +4430,31 @@ for ($i = 0; $i -lt $minutes; $i++) {
 -   Chats/G-Groups
 -   Always return to the initial onboarding documents - you might miss things
 
-# 📅 29.06.2021 Useful links
-
--   E-Macs Shortcuts you can use in macOS: [link1](https://jblevins.org/log/kbd)
+# 📅 29.06.2021 jira: How to format text
 -   Jira-Formatting: [link1](https://jira.atlassian.com/secure/WikiRendererHelpAction.jspa?section=advanced) and [link2](https://jira.atlassian.com/secure/WikiRendererHelpAction.jspa?section=advanced)
--   Things you can do with [draw.io](https://drawio-app.com/interactive-diagrams-with-custom-links-and-actions/)
--   GSuite/Google Shortcuts: [Link](https://support.google.com/chat/answer/7649271?hl=en&authuser=0)
 
-# 📅 29.06.2021 Useful bash/zsh alias
-
+# 📅 29.06.2021 git: Useful bash/zsh alias
 -   git push upstream: `gpsup`
 -   git checkout -b: `gcb`
 -   Git commands for undo changes
 -   git reset --hard
 -   git clean -f
 
-# 📅 29.06.2021 Useful unix tools
-
+# 📅 29.06.2021 unix: Edit and execute last command
 -   edit and execute last command: `fc`
 
-# 📅 29.06.2021 Useful docker commands
-
--   List CPU\'s: `docker ps -q | xargs  docker stats --no-stream`
+# 📅 29.06.2021 docker: Useful docker commands
+-   List CPU's: `docker ps -q | xargs  docker stats --no-stream`
 -   Run local docker container: `docker run --publish 8090:8080 --env SPRING_PROFILES_ACTIVE=local IMAGE`
 -   Delete all docker containers originating from one image: `docker rm -f $(docker ps -a -q  --filter ancestor=postgres:13)`
 -   delete all docker containers: `docker rm -f $(docker ps -a -q)`
 
-# 📅 29.06.2021 Useful kubectl commands
-
+# 📅 29.06.2021 kubectl: Useful kubectl commands
 -   list the logs of a previously stopped pod: `kubectl logs --previous`
--   do something with a set of grep\'ed pods: `kubectl get pods | grep shard |  cut -d ' ' -f1 | xargs echo`
+-   do something with a set of grep'ed pods: `kubectl get pods | grep shard |  cut -d ' ' -f1 | xargs echo`
 -   even better, you can use `up` ([github](https://github.com/akavel/up)), to check the results
 
-# 📅 29.06.2021 Useful postgres commands
-
+# 📅 29.06.2021 postgres: Useful postgres commands
 -   Show foreign tables and foreign servers: `\des+` and `\dE[S+]`
 -   where logs are stored: `SHOW log_directory;`
 -   Make a long running query: `select pg_sleep(5 * 60);`
@@ -4500,8 +4462,7 @@ for ($i = 0; $i -lt $minutes; $i++) {
 -   Sample data (for not to big table): 2. `COPY  (select * from table ORDER BY random() LIMIT 10000) TO '/home/postgres/export_10k.csv' CSV HEADER;`
 -   List indexes: `select * from pg_indexes where table not like 'pg%';`
 
-# 📅 29.06.2021 Sharding with fdw and pl-proxy
-
+# 📅 29.06.2021 postgres: Sharding with fdw and pl-proxy
 -   fdw does not parallelize shard access
 -   uses flyway placeholders (via env variables or setting placeholders via fluid config)
 
@@ -4540,19 +4501,18 @@ SELECT name, id FROM table WHERE name = p_name;
 $$ LANGUAGE plproxy;
 ```
 
-# 📅 29.06.2021 You can patch a deployment and also inject spring variables like so
+# 📅 29.06.2021 kubernetes: You can patch a deployment and also inject spring variables like so
 -   [source](https://github.com/spring-projects/spring-boot/wiki/Relaxed-Binding-2.0#lists-1)
-- `zkubectl patch deployment $DEPLOYMENT --patch "$(cat sharding-patch.yaml)"`
+- `kubectl patch deployment $DEPLOYMENT --patch "$(cat sharding-patch.yaml)"`
 
-# 📅 25.06.2021 Change local host reference to maschine host in docker image
+# 📅 25.06.2021 docker: Change local host reference to maschine host in docker image
 - `docker exec -u 0 $CONTAINER /bin/sh -c 'sed "s/127.0.0.1/$(dig +short host.docker.internal)/g" /etc/hosts > tmp.txt && cat tmp.txt > /etc/hosts'`
 
-# 📅 11.06.2021 Show previous stashes
+# 📅 11.06.2021 git: Show previous stashes
 - `git stash show -p stash@{3}`
 
-# 📅 11.06.2021 Java collectors and teeing operator
+# 📅 11.06.2021 java: Collectors and teeing operator
 -   Combine two collectors
-
 ``` {.python}
 HashMap<String, Employee> result = employeeList.stream().collect( 
                         Collectors.teeing(
@@ -4567,72 +4527,44 @@ HashMap<String, Employee> result = employeeList.stream().collect(
                         ));
 ```
 
-# 📅 11.06.2021 Postgres commands
-
+# 📅 11.06.2021 postgres: How to speed up index creation?
 -   Speed up index creation and maintenance work related processes
-
 `SET maintenance_work_mem TO '1000 MB';` `SET max_parallel_maintenance_workers TO 5;`
 
-# 📅 11.06.2021 Useful Kubernetes commands
-
+# 📅 11.06.2021 kubernetes: Useful commands
 -   Shell into db
-
 `kubectl exec -it podname bash` `psql -U postgres -d db_name` // -c \"Direct string\" and -f \"Load from file\"
-
 -   Edit deployment files in prod
-
 `kubectl edit deployment DEPLOYMENT_ID` Sometimes needed `kubectl rollout restart deployment DEPLOYMENT_ID`
 
-# 📅 11.06.2021 Postgres Theory
-
--   Disadvantage of using partitioning
--   if a a lot will impact query planner performance (over 500)
+# 📅 11.06.2021 postgres: What is one disadvantage of using partitioning?
+-   if a lot will impact query planner performance (over 500)
 -   there are not global unique constraints, only uniqueness in a partition can be guaranteed
 -   [Course](https://www.udemy.com/course/postgresql-high-performance-tuning-guide/) you want to take
 
 # 📅 11.06.2021 GSuite short links
-
 -   Docs \>\> create and collaborate on documents
-
 `docs.new | doc.new | document.new`
-
 -   Sheets \>\> create and collaborate on spreadsheets
-
 `sheets.new | sheet.new | spreadsheet.new`
-
 -   Slides \>\> create new powerful presentations
-
 `slides.new | slide.new | presentation.new | deck.new`
-
 -   Forms \>\> create forms, registrations, surveys and quizzes
-
 `forms.new | form.new`
-
 -   Calendar \>\> schedule a new event
-
 `cal.new | meeting.new`
-
 -   Meet \>\> make video conferences and share your screen
-
 `meet.new`
-
 -   Jamboard \>\> collaborate in real time on a digital whiteboard
-
 `jam.new`
-
 -   Sites \>\> create a website to share info with others
-
 `site.new | sites.new | website.new`
-
 -   Diagrams \>\> create, edit, and share diagrams (formerly known as draw.io)
-
 `diagram.new | diagrams.new`
-
 -   Keep \>\> create, edit, and share notes
-
 `keep.new`
 
-# 📅 30.04.2021 How to use Postgres EXPLAIN
+# 📅 30.04.2021 postgres: How to use Postgres EXPLAIN
 
 -   What it is
 -   executed plan generated by the optimizer
@@ -4642,14 +4574,12 @@ HashMap<String, Employee> result = employeeList.stream().collect(
 -   `VERBOSE`: Print each step in the execution plan
 -   `SETTINGS`: Print all performance-relevant parameters which are different from their output
 
-# 📅 24.03.2021 Postgres Performance Optimization
+# 📅 24.03.2021 postgres: Postgres Performance Optimization
 
--   Tablespaces
--   Tablespaces are, in short, the way to tell the Postgres server where to place the physical files for SQL objects.
--   Other tips
--   Partitoning your table is also good since you can deploy \"multiple autovacuum workers on the same logical table\"
+-   Tablespaces := Are the way to tell the Postgres server where to place the physical files for SQL objects.
+-   Partitoning your table is also good since you can deploy "multiple autovacuum workers on the same logical table"
 
-# 📅 16.03.2021 Roadmap for sharding
+# 📅 16.03.2021 postgres: Roadmap for sharding
 
 -   [source](https://www.youtube.com/watch?v=C4GJAjUcAtg)
 -   Approaches
@@ -4663,55 +4593,46 @@ HashMap<String, Employee> result = employeeList.stream().collect(
 -   Streaming replication
     -   Each shard will have replicated tables from other shards (shardman us doing this)
 
-# 📅 09.03.2021 What you can do with LightStep
-
--   Terms
+# 📅 09.03.2021 tracing: Basics of distributed tracing
+-   Why?
+  -   increasingly more distributed infrastructures
+  -   microservices in isolation are easy to manage and understand but complexity arises with interaction with its environment (distributed computing)
+  -   need for increasing visibility across teams
+  -   identify bottlenecks in the system (e.g. adaptive paging in Zalando)
+    -   global health of the system/detect root cause of a problem in a system
+-   What?
+  -   is tracing a request accross multiple systems
+  -   tracing is a bunch of log messages which can be correlated together through a correlation id
+  -   distributed tracing starts with one request and following the flow other systems will do operations on it resulting in other traces, which itself is segmented in spans, unique actitivies performed by the system
+  -   spans can fork into child spans (for instance parallel processes) resulting in a span tree which in its totality represents the whole trace
+- Components
+  -   **Instrumentation**: The process of collecting data (a lot of automated tools)
+  -   **Trace context**: You need a unique ID passed along with timestamp to reconstruct the order
+  -   A trace contains
+      -   spans (with component, operation, duration, other metadata)
+      -   errors
+  -   **Analysis and visualization**: Frontend of telling the story of one trace. Standards like Opentracing/OpenCensus create a interface between metric collection (instrumentation) and frontend/analysis solutions
+  -   Observability: "Observability lets you understand why something is wrong, compared with monitoring, which simply tells you when something is wrong."
+  -   Adaptive Paging
+    -   if there is one service down you will have a christmas tree (all components fire alarms), all incident teams will try to solve the issue but usually only one team can solve this (creates alarm fatigue)
+    -   solution, page the team closest to the problem
 -   **ingress operations**: the first operations handling external requests from outside that service (starting out a trace)
 -   **egress operations**: are those operations that call out to external services (ending the trace of a single service)
 
-# 📅 09.03.2021 Basics of distributed tracing
+# 📅 25.02.2021 postgres: General concepts
 
--   Why?
--   increasingly more distributed infrastructures
--   microserver in isolation are easy to manage and understand but complexity arsises when interaction with its environment (distributed computing)
--   need for increasing visibility across teams
--   indentify bottlenecks in the system (adaptive paging)
--   global health of the system/detect root cause of a problem in a system
--   What?
--   is tracing a request accross multiple systems
--   tracing is a bunch of log messages which can be correlated together through a correlation id
--   distributed tracing starts with one request and following the flow other systems will do operations on it resulting in other traces, which itself is segmented in spans, unique actitivies performed by the system
--   spans can fork into child spans (for instance parallel processes) resulting in a span tree which in its totality represents the whole trace
--   Components
--   **Instrumentation**: The process of collecting data (a lot of automated tools)
--   **Trace context**: You need a unique ID passed along with timestamp to reconstruct the order
--   A trace contains
-    -   spans (with component, operation, duration, other metadata)
-    -   errors
--   **Analysis and visualization**: Frontend of telling the story of one trace. Standards like Opentracing/OpenCensus create a interface between metric collection (instrumentation) and frontend/analysis solutions
--   Observability: \"Observability lets you understand why something is wrong, compared with monitoring, which simply tells you when something is wrong.\"
--   Adaptive Paging
--   if there is one service down you will have a christmas tree (all components fire alarms), all incident teams will try to solve the issue but usually only one team can solve this (creates alarm fatigue)
--   solution, page the team closest to the problem
-
-# 📅 25.02.2021 Database concepts
-
--   Views
--   is a named query, usually combines several base tables but does not store extra data (vs materialized view)
--   usefull to wrap complex queries
--   good for granting users only a subset of different base tables
--   consistent abstraction layers even if underlaying base tables change
--   Store procedures
--   Some kind of functions you can define to do complex operations in a batch
--   you can define control flows like if etc.
--   Elasticity
--   describes the flexibility how a distributed database can adapt to changes
--   changes could be adding/removing nodes or data models (which is rather fix for relational databases)
+-   Views := A named query, usually combines several base tables but does not store extra data (vs materialized view)
+  -   useful to wrap complex queries
+    -   good for granting users only a subset of different base tables
+    -   consistent abstraction layers even if underlaying base tables change
+-   Stored procedures := Some kind of functions you can define to do complex operations in a batch
+  -   you can define control flows like if etc.
+-   Elasticity := Describes the flexibility how a distributed database can adapt to changes
+  -   changes could be adding/removing nodes or data models (which is rather fix for relational databases)
 
 # 📅 23.02.2021 Sharding and Foreign Data Wrapper in Postgres
 
--   Theory
--   Is just a view to a external table, but looks like a local table
+-   Sharding is just a view to a external table, but looks like a local table
 -   Parameters required:
     -   foreign server
     -   user mapping
@@ -4745,27 +4666,27 @@ HashMap<String, Employee> result = employeeList.stream().collect(
     -   lacks support for INSERT statements with an ON CONFLICT DO UPDATE clause
 -   Useful commands for postgres
     -   `EXPLAIN (verbose) command` shows the also commands executed on foreign server
--   Usefull Sources
+-   Useful Sources
     -   this [video](https://www.youtube.com/watch?v=3JQrfgb3Av0)
     -   about a [elastic postgres solution](https://swarm64.com/post/scaling-elastic-postgres-cluster/)
     -   from gitlab [blog](https://about.gitlab.com/handbook/engineering/development/enablement/database/doc/fdw-sharding.html)
 
-# 📅 16.02.2021 About databases
+# 📅 16.02.2021 postgres: Sharding and data structures
 
 -   Table scans
--   INDEX SCAN: Go over index b-tree and afterwards potentially over heap if not available in non-key columns. Still can be quite expensive since fetching from Heap is a random access operation (which seq scan is not)
--   INDEX ONLY SCAN: Like above but everything you need is included in non-key cols (no HEAP needed)
--   BITMAP SCAN: First creates a bitmap of all indices who fufill the predicate and then bundles the heap access to not needing to much random access (working with offsets)
--   SEQUENTIAL SCAN: The classic full table scan
+  -   INDEX SCAN: Go over index b-tree and afterwards potentially over heap if not available in non-key columns. Still can be quite expensive since fetching from Heap is a random access operation (which seq scan is not)
+    -   INDEX ONLY SCAN: Like above but everything you need is included in non-key cols (no HEAP needed)
+    -   BITMAP SCAN: First creates a bitmap of all indices who fufill the predicate and then bundles the heap access to not needing to much random access (working with offsets)
+    -   SEQUENTIAL SCAN: The classic full table scan
 -   Sharding
--   Why sharding in the first place? Indicies grow large -\> longer queries -\> more cpu/memory
--   Unless your sharding field is a seq key you will need to ensure conistent hashing
--   Difference to horizontal sharding: it is still the same database, but different tables or even schema, client has to know those
--   Pros: Horizontally easy to scale + Security (e.g. a user only has access to one shard)
--   Cons: Complex for client to decide to which shard to talk to, how to deal with transactions which impact two shards at the same time? Rollbacks are very hard. Schema changes are hard. Joins across shards are slow. If key you are looking for is not sharding field it is very slow because you have to hit all shards
+  -   Why sharding in the first place? Indicies grow large -\> longer queries -\> more cpu/memory
+    -   Unless your sharding field is a seq key you will need to ensure conistent hashing
+    -   Difference to horizontal sharding: it is still the same database, but different tables or even schema, client has to know those
+    -   Pros: Horizontally easy to scale + Security (e.g. a user only has access to one shard)
+    -   Cons: Complex for client to decide to which shard to talk to, how to deal with transactions which impact two shards at the same time? Rollbacks are very hard. Schema changes are hard. Joins across shards are slow. If key you are looking for is not sharding field it is very slow because you have to hit all shards
 -   Interesting thoughts
--   Why do we have one billion rows in the first place? Can you design your data model differently?
--   What is the read/write ratio and what are the access patterns?
+  -   Why do we have one billion rows in the first place? Can you design your data model differently?
+    -   What is the read/write ratio and what are the access patterns?
 -   Vertical partiting in postgresql works out of the box - client does not have to worry
 -   Sharding is especially usefull if there are many connections/clients to one service and it also get\'s a CPU/Memory problem
 -   but for this you can also get some read replicas (but only if you don\'t write a lot)
@@ -4774,18 +4695,14 @@ HashMap<String, Employee> result = employeeList.stream().collect(
 -   Re-Sharding is very complicated (because all client has to adapt when you have application layer sharding)
 -   YouTube has introduced a service layer before it vitess.io
 
-# 📅 15.02.2021 About databases
-
--   (DB Engineering)
+# 📅 15.02.2021 postgres: Performance considerations
 -   You don\'t need heap fetches if you just select the index (super fast but useless)
 -   Always avoid full table scans
 -   For looking at the details of a query always do explain analyze QUERY
--   (Indexing)
--   create index employees~name~ on employees(name);
 -   LIKE statements will always trigger a full select because b-tree can\'t be scanned on partial string
 -   key column: the index itself, non-key column: Include the value in the index itself so that you don\'t have to jump to the location of the whole row
 
-# 📅 23.10.2020 MongoDb
+# 📅 23.10.2020 mongodb: MongoDb 101
 
 -   Setting up mongo db locally
     -   docker pull mongo
@@ -4945,7 +4862,7 @@ categories = {1: 'Alpha', 2: 'Beta', 3: 'Charlie'}
 df[new_cols] = df[source_cols].applymap(categories.get)
 ```
 
-# 📅 09.08.2020 Pandas: Working with data frames
+# 📅 09.08.2020 pandas: Working with data frames
 
 -   When you want to operate on a bunch values in a series you can use this notation
 -   It seems to be a shorthand for apply
@@ -4957,12 +4874,12 @@ df.columns.str.replace(' ','_') # Returns a series with updated column names (yo
 df.column1.str.contains("Hallo") # Returns a series of bools which then can be used as a mask
 ```
 
-# 📅 09.08.2020 Pandas: Convert a catamorphic function to a homomorphic one
+# 📅 09.08.2020 pandas: Convert a catamorphic function to a homomorphic one
 
 -   A function like `sum` acts as aggregator, if you want to maintain structure you can call the function like `transform('sum')` so it will pad cells with the same result
 -   Very useful if you do something like `orders.groupby('orderid').itemprice.transform('sum')`, the result will have the same length as orders
 
-# 📅 08.08.2020 Python: Use named subgroups and go functional in python
+# 📅 08.08.2020 python: Use named subgroups and go functional in python
 
 -   By naminging subgroups \`(?P\<name\>+̣)\` you can return a \`groupdict\` containing \<name,match\> pairs.
 
@@ -5000,20 +4917,20 @@ list(map(lambda line: spec.match(line).groupdict(),
   'english': 'old variant of 攜|携[xie2]'}]
 ```
 
-# 📅 08.07.2020 Clojure: Use merge-with for conflicting hash-map merges
+# 📅 08.07.2020 clojure: Use merge-with for conflicting hash-map merges
 
 ``` {.clojure}
 (merge-with + {:a 1  :b 2} {:a 1  :b 2 :c 3})   
 ;; output {:c 3, :a 2, :b 4}
 ```
 
-# 📅 03.06.2020 Clojure: Operate on only one of the key-value pairs in a hash-map
+# 📅 03.06.2020 clojure: Operate on only one of the key-value pairs in a hash-map
 
 ``` {.clojure}
 (reduce-kv #(assoc %1 %2 (flatten %3)) {})
 ```
 
-# 📅 02.06.2020 Clojure: Use matching groups when replacing with regex
+# 📅 02.06.2020 clojure: Use matching groups when replacing with regex
 
 ``` {.clojure}
 (str/replace % #"\{:([^\s]+)[^{^}]*\}" "<$1>")
@@ -5023,7 +4940,7 @@ list(map(lambda line: spec.match(line).groupdict(),
 ;; This is very useful if you want to quote a xml element and at the same time not
 ```
 
-# 📅 28.05.2020 Chrome: Make content of any website editable
+# 📅 28.05.2020 chrome: Make content of any website editable
 
 -   `document.designMode = 'on'.`
 -   This allows you to edit content of a website directly in the view without manipulating the dom tree via for instance the Chrome Developer Tools
@@ -5087,7 +5004,7 @@ $ edit syntax
 
 -   `ls -a . >> .gitignore` Why did I take so long to start doing this? 🤔
 
-# 📅 13.05.2020 Unix: Several commands
+# 📅 13.05.2020 unix: Several commands
 
 -   (textutil) Resolve wired encoding issues of text/html files
 -   `textutil -convert txt *.html` batch processing (OSX)
@@ -5101,7 +5018,7 @@ $ edit syntax
 -   (vim) Show whitespace characters in vim
 -   Toggle with `:set nolist//list`
 
-# 📅 12.05.2020 Unix: More commands
+# 📅 12.05.2020 unix: More commands
 
 -   (awk) Group matches inside gawk (this does not work in the mac version)
 -   `brew install gawk`
@@ -5109,7 +5026,7 @@ $ edit syntax
 -   (sed) A how to split sentences in seperate lines
 -   `sed 's/[.!?]  */&\n/g' file.txt` where the `&` is the back reference to the match
 
-# 📅 11.05.2020 Unix: awk commands
+# 📅 11.05.2020 unix: awk commands
 
 -   (awk) Basic commands
 -   1.  Basic structure: `pattern {action}`
@@ -5143,12 +5060,12 @@ $ edit syntax
 # 📅 10.05.2020 vim: Use surround.vim (default in evil-mode)
 - In order to swap brackets or any flanking symbol (e.g. \" \", {}, \[\]) press `cs` `+` **(** for **(** as flanking symbol.
 
-# 📅 07.05.2020 Trivia: Linguistics 101
+# 📅 07.05.2020 trivia: Linguistics 101
 - For some side project of mine I need to learn some specifics how syntax and semantics of a sentence play together.
 -   Transitivity of verbs := A intransitive verb does not allow a direct object. Whereas a transitive verb requires at least one object.
 -   Topic-prominent language := A language which is syntactically structured in a way so that it focus on the topic (the given, old information), followed by a comment (for instance how that changes into a new on information)
 
-# 📅 06.05.2020 Clojure: Implement atom? for clj/cljs using reader conditionals
+# 📅 06.05.2020 clojure: Implement atom? for clj/cljs using reader conditionals
 - Some language features are not implemented the same way in clojure and clojurescript. To use the same code base for both one might use reader conditionals.
 
 ``` {.clojure}
