@@ -27,6 +27,29 @@
 
 ---
 
+# 📅 02.11.2022 clojure: Java interops
+- [source/further info](https://clojure.org/reference/java_interop)
+- construct a new object
+```clojure
+;; both work
+(is (instance? String (String.)))
+(is (instance? String (new String)))
+;; Constructor with args
+(is (instance? URI (new URI  "oma.app" "//" "docker")))
+```
+- Access member methods
+```clojure
+(.toUpperCase "fred")
+```
+- Access member fields
+```clojure
+(.-x (new Point 4 5)) ;; Point with x,y (public vars)
+```
+- Access static fields
+```clojure
+(System/getProperty "java.vm.version")
+```
+
 # 📅 26.10.2022 vim: Search and replace
 - Through whole file (whole line, with confirmation) `:%s/PATTERN/REPLACEMENT/gc` (`%` is shorthand for `1,$` - whole file)
 - From current line till end of file: `:.,$s/PATTERN/REPLACEMENT/gc` 
