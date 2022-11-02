@@ -1770,40 +1770,27 @@ assertTrue(1/b == Double.NEGATIVE_INFINITY);
 
 -   Credits go to [@alexmaesej](https://www.instagram.com/alexmaesej)
 -   Growth mindset and working on a annoying problem:
-
-```{=html}
 <p align="center"><img height=400 src="https://raw.githubusercontent.com/biocarl/img/master/psychology/attitude.png" /></p>
-```
--   Pairing and wanting to resolve a problem before finishing the day:
 
-```{=html}
+-   Pairing and wanting to resolve a problem before finishing the day:
 <p align="center"><img height=400 src="https://raw.githubusercontent.com/biocarl/img/master/psychology/focus.png" /></p>
-```
+
 -   Working with a new technology:
 
-```{=html}
 <p align="center"><img height=400 src="https://raw.githubusercontent.com/biocarl/img/master/psychology/starting_a_task.png" /></p>
-```
--   Doing TIL\'s:
 
-```{=html}
+-   Doing TIL\'s:
 <p align="center"><img height=400 src="https://raw.githubusercontent.com/biocarl/img/master/psychology/consistency.png" /></p>
-```
+
 -   Reflecting about growth and technical journey in general:
-
-```{=html}
 <p align="center"><img height=400 src="https://raw.githubusercontent.com/biocarl/img/master/psychology/not_giving_up.png" /></p>
-```
+
 -   Doing TIL\'s:
-
-```{=html}
 <p align="center"><img height=400 src="https://raw.githubusercontent.com/biocarl/img/master/psychology/discipline.png" /></p>
-```
--   Splitting sub tasks of story to not get overwhelmed:
 
-```{=html}
+-   Splitting sub tasks of story to not get overwhelmed:
 <p align="center"><img height=400 src="https://raw.githubusercontent.com/biocarl/img/master/psychology/one_step_at_a_time.png" /></p>
-```
+
 # 📅 10.08.2022 Fun: Where does the name git come from?
 
 -   Torvalds the creator of `git` stated: \"I\'m an egotistical bastard, and I name all my projects after myself. First \'Linux\', now \'git\'.\"
@@ -2517,9 +2504,8 @@ gradle --profile
 -   Not mission but employee is the main focus
 -   TBD: Explain some of the characteritics
 
-```{=html}
 <p align="center"><img height=400 src="https://raw.githubusercontent.com/biocarl/img/master/servant_leadership.png" /></p>
-```
+
 # 📅 14.06.2022 Git: Revert last n commits in one commit
 
 ``` {.Bash}
@@ -3343,9 +3329,8 @@ Early and continuous deployment
 -   **Force-Field-Analysis**: In the middle \"Some change you want to achieve\" and both side \"Forces for change\" and \"Forces against change\" (from Lewin)
 -   **SQUID**: Come up with questions, second round - ask questions. Repeat those steps, layer by layer
 
-```{=html}
 <p align="center"><img height=200 src="https://raw.githubusercontent.com/biocarl/img/master/squid.jpeg" /></p>
-```
+
 # 📅 25.02.2022 What questions to ask during a workshop (as facilitator) from Gamestorming
 
 -   **Opening**
@@ -3455,21 +3440,17 @@ Early and continuous deployment
 
 # 📅 11.02.2022 A nice way of checking the team health in the retro
 
-```{=html}
 <p align="center"><img height=400 src="https://raw.githubusercontent.com/biocarl/img/master/healthcheck.PNG" /></p>
-```
+
 # 📅 09.02.2022 What to do after a brainstorming session
 
 -   Pre-define brainstorming outcome by setting a meaningful space beforehand
     -   Example: Give some grid and everyone has to arrange the stickies they put there in the appropriate corners e.g. High/Low Impact/Effort - Quadrants
     -   Other \"meaningful spaces\"
 
-```{=html}
 <p align="center"><img height=100 src="https://raw.githubusercontent.com/biocarl/img/master/20220224_215317.jpg" /></p>
-```
-```{=html}
 <p align="center"><img height=100 src="https://raw.githubusercontent.com/biocarl/img/master/20220224_215351.jpg" /></p>
-```
+
 -   Everyone votes on the most important ideas (also vote with different emojis like ❤️‍/🔥)
     -   Similiar, idea of \"Forced Ranking\" (everyone needs to come up with their own ranking)
 -   Talk through each items and allow people to join the discussion
@@ -3512,9 +3493,8 @@ Early and continuous deployment
         -   Es gibt 4 Themen welche die Auserwählten durch die Kleingruppen tragen
         -   ursprünglich auf Tischdecke schreiben/ aber auch online möglich (breakout rooms für Kleingruppen während Auserwählte)
 
-        ```{=html}
         <p align="center"><img height=200 src="https://raw.githubusercontent.com/biocarl/img/master/world-cafe.jpeg" /></p>
-        ```
+        
     -   Freies Spekulieren / Positives Hypothesieren
         -   Kleingruppen sprechen jeweils einer Person positive Eigenschafen zu
         -   Danach kann der Einzelne die Vermutungen richtigstellen
@@ -3533,9 +3513,8 @@ Early and continuous deployment
     -   and a `/{range}` specifciation
     -   with that range you calculate the number of available IP\'s
 
-    ```{=html}
     <p align="center"><img src="https://raw.githubusercontent.com/biocarl/img/master/cidr.PNG" /></p>
-    ```
+    
     -   the range you retrieve by incrementby that amount from the start IP
 -   also watch this *<https://www.youtube.com/watch?v=MmA0-978fSk>*
 
@@ -3588,17 +3567,13 @@ Early and continuous deployment
         -   takes longer to do migrations (you have to do this for all tentants)
     -   You can do multitenancy on several levels
 
-    ```{=html}
     <p align="center"><img src="https://raw.githubusercontent.com/biocarl/img/9eb6460880f5e3ec606d7128be0db658f1ddccab/The-multi-tenancy-continuum.png" /></p>
-    ```
 
 # 📅 11.01.2022 How to embed images in org files (rendered on Github)
 
 -   Upload to img repo and then open image in new tab and ue the githubusercontent url
 
-``` {.bash}
 #+html: <p align="center"><img src="https://raw.githubusercontent.com/biocarl/img/34edba9d7e71c0887534bf0310ba0c137f59afbc/gap_map.png" /></p>
-```
 
 # 📅 10.01.2022 InfoSec: How to tackle dependency drift?
 
@@ -3641,10 +3616,8 @@ Early and continuous deployment
 -   Warmup-Question: Tell us a story: What was the best team you were ever part of?
 -   Five Dysfunctions of a Team (Book) [link](https://www.youtube.com/watch?v=GCxct4CR-To)
 
-```{=html}
 <p align="center"><img src="https://raw.githubusercontent.com/biocarl/img/master/dysfunction.jpeg" width="500" /></p>
-```
-\#+END~SRC~
+
 
 -   **Absence of Trust**: Without trust you do not have the base to go into conflict
     -   Action: Do the first step and share challenges, fears and limitations
@@ -4001,9 +3974,8 @@ Bob --> Alice: Gives ice cream
 -   **How feedback is created**
     -   There is always a gap between what we think we present and what other people see
 
-```{=html}
 <p align="center"><img src="https://raw.githubusercontent.com/biocarl/img/34edba9d7e71c0887534bf0310ba0c137f59afbc/gap_map.png" width=400 /></p>
-```
+
 -   In the spirit of constructivism you do not understand
     -   their system
         -   their intention
@@ -4025,9 +3997,8 @@ Bob --> Alice: Gives ice cream
     -   you yourself ask a person about something you want to have feedback on, usually before you expose that behavior you want to get evaulated. A good way of lower the barrier of getting into feedback since you select the person (comes down to trust) and the topic you want to have feedback on
     -   there is also a very nice form of feedforward
 
-    ```{=html}
     <p align="center"><img height=400 src="https://raw.githubusercontent.com/biocarl/img/master/feedforward.jpeg" /></p>
-    ```
+    
 -   Benefits of recieving feedback
     -   Acknowledgement: Often we see something which our teammate did well but we do not take the time to also communicate this to him. It is actually pretty nice if get to hear what you did well, maybe you want to get even better
     -   Sense of purpose: If you getting a feedback more often this is a perfect indicator that something might correspond to reality and I goes there is no one who does not like to be a person people like to work with -\> Motivation
