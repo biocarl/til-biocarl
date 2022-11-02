@@ -27,6 +27,12 @@
 
 ---
 
+# 📅 26.10.2022 vim: Search and replace
+- Through whole file (whole line, with confirmation) `:%s/PATTERN/REPLACEMENT/gc` (`%` is shorthand for `1,$` - whole file)
+- From current line till end of file: `:.,$s/PATTERN/REPLACEMENT/gc` 
+- From current line to the next 10 lines: `:10:$s/PATTERN/REPLACEMENT/gc` 
+- For more range options see `:h range`
+
 # 📅 26.10.2022 training: What are scientic communities who research on computer science education?
 - [SIGCSE](http://sigcse.org/) := Technical Symposium on Computer Science Education 
 - [ITiCSE](http://iticse.acm.org/) := Conference on Innovation and Technology in Computer Science Education, 
@@ -526,16 +532,16 @@ public class Main implements InterfaceA, InterfaceB {
 
 
 # 📅 02.10.2022 java: oop: polymorphism: What is an abstract class?
-        - sometimes you want to write a class that can not be instantiated
-        - its main purpose is to be extended
-        - car example: vehicle abstract class, and boat and car can be initiated
-        - can also contain abstract methods, has no body - child classes are forced to overwrite that method (or they become abstract themselves)
+- sometimes you want to write a class that can not be instantiated
+- its main purpose is to be extended
+- car example: vehicle abstract class, and boat and car can be initiated
+- can also contain abstract methods, has no body - child classes are forced to overwrite that method (or they become abstract themselves)
 - car example: `move` method from vehicle class. There is no common movement which would make sense that child classes inherit
 
 
 # 📅 02.10.2022 java: oop: polymorphism: What are interfaces?
-        - in common language, a way in which two things interact (power plug)
-        - for instance when we create a class with public methods, we define an interface with the outside world (in contrary to the private methods which are not part of the interface)
+- in common language, a way in which two things interact (power plug)
+- for instance when we create a class with public methods, we define an interface with the outside world (in contrary to the private methods which are not part of the interface)
 
 
 # 📅 02.10.2022 java: oop: polymorphism: Why use interfaces and not abstract classes?
@@ -544,15 +550,15 @@ public class Main implements InterfaceA, InterfaceB {
 
 
 # 📅 02.10.2022 java: oop: polymorphism: What is the difference between interface and an abstract class?
-        - they both
-- can not be instantiated
-- contain static variables
+- they both
+  - can not be instantiated
+  - contain static variables
 - but an interface
 - can only contain abstract methods (not considering default methods since Java 8), abstract classes commonly contain also methods with implementation
   - no instance instance variables (abstract class can have instance variables)
   - interface also can’t have a constructor
 
-- java: What is purpose of default methods in interfaces?
+# 📅 02.10.2022 java: oop: polymorphism: What is purpose of default methods in interfaces?
 - default methods allows for having a method body (not abstract anymore)
 - advantages
 -  Before Java 8, all classes implementing a interface would break if a new method was added since abstract methods need to be implemented, default method is offering a fallback for that method if it was not overwritten yet
@@ -562,9 +568,6 @@ public class Main implements InterfaceA, InterfaceB {
 - `:vsp` and `:sp`: for moving current window in vertical or horizontal split
 - `Ctrl-W` + `h/j/k/l`: for navigating between the windows
 - `Ctrl` + `ww`: For cycling through all windows
-
-
-
 
 # 📅 01.10.2022 java: oop: basics: What happens if you do not specify any access modifier on a Java class?
 - when not specifying any access modifier (like private/public) it evaluates to package-private access level
@@ -2947,22 +2950,22 @@ in mvn use: `mvn test -Dgroups=group3,group2`
 
 # 📅 25.04.2022 Java: Memory management Shown my Native Memory Tracking
 
--   Heap: Java objects
-    -   globally accessable
--   Non-Heap
-    -   Garbage Collector: GC requires memory for data structures and algorithms to do its job
-    -   Code Cache: Storage of dynamically generated code
-    -   Compiler: JIT compiler needs some memory to run
-    -   Metaspace
-        -   here Class metadata (method bytecodes, symbols, constant pools, annotations) is stored
-    -   thread stack
-        -   contain references
-        -   last-in, first-out (LIFO) memory allocation
-        -   each thread contains at least 1 stack
-            -   Java stack (Java method calls)
-            -   Native stack (Native method calls in VM)
--   Other: For example native C code
--   Debug Out-Of-Memory Errors
+- Heap: Java objects
+  - globally accessable
+- Non-Heap
+  - Garbage Collector: GC requires memory for data structures and algorithms to do its job
+  - Code Cache: Storage of dynamically generated code
+  - Compiler: JIT compiler needs some memory to run
+  - Metaspace
+    - here Class metadata (method bytecodes, symbols, constant pools, annotations) is stored
+  - thread stack
+    - contain references
+    - last-in, first-out (LIFO) memory allocation
+    - each thread contains at least 1 stack
+       - Java stack (Java method calls)
+       - Native stack (Native method calls in VM)
+- Other: For example native C code
+- Debug Out-Of-Memory Errors
 
 ``` {.bash}
 # Print out heap dump
@@ -4049,34 +4052,31 @@ Bob --> Alice: Gives ice cream
 
 # 📅 21.10.2021 microservice: Microservices 101
 
--   Advantages
-    -   autonomous teams
-    -   diverse set of technologies
-    -   independent life cycle
-    -   easy to understand a single microservice
-    -   easy to compose services
--   Migrate from monolith to microservices
-    -   tips for starters: first try decoupling a simple/decoupled function of a monolith
-    -   Avoid coupling back to the monolith
-    -   deploy early and then release
--   Change patterns
-    -   Strangler Fig Pattern: Extract functionality from the egde of a system to a microservice Steps
-        -   1.  Put proxy layer in front, intercept inbound call (does not work if logic lives deep inside the monlith)
-
-        -   1.  Reroute traffic to new implementation
-
-        -   1.  Delete old implementation
-
-        Details
-        -   use this if you must not touch the monolith\'s code
-        -   when intercepting call you can do this via proxy or redirect, can even change the protocoll e.g. soap -\> rest
-        -   even though not preferred you can still call back to monolith if this allows for small extraction
-        -   you can also intercept response/request and just add something before/after it is processed by upstream/downstream services, called **decorating collaborator**
-            -   example a new field is added in the response which seperately calcukated based on other fields in the response
-            -   with this you also do not need to touch the orginal monolith
-    -   Branch by abstraction: Create abstraction over functionality you want to use and then easly switch over between old (code living in monolith) and new implementation (a http call to the microservice)
-    -   Parallel Run: Can be used in combination with the ones above: calling both implementations at the same time. Usually you have a validation to check if both implemenations work in the same way
-    -   Change Data Capture Pattern: Listen to database changes with microservices to add additional functionality
+- Advantages
+  - autonomous teams
+  - diverse set of technologies
+  - independent life cycle
+  - easy to understand a single microservice
+  - easy to compose services
+- Migrate from monolith to microservices
+  - tips for starters: first try decoupling a simple/decoupled function of a monolith
+  - Avoid coupling back to the monolith
+  - deploy early and then release
+- Change patterns
+  - Strangler Fig Pattern: Extract functionality from the egde of a system to a microservice Steps
+    - Put proxy layer in front, intercept inbound call (does not work if logic lives deep inside the monlith)
+    - Reroute traffic to new implementation
+    - Delete old implementation
+- Details
+  - use this if you must not touch the monolith\'s code
+  - when intercepting call you can do this via proxy or redirect, can even change the protocoll e.g. soap -\> rest
+  - even though not preferred you can still call back to monolith if this allows for small extraction
+  - you can also intercept response/request and just add something before/after it is processed by upstream/downstream services, called **decorating collaborator**
+    - example a new field is added in the response which seperately calcukated based on other fields in the response
+    - with this you also do not need to touch the orginal monolith
+  - Branch by abstraction: Create abstraction over functionality you want to use and then easly switch over between old (code living in monolith) and new implementation (a http call to the microservice)
+  - Parallel Run: Can be used in combination with the ones above: calling both implementations at the same time. Usually you have a validation to check if both implemenations work in the same way
+  - Change Data Capture Pattern: Listen to database changes with microservices to add additional functionality
 
 # 📅 21.10.2021 Networking 101
 
