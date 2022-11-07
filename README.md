@@ -27,6 +27,437 @@
 
 ---
 
+
+# 📅 07.11.2022 sql: How to check for null values?
+```sql
+SELECT product_name, price
+FROM product
+WHERE price = NULL -- `IS NULL` also works
+```
+
+# 📅 07.11.2022 sql: How to rewrite a inner join with a WHERE statement?
+- but don't do this, does not follow conventions
+```sql
+SELECT product_name, category_name
+FROM product, category
+WHERE product.category_id = catgegory.id;
+```
+
+# 📅 07.11.2022 sql: What is understood under a OUTER JOIN?
+- Outer join returns all rows even if no matches are found
+- `LEFT JOIN`: Return all rows from the table on the left, `RIGHT JOIN` on the right
+- It is common practice to avoid right outer joins
+```sql
+SELECT product_name, category_name
+FROM product LEFT JOIN category
+ON product.category_id = catgegory.id;
+```
+
+# 📅 07.11.2022 sql: What is understood under a CROSS JOIN?
+- A `CROSS JOIN` includes data from both tables
+- Has no conditions
+- Rarely used
+```sql
+SELECT product_name, category_name
+FROM product CROSS JOIN category
+```
+
+# 📅 07.11.2022 sql: What is understood under a UNION?
+- A `UNION` combines the results of two or more `SELECT` statements
+- Each `SELECT` must return the same columns (same amount, name, datatype)
+```sql
+-- get selection of customers (vip/non-vip) which have birthday in september
+SELECT first_name, last_name
+FROM customer
+WHERE MONTH(birth_date) = 9
+UNION
+SELECT first_name, last_name
+FROM customer_vip
+WHERE MONTH(birth_date) = 9
+```
+
+# 📅 07.11.2022 sql: How to match specific strings?
+- (1) Native matcher
+- `%` acts as the wildcard (zero or more Characters)
+- `_` matches any single character, can be repeated e.g. `LIKE "M__"` to match `Max`
+```sql
+SELECT product_name
+FROM product
+WHERE product_name LIKE "A%"
+```
+- (2) Regex
+```sql
+SELECT product_name
+FROM product
+-- starting with A and ending with ck or er
+WHERE product_name REGEXP "^A" AND "ck$|er$"
+```
+
+# 📅 07.11.2022 sql: How to work with alias 'AS'?
+- aliases do only exist for the lifetime of the query
+- For columns:
+```sql
+-- you can define an alias after each field selection
+SELECT customer_id AS ID, customer_name AS Customer
+FROM customers;
+-- if the alias contains whitespaces use quotes or brackets
+SELECT customer_id AS "THE ID"
+FROM customers;
+SELECT customer_id AS [THE ID]
+FROM customers;
+-- you can also store function output to an tmp alias table
+SELECT customer_id,
+CONCAT(address,', ',postal_code,', ',city,', ',country) AS Address
+FROM customers;
+```
+- For tables (when needing to reference a long table name with explicit namespace)
+```sql
+SELECT product_name
+FROM product AS p
+WHERE p.product_name LIKE "A__"
+```
+
+# 📅 07.11.2022 sql: How do aggregate functions work?
+- Aggregate functions reduce a set of values to a single value
+- They ignore `NULL` values (except for `COUNT(*)`)
+- Often used in combination of `GROUP BY` where the aggregation functions are applied on the created buckets, not before!
+- Common aggregation functions: `AVG`, `COUNT`, `MAX`, `MIN`, `STDEV`, `SUM`
+
+# 📅 07.11.2022 sql: How does GROUP BY work?
+- groups rows that have the same values into summary rows, those are almost always aggregated with a aggregation function
+- not when selecting for columns which are not part of the `GROUP BY` only the row with the first occurence of a matching group-by key will be shown (in the example only James Bond is shown)
+```sql
+SELECT id, first_name, last_name, COUNT(*) as AMOUNT
+FROM customer
+GROUP BY last_name
+```
+- Example
+```plaintext
+id,first_name, last_name
+1, James, Bond
+2, Alexa, Bond
+3, Hermine, Granger
+>(A) GROUP BY last_name resulting in following buckets/summary rows
+
+>>1, James, Bond
+>>2, Alexa, Bond
+
+>>3, Hermine, Granger
+
+>(B) COUNT(*) -> adds column AMOUNT
+id,first_name, last_name, AMOUNT
+>>1, James, Bond, 2
+>>3, Hermine, Granger, 1
+```
+- When you you want to filter the grouped by buckets use `HAVING`
+```sql
+-- Returns only the customers which have a unique last_name
+SELECT id, last_name, last_name, COUNT(*) as AMOUNT
+FROM customer
+GROUP BY last_name
+HAVING AMOUNT = 1
+```
+
+- Sometimes the result can also be non-aggregated (though still using a aggregation function)
+```sql
+SELECT birth_date
+FROM customer
+GROUP BY birth_date
+HAVING COUNT(*) = 1
+-- which is the same as
+SELECT DISTINCT birth_date FROM customer
+```
+
+# 📅 07.11.2022 sql: How do views work?
+- `SELECT` statements which results are stored in the database
+```sql
+CREATE VIEW customer_statistics AS
+SELECT
+SUM(order_count) AS "Total Orders",
+MAX(order_count) AS "Biggest Shopper"
+AVG(order_count) AS "Average Shopper";
+```
+- VIEW can be viewed as a normal table with `SELECT * FROM some_view`
+- And deleted with `DROP VIEW some_view`
+- Benefits
+- Is a layer of abstraction - you can change the underlying query without changing the view reference
+- Useful when users should not have access to the underlying data
+- Automatically updates if there are data changes BUT only if it does NOT include
+- `DISTINCT`
+- `UNION`
+- Aggregate functions
+- `GROUP BY` and `HAVING`
+
+
+# 📅 07.11.2022 sql: How to temporaryly add a virtual column to a complete table?
+- You can also use wildcard in combination to the notation of comma-separated fields for `SELECT`
+```sql
+SELECT *, (order_count * average_item_price) AS Average_order FROM customer
+```
+- The opposite of a [virtual column](https://en.wikipedia.org/wiki/Virtual_column) is a persistent column
+- virtual columnn do not use any space on disk but have to pre always calculated on demand
+- virtual column are also called 'generated columns' in MySQL
+# 📅 07.11.2022 sql: What are stored programs?
+- Different types
+- **Stored procedures**:
+- Executed by application which has access to your database
+- parameters are passed in by value (except you use `@variable` notation with `INOUT`
+- In stored procedures you have all the common language constructs like
+- `ELSE/ELSEIF`
+- `CASE/WHEN`
+- `WHILE`
+- `REPEAT/UNTIL`
+- Cursors: Iterate through rows and work with them individually
+- Error handling (see `EXIT HANDLER`)
+```sql
+USE customer;
+DROP PROCEDURE IF EXISTS get_customers
+DELIMITER // -- instead of ; // now marks end of statement
+CREATE PROCEDURE get_customers(IN limit_amount INT) -- params with types, for more do ,-list - for return see OUT and INOUT
+BEGIN
+DECLARE hardcoded_filter VARCHAR(30);
+SET hardcoded_filter = "^A";
+SELECT first_name, last_name
+FROM customer
+WHERE first_name = hardcoded_filter
+LIMIT limit_amount; -- ; can be used here now without being evaluated right away
+-- returned is the last select statement
+END //
+DELIMITER ; -- switch back delimiter
+-- call stored procedure
+CALL get_customers()
+```
+- **Stored functions**: Can be executed only within SQL query
+- **Triggers**: Executed when `INSERT`, `UPDATE` and `DELETE` commands are executed
+- **Events**: Executed at scheduled times
+
+# 📅 03.11.2022 clojure: Using d3 in clojurescript
+- [source](https://lambdaisland.com/blog/2018-04-26-d3-clojurescript)
+```clojure
+;; in project.clj
+(defproject project "1.0.0-SNAPSHOT"
+:dependencies [[cljsjs/d3 “6.2.0-0”]])
+
+;; in source file
+(ns my.namespace (:require [cljsjs.d3] ))
+(defn append-svg []
+(-> js/d3
+(.select “#my-id”)
+(.append "svg")
+(.attr "height" 500)
+(.attr "width" 500)))
+
+(.addEventListener
+js/window
+"DOMContentLoaded"
+(fn [] (do
+(append-svg)
+)))
+;; In html files
+;; <div id=“”my-id> </div>
+```
+
+# 📅 03.11.2022 clojure: How to import javascript libraries into clojurescript?
+- There is a wrapper project called [cljsjs](http://cljsjs.github.io/)
+- work through the `:foreign-libs`
+- gives the cljs compiler some hints and of course load the js library in the frontend
+
+# 📅 02.11.2022 sql: What is a database?
+- is just data which is structure into rows and columns like a speadsheet
+- Columns define the structure of the data, 1 col defines one type of data the database stores
+- Rows contain the data, one row holding data to a specific entity
+- Sending commands are called query, the database then returns results
+
+# 📅 02.11.2022 sql: What is a primary key?
+- A value to describe a unique entity in a table
+- A non-unique key is a non-primary key
+
+# 📅 02.11.2022 sql: How to create a database/schema?
+- In mysql databases are also referred as schemas
+```sql
+CREATE SCHEMA `my_db`
+```
+
+# 📅 02.11.2022 sql: How to create a table? What data types are available?
+- sql names are always in upper-case letters
+```sql
+CREATE TABLE customer(
+first_name VARCHAR(30), -- col name and type
+last_name VARCHAR(30) NOT NULL, -- can not be null
+zip MEDIUMINT UNSIGNED, -- can't be a negative number
+birth_date DATE NULL, -- null is allowed
+sex ENUM ('M', 'F'), -- enums are also possible
+date_entered TIMESTAMP, -- for date & time
+id INT UNSIGNED
+AUTO_INCREMENT --increases automatically for each new insert
+PRIMARY KEY); -- marks column as primary key
+```
+- Numeric data types
+- Float is deprecated and should not be used, use `DECIMAL` data type instead
+```sql
+DECIMAL(6,2) -- 6 is total number of digits, 2 is decimal digits e.g. -9999.99, is signed
+```
+- There are no boolean data types natively supported, you can use `BOOLEAN` but this is just a shorthand for `TINYINT(1)`
+- Characters
+```sql
+VARCHAR(m) -- with max m bytes (255 8-bit number)
+VARCHAR(m) -- with max m bytes (255 8-bit number)
+```
+- Time and date
+```sql
+DATE ->  '1993-12-31';
+DATETIME ->  '1993-12-31 23:59:59.999999';
+TIMESTAMP ->  '1993-12-31 23:59:59.999999';
+TIME ->  '823:59:59.999999';
+YEAR ->  '1993';
+```
+
+# 📅 02.11.2022 sql: How to insert data into a table?
+- non-specified fields will be populated with NULL or DEFAULT value
+```sql
+INSERT INTO customer (first_name, last_name, id) -- columns you want to insert values in
+VALUES ('James', 'Bond', NULL); -- for auto-generated id you have to supply NULL
+```
+- you can provide also several `VALUES` pairs at once, you just need to comma-separate them
+```sql
+INSERT INTO customer (first_name, last_name, id)
+VALUES
+('James', 'Bond', NULL),
+('Lisa', 'Potter', NULL),
+('Allan', 'Watts', NULL);
+```
+- When the order of the values is the same as in the table definition and you supply all of them, you can omit the colum names
+
+# 📅 02.11.2022 sql: How to query data from a table?
+```sql
+-- '*' = select all rows with all columns from table
+SELECT * FROM customer;
+-- a specific row
+SELECT age FROM customer;
+```
+- Where conditions with conditional/logical operators
+```plaintext
+Conditional operators
+= : Equal
+</>/<=/>= : Greater/Less with equals
+!= : Not Equal
+<> : Not Equal
+Logical operators
+AND, OR, NOT
+```
+```sql
+SELECT * FROM customer WHERE age >= 18;
+SELECT * FROM customer WHERE age >= 18 AND NOT order_count <> 0; -- adult person which ordered at least once
+-- BETWEEN syntax when using dates
+SELECT * FROM customer WHERE date_joined BETWEEN '2022-04-09' AND '2023-04-09';
+```
+- Where conditions checking from a list of values
+```sql
+SELECT * FROM customer WHERE last_name IN ('Bond', 'Potter');
+```
+- Order query result
+```sql
+SELECT * FROM customer
+WHERE age >= 18
+ORDER BY age; -- when reversing the order at DESC at the very end
+```
+- Limit entries of query result
+```sql
+SELECT * FROM customer WHERE age >= 18 LIMIT 10;
+```
+
+# 📅 02.11.2022 sql: How to combine data fields into a temporary single field?
+```sql
+SELECT CONCAT (first_name, '---', last_name) AS Name, zip, sex
+FROM customer
+WHERE sex = 'M';
+```
+```plaintext
+>>Output
+Name,zip,sex
+'James---Bond', 21002, 'M'
+'Allan---Watts',12021, 'M'
+```
+
+# 📅 02.11.2022 sql: What native column-wise functions exist?
+```sql
+-- SUM up values
+SELECT sex, SUM(order_count) as Order_Count FROM customer;
+-- DISTINCT to remove duplicates - list all age's of the customers in ordered fashion
+SELECT DISTINCT age from customer ORDER BY age;
+```
+
+# 📅 02.11.2022 sql: What are the different possible data constraints?
+- `NOT NULL`: Field can't be null
+- `DEFAULT`: Assigns default value when row without data is created
+- `UNSIGNED`: No negative values are allowed
+- `PRIMARY KEY`: Unique value within the column
+- `AUTO_INCREMENT`: On insert auto-increments the value
+- can only be used on value per table
+- and musst be either unique or primary key
+
+# 📅 02.11.2022 sql: How to alter an existing table?
+- altering table also possible with MySQL worksbench: Right-Click on table -> `... Alter table`
+```sql
+-- add new column
+ALTER TABLE customer ADD is_vip BOOL;
+-- modify existing column - make it not-null
+ALTER TABLE customer MODIFY is_vip BOOL NOT NULL;
+-- drop existing column
+ALTER TABLE customer DROP COLUMN is_vip;
+-- rename whole table
+RENAME TABLE customer TO old_customer;
+-- delete all data in a table
+TRUNCATE TABLE customer;
+-- delete table itself
+DROP TABLE customer;
+```
+
+# 📅 02.11.2022 sql: Why to index in a database and how to do this?
+- Helps to find a row based on an index field faster
+```sql
+-- Create index based on 1 col
+CREATE INDEX customer_idx ON customer(first_name);
+-- Create index based on 2 cols
+CREATE INDEX customer_idx_2 ON customer(first_name, second_name);
+```
+
+# 📅 02.11.2022 sql: What is a foreign key?
+- A unique identifier which corresponds to a primary key of another table
+- You can have multiple foreign keys in a table but only one primary key
+- Primary key can be made up out of several columns, called composite primary keys
+```sql
+CREATE TABLE product
+(
+category_id INT UNSIGNED NOT NULL,
+FOREIGN KEY (category_id) -- references which column should function as a foreign key
+REFERENCES category (id), -- references category table and primary key, the id column
+product_name VARCHAR (40),
+id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY);
+```
+
+
+# 📅 02.11.2022 sql: How to combine data from different tables with a inner JOIN?
+- `INNER JOIN`
+```sql
+-- here you can already SELECT columns which exist in either one or the other table
+-- if they are not unique in scope prepend them with the table name like product.product_name
+SELECT product_name, category_name
+FROM product INNER JOIN category
+ON product.category_id = catgegory.id;
+```
+- How to `INNER JOIN` several tables?
+- Just write several `JOIN` statements after `FROM`
+- For clarity and to avoid name conflicts provide table name as scope for each field you want to select
+```sql
+SELECT product.product_name, catgegory.category_name, history.has_old_name
+FROM product
+INNER JOIN category
+ON product.category_id = catgegory.id;
+INNER JOIN history
+ON product.history_id = history.id;
+```
+
 # 📅 02.11.2022 clojure: Java interops
 - [source/further info](https://clojure.org/reference/java_interop)
 - construct a new object
@@ -3223,18 +3654,16 @@ in mvn use: `mvn test -Dgroups=group3,group2`
         -   config is language independent
 
 # 📅 30.03.2022 QA: Learnings on pact and pact broker
-
--   why to use tagging for feature toggles? ([read more on this](https://docs.pact.io/pact_broker/tags))
-    -   on consumer side you have a feature toggle but you don\'t know if the provider already has the features implemented, integrated in the deployed artefact. That is why you want to tag with the consumer/provider version after deploying the artefact. You have a mapping between consumer versions of a contract and how this related to the deployed artefacts, helping you decide which feature toggles on the consumer side you can toggle on. The other way of doing it would be to check on the deployed artefacts which feature is present and which not but doing it this with the pact contracts is like putting a matching pattern over the codebase using the logic you already have set anyway for the contract testing
--   how does pending contracts work?
-    -   motivation: You want to introduce a change as a consumer without immediately breaking the provider. The provider decides when to fufill the contract
-    -   First you have a new contract version on consumer side, first you would introduce this as pending
-    -   a pending contract never brakes the pipeline on provider side
-    -   once the provider meets the requirements of the new contract the pending flag is removed
-    -   if at another run the contract brakes on provider side the pipeline also breaks
+- why to use tagging for feature toggles? ([read more on this](https://docs.pact.io/pact_broker/tags))
+  - on consumer side you have a feature toggle but you don\'t know if the provider already has the features implemented, integrated in the deployed artefact. That is why you want to tag with the consumer/provider version after deploying the artefact. You have a mapping between consumer versions of a contract and how this related to the deployed artefacts, helping you decide which feature toggles on the consumer side you can toggle on. The other way of doing it would be to check on the deployed artefacts which feature is present and which not but doing it this with the pact contracts is like putting a matching pattern over the codebase using the logic you already have set anyway for the contract testing
+- how does pending contracts work?
+  - motivation: You want to introduce a change as a consumer without immediately breaking the provider. The provider decides when to fufill the contract
+  - First you have a new contract version on consumer side, first you would introduce this as pending
+  - a pending contract never brakes the pipeline on provider side
+  - once the provider meets the requirements of the new contract the pending flag is removed
+  - if at another run the contract brakes on provider side the pipeline also breaks
 
 # 📅 29.03.2022 Workshop: Airport metaphor
-
 -   Icebreaker: Where do you want to go next?
 -   Healthcheck: Check-In at airport
 -   Action items: Take-Off
@@ -3247,34 +3676,33 @@ in mvn use: `mvn test -Dgroups=group3,group2`
 -   Who is next: Stuart with sunglasses
 
 # 📅 17.03.2022 Sensible practices
-
--   Trunk-Based development
-    -   **Why**: Faster feedback, resolve merge conflicts quicker, easier to code review because smaller changes
-    -   Prerequisite of Continuous Integration
-    -   If not possible only very short feature branches
--   TDD
-    -   **Why**: Simpler, just make the test pass. More modular code. Fast feedback - less debugging during development
--   Pairing
-    -   **Why**: Fast feedback, shared ownership and knowledge transfer
--   Security first
-    -   Scanning for vulnerabilities in pipeline (libs, container immages etc.)
-    -   Secret manager
-    -   Thread modelling part of agile routine
-    -   Quick reaction strategies e.g. monitoring, fix-forward
-    -   least privilege principle when it comes to access etc.
-    -   Consider checklists like OWASP
-    -   **Why**: Faster feedback and therefore impact on code and design, reproducable and therefore less dependent on security SME for audits etc.
--   Automated build pipeline
-    -   within miniutes
-    -   everyone has easy access to current state and should be informed in case of a failure
-    -   prioritize speed and non-flakyness of pipeline
-    -   **why**: quick feedback if new changes introduce defects, less efort because no manual steps
--   Automated deploy pipeline
-    -   also automated infrastructure (e.g. terraform)
-    -   manual approvement can happen but no manual steps
-    -   (❗) artefact is build once and deployed to different environments with different configuration
-    -   Avoid configuration drift in environments (different settings in infra)
-    -   **why**: *Automation reduces errors caused by humans.* + faster feedback, less time required
+- Trunk-Based development
+  - **Why**: Faster feedback, resolve merge conflicts quicker, easier to code review because smaller changes
+  - Prerequisite of Continuous Integration
+  - If not possible only very short feature branches
+- TDD
+  - **Why**: Simpler, just make the test pass. More modular code. Fast feedback - less debugging during development
+- Pairing
+  - **Why**: Fast feedback, shared ownership and knowledge transfer
+- Security first
+  - Scanning for vulnerabilities in pipeline (libs, container immages etc.)
+  - Secret manager
+  - Thread modelling part of agile routine
+  - Quick reaction strategies e.g. monitoring, fix-forward
+  - least privilege principle when it comes to access etc.
+  - Consider checklists like OWASP
+  - **Why**: Faster feedback and therefore impact on code and design, reproducable and therefore less dependent on security SME for audits etc.
+- Automated build pipeline
+  - within miniutes
+  - everyone has easy access to current state and should be informed in case of a failure
+  - prioritize speed and non-flakyness of pipeline
+  - **why**: quick feedback if new changes introduce defects, less efort because no manual steps
+- Automated deploy pipeline
+  - also automated infrastructure (e.g. terraform)
+  - manual approvement can happen but no manual steps
+  - (❗) artefact is build once and deployed to different environments with different configuration
+  - Avoid configuration drift in environments (different settings in infra)
+  - **why**: *Automation reduces errors caused by humans.* + faster feedback, less time required
 
 Early and continuous deployment
 
