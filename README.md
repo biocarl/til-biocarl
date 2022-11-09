@@ -27,7 +27,7 @@
 
 ---
 
-# 📅 09.11.2022 javascript: Dyanmically load javascript from 3rd party server and evalute
+# 📅 09.11.2022 javascript: Dyanmically load javascript from 3rd party server and evaluate
 ```javascript
 let options = {
     method: 'GET',
