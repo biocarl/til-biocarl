@@ -27,6 +27,65 @@
 
 ---
 
+# 📅 09.11.2022 javascript: Boilerplate for having dynamically generated pages
+- For quick local prototyping
+```html
+<body>
+    <div>
+        <div>Page: <span id="counter-view"> 0</span></div>
+        <div onclick="nextPage()"> Next page</div>
+        <div id="main"><div id="child"> </div></div>
+    </div>
+</body>
+
+<script>
+    const page0 = document.createElement("div");
+    page0.setAttribute("style", `height: 100%; width: 100%; background-color: #679c92`);
+    page0.setAttribute("id","child");
+
+page0.innerHTML = (`
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <div class="text-center p-5" style="margin: 70px;">
+        <div style="border-radius: 0 0 15px 15px; background-color: #4b756d">
+            <img class="mb-4" src="https://raw.githubusercontent.com/biocarl/img/master/minions/minion-carl.png" height="110" width="110" alt="SomeLogo">
+            <br>
+            <br>
+            <h3 style="padding-bottom: 20px;margin:-20px;font-family: 'Copperplate', cursive;color:white">PAGE0</h3>
+        </div>
+    </div>
+`);
+
+const page1 = document.createElement("div")
+page1.setAttribute("style", `height: 100%; width: 100%; background-color: #679c92`)
+page0.setAttribute("id","child")
+page1.innerHTML = (`
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <div class="text-center p-5" style="margin: 70px;">
+        <div style="border-radius: 0 0 15px 15px; background-color: #4b756d">
+            <img class="mb-4" src="https://raw.githubusercontent.com/biocarl/img/master/minions/minion-carl.png" height="110" width="110" alt="SomeLogo">
+            <br>
+            <br>
+            <h3 style="padding-bottom: 20px;margin:-20px;font-family: 'Copperplate', cursive;color:white">PAGE1</h3>
+        </div>
+    </div>
+`);
+
+
+var VIEWS = [page0, page1];
+var COUNTER = 0
+document.getElementById('main').replaceWith(VIEWS[COUNTER]);
+
+function nextPage(){
+    console.log("Switching page");
+    COUNTER++;
+    document.getElementById('child').replaceWith(VIEWS[COUNTER]);
+    document.getElementById('counter-view').innerHTML = COUNTER;
+}
+
+</script>
+```
 
 # 📅 07.11.2022 sql: How to check for null values?
 ```sql
