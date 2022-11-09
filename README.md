@@ -27,6 +27,21 @@
 
 ---
 
+# 📅 09.11.2022 javascript: Dyanmically load javascript from 3rd party server and evalute
+```javascript
+let options = {
+    method: 'GET',
+    headers: {}
+    };
+
+fetch('https://raw.githubusercontent.com/Fowler1234/custom-plugins/main/CustomImagePlugin.js', options)
+.then(response => response.text())
+.then(body => {
+    console.log(body);
+    eval(body);
+    });
+```
+
 # 📅 09.11.2022 javascript: Boilerplate for having dynamically generated pages
 - For quick local prototyping
 ```html
