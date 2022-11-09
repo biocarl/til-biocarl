@@ -27,6 +27,338 @@
 
 ---
 
+# 📅 09.11.2022 javascript: Why should you learn javascript?
+- Not really an alternative (except wasm) when you want to do something in the frontend
+- You can manipulate HTML, CSS and have custom logic in frontend
+- there is also other frontend languages you can use but even those languages are in the end transpiled to javascript
+
+# 📅 09.11.2022 javascript: How to interact with the dom?
+- Access dom elements
+```javascript
+// Access dom tree directly
+document.childNodes[1].style.backgroundColor = 'green'; // should always target <html> tag
+// Access dom element(s) based on id
+document.getElementById("someId").innerHtml = "newValue";
+// Access dom elements based on tag type
+document.getElementsByTagName("p")[0].style.backgroundColor = 'black'; // style first match
+```
+
+- Check/change attributes of elements
+```javascript
+someNode.hasAttribute("id");
+someNode.getAttribute("id");
+someNode.setAttribute("id", "so22");
+someNode.attributes[0].nodeName; //access all attributes
+someNode.attributes[0].nodeValue;
+```
+
+- Create elements and associate with dom tree
+```javascript
+// Create element
+var myDiv = document.createElement("div");
+myDiv.innerHtml = "Some text here";
+
+// plug into dom tree
+someOtherNode.appendChild(myDiv); // inserts as last child of someOtherNode
+someOtherNode.insertBefore(myDiv,someNode.childNodes[0]); // inserts as first child of someOtherNode
+
+// Write to document directly
+document.write("1+2",1+1,"<div>someDomElement</div>");
+```
+
+# 📅 09.11.2022 javascript: oop: How to do OOP?
+- The analogon of a object is usually a simple map where we also introduce functions
+```javascript
+var person1 = {
+    name : "James",
+    age : 12,
+    greet: function (name){
+        return "Hey "+ name + ", my name is "+ this.name;
+    }
+};
+
+// access/assign values
+person1.name = "Dr. James";
+person1["name"] = "Dr. James"; //analogous
+
+// delete a specific property
+delete person1.age;
+```
+- Map analogy because you can also access fields via key-value notation
+```javascript
+// iterate over all fields
+for(key in person1){
+    console.log(person1[k]); // access value like you would access an ordenary map
+}
+// Check if property is in object
+var hasName = "name" in person1;
+```
+
+- If you want to define a generic object there is also object constructors
+- Note the differences to the object map (use of `this`, `=` instead of `:`, field declarations ending with `;`)
+```javascript
+function Person(name, age){
+    this.name = name;
+    this.age = age;
+    this.greet = function (name){
+        return "Hey "+ name + ", my name is "+ this.name;
+    };
+}
+var person2 = new Person("Billy", 12);
+```
+
+# 📅 09.11.2022 javascript: oop: How to define class/static variables?
+```javascript
+// shared values
+Person.prototype.isSmartestSpecies = false; // shared value for all persons
+// shared functions (aka prototype methods)
+Person.prototype.compare = function(p1, p2){
+    return p1.age.compare(p2.age);
+};
+// you can also overwrite methods (all objects have toString)
+Person.prototype.toString = ...
+```
+
+# 📅 09.11.2022 javascript: How does regex work?
+```javascript
+var regex = /^A.{4}/;
+regex.test("Abcde");
+```
+
+# 📅 09.11.2022 javascript: How do exceptions work?
+```javascript
+// catch error
+try{
+    // throw a new error
+    throw new RangeError("Out of range!");
+}catch (ex){
+    if(ex instanceof RangeError){
+        console.log("Range error occured");
+    }
+}
+```
+
+# 📅 09.11.2022 javascript: How to interact with the browser (apart from dom)?
+- Read/Write current url/host/path
+```javascript
+alert(window.location.href);
+alert(window.location.hostname);
+alert(window.location.pathname);
+// you can also dynamically change those
+window.location.href = "www.google.com";
+```
+- You can reload the window
+```javascript
+window.location.reload(true);
+```
+- Go back and forth through browser history
+```javascript
+history.forward();
+history.back();
+// to jump several at once do
+history.go(-2); // jump 2 backwards
+```
+
+# 📅 09.11.2022 javascript: datatypes: How to create variables?
+- Javascript has a dynamic type system, "figures out the types at runtime"
+```javascript
+var someInteger = 3;
+var someString = "hi";
+```
+
+# 📅 09.11.2022 javascript: datatypes: Which range does the integer type hold?
+```javascript
+var someInteger = Number.MAX_VALUE; // or Number.MIN_VALUE
+```
+
+# 📅 09.11.2022 javascript: datatypes: How to work with decimal numbers?
+- Precision is up to 16 digits
+```javascript
+// test
+0.2 = 0.1000000000000000000000000001 + 0.1000000000000000000000000001
+```
+- Rounding to two decimal places
+```javascript
+(120.122/12).toFixed(2);
+```
+
+# 📅 09.11.2022 javascript: datatypes: What are some math functions are available?
+```javascript
+Math.abs(-3);
+Math.ceil(4.4);
+Math.floor(4.4);
+Math.log(10);
+Math.min(10,1);
+Math.max(10,1);
+Math.pow(10);
+Math.sqrt(10);
+```
+# 📅 09.11.2022 javascript: datatypes: How to generate a random number?
+```javascript
+var from = 3;
+var to = 14;
+Math.floor((Math.random()*to)+from);
+```
+
+# 📅 09.11.2022 javascript: datatypes: How to convert a string into a number?
+```javascript
+Number("3.41");
+// or specific type
+parseInt("21");
+parseFloat("3.2")
+```
+# 📅 09.11.2022 javascript: datatypes: How to work with strings?
+- The usual string methods
+```javascript
+var someString = "ab" + "cdefgh";
+someString.length; // number of characters
+someString.indexOf;("ab") // 0 (start of string)
+someString.slice(2,5); // get substring by index
+someString.substring(2,2); // same as above but second argument is length starting from position 2022
+someString.replace("ab", "--");
+someString.charAt(2); // access char array
+someString.split(";"); // returns string array based on delimiter
+someString.trim(); // trim leading/trailing whitespaces
+someString.toLowerCase();
+```
+- Flank strings with certain styling tags
+```javascript
+var message = "Welcome!";
+// all those returns dom elements
+message.big();
+message.bold();
+message.fontcolor("blue");
+message.fontsize("5em");
+message.italics();
+message.link("www.google.com");
+message.small();
+message.strike();
+message.sub(); // lowered
+message.sup(); // uppered
+```
+
+# 📅 09.11.2022 javascript: datatypes: What is the difference between == and ===?
+`==` verifies that values are equal, `===` value and type is verfied for eequality
+- `===` should always be prefered
+```javascript
+7 == "7" -> true
+7 === "7" -> false
+```
+
+# 📅 09.11.2022 javascript: datatypes: How to create and use arrays?
+- Can create multiple different datatypes in the same array
+- You also do not have to define a specific size
+- acts more like a array list in Java
+
+```javascript
+var notes = ["Hello World", 42, [1, 2]] // all types can live in same array
+notes[0] = "Eii mundo!"; // replace at index 0
+
+// splice method
+// first parameter is start index, second how many to delete and third (optional) what to insert instead
+// returns elements which were deleted/replaced and operates on existing one
+notes.splice(0,2,"new1", "new2", "new3"); // returns ["Hello World", 42] and notes is now ["new1", "new2", "new3", [1,2]]
+
+notes.unshift("addNewFirstElement");
+notes.push("secondLastNewEntry","lastNewEntry"); //add item to end
+
+notes.shift(); // delete first item
+notes.pop(); // Remove last item
+
+// convert array to string
+notes.valueOf();
+notes.toString(); // above does the same thing
+notes.join(","); // join with delimiter
+
+//delete index
+delete notes[0]; // delete element
+
+//sorting
+notes.sort(); // but is only lexicographic sorting!
+// if you want to sort numbers
+var numbers = [1,3,42,2]
+numbers.sort(function (x,y) { return x - y}); // ascending sort (do y - x for descending)
+
+//combine two arrays into one
+var newArray = notes.concat(numbers);
+```
+
+# 📅 09.11.2022 javascript: How to work with functions?
+- Create a function (no types signature - for params or return values)
+```javascript
+function myFunction(param1, param2){
+    return param1 != param2;
+}
+```
+- But we do not have to provide parameters and can access an unknown amount of params (like varargs in Java)
+```javascript
+function myWiredFunction(){
+    return arguments.length;
+}
+myWiredFunction(1,2,3,4,5,6,7,10,11); // 9
+```
+
+- In javascript we can pass functions as a parameter to another function (see also higher order functions and function as first class citizens)
+```javascript
+function multiplyBy5(number){
+    return number*5;
+}
+
+function repeatFunctionTimes3(func,initalNumber){
+    return func(func(func(initalNumber)));
+}
+
+var result = repeatFunctionTimes3(multiplyBy5,2); // 10 -> 50 -> 250
+```
+- In the same way you can also assign functions to variables
+```javascript
+var f1 = function (number){
+    return number*5;
+}
+```
+- allowing you to store them also in arrays
+```javascript
+var functions = [function (number){ return number*2;}, function (number){ return number*3;}];
+functions[0](2); //4
+functions[1](2); //6
+```
+
+
+# 📅 09.11.2022 javascript: Where to inject javascript?
+- Trigger javascript when clicking on a link (href keeps page from reloading when link is clicked)
+```html
+<a href="JavaScript:void(0)" onClick="alert('Hello world!';)" >
+```
+- React to changes in a form (is only trigger once cursor leave form)
+```html
+<input type="text" id="input1" onChange="alert(document.getElementById(input1).value);" >
+```
+- React to mouse movements on whole body
+```javascript
+document.body.onmousemove = function (e) {
+        alert(e.pageX + " and " + e.pageY);
+};
+```
+
+- Self-reference dom with 'this'
+```html
+<!--self-reference dom with 'this' -->
+<a onClick="this.style.color='gray';" >
+```
+
+# 📅 09.11.2022 javascript: What trigger events are there for dom elements?
+```html
+<a onClick="alert('hi')" >
+<!-- when hovering over mouse -->
+<a onmouseover="alert('hi')" >
+<!-- when leaving dom element with mouse -->
+<a onmouseout="alert('hi')" >
+<!-- when double clicking -->
+<a ondblclick="alert('hi')" >
+<!-- when pressing and pulling down with mouse -->
+<a onmousedown="alert('hi')" >
+```
+
 # 📅 09.11.2022 javascript: Dyanmically load javascript from 3rd party server and evalute
 ```javascript
 let options = {
