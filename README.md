@@ -3704,26 +3704,24 @@ public class CustomInterceptor implements ClientHttpRequestInterceptor {
         -   a WAF for instance would keep track of malicous IP\'s dynamically and block those once a certain pattern in requests is identified
 
 # 📅 28.04.2022 Networking: OSI Model 101
-
--   OSI := open systems interconnection, is a communication standard between computers
--   when OSI layer is used
-    -   characterizing network issues
-    -   categorizing cyber threats
--   split up in 7 layers
-    -   Layer 7 (Application): *All the common protocolls like HTTP, FTP, TELNET, SMTP*
-    -   Layer 6 (Presentation): *Responsible for converting incoming data so that the application understands its content and translating outgoing data so that it conforms to the protocoll standard. This also includes things like encryption, and compression of data*
-    -   Layer 5 (Session): TBD
-    -   Layer 4 (Transport): TBD
-    -   Layer 3 (Network): TBD
-    -   Layer 2 (Data Link): TBD
-    -   Layer 1 (Physical): TBD
+- OSI := open systems interconnection, is a communication standard between computers
+- when OSI layer is used
+    - characterizing network issues
+    - categorizing cyber threats
+- split up in 7 layers
+    - Layer 7 (Application): *All the common protocolls like HTTP, FTP, TELNET, SMTP*
+    - Layer 6 (Presentation): *Responsible for converting incoming data so that the application understands its content and translating outgoing data so that it conforms to the protocoll standard. This also includes things like encryption, and compression of data*
+    - Layer 5 (Session): TBD
+    - Layer 4 (Transport): TBD
+    - Layer 3 (Network): TBD
+    - Layer 2 (Data Link): TBD
+    - Layer 1 (Physical): TBD
 
 # 📅 28.04.2022 JUnit: Tags
 
--   helps you to filter for certain annotated tests (include/exclude)
--   Use `@Tag` on either class or method level
--   in Maven Surefire Plugin use:
-
+- helps you to filter for certain annotated tests (include/exclude)
+- use `@Tag` on either class or method level
+- in Maven Surefire Plugin use
 ``` {.xml}
 <configuration>
         <groups>group3</groups>
@@ -3733,13 +3731,11 @@ public class CustomInterceptor implements ClientHttpRequestInterceptor {
 in mvn use: `mvn test -Dgroups=group3,group2`
 
 # 📅 28.04.2022 Infrastructure: Open Policy Agent (OPA)
-
 -   [source](https://www.openpolicyagent.org/)
 -   you define policies and a agent is checking them (compliance)
 -   e.g. use terraform plan json output and feed it into agent
 
 # 📅 28.04.2022 QA: Synthetic monitoring
-
 -   a small subset of tests you execute on your prod environment in a regular fashion and create alerts on it
 -   sometimes called semantic monitoring
 -   can be combined with canary releases
@@ -3750,7 +3746,6 @@ in mvn use: `mvn test -Dgroups=group3,group2`
 -   [further reading](https://martinfowler.com/bliki/SyntheticMonitoring.html)
 
 # 📅 26.04.2022 QA: Performance tetsing of microservice in isolation vs system-wide tests
-
 -   Benefits of testing system in isolation
     -   see if changes you introduced decrease performance
     -   since you test system in isolation you can benchmark against a baseline (regression-testing)
@@ -3761,7 +3756,6 @@ in mvn use: `mvn test -Dgroups=group3,group2`
     -   e.g. running system in isolation you could do on every deploy and system-wide on every release
 
 # 📅 26.04.2022 Maven: Maven Enforcer Plugin
-
 -   like a unit test for maven files
     -   built-in rule: Dependency Convergence
         -   fail if two dependencies A,B depend on a different version of another dependency C
@@ -3770,9 +3764,7 @@ in mvn use: `mvn test -Dgroups=group3,group2`
     -   Maven/Gradle always has to set for one version otherwise we would get a scope conflict (same class names etc.)
 
 # 📅 26.04.2022 Maven: Multi-Module project
-
 -   Define root and module poms
-
 ``` {.xml}
 <!-- In root pom -->
 <modules>
@@ -3787,32 +3779,29 @@ in mvn use: `mvn test -Dgroups=group3,group2`
   <version>1.0-SNAPSHOT</version>
 </parent>
 ```
-
--   Dependency Management in Parent Project ([source](https://www.baeldung.com/maven-multi-module))
-    -   centralizing the dependency information in one place
-    -   in parent pom you define artifact, groupId and version
-    -   in inheriting pom only artifact, groupId
-    -   exclusions are also inherited
+- Dependency Management in Parent Project ([source](https://www.baeldung.com/maven-multi-module))
+    - centralizing the dependency information in one place
+    - in parent pom you define artifact, groupId and version
+    - in inheriting pom only artifact, groupId
+    - exclusions are also inherited
 
 # 📅 25.04.2022 Java: Memory management Shown my Native Memory Tracking
-
 - Heap: Java objects
-  - globally accessable
+    - globally accessable
 - Non-Heap
-  - Garbage Collector: GC requires memory for data structures and algorithms to do its job
-  - Code Cache: Storage of dynamically generated code
-  - Compiler: JIT compiler needs some memory to run
-  - Metaspace
+    - Garbage Collector: GC requires memory for data structures and algorithms to do its job
+    - Code Cache: Storage of dynamically generated code
+    - Compiler: JIT compiler needs some memory to run
+- Metaspace
     - here Class metadata (method bytecodes, symbols, constant pools, annotations) is stored
-  - thread stack
+- Thread stack
     - contain references
     - last-in, first-out (LIFO) memory allocation
     - each thread contains at least 1 stack
-       - Java stack (Java method calls)
-       - Native stack (Native method calls in VM)
+        - Java stack (Java method calls)
+        - Native stack (Native method calls in VM)
 - Other: For example native C code
 - Debug Out-Of-Memory Errors
-
 ``` {.bash}
 # Print out heap dump
 -XX:+HeapDumpOnOutOfMemoryError
@@ -3827,7 +3816,6 @@ in mvn use: `mvn test -Dgroups=group3,group2`
 ```
 
 # 📅 25.04.2022 Team: Meeting rules
-
 -   👥: Team and 👩‍🏫: Facilitator
 -   Before the meeting
     -   👩‍🏫 Before sending out the invite go through the 7Ps below and put relevant information in the invite (like outcome and preparation)
@@ -3844,20 +3832,17 @@ in mvn use: `mvn test -Dgroups=group3,group2`
 -   After the meeting
     -   👩‍🏫 Create action items in the Daily Guide
     -   👩‍🏫 Update the Meeting notes and follow up with action items e.g. updating a LADR
-    -   👥 Everyone should go through the meeting notes and provide comments if necessary.
+    -   👥 Everyone should go through the meeting notes and provide comments if necessary
 
 # 📅 22.04.2022 IntelliJ: Shelve and unshelve changes
-
 -   Like stashing a change list (creating a patch), which you can apply later again
 -   this happens automatically in IntelliJ when you pull with changes in working dir
 
 # 📅 22.04.2022 Jackson: Objectmapper for enums
-
 -   Serialization: `@JsonValue`, indicates a single method that the library will use to serialize the entire instance. e.g. `toString()`
 -   Deserialization : `@JsonCreator`, just out this on the constructor and specificy the primitives you want to create the object from
 
 # 📅 21.04.2022 Networking: DNS server mappings are cached locally Working on Windows OS
-
 -   `nslookup  <url>` does reach out to dns server to retrieve IP
 -   `tracert <url>` goes same route as os, uses cache (not reaching out to dns server every time)
 -   `ipconfig /flushdns` clear local cache
@@ -3865,12 +3850,10 @@ in mvn use: `mvn test -Dgroups=group3,group2`
     -   specified via Windows `c:\Windows\System32\Drivers\etc\hosts` file
 
 # 📅 20.04.2022 Networking: Principle of Round Robin
-
 -   Easy process for network/process schedulers to distribute load/data amongst workers etc.
 -   Round-robin DNS: Principle applied on redundant DNS servers, like a load balancer
 
 # 📅 19.04.2022 Networking: Fundamentals
-
 -   `nslookup <url>`: Nameserver lookup, shows responding dns server for that url and the ip\'s it is resolving to
 -   `route print` / `netstat -r`: Showing routing tables
 -   `DNS server`: Responsible to translate domain names into IP adresses
