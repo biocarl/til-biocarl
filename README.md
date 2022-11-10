@@ -27,6 +27,43 @@
 
 ---
 
+# 📅 10.11.2022 sql: What is the difference between Datetime, timestamp?
+- `TIMESTAMP` is like a unix timestamp denoting a point in time in UTC, is converted back and forth when retrieved
+- `DATETIME` is stored with the current timezone and not converted in UTC
+- `TIMESTAMP` is usually used for internal creation/update timestamps
+
+# 📅 10.11.2022 sql: What is the difference between VARCHAR, TEXT and BLOB?
+- `TEXT` datatype is quite similar to `VARCHAR` - see differences [here](https://www.navicat.com/en/company/aboutus/blog/1308-choosing-between-varchar-and-text-in-mysql)
+- both of them are a bunch of bytes with an character set associated to it
+- A blob stores binary data, just a bunch of bytes used for example to store image data
+- To convert between binary and text representation see [charset conversion](https://dev.mysql.com/doc/refman/8.0/en/charset-conversion.html)
+
+# 📅 10.11.2022 sql: What is the difference between SET and ENUM?
+- both of them act as a constraint on values entered into the column
+-`ENUM`, like radio fields: you can choose one of the accepted values. Error value 0 or empty string are rejected
+-`SET`, like checkbox fields: you can choose choose multiple of the accepted values. Empty string is not rejected since it always part of `SET`
+
+# 📅 10.11.2022 sql: How to rewrite a inner join with a WHERE statement?
+- from a performance standpoint both statements are the same
+```sql
+SELECT product_name, category_name
+FROM product, category
+WHERE product.category_id = catgegory.id;
+```
+- but don't do this
+- since the WHERE statemen does not comply to the ANSI Syntax for JOINS
+- `INNER JOIN` is easy to replace with `OUTER JOIN
+- `STRAIGHT JOIN` also allows to define inner/outer loop, joining order
+
+# 📅 10.11.2022 sql: What is the ANSI Syntax?
+- ANSI SQL := a series of standards for modeling and manipulating data
+- Some vendors comply to that standard, some not or only partially
+
+# 📅 10.11.2022 sql: Which JOINS will I use the most often?
+- Most frequent `JOINS` you will end up using
+- `INNER JOIN`
+- `LEFT OUTER JOIN` aka. `LEFT JOIN`
+
 # 📅 09.11.2022 javascript: Why should you learn javascript?
 - Not really an alternative (except wasm) when you want to do something in the frontend
 - You can manipulate HTML, CSS and have custom logic in frontend
@@ -441,18 +478,10 @@ FROM product
 WHERE price = NULL -- `IS NULL` also works
 ```
 
-# 📅 07.11.2022 sql: How to rewrite a inner join with a WHERE statement?
-- but don't do this, does not follow conventions
-```sql
-SELECT product_name, category_name
-FROM product, category
-WHERE product.category_id = catgegory.id;
-```
-
 # 📅 07.11.2022 sql: What is understood under a OUTER JOIN?
 - Outer join returns all rows even if no matches are found
 - `LEFT JOIN`: Return all rows from the table on the left, `RIGHT JOIN` on the right
-- It is common practice to avoid right outer joins
+- It is common practice to avoid right outer joins, seldomly used since people got used to start with the table "which has all of the non-orphan items"
 ```sql
 SELECT product_name, category_name
 FROM product LEFT JOIN category
@@ -706,9 +735,9 @@ DECIMAL(6,2) -- 6 is total number of digits, 2 is decimal digits e.g. -9999.99, 
 - There are no boolean data types natively supported, you can use `BOOLEAN` but this is just a shorthand for `TINYINT(1)`
 - Characters
 ```sql
-VARCHAR(m) -- with max m bytes (255 8-bit number)
-VARCHAR(m) -- with max m bytes (255 8-bit number)
+VARCHAR(m) -- with max m bytes (255 - 8-bit number), with MySQL version 5.0.3 is now 65,535 - 16 bit
 ```
+
 - Time and date
 ```sql
 DATE ->  '1993-12-31';
@@ -852,7 +881,7 @@ SELECT product_name, category_name
 FROM product INNER JOIN category
 ON product.category_id = catgegory.id;
 ```
-- How to `INNER JOIN` several tables?
+# 📅 02.11.2022 sql: How to do INNER JOIN with several tables?
 - Just write several `JOIN` statements after `FROM`
 - For clarity and to avoid name conflicts provide table name as scope for each field you want to select
 ```sql
