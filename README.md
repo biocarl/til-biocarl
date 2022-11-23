@@ -33,8 +33,8 @@
     - via probs (think of them like parameters or attributes in the html context)
     - via slots (this is of as text nodes)
 - `Props`
-    - Use custom attributes to pass them into a component, called `props`
-    - `props` should be always read-only (in theory you can mutate objects because they are passed by reference but you don't want this because data flow becomes very messy)
+- Use custom attributes to pass them into a component, called `props`
+- `props` should be always read-only (in theory you can mutate objects because they are passed by reference but you don't want this because data flow becomes very messy)
 ```javascript
 app.component('my-component-name', {
     props: {
@@ -48,23 +48,23 @@ app.component('my-component-name', {
     template: `<h1>{{isDarkMode ? "Darkmode" : "LightMode"}}<h1>`, // use prop fields like normal data fields
     })
 ```
-    - Then in parent component, given below state
+- Then in parent component, given below state
 ```javascript
 // return data() from app
 {
     isDarkModeSelection: true
 }
 ```
-    - with corresponding html template, you can call the nested component like so (notice `:attribute` binding only needed when value is dynamic)
+- with corresponding html template, you can call the nested component like so (notice `:attribute` binding only needed when value is dynamic)
 ```html
 <my-component-name :isDarkMode="isDarkModeSelection"></my-component-name>
 ```
 - `Slots`
-    - In the template
+- In the template
 ```html
 <MyComponent> This is some content I pass in!</MyComponent>
 ```
-    - In the component
+- In the component
 ```html
 <template>
   <div>
@@ -131,7 +131,8 @@ app.component('my-component-name', {
 # 📅 23.11.2022 vuejs: How so vue directives work?
 - Vue directives are instruction for VueJS to do things in a certain way
 - General syntax
-<p align="center"><img height=400 src="https://vuejs.org/assets/directive.69c37117.png" /></p>
+<p align="center"><img height=400 src="https://vuejs.org/assets/directive.69c37117.png" /></p><br>
+
 - Arguments (demarked by `:`) can also be dynamic
 ```html
 <!-- Evaluates e.g. to attributeName="src"-->
