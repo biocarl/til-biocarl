@@ -28,6 +28,303 @@
 ---
 
 
+# 📅 23.11.2022 vuejs: How to pass data into a component?
+- There is ways of doing this
+    - via probs (think of them like parameters or attributes in the html context)
+    - via slots (this is of as text nodes)
+- `Props`
+    - Use custom attributes to pass them into a component, called `props`
+    - `props` should be always read-only (in theory you can mutate objects because they are passed by reference but you don't want this because data flow becomes very messy)
+```javascript
+app.component('my-component-name', {
+    props: {
+        isDarkMode: {
+            type: Boolean, // we can enforce types here. Others are e.g. Array, Object, Date, Function
+            required: true, // gives warning if not supplied
+            default: true // default value, for booleans defaults to false if not stated otherwise
+
+        }
+    }
+    template: `<h1>{{isDarkMode ? "Darkmode" : "LightMode"}}<h1>`, // use prop fields like normal data fields
+    })
+```
+    - Then in parent component, given below state
+```javascript
+// return data() from app
+{
+    isDarkModeSelection: true
+}
+```
+    - with corresponding html template, you can call the nested component like so (notice `:attribute` binding only needed when value is dynamic)
+```html
+<my-component-name :isDarkMode="isDarkModeSelection"></my-component-name>
+```
+- `Slots`
+    - In the template
+```html
+<MyComponent> This is some content I pass in!</MyComponent>
+```
+    - In the component
+```html
+<template>
+  <div>
+    <strong>Below the content we passed in:</strong>
+    <slot />
+  </div>
+</template>
+```
+- `<slot>` is like a placeholder where we can inject text node content into
+
+# 📅 23.11.2022 vuesjs: Why can't you alert/log in a v-directive expression?
+- Due to the restricted exposure of globals, see [here](https://vuejs.org/guide/essentials/template-syntax.html#restricted-globals-access)
+- Template expression are sandboxed and can only access certain globals like `Math` or `Date`
+- If you want to log something in a template expression of a click handler just write wrap this in a method and reference it in the expression
+- If you want to expose certain globals you can do this in [`app.config.globalProperties`](https://vuejs.org/api/application.html#app-config-globalproperties)
+
+# 📅 23.11.2022 programming: What is the difference between a statement and a expression?
+- [source](https://www.baeldung.com/cs/expression-vs-statement)
+- An expression is a piece of code that can be evaluated to a value. Often you can think of it as something you could write into a `return` statement
+    - `1+2`
+    - `Singleton.getInstance()`
+    - `1 < 4`
+- An statement is valid code which can stand for itself and resembles a complete piece of information the compiler/computer can react on. Usually a statement returns `void`
+
+# 📅 23.11.2022 programming: What are the different cases used in programming languages?
+- Camel case
+    - is usually `lowerCamelCase`
+    - Origin: By Newton Love, "he mentioned that the humpiness of the style made him call it HumpyCase at first"
+- Pascal case
+    - sometimes also referred as `UpperCamelCase`
+    - Origin: "The casing style was popularized by the Pascal programming language"
+- Snake case
+    - is `snake_case` or `SNAKE_CASE` (sometimes called `SCREAMING_SNAKE_CASE`), both delimiting words words with `_`
+    - Origin: Because the `______(-)<` is like a snake on the floor
+- Kebab case
+    - is `kebab-case` (delimiting words with `-`)
+    - Origin: Because the `-` look like a skewer in a kebab: `-{}-@-{}@{}--`
+- Read more on different formating options [here](https://en.wikipedia.org/wiki/Naming_convention_(programming)#Multiple-word_identifiers) and [here](https://stackoverflow.com/questions/17326185/what-are-the-different-kinds-of-cases)
+
+
+# 📅 23.11.2022 javascript: How to create a copy of an array?
+- Example for `reverse()` because this mutates original array
+```javascript
+[...numbers].reverse()
+```
+- `...` is the [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) where you expand a list into arguments
+
+
+# 📅 23.11.2022 vuejs: How render a element n times?
+- Render a `div` 10 times
+```html
+<div v-for="n in 10">{{ n }}</div>
+```
+- If you want to render several elements without a enclosing div you can wrap this in a `<template>` tag and add the `v-for` directive there
+
+# 📅 23.11.2022 vuejs: How render a object (key/value) with a loop?
+```html
+<li v-for="(value, key) in propertyObject">
+  {{ key }}: {{ value }}
+</li>
+```
+- optionally you can also access the index with a third parameter
+
+# 📅 23.11.2022 vuejs: How so vue directives work?
+- Vue directives are instruction for VueJS to do things in a certain way
+- General syntax
+<p align="center"><img height=400 src="https://vuejs.org/assets/directive.69c37117.png" /></p>
+- Arguments (demarked by `:`) can also be dynamic
+```html
+<!-- Evaluates e.g. to attributeName="src"-->
+<a v-bind:[attributeName]="url"> </a>
+<!-- Shorthand for event binding, evaluates e.g. to eventName="click"-->
+<a @[eventName]="doSomething">
+```
+
+
+# 📅 23.11.2022 vuejs: How to bind multiple attributes to an element at once?
+- Usually you would define a attribute object and bind that to an element
+```javascript
+// return data() from app
+{
+    someProperties: {
+        src: "oma.app/profile.png",
+        height: 12px,
+        width: 12px
+    }
+}
+```
+```html
+<!-- Note that no argument is provided for the bind directive-->
+<img v-bind="someProperties">
+<!-- Evaluates to this:-->
+<img src="oma.app/profile.png" height="12px" width="12px" >
+```
+- as a binding object you can also use computed attributes which is quite powerful (e.g. calculate booleans in property and not inline in template)
+
+# 📅 23.11.2022 vuejs: How to evaluate HTML when injecting into a template?
+- There is a `v-html` directive, which you would use like this
+```html
+<p>Evaluated html: <span v-html="someHTML"></span></p>
+```
+- Note this evalates raw html and no template syntax like bindings etc. (for this you should use components)
+
+# 📅 22.11.2022 npm: How to run several tasks at once?
+- The usual unix operators apply
+```bash
+# Run run sequentially
+"dev": "vite && json-server --watch mocks/db.json --routes mocks/routes.json",
+# Run run in parallel
+"dev": "vite & json-server --watch mocks/db.json --routes mocks/routes.json"
+```
+- If you want to have them in one task, having the option to interupt them both with `Crtl + C`, use package `concurrently`
+```bash
+"dev": "concurrently --kill-others \"command1\" \"command2\""
+```
+
+# 📅 22.11.2022 vuesjs: vite: How to inject environment dependent variables on build time?
+- Vite has the concept of different modes: `development` (on `dev` task) and `production` (on `build` task)
+- Depending on the mode environment variables are loaded from either `.env` (always loaded) or `.env.development`/`.env.production` (overwrites more general definition)
+- A env-file is a simple key-value mapping, variables need to be prepended with `VITE_` for exposing them to the application
+```plaintext
+# in .env.development located in root folder (defined in `envDir`)
+VITE_URL=http://localhost:3000
+```
+- Environment variables can be accessed via
+```javascript
+console.log(import.meta.env.VITE_URL);
+// Current mode can be checked with
+console.log(import.meta.env.MODE); // or check for boolean: import.meta.env.PROD/DEV
+```
+
+# 📅 22.11.2022 javascript: How to do string interpolation?
+```javascript
+console.log(`also for normal String`);
+console.log(`string text ${1+1} string text`);
+```
+
+# 📅 22.11.2022 javascript: How to create anonymous functions?
+```javascript
+// you can pass this a parameter
+function (a, b) {
+    return a + b;
+};
+// Since ES6
+(a, b) => a + b;
+```
+# 📅 22.11.2022 vuejs: How to react on a state update with a side-effect?
+- In vue you can bind state changes to a attribute (`v-bind:..`) or a text node (`{{...}}`)
+- But also a value calcultion with `computed` properties
+- If you just want to trigger a side-effect like an API call on state change, use `Watcher`
+```javascript
+export default {
+    data() {
+        return {
+            someVar: "",
+        }
+      },
+      watch: {
+        someVar(newVal, oldVal){
+          console.log("Changed!! With " + newVal);
+        }
+      }
+}
+```
+- If you have multiple values you can either
+    - create a `computed` composite and observe this
+    - or store it in a composite object in the first place (but then do not forget to use a [Deep Watcher](https://vuejs.org/guide/essentials/watchers.html#deep-watchers) -> `deep:true` option)
+
+# 📅 22.11.2022 vuejs: How does the component lifecycle work?
+- Most important state changes are
+    - `created`: Here you would normally fetch data before populating the view of a component
+    - `mounted`: Used when you need the rendered dom for applying a side-effect
+    - `updated`
+    - `unmounted`
+- Exposed for instance through Options API like so
+```javascript
+export default {
+  mounted() {
+    console.log(`Finished`);
+ }
+}
+```
+
+
+# 📅 21.11.2022 unix: How to change to different user in cli?
+- `su -i "USER"`
+
+# 📅 21.11.2022 npm: What is npm?
+- A package manager for node.js (Javascript)
+
+# 📅 21.11.2022 npm: How to update?
+- `npm update -g`
+
+# 📅 21.11.2022 vuesjs: What is vite?
+- The official build tool for vue
+
+# 📅 21.11.2022 javascript: What is ECMAScript?
+- Since each browser has its own Javascript interpreter a standard was needed to ensure the written Javascript is compatible with all the different browsers
+- Common verisons are
+    - ES6(ECMAScript 2015)
+    - ES7(ECMAScript 2016)
+    - ES8(ECMAScript 2017)
+- Since 2016 version are usually named by the year only
+- For versions and compability see [here](https://www.w3schools.com/js/js_versions.asp)
+
+# 📅 21.11.2022 javascript: What is Typescript?
+- A superset of Javascript
+- Extends the language by a static type system
+
+
+# 📅 21.11.2022 javascript: What is JSX?
+- A Javascript extension allowing to work with xml sytnax
+- Stands for Javascript XML
+- Originally HTML (subset of XML) with javascript in `<script>` tags, now it is the other way round: Javascript with xml tags
+- Allows you to something like this
+```javascript
+var nav-bar = (
+    <ul id="nav-bar">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+);
+```
+- Since JSX is not supported by browsers, written JSX code needs to converted into ordinary Javascript code (done by a preprocessor)
+
+
+# 📅 21.11.2022 networking: What is a CDN?
+- CDN := A content delivery network delivering content from a content delivery server based on the geographical location of the client
+
+# 📅 21.11.2022 vuesjs: What is the difference between views and components?
+- A View is a specific component which is used for routing (orchestrated by Vue Router)
+- When a certain route is matching view is shown in the corresponding `<RouterView />`
+- Example of how a router could look like
+```javascript
+import Home from '@/views/HomeView.vue'
+import About from '@/views/AboutView.vue'
+
+export default [
+  {
+    path: '/',
+    name: 'home',
+    component: HomeView,
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: AboutView,
+  },
+]
+```
+- A view itself usually would contain some other resuseable components
+- The distinction between views and components is a artifical one and does not have to be followed, it is just a convention scaffolding tools like `vite` is using
+
+# 📅 21.11.2022 How to test my frontend with backend rest dependencies?
+- Spin up local backend yourself
+- Spin up a mock server serving a REST api, recommended tool: [json-server](https://github.com/typicode/json-server)
+- Tooling for intercepting calls (also possible from Chrome Browser), recommended tool: [msw](https://github.com/mswjs/msw)
+
+
 # 📅 17.11.2022 sql: normalization: What is understood under 4NF?
 - **If we break 3NF we also violate 4NF**
 - **If we do have multi-valued dependencies on a non-key attribute we break 4NF**
@@ -47,10 +344,10 @@ id,race,skin_color
 
 
 # 📅 17.11.2022 vuejs: How to create an app?
-- How your main.js looks like
+- In `main.js` the vue app is created via `createApp`, with a mandatory options object, containing
+    - `data` which is the data model which is used in the view/html template
 ```javascript
 const app = Vue.createApp(
-    // options object is mandatory
     { data: function {
         return { item: 'Tomato' }
         }
@@ -67,9 +364,9 @@ const app = Vue.createApp(
 );
 ```
 - import main.js into your index.html and mount it (injecting into dom element with id `main`)
+- each `{{value}}` creates a connection (like a telephone line) to the dynamically created hash map in main.js/app
 ```html
 <div id="main">
-    <!-- each {{value}} creates a connection (like a telephone line) to the dynamically created hash map in main.js/app-->
     <h1>{{item}}</h1>
 </div>
 <!-- Import vue.js-->
@@ -81,9 +378,12 @@ const app = Vue.createApp(
     const mountedApp = app.mount('#main');
 </script>
 ```
+- if the app options do not contain a template field, the html in the container will be used as template (called in-DOM template)
+    - here you have to use kebab-case for components to comply to the Dom parsing of the browser
+    - For more in-DOM template implications see [here](https://vuejs.org/guide/essentials/component-basics.html#dom-template-parsing-caveats)
 
 # 📅 17.11.2022 vuejs: What does {{someThing}} mean in my html?
-- Called moustache syntax and allows us to run javascript in our html (without an explicit script syntax)
+- Called mustache syntax and allows us to run javascript in our html (without an explicit script syntax)
 ```html
 <h1>{{alert('Hello World!')}}</h1>
 <h1>{{'This is ' + myName}}</h1>
@@ -99,11 +399,11 @@ const app = Vue.createApp(
 ```javascript
     document.getElementById("myHeader").innerHTML = 'This is ' + mountedApp.item;
 ```
-- What the framework additionaly is doing is running this code whenever that specifc value has changed.
+- What the framework additionaly is doing is running this code whenever that specifc value has changed
 - For more read into `Vue's Reactivity System`
 
 # 📅 17.11.2022 vuejs: What is attribute binding?
-- With the moustache syntax `{{}}` you can only use in text nodes but not in a expression of a attribute
+- With the moustache syntax `{{}}` you can only use in text nodes but not for values of HTML attributes
 - Given you expose `url` field
 ```javascript
 // return data() from app
@@ -120,6 +420,8 @@ const app = Vue.createApp(
 <img v-bind:src="url">
 <img :src="url"> <!-- shorthand-->
 ```
+- if the bound value is null or undefined the attribute will be removed
+- those custom dom attributes like `v-bind` are called vue directives, see [here](https://vuejs.org/api/built-in-directives.html) for complete overview of native directives
 
 # 📅 17.11.2022 vuejs: What is conditional rendering?
 - Like a if-else helping you to decide which dom elements you want to render
@@ -141,33 +443,50 @@ const app = Vue.createApp(
 ```
 - You do not need a fall-back element with `v-else` if there is nothing to show
 - If you want to just toggle visibility on a condition use `v-show` (will always be part of the dom). Often used for instance for a modal
+- When you want to conditionally render several elements without wanting to introduce a parent element, use template
+```html
+<template v-if="renderThis">
+  <h1>Hello World</h1>
+  <p>Some subtitle</p>
+  <p>and more text</p>
+</template>
+```
+- When rendering the dom the `<template>` tag will be not part of it
 
 # 📅 17.11.2022 vuejs: How to render lists?
-- like a for-loop, creating a duplicate of the tagged `v-for` for each element of `items`. The current element can be accessed with `item`
+- for creating several elements at once we need to use the `v-for` directive on the element we want to repliate e.g. `<li>`
+- same principle as a for-each loop, for each element `item` of `items`
+- The current element can be accessed with the alias `item`
 ```javascript
 // return data() from app
 {
     items: [{ name: "Tomato", quanity: 12, id: 1},{ name: "Milk", quanity: 2, id:2},{ name: "Cheese", quanity: 8, id:3}]
 }
 ```
+
 ```html
 <div>Items:</div>
 <ul>
+    <!-- Instead of in you can also use for-->
     <li v-for="item in items">{{'Product: '+ item.name + ', Stock: '+item.quantity}}</li>
 </ul>
 ```
-- It is important that each list item has a unique id (note the shorthand for attribute binding `:attribute`)
+- Each list item should have a unique id (note the shorthand for attribute binding `:key`)
     - gives us performance improvments
     - track item for instance when identifying clicked element
+    - very important if child elements are components or dom elements with state
+    - See more details [here](https://vuejs.org/guide/essentials/list.html#maintaining-state-with-key)
 ```html
 <div>Items:</div>
 <ul>
     <li :key="item.id" v-for="item in items">{{'Product: '+ item.name + ', Stock: '+item.quantity}}</li>
 </ul>
 ```
+- Alternatively we can also use the current index of each element e.g. key="item_"+index
 
 # 📅 17.11.2022 vuejs: How to do event handling?
-- First the event handler needs to be written and registred in the vue app
+- First the event handler needs to be written and registred in the vue app (in the `methods` field of our options object)
+- Note how data attributes are referenced with `this`. You can also assign other attributes to `this` but they want be reactive as they are when declared in the `data` object
 ```javascript
 const app = Vue.createApp(
     {
@@ -181,7 +500,7 @@ const app = Vue.createApp(
     }
 );
 ```
-- Listening to `click` event, in the expression we just reference the name of the event handler we want to run
+- In order to register the event handler on the `click` event, we use the `v-on` directive
 ```html
 <button v-on:click="alertTheWorld">Click-me!</button>
 <!-- Shorthand for v-on is @ -->
@@ -285,7 +604,9 @@ const app = Vue.createApp(
 );
 ```
 - this is also useful as a alias e.g. if you need to do this often `this.items[this.currentItemIndex].variant[this.variantSelection].name` is probably better to create an computed property
-
+- Or also used if you want to provide a sorted list
+- You can also use computed properties to calculate values and have a different type as output
+- Creating a message like this: `message=this.author.books.length > 0 ? 'Yes' : 'No'`
 
 # 📅 17.11.2022 vuejs: What are components?
 - Basic building blocks of a vue.js app
@@ -303,35 +624,40 @@ app.component('my-component-name', {
 ```html
 <my-component-name></my-component-name>
 ```
+- [Single-File-Components](https://vuejs.org/guide/scaling-up/sfc.html): Since you will end up creating and using a lot of components you can also use an **alternative way** of declaring components
+    - you can use specific dom tags for defining script/template logic
+    - Syntax described [here (SFC))](https://vuejs.org/api/sfc-spec.html)
+    - File extension is `.vue`
+    - A compiled SFC is a proper Javascript module and therefore can also be imported like a module `import MyComponent from './MyComponent.vue'`
+    - Therfore do not forget the `export default {..}` (alternatively you can also export several components from the same file if you use named exports)
+    - For Single-File-Components you should use `PascalCase` in order to differentiate from html tags (even though the compiled html is case-insensitive)
 
-# 📅 17.11.2022 vuejs: How to pass data into a component?
-- Use custom attributes to pass them into a component, called `props`
-```javascript
-app.component('my-component-name', {
-    props: {
-        isDarkMode: {
-            type: Boolean, // we can enforce types here. Others are e.g. Array, Object, Date, Function
-            required: true
-
-        }
-    }
-    template: `<h1>{{isDarkMode ? "Darkmode" : "LightMode"}}<h1>`, // use prop fields like normal data fields
-    })
-```
-- Then in parent component, given below state
-```javascript
-// return data() from app
-{
-    isDarkModeSelection: true
-}
-```
-- with corresponding html template, you can call the nested component like so (notice `:attribute` binding)
 ```html
-<my-component-name :isDarkMode="isDarkModeSelection"></my-component-name>
+<script>
+    export default {
+      data() {
+        return {
+          greeting: 'Hello World!'
+        }
+      }
+    }
+</script>
+
+<template>
+  <p class="greeting">{{ greeting }}</p>
+</template>
+
+<style>
+    .greeting {
+      color: red;
+      font-weight: bold;
+    }
+</style>
 ```
 
 # 📅 17.11.2022 vuejs: How to trigger state changes outside of component?
 - In short, emit an event to the parent component that a certain thing happened
+- Note the `$` prefix, this is reserved for Vue's internal API's (same for `_` which is for internal properties)
 ```javascript
 app.component('my-component-name', {
     // template, probs, computed ...
@@ -359,6 +685,9 @@ const app = Vue.createApp(
     }
 );
 ```
+- Apart from emitting events you can also
+    - Pass down a hook which updates parent state
+    - Use tech like `vuex store` which maintains a global state everyone can read and write from
 
 # 📅 17.11.2022 vuejs: How to create forms?
 - `v-bind`/`:attribute` only binds from vue backend to template (on-way)
@@ -407,7 +736,7 @@ arr = [];
 (null == false)
 (NaN == false)
 ```
-
+- when talking about the opposite of falsy we often talk about the truthiness of e.g. a property
 
 # 📅 14.11.2022 sql: How to update a value in a row?
 ```sql
