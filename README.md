@@ -27,6 +27,36 @@
 
 ---
 
+# 📅 06.12.2022 npm: How to list a dependency tree?
+```bash
+npm list --depth=10
+```
+
+# 📅 06.12.2022 npm: How to update dependencies?
+```bash
+npm update --save // to store it in package.json
+```
+
+# 📅 06.12.2022 vite: How to user test production ready app?
+```bash
+# Instead of only using hot-reload dev command with vite
+vite
+# You should generate the build files locally and preview it
+vite build && vite preview
+```
+- for the preview to work you might need to adapt the `vite.config.js` (since local server is spawn relative to src dir)
+```javascript
+{ //config
+  base: '/dist/',
+}
+```
+
+# 📅 06.12.2022 git: How to create a tag and push it?
+```bash
+git tag TAG_NAME
+git push origin --tags
+```
+
 # 📅 06.12.2022 css: How to preverse whitespace in a text node?
 ```css
 #target{
@@ -251,7 +281,30 @@ console.log(var1); // can result in 'onlyInternal?'
 
 # 📅 25.11.2022 mocha: What is it and for what do we use it?`
 - Install and run `npm install --save-dev mocha && npm test`
-- Create a `./test` folder
+- Provided you create a npm task like this (in `package.json`)
+```json
+{
+  "scripts": {
+    "test": "mocha test/**/*.js"
+    },
+  "type":"module"
+}
+```
+- And Create a `./test` folder with test files with following skeleton
+```javascript
+import { methodName } from  "../../src/services/helpers.js";
+import assert from "assert";
+
+describe('Unit test helper functions', function () {
+    describe('methodName', function () {
+        it('should return expected string', function () {
+            assert.equal(
+                "expectedString",
+                methodName());
+        });
+    });
+});
+```
 
 # 📅 25.11.2022 javascript: How to destructure function parameters?
 - Destructuring object based on keys
