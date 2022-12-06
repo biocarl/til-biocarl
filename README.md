@@ -27,11 +27,288 @@
 
 ---
 
+# 📅 06.12.2022 css: How to preverse whitespace in a text node?
+```css
+#target{
+    white-space: pre; /* use pre-wrap to keep wraps*/
+}
+```
+```html
+<div id="target">H   e ll   o </div>
+```
+
+
+# 📅 06.12.2022 css: What are some interesting use-cases for pseudo-classes?
+- `:first-letter`, matches first letter of text (same for `:first-line`)
+- `:first-child`, matches first child (same for `:last-child`, `:nth-child(2)`)
+- `:hover`, matches element when it is hovered over
+
+# 📅 06.12.2022 css: How to creater element counters?
+- In css you can keep track the number of times an element appears on a page with the counter variable you define
+- In this example you have several `.bubble` elements on the page and you want to number them
+```css
+.bubble{
+    counter-increment: myCounter 1; /* you can also supply a counter increment, defaults to 1 */
+}
+
+.bubble:before{
+    content: "(" counter(myCounter) ")" ; /* increments counter and returns it*/
+}
+```
+
+# 📅 06.12.2022 css: How to do absolute positioning?
+- Absolute positioning allows you to position an element relative to its parent container
+```css
+#target{
+    position: absolute;
+    top: 0; /* you can also use relative units like 50% */
+    left: 0;
+    z-index: 4; /* High number puts the element in the foreground */
+}
+```
+
+# 📅 06.12.2022 css: How to do fixed positioning?
+- Fixed positioning allows you to position an element relative to the browser window.
+- The element will remain in the same position on the page, even if the user scrolls the page
+```css
+#target{
+    position: fixed;
+    top: 90%; /* floating nearly at the top */
+    left: 0;
+    width: 100%; /* like a banner*/
+    z-index: 4; /* High number puts the element in the foreground */
+}
+```
+- Some usecases would be a navigation banner, or a chat bot icon
+
+# 📅 06.12.2022 css: How to do relative positioning?
+- You would use this if you want to finetune a layout but do not want to change the other elements layout
+- It is called relative because you define offsets relative to its original position
+```css
+#target{
+    position: relative;
+    top: -10px; /* relative to orginal position */
+}
+```
+
+# 📅 06.12.2022 css: What is the difference between block elements and inline elements?
+- Block elements are a line break after them like `body`,`br`,`div`,`article`,`ul`,`li`,`...`
+- Inline elements do not have breaks like `a`,`span`,`code`, `input`,`img`,`...`
+
+# 📅 06.12.2022 css: What are the common unit types and when to use them?
+- Pixel, `px`, use for example for raster images or any fixed size requirements
+- Ems, `em` corresponds to font-size of current element (`rem` of root element), use for response designs
+- Percent, `%` of the parent element, use for responsive designs
+- Points, `pt` often used for fonts
+- Usually you should use: `em`, `rem`, `%` and `px` for fixed elements
+- You should avoid using viewport units like `vw`, `vh`, `vmin`, `vmax` (percentages relative to viewport)
+- Unit examples
+    - Borders you would specifiy in `px` because you typically do not want them to scale: `border-bottom: 2px solid #fff;`
+    - Font sizes you would specifiy with `em` always relative to the current/parent element  `font-size: 0.9em;`
+    - For padding/margins you should use `rem`, if in component it is better for reusability
+    - For media queries always use `em` (never use `px`) - [source](https://cloudfour.com/thinks/the-ems-have-it-proportional-media-queries-ftw/)
+
+# 📅 06.12.2022 css: What is the difference between border, margins and padding?
+- Both padding and margin are used to create space around elements
+- Boader is surrounding all of your content and padding, outside the border is the margin defined
+- Or put differently: Margin is used to create space around an element, while padding is used to create space within an element.
+- When to to use what?
+    - Per default you should always use margin, except you have a visible background and want to show some empty space between content and border
+    - Be aware then margins auto-collapse - think of it as a min space between two elements if two elements have margin=100px then the total space between will be 100px. padding is added though since it is part of the element within the boarders
+    - Be aware that margin is not part of the click region (contrary to padding)
+
+# 📅 06.12.2022 css: What are the different css selectors?
+- [source](https://www.w3schools.com/cssref/css_selectors.php)
+```css
+/* Matches dom tags */
+h1 {
+    color: blue;
+}
+/* Matches classes */
+.title {
+    font-size: 2em;
+}
+
+/* Matches id */
+.logo-vip {
+    height: 20px;
+}
+/* Matches all elements having an attribute (e.g. all img elements with an height attribute) */
+img[height]{
+    width: auto;
+}
+/* you can also match for specific attribute values (equal '=', contains '*=', starting with '^=', ending with '$=' */
+img[height=200]{
+    width: 100px;
+}
+/* Append/Prepend to element e.g. prepending '>>>' before each header */
+h1:before { /* also :after */
+    content: ">>>";
+}
+```
+
+# 📅 06.12.2022 css: How to combine css selectors?
+- style several entities at once
+```css
+h1, h2 {
+    color: blue;
+}
+```
+- match all elements with a important class which are located inside a span (decendants of span)
+```css
+span .important {
+    color: red;
+}
+/* for direct decendants use this*/
+span > .important {
+    color: red;
+}
+
+```
+- match all span elements with a important class
+```css
+span.important {
+    color: red;
+}
+/* also works with other selectors like id matcher */
+span#specialAlert {
+    color: red;
+}
+```
+- one selector following the other (first paragraph after each header)
+```css
+h1 + p {
+    font-style: italic;
+}
+```
+
+# 📅 06.12.2022 css: How to style several entities at once?
+- Just comma-seperate them
+```css
+h1, h2 {
+    color: blue;
+}
+```
+
+# 📅 06.12.2022 css: How to select every element there is?
+```css
+/* Matches everything */
+* {
+    font-family: Arial;
+}
+
+/* Matches every child element of div */
+div * {
+    color: red;
+}
+```
+
+
+
+# 📅 06.12.2022 css: How to import other css files?
+- Imports must be at the very top of the file
+```css
+@import "someOtherFile.css"
+```
+
+
+
+
+# 📅 05.12.2022 javascript: What is hoisting?
+- All variable or function declarations are moved to the top of the file/or scope so you do not have to order the functions accordingly
+```javscript
+console.log (var1);
+var var1 = "hey";
+//results in
+var var1;
+console.log(var1); //still undefined
+var1 = "hey";
+```
+
+# 📅 05.12.2022 javascript: What is the difference between var, let and const?
+- `var` can be locally or globally scoped (dependning on if you declare it in function or outside in file)
+    - can be update but also redeclared
+```javascript
+var var1 = "Hello";
+var var1 = "redeclared";
+var1 = "update";
+// problem: it also redeclares from nested scope
+if (isSunshine) {
+        var var1 = "onlyInternal?";
+}
+console.log(var1); // can result in 'onlyInternal?'
+```
+- `let` can be updated but not redeclared (in nested scope it will be a second scoped local var instead): this is why you should prefer using `let`
+- Both `var` and `let` declarations are hoisted but `var` will result in undefined at runtime and `let` in a Reference Error
+- `const` is like `let` but is final, meaning it needs to be assigned at the moment of declaration and can't be updated (but we still can update properties of an object)
+
+
+# 📅 05.12.2022 node: How to use import statements in node?
+- ES6 Modules are not supported by default in node.js
+- In `package.json` you need to add `"type":"module"`
+- and instead of `require` you need to use now `import { someFunction } from  "../../src/functions.js";` or e.g. `import assert from "assert";`
+- of course this requires that you also use the correponding `export` statements
+
+# 📅 25.11.2022 mocha: What is it and for what do we use it?`
+- Install and run `npm install --save-dev mocha && npm test`
+- Create a `./test` folder
+
+# 📅 25.11.2022 javascript: How to destructure function parameters?
+- Destructuring object based on keys
+```javascript
+func({name: "Lara", age: 29});
+
+function func({name, age}) {
+    console.log(`${name} && ${age}`)
+}
+// give different local var name
+function func({name: n1, age: a1}) {
+    console.log(`${n1} && ${a1}`)
+}
+// give default value
+function func({name = 'James', age = 12}) {
+    console.log(`${name} && ${age}`)
+}
+// and combined
+// give default value
+function func({name: n1 = 'James', age: a1 = 12}) {
+    console.log(`${n1} && ${a1}`)
+}
+```
+- More on destructuring [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) e.g. arrays
+
+# 📅 25.11.2022 javascript: How to assign several properties to a object at once?
+- Option 1 (ES2015)
+```javascript
+const originalObject = {
+    school: "Bogy",
+    studentCount: 30,
+    country: "Germany"
+};
+const thingsToChange = {
+    school: "Bogy+VHG",
+    studentCount: 60,
+};
+
+const combinedObject = Object.assign({}, originalObject, thingsToChange);
+// resulting in
+combinedObject = {
+    school: "Bogy+VHG",
+    studentCount: 60,
+    country: "Germany"
+};
+```
+- Option 2 (ES2016)
+```javascript
+const combinedObject = {...originalObject, school: "Bogy+VHG", studentCount: 60}
+// or with object reference (don't mix up the order!)
+{...originalObject, ...thingsToChange}
+```
 
 # 📅 23.11.2022 vuejs: How to pass data into a component?
 - There is ways of doing this
     - via probs (think of them like parameters or attributes in the html context)
-    - via slots (this is of as text nodes)
+    - via slots (like text nodes, think of parameterized templates)
 - `Props`
 - Use custom attributes to pass them into a component, called `props`
 - `props` should be always read-only (in theory you can mutate objects because they are passed by reference but you don't want this because data flow becomes very messy)
