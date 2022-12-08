@@ -27,6 +27,79 @@
 
 ---
 
+# 📅 08.12.2022 vuejs: How to style bind css functions?
+- Treat the function as a string and concat the function call if you have arguments
+```html
+<li :style="{filter: 'brightness('+ (1 - depth/10) +')'}"  >{{name}}</li>
+```
+
+# 📅 08.12.2022 github actions: How to reuse workflows?
+- For the workflow you want to reuse change the `on` trigger to `on: [workflow_call]`
+- and reference that workflow from another workflow like this
+```yaml
+name: "Some other workflow"
+run-name: ${{ github.actor}} is running the build job
+on: [push]
+jobs:
+  call-build-job:
+    uses: ./.github/workflows/build-job.yaml
+```
+
+# 📅 08.12.2022 github actions: How to upload and download artefacts/files?
+```yaml
+name: "Workflow for uploading/downloading files"
+on: [push]
+jobs:
+  upload-download-files:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: "Upload file"
+        uses: actions/upload-artifact@v3
+        with:
+          name: "Users.txt"
+          path: ./files/users.txt
+     - name: "Download file"
+       uses: actions/download-artifact@v3
+       with:
+         name: "Users.txt"
+```
+
+# 📅 08.12.2022 devops: What is continous integration?
+- The idea is that developers should aim for integration into the shared repository as soon as possibily
+- Integration here means resolve merge conficts but also pass the automated suite of tests/and or manually validate new changes
+- The overall goal is that software is always in a state where it can be released and deployed to production
+- One methodlogy to achieve this is for example trunk-based development (avoiding branches alltogether)
+
+# 📅 08.12.2022 devops: What is devops?
+- Devops is a general approach which tries to improve the path to production
+- it puts emphasis on people, processes, and technology in order to focus on the fast iterations and product value (agile mindset)
+- the general idea is that infrastructure related tasks should be at best fully automated so that developers can focus on developing new features or incorporate collected feedback
+
+# 📅 08.12.2022 devops: What is the difference between Continuous delivery and continuous deployment?
+- They are both almost identical, they both encompass building and testing and releasing updates
+- The difference is that Continuous Delivery software is only released but not deployed to a production environment
+- This allows the team to manually review changes and decide if the changes should be deployed to production
+- With Continuous Deployment the only quality gate before source is deployed to production are the tests, everything is fully automated
+
+# 📅 07.12.2022 vuejs: How to share css between components?
+- Extract into shared css and do this in each component
+```html
+<style scoped>
+@import "@/assets/shared.css";
+</style>
+```
+
+# 📅 06.12.2022 vite: How to debug preview app?
+- Disable minify of js in `vite.config.js` so you can inspect javascript in browser
+```json
+{ //config
+    build:{
+        minify: false
+    }
+}
+```
+-
+
 # 📅 06.12.2022 npm: How to list a dependency tree?
 ```bash
 npm list --depth=10
@@ -37,7 +110,7 @@ npm list --depth=10
 npm update --save // to store it in package.json
 ```
 
-# 📅 06.12.2022 vite: How to user test production ready app?
+# 📅 06.12.2022 vite: How to user-test production ready app?
 ```bash
 # Instead of only using hot-reload dev command with vite
 vite
@@ -6024,10 +6097,6 @@ Bob --> Alice: Gives ice cream
         -   interpretations
         -   completeness of your data
 -   Therefore, when you give feedback try to focus about the behavior and understand their intention first
-
-```{=html}
-<!-- -->
-```
 -   "He said, when you're screwing up and nobody's saying anything to you anymore, that means they gave up. And that's a lesson that stuck with me my whole life. Is that when you see yourself doing something badly and nobody's bothering to tell you anymore, that's a very bad place to be. Your critics are your ones telling you they still love you and care." - Randy Pausch
 -   Good exercise: Each person draws a picture and you swap with your partner and exchange feedback
     -   How did you feel as a giver? Was it easy? Did you use any specific techniques? Was your feedback incorporated in the drawing? Was your feedback listened to? Did you get the result you expected?\"
