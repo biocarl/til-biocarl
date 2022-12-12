@@ -1256,6 +1256,27 @@ mal13,coin,110
     - `age` depends not entirely on `PK(username,item_type)` since age does not change for a specific username/item_type combination. It only depends on username
 - 🛠 Repair this: here we should realize that a `user` is an important concept in its own write, create a user table and add the `age` column there. then `age` will depend entirely on `PK(username)`
 
+# 📅 14.11.2022 sql: What is the usecase of EXISTS?
+- `EXISTS` returns true if a subquery returned results and (!) short circuits if there is a match
+- Use-case: Retrieve all customers which have bought at least product below 100$
+```sql
+SELECT *
+FROM customer
+WHERE EXISTS
+    (
+    SELECT * FROM order
+    WHERE customer_id = customer.id AND price < 100
+    )
+```
+- This also can be rewritten with `JOIN`
+```sql
+SELECT * FROM customer as c
+    INNER JOIN order as o
+    ON o.customer.id = c.id
+    WHERE o.price < 100;
+```
+- But with `JOIN` the whole table is joined and matching process is not short-circuited
+- [further](https://stackoverflow.com/a/7082510)
 
 # 📅 14.11.2022 sql: normalization: What is understood under 3NF?
 - **If we break 2NF we also violate 3NF**
