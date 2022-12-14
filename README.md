@@ -28,6 +28,12 @@
 ---
 
 
+# 📅 14.12.2022 memes: What are some good source for memes?
+- [xkcd.com/](xkcd)(and [site](https://explainxkcd.com/wiki/index.php/1188:_Bonding) which explains some of those)
+- [/r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/) on reddit
+- SD,MJ etc ;)
+
+
 # 📅 14.12.2022 h2: How to access the ui locally?
 - Add this in `application.yaml/.properties`: `spring.h2.console.enabled=true`
 - And access via url: `http://localhost:8080/h2-console`
@@ -2651,6 +2657,7 @@ public class Main implements InterfaceA, InterfaceB {
   - Dog is the reference type and defines the contract and therefore callable methods. This is because `dog` could hold all different subtypes which might not have the methods contained in `SpecialDog`. In other words Java can not guarantee which subtype the variable holds, therefore it plays safe and sticks to the general type
   - SpecialDog is the object type and defines the method implementation (dynamic dispatch)
 - Reference type is about the what, object type is about the how
+- Just because someone says human to you doesn't mean you don't remember what your name is. (reference type vs object type)
 
 
 # 📅 02.10.2022 java: oop: polymorphism: Where do we see the concept of polymorphism in the Java Standard library?
