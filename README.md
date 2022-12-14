@@ -27,6 +27,12 @@
 
 ---
 
+
+# 📅 14.12.2022 h2: How to access the ui locally?
+- Add this in `application.yaml/.properties`: `spring.h2.console.enabled=true`
+- And access via url: `http://localhost:8080/h2-console`
+
+
 # 📅 08.12.2022 vuejs: How to style bind css functions?
 - Treat the function as a string and concat the function call if you have arguments
 ```html
