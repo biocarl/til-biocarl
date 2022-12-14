@@ -27,6 +27,16 @@
 
 ---
 
+# 📅 14.12.2022 intellij: Convenient tools 
+- Show shortcuts when using the mouse, [key-promoter-x](https://plugins.jetbrains.com/plugin/9792-key-promoter-x)
+
+# 📅 14.12.2022 java: Why can't you overwrite static methods?
+- static methods in Java are resolved at compile time
+- since method overriding is part of Runtime Polymorphism, static methods can't be overridden
+
+# 📅 14.12.2022 training: What will you learn in a coding bootcamp?
+- You will start walking but it will take a lot longer to master the skill
+- Recommended [article](https://norvig.com/21-days.html)
 
 # 📅 14.12.2022 memes: What are some good source for memes?
 - [xkcd.com/](xkcd)(and [site](https://explainxkcd.com/wiki/index.php/1188:_Bonding) which explains some of those)
