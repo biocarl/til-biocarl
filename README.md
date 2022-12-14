@@ -27,6 +27,27 @@
 
 ---
 
+
+# 📅 14.12.2022 fun: What are some common animal sounds? (onomotopoeia)
+- [source](https://www.fluentu.com/blog/english/animal-sounds-in-english/)
+- Cats — `meow`
+- Dogs — `woof`
+- Horses — `neigh`
+- Goats and sheep — `baa`
+- Pigs — `oink`
+- Cows — `moo`
+- Donkeys — `hee-haw`
+- Chickens — `cluck`
+- Roosters — `cock-a-doodle-do`
+- Birds — `chirp`
+- Mosquitoes — `buzz`
+
+# 📅 14.12.2022 programming: How do I approach a programming problem?
+- Read through the whole problem statement (!)
+- Which data types are involved. Do I already have all of them available or do I have to convert something? Which of the types are primitive or reference types?
+- Learn how to read documentation of available methods with its parameters
+- What is the first step I can do to come close to the solution? Can I simplfy the problem somehow?
+
 # 📅 14.12.2022 intellij: Convenient tools 
 - Show shortcuts when using the mouse, [key-promoter-x](https://plugins.jetbrains.com/plugin/9792-key-promoter-x)
 
