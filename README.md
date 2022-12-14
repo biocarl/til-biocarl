@@ -21,6 +21,14 @@
 
 ---
 
+# 📅 14.12.2022 java: oop: What are the basic terms with easy explanations?
+- things a object knows about itself -> instance variables
+- things an object can do -> methods
+-  A `class is not the `object: e.g. a list of contacts, a contact form is `class` defining how a contact looks like, and `object` is a specific entry
+- `instance` is another way of saying `object`
+- `constructor` Is a `method` which runs if you create a new `object` and which accepts parameters you can use to create a certain initial state. 
+- `class` is a blueprint for a `object` and tells JVM how how to make an object of that type
+
 
 # 📅 14.12.2022 fun: What are some common animal sounds? (onomotopoeia)
 - [source](https://www.fluentu.com/blog/english/animal-sounds-in-english/)
@@ -38,7 +46,9 @@
 
 # 📅 14.12.2022 programming: How do I approach a programming problem?
 - Read through the whole problem statement (!)
-- Which data types are involved. Do I already have all of them available or do I have to convert something? Which of the types are primitive or reference types?
+- Which data types are involved. Do I already have all of them available or do I have to convert something?
+  - Which of the types are primitive? I can do very little with them (look for static methods `Primitive.method`) or use the wrapper types instance methods
+  - What are reference types?
 - Learn how to read documentation of available methods with its parameters
 - What is the first step I can do to come close to the solution? Can I simplfy the problem somehow?
 
