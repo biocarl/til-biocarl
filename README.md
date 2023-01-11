@@ -258,10 +258,10 @@ git push origin --tags
     - For padding/margins you should use `rem`, if in component it is better for reusability
     - For media queries always use `em` (never use `px`) - [source](https://cloudfour.com/thinks/the-ems-have-it-proportional-media-queries-ftw/)
 
-# 📅 06.12.2022 css: What is the difference between border, margins and padding?
+# 📅 06.12.2022 css: What is the difference between border, margins and padding (box model)?
 - Both padding and margin are used to create space around elements
 - Boader is surrounding all of your content and padding, outside the border is the margin defined
-- Or put differently: Margin is used to create space around an element, while padding is used to create space within an element.
+- Or put differently: Margin is used to create space around an element, while padding is used to create space within an element (e.g. button).
 - When to to use what?
     - Per default you should always use margin, except you have a visible background and want to show some empty space between content and border
     - Be aware then margins auto-collapse - think of it as a min space between two elements if two elements have margin=100px then the total space between will be 100px. padding is added though since it is part of the element within the boarders
@@ -325,10 +325,28 @@ span#specialAlert {
     color: red;
 }
 ```
-- one selector following the other (first paragraph after each header)
+- one selector following the other, in the same hierachy (first paragraph after each header), aka. adjacent sibling combinator
 ```css
 h1 + p {
     font-style: italic;
+}
+```
+- match based on state (for more see pseudo-elements)
+```css
+a:visited {
+    color: green;
+}
+```
+
+- you can also combine several selectors
+```css
+/* a sequence of those elements in same hierachy */
+h1 + p + span {
+    color: green;
+}
+/* a nesting of those elements */
+section p span {
+    color: green;
 }
 ```
 
