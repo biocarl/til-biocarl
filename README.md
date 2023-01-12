@@ -206,7 +206,7 @@ git push origin --tags
 }
 ```
 
-# 📅 06.12.2022 css: How to do absolute positioning?
+# 📅 06.12.2022 css: layout: How to do absolute positioning?
 - Absolute positioning allows you to position an element relative to its parent container
 ```css
 #target{
@@ -217,7 +217,7 @@ git push origin --tags
 }
 ```
 
-# 📅 06.12.2022 css: How to do fixed positioning?
+# 📅 06.12.2022 css: layout: How to do fixed positioning?
 - Fixed positioning allows you to position an element relative to the browser window.
 - The element will remain in the same position on the page, even if the user scrolls the page
 ```css
@@ -231,7 +231,7 @@ git push origin --tags
 ```
 - Some usecases would be a navigation banner, or a chat bot icon
 
-# 📅 06.12.2022 css: How to do relative positioning?
+# 📅 06.12.2022 css: layout: How to do relative positioning?
 - You would use this if you want to finetune a layout but do not want to change the other elements layout
 - It is called relative because you define offsets relative to its original position
 ```css
@@ -241,14 +241,16 @@ git push origin --tags
 }
 ```
 
-# 📅 06.12.2022 html: What is the difference between block elements and inline elements?
+# 📅 06.12.2022 css: layout: What is the difference between block elements and inline elements?
 - Block elements are a line break after them like `body`,`br`,`div`,`article`,`ul`,`li`,`...`
 - Inline elements do not have breaks like `a`,`span`,`code`, `input`,`img`,`...`
+- Those elements default for `display` property to either `block` or `inline`
 
 # 📅 06.12.2022 css: What are the common unit types and when to use them?
+- There is absolute length units (like `px`, `mm`, `pt`) and relative ones (`em`, `ch`, `%`)
 - Pixel, `px`, use for example for raster images or any fixed size requirements
-- Ems, `em` corresponds to font-size of current element (`rem` of root element), use for response designs
-- Percent, `%` of the parent element, use for responsive designs
+- Ems, `em` corresponds to font-size of current element (`rem` of root element), use for response designs. `1.4rem` is 1.4 times the fontsize of the root element of the document.
+- Percent, `%` of the parent elements value for the same property, use for responsive designs
 - Points, `pt` often used for fonts
 - Usually you should use: `em`, `rem`, `%` and `px` for fixed elements
 - You should avoid using viewport units like `vw`, `vh`, `vmin`, `vmax` (percentages relative to viewport)
@@ -258,7 +260,7 @@ git push origin --tags
     - For padding/margins you should use `rem`, if in component it is better for reusability
     - For media queries always use `em` (never use `px`) - [source](https://cloudfour.com/thinks/the-ems-have-it-proportional-media-queries-ftw/)
 
-# 📅 06.12.2022 css: What is the difference between border, margins and padding (box model)?
+# 📅 06.12.2022 css: layout: box-model: What is the difference between border, margins and padding (box model)?
 - Both padding and margin are used to create space around elements
 - Boader is surrounding all of your content and padding, outside the border is the margin defined
 - Or put differently: Margin is used to create space around an element, while padding is used to create space within an element (e.g. button).
