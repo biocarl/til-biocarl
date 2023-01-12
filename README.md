@@ -21,6 +21,718 @@
 
 ---
 
+# 📅 12.01.2023 css: layout: box-model: How does margin work for `block` elements?
+- Margin values can be either positive or negative, creating additional space or remove additional space around the content-box (this can also cause overlapping)
+- Margin collapsing: The margin values of two neighboring boxes are 
+	- in case of the same sign, max(abs(marginA), abs(marginB)) - so always the most negative or positive
+	- in case of different sign, being added to each other, marginA-marginB (in case margin is < 0)
+
+# 📅 12.01.2023 css: layout: box-model: How does the box-model work for `inline` elements?
+- Vertical margins, padding and borders will be applied but won’t affect other inline boxes to create space
+- Horizontal margins, padding and borders will be applied and will also affect spacing to other inline boxes
+- In simple language: Space creating attributes like margin, padding and border will always work on the element itself. So in all directions. But since it is an outer display value it can also end up influencing other `inline` elements around it. For `inline` this is only the case for left/right elements but not top/bottom elements. When applying padding in all directions, another element located left would be pushed away by the padded element (since it just got bigger - maintaining the layout) but a element located above the padded element would stay at its place. Padding the element even further could even end up overlapping the top element.
+- Example (`<span>` is `inline` per default) - here the span only pushes elements to sideways
+```css
+span {
+  margin: 30px;
+  padding: 30px;
+  background-color: green;
+}
+```
+```html
+<p>
+This is a very long text with a <span>span</span> inside the text. Here is some more text to have some more lines coming after.
+</p>  
+```
+- If you want to avoid the overlapping (since vertical elements are not pushed away) but still want to have it inline you can use `inline-block`. This also allows you to specify `width`/`height`
+
+# 📅 12.01.2023 css: How to style borders?
+- Usually we use a shorthand to target all sides and several properties at once
+```css
+.box {
+  border: 2px solid green; /* width, style, color */
+}
+```
+- but those can be also target individually e.g. `border-top`, `border-width` or even `border-top-width`
+- To created rounded corners use the `border-radius` property provide two arguments for horizontal and vertical radius (in `px`, `em` or `%`). You can also target single sides like `  border-top-right-radius: 15% 35%;`
+
+# 📅 12.01.2023 css: How to style text to be vertical?
+- Just use the property `writing-mode`
+```css
+h1 {
+  writing-mode: vertical-rl;
+  color: white;
+  background-color: black;
+}
+```
+
+# 📅 12.01.2023 css: How to handle overflow?
+- Overflow happens if the content does not fit into the box (and the box does not have appropriate space to grow e.g. through `height` constraint)
+- Controlled by property `overflow` (per default `visible`, because you do not want to hide something and a user might miss a important information)
+- Cropping overflowing content with `hidden`, to create a scroll-window use `scroll`
+- Directions can also be specified via `overflow-y` or `overflow-x`
+- For text you usually do not want to overflow but want to wrap the text (see `overflow-wrap` and `word-break`)
+- Use `overflow: auto` to let the browser decide which scrollbars are needed
+
+# 📅 12.01.2023 css: What is the difference between `em` and `rem` unit?
+- Ems, `em` corresponds to `font-size` of the parent element (`rem` of root element), use for response designs. `1.4rem` is 1.4 times the fontsize of the root element of the document
+- `%` work is the same way as `em` but is using e.g. `70%` of the parents element of a specific property. `em` is always using the `font-size` independent where the value is used
+- Example: In first list font size is always double because it refers to parent element. In the second the root element is static, so nesting does not change the font-size
+```css
+html {
+  font-size: 20px;
+}
+
+.em li {
+  font-size: 2em; /* equivalent to ‘200%’ */
+}
+
+.rem li {
+  font-size: 2rem;
+}
+```
+```html
+<ul class="em">
+  <li>A</li>
+  <li>B</li>
+  <li>C
+    <ul>
+      <li>A.1</li>
+      <li>A.2
+        <ul>
+          <li>A.2.I</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<ul class="rem">
+  <li>A</li>
+  <li>B</li>
+  <li>C
+    <ul>
+      <li>A.1</li>
+      <li>A.2
+        <ul>
+          <li>A.2.I</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+```
+
+# 📅 12.01.2023 css: How does sizing work?
+- there is two types of sizes
+- intrinsic size e.g. the dimensions of a picture, or zero size of a div without content or some size with content
+- extrinsic size is a size we explicitly define via constraints `width`/`height`. Can cause overflow
+- upper/lower bounds for sizes e.g. `min-height`/`max-height` for dealing with variable amount of content (and avoiding overflow). Also for example for big images to not break the layout
+
+
+# 📅 12.01.2023 css: What are replaced elements?
+- css can not affect the internal layout of those elements
+- Example: image, video and forms
+- this is also the case when placed in a flex or grid layout
+- as for `block` elements, replaced elements also respect `weight`/`height` attributes
+
+# 📅 12.01.2023 css: How to use custom variables?
+- Reuse specific values throughout the stylesheet
+```css
+:root {
+  --primary-color: brown;
+}
+```
+- `:root` selector allows to use the variable globally (for local scope use a appropriate selector like e.g. `h1`)
+- variable names must start with a double dash, `--var-name` and are case-sensitive
+- to reference a variable use the `var` function
+```css
+span a {
+  color: var(--primary-color);
+}
+```
+
+# 📅 12.01.2023 css: How to style text?
+```css
+p {
+  color: blue;
+  font-family: "Arial", Verdana, sans-serif; /* called font stack, fallback options if font is not available */
+  font-size: 1.5em; /*always good to use for font-size*/
+  font-weight: bold; /*or 100 - 900*/
+  text-shadow: 1px 1px 1px blue, 2px 2px 1px green; /*double shadow in two colors*/
+  text-align: center; /* center text */
+  letter-spacing: 2px; /* space between letters */
+}
+```
+
+# 📅 12.01.2023 css: How to use web fonts?
+- Custom font will be downloaded together with css
+```css
+@font-face {
+  font-family: "someFont";
+  src: url("myFont.woff2");
+}
+html {
+  font-family: "someFont", serif;
+}
+```
+- Website for partially free `woff2` files are for example [dafont](https://www.dafont.com/de/), [fontsquirrel](https://www.fontsquirrel.com/)
+- Instead going the route over font-faces people usually use free services like [Google Fonts](https://fonts.google.com/) (embedded via <link> element)
+
+
+
+# 📅 11.01.2023 html: How to ensure responsiveness of images (without css)?
+- Why without css? You end up not even loading unneeded images on dom load, since the html is taking care of it
+- *resolution switching*: Having several resolutions of the image depending on the screen/layout (download low-resolution version on mobile) and/or vector graphics can be a good alternative
+```html
+<img
+  srcset="profile-400w.jpg 400w, profile-800w.jpg 800w"
+  sizes="(max-width: 600px) 400px, 800px"
+  src="profile.jpg"
+  alt="alt text" />
+```
+	- chooses `profile-800w.jpg` if it is above `max-width: 600px`
+	- `max-width` is a media condition resolving in a boolean 
+- *art direction*: Focus on different cropped images to ensure the correct layout (focusing on having the most important part of the image visible)
+```html
+<picture>
+  <source media="(max-width: 799px)" srcset="profile-400w-close-portrait.jpg" />
+  <source media="(min-width: 800px)" srcset="profile-800w.jpg" />
+  <img src="profile-800w.jpg" alt="alt text" />
+</picture>
+```
+	- `<source>` contain the images options with the media conditions
+	- `<img>` is the default case which needs to be provided in any case
+- How to deal with sizing?
+	- `width: 100%` would not be good because a image with intrinsic width smaller then the parent container width would be stretched and would not look good
+	- `max-width: 100%` does not force to stretch (image never breaks the boundaries of parent container) but also scales the image down if the intrinsic width of the image is higher.
+- How to make an image maintain the aspect ratio of the parent container (automatically crop it)?
+```css
+img {
+height: 100%;
+width: 100%;
+object-fit: cover;
+}
+```
+
+# 📅 11.01.2023 html: How to create tables?
+- table and cells adapt to content and not to parent size dimensions
+```html
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Emil</td>
+    <td>12</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Lisa</td>
+    <td>14</td>
+    <td>Poland</td>
+  </tr>
+</table>
+```
+- `tr` stands for table row
+- `td` stands for table data
+- `th` stands for table header (also important for accessibility since screen readers can read out data associated to a column)
+- Use the attributes `colspan=”n”` and `rowspan=”n”` to make a cell span over several cols or rows
+- Defining `<colgroup>`/`<col>` in the table allows to create some style columns so css can access specific columns for styling (otherwise you would have to select every nth row via css which is quite tedious)
+- Defining `<caption>` in the table adds a caption (important also for screen reader)
+
+# 📅 11.01.2023 css: What is a reset/normalizer stylesheet?
+- Browser already already come with some basic default formatting e.g. blue links, bold headers, bullet points, search box, button, space between paragraphs for html (even without CSS) often called browser defaults or user agent styles
+- you can also disable those in your browser and you will see that there is no formatting left at all, not even line-breaks and spacing
+- This styling can be inconsistent across browser, a reset stylesheet aims to remove those inconsistencies by applying some default values (first described by [meyerweb](https://meyerweb.com/eric/tools/css/reset/)
+- Popular normalizer stylesheet is [normalize.css](https://necolas.github.io/normalize.css/)
+
+# 📅 11.01.2023 css: How does compatibility work?
+- CSS is in the end just a specification published by the [CSS Working Group](https://www.w3.org/Style/CSS/)
+- Browser have to implement that specification and make sure that a certain piece of CSS code results in the define visual outcome. Although all major browser manufacturers comply to those specifications at some point they usually take some time to comply
+- Backwards compatibility is usually always ensured (a website from the year 2000 should still run today). Also old browser won’t break a website since declarations which are not understood by the browser are just ignored.
+- Usually you find Browser compatibility tables online which show which feature is rolled out in which browser
+
+# 📅 11.01.2023 css: What are the ways of adding CSS to a html document?
+- External stylesheet (put this in your head), relative path or absolute url
+```html
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+```
+- Internal stylesheet
+```html
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <title>My CSS experiment</title>
+    <style>
+      h1 {
+        color: blue;
+        background-color: yellow;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+```
+- Apply css directly on a single html element
+	- this should not be done since this mixes content and styling and will require multiple edits for a single style change
+	- Exceptions are for example when you have only a single html file in CMS
+```html
+<h1 style="color:red;">This is a header</h1>
+</html>
+```
+
+# 📅 10.01.2023 html: How to style text with html?
+- `<b>`/`<strong>` for bold
+- `<i>` for italic
+- `<u>` for underlined
+- `<mark>` for marked text
+- `<small>` for smaller text
+- `<del>` for deleted text (crossed through)
+- `<sub>`/`<sup>` for sub/superscript
+
+# 📅 10.01.2023 html: How to create hyperlinks?
+- this is what makes the web a web
+- Syntax
+```html
+​​<p>Here is a <a
+href="https://www.google.com/"
+title="Some description”>link</a></p>
+```
+- `href` also called the target or hypertext reference
+- `title` provides some description which appears as tooltip on hover
+- Both `title` and link text are important for screen readers but also for SEO
+- you can make everything a link (just provide it as child to the `<a>` element)
+- Linking inside a document: *Document fragment*
+	- You just separate with `#` to link to a specific anchor/id of the target document: `<a href="about.html#last_section" </a>`
+	- or you omit target if it is the current document, `<a href="#last_section" </a>`
+- If you want to open the link in a separate tab provide `target="_blank"` as an additional attribute
+- Linking for downloading a file
+	- make it clear in text and description that it is not just a link to another website
+	- using the `download="filename.exe”` will provide the user with a filename when persisting the file
+- Linking to email address
+	- `<a href="mailto:bioflash@web.de">Send me</a>`
+	- you can send the mail with cc, bcc, subject and body ([reference](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#specifying_details))
+
+# 📅 10.01.2023 html: What are description lists?
+- A little bit like `ul`/`ol` in the sense of that this is a list structure but no nesting allowed and used for describing semantic value pairs
+- This can be used for example by search machines to extract a glossary out of a article (you can also have multiple terms (`<dt>`) per description (`<dd>`) or the other way round
+- Example of [w3](https://www.w3.org/TR/html401/struct/lists.html#h-10.3)
+```html
+<DL>
+  <DT>Dweeb
+  <DD>young excitable person who may mature
+    into a <EM>Nerd</EM> or <EM>Geek</EM>
+
+  <DT>Hacker
+  <DD>a clever programmer
+
+  <DT>Nerd
+  <DD>technically bright but socially inept person
+</DL>
+```
+
+# 📅 10.01.2023 html: How to quote html?
+- By using the `<blockquote>`, a `cite` attribute optionally provides the source of the quote
+```html
+<blockquote
+  cite="www.google.com">
+  <p>
+    This <strong> normal html code which will be evaluated as plain text in the browser</p>
+</blockquote>
+```
+- for inline quotations use `<q>` (with optional `cite` attribute)
+
+# 📅 10.01.2023 html: How to create abbreviations/acronyms?
+- the text node of `<abbr>` contains the abbreviation and the `title` attribute the long form (which is shown on hover)
+```html
+<p>This <abbr title="Very bad word">@/$&</abbr> is happening again! :(</p>
+```
+- `<acronym>` is deprecated
+
+# 📅 10.01.2023 html: How to render code in html?
+- Most of the below tags will style the code with monospace font by default, they are more for semantic clarity and/or will be targeted by css frameworks (like styling of code)
+- Use `<code>` for block element and code formatting
+- Use `<pre>` if you want to keep whitespaces and newlines
+- Use `<var>` for describing variable names.
+- Use `<kbd>` for key names of keyboard
+- Use `<samp>` for terminal output
+
+# 📅 10.01.2023 html: What are semantic elements and why do they exist?
+- Semantic elements clearly describe the content contained whereas non-semantic like `<div>` or `<span>` do not
+- although this does not impact layout or visuals (done with css) this is very important for
+- search engines, since search engines depend on this they punish or reward this with different SEO outcomes
+- visually impaired people who navigate a webpage via a screen reader and depend on those tags for understanding the logical structure of the document
+- developers, easier to read (on contract to a div soup)
+- Following a convention of semantic elements allow to target them directly with css and therefore not needing classes and id’s (in many cases). There is even [drop-in css boilerplate](https://dohliam.github.io/dropin-minimal-css/) frameworks which allow you to style the whole document based only on the element tags
+- Some of them are to structure the common areas of a website
+<p align="center"><img height=400 src="https://www.w3schools.com/html/img_sem_elements.gif" /></p><br>
+- header: heading, logo and tagline of website (`<header>`)
+- navigation bar: consistent layout across the pages, links to other pages (often together with header) (`<nav>`)
+- main content which subsections like article and section (`<main>`, `<article>`, `<section>`). This is unique to the page and will always change from page to page. A section should always start with a heading and contain several articles or the other way round.
+- sidebar: supplements main content (`<main>`) like quotes, info, secondary navbar (context dependent) (`<aside>`)
+- footer: copyright, fineprint (`<footer>`) 
+
+# 📅 10.01.2023 html: How to debug html?
+- Browsers are usually parse and interpret HTML permissively, meaning that even with errors the page is still rendered (browsers usually have built-in mitigation strategies how to deal with erroneous html, compare source code and created dom by the browser)
+- Most commonly is looking at the code and get support by IDE for missing enclosing tags etc.
+- Or validate html with [Markup Validation Service](https://validator.w3.org/)  by W3C
+- Further tips
+	- Talk through what the code should do
+	- Properly intent the html document
+	- Check for closing tags
+
+# 📅 10.01.2023 html: How to add images?
+- Never use images hosted in places you do not own and you have to explicit permission linking from (called hotlinking)
+- Use a `alt` text for accessibility/search engines/bad internet connection (same for `title`)
+```html
+<img
+  src="images/profile.jpg"
+  alt="A profile picture of a young, middle aged man, smiling" />
+```
+- Attributes of  `width`and `height` also reserve empty space when image is not yet loaded - so the layout does not change upon load (for scaling etc. use css)
+- If you want to create captions in a semantic/accessible way you should use `<figure>`
+```html
+<figure>
+  <img … />
+  <figcaption>
+	This is a caption below the image shown.
+  </figcaption>
+</figure>
+```
+- A caption is also for people who see an image, the alt text is a substitute for the picture. Caption and alt text should not be identical
+
+# 📅 10.01.2023 html: How does embedding a 3rd party website work?
+- when embedding of other webpages makes sense and is allowed: youtube videos, statistics and badges of social media, payment buttons/options
+- In order to embed a website (via `<iframe>`) the host server needs to allow this (see [X-Frame-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options)), preventing clickjacking
+```html
+  <iframe
+    src="www.hostserver.com"
+    width="100%"
+    height="500"
+    border: none
+    allowfullscreen
+    sandbox>
+    <p>
+        Fallback for browsers that don't support iframes
+    </p>
+  </iframe>
+```
+- set the `src` attribute only after page has loaded to reduce loading time (since it would have to wait also for the host server response)
+- always set the `sandbox` attribute, not allowing the externally website anything (like calling javascript or manipulating the parent documents dom)
+
+
+# 📅 10.01.2023 css: How are conflicting styling rules resolved (cascading/specificity/inheritance)?
+- Note: In case of a conflicting declaration block not the entire rule takes precedence but rules for single attributes are prioritized 
+- *Specificity*: Can be visualized like a waterfall: “At the top, we have more general selectors and as we trickle down specificity grows more and more… specific.”
+- Most general: Universal selector -> Elements -> Classes -> IDs -> Inline Styling -> !important: Most specific
+- See more [here](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
+- *Cascade*: In case two selectors have the same precedence the rule defined last in the stylesheet will be applied (source order). You can even have the same rule in the same declaration block. This becomes useful for a fallback strategy (in this case if the `calc` function is available the line will be ignored but the previous line still is evaluated) 
+```css
+.box {
+  width: 200px;
+  width: calc(100% - 10px);
+}
+```
+- *Inheritance*: Some rules applied on parent elements are passed down to child elements.
+- Inheriting properties: `color`, `font-family`
+- Not-Inheriting properties:  `height` , `width` , `border` , `margin` and `padding`
+- Inheritance can be checked online e.g. for [color](https://developer.mozilla.org/en-US/docs/Web/CSS/color#formal_definition)
+- Independent of the default inheritance properties you can also explicitly define a inheritance behavior described [here in depth](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#controlling_inheritance) 
+```css
+.parent-element {
+    color: blue;
+}
+
+.child-element-1 { /* inherit color from parent */
+    color: inherit;
+}
+
+.child-element-2 {
+    color: revert; /* default styling of browser */
+}
+.child-element-3 {
+      all: revert; /* default styling of browser for all attributes */
+}
+```
+
+# 📅 10.01.2023 css: syntax: What is the general syntax?
+- CSS declaration block
+```css
+/* CSS declaration block */
+p {  /* selector*/
+  color: blue;  /* property and value combined = CSS declaration */
+}
+```
+- property and values are american english and case-insensitive and must not contain whitespace
+- wrong syntax of CSS declaration will be simply ignored
+
+# 📅 10.01.2023 css: syntax: What are CSS functions?
+- CSS also supports some native functions to calculate things at runtime
+```css
+.square {
+width: calc(90% - 10px);  /* 90% of the parent width*/
+}
+```
+	- other functions are `transform: rotate(0.8turn);`, `color: rgba(200,200,200,0.1);`
+
+
+# 📅 10.01.2023 css: syntax: What are CSS @rules and how you use them?
+- @rules are some instruction to the browser which modify CSS behavior
+- Some examples
+- `@import`: Import another stylesheet e.g. `@import "partial.css";`
+- `@media`: Only execute enclosed declaration block if media condition resolved to true
+```css
+@media (min-width: 480px) {
+  nav {
+    background-color: gray;
+  }
+}
+```
+- for more see [here](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule) 
+
+# 📅 10.01.2023 css: syntax: What are shorthand properties?
+- Summarizes several CSS declarations into one line
+```css
+padding: 1px 2px 3px 4px; /* clockwise from the top */
+/* Equivalent statements */
+padding-top: 1px;
+padding-right: 2px;
+padding-bottom: 3px;
+padding-left: 4px;
+``` 
+- Be careful with incomplete value in shorthands. CSS will fill those out with default values leading to potentially overwrite old values you did not intend
+- Other shorthands are for example `font`, `background`, `border` and `margin`
+
+# 📅 10.01.2023 html: What is a dom tree?
+- When the browser downloads the html it parses it and represents the document structure as a tree in memory, a document object model (dom)
+- Each element, attribute or text content becomes a dom node
+- CSS will be downloaded and parsed in a second step and will be then applied to each node before the dom is rendered to the user
+
+# 📅 10.01.2023 css: What are CSS cascade layers?
+- Allows you to put your css rules in different layers so that they take precedence over a different set of rules (independent of specificity or source order)
+- In general the following order of priority: default browser style sheet, user style sheets, author/developer styles sheets, important declarations
+- In the author/developer style sheets we have to possibility to introduce addition ordering with cascade
+```css
+/* from lowest to highest priority */
+@layer basic, partials, custom, special-overrides;
+
+/* Populate layers */
+/* via external style sheet */
+@import 'partial.css' layer(partials);
+
+/* via direct snippet*/
+@layer custom {
+h1 {
+  color: blue;
+}
+}
+
+/* style with no layer have the highest priority */
+a {
+  color: pink;
+}
+```
+
+# 📅 10.01.2023 css: layout: box-model: What are block and inline display types and how are they connected to the box model?
+- Everything in css is a *box*, the layout is determined by the `display` property and either targets
+- *outer display type*: This does not impact the child elements of the container but how it interact with other elements, the pageflow
+- `block`
+	- takes up the full width (nothing next to it)
+	- e.g. default of `<div>`
+- `inline`
+	- takes up minimum amount of space possible (can’t have `width`/`height`)
+	- e.g. default of `<span>`
+- `inline-block`
+	- same as `inline` element but you can set `width`/`height`
+- `none`
+	- box not displayed
+- or the *inner display types* like `flex`/`grid`/`flow-root`/`table` which impacts the layout of the child elements of the styled container.
+- A element always has both inner and outer display type (even if it is not explicitly stated in the display type). Sometimes you end up combining both types for the `display` value. For example `inline-flex`.
+- But you can also combine outer display types like `inline-block`. For example for a button you would use an `inline-block` because we do not take up all the space like in `block` while still being able to provide a `width`/`height`. This also allows us to have several buttons in the same line
+- The *box model* (content, border, padding, margin) fully applies to `block` elements and only partially to `inline` elements
+
+
+# 📅 10.01.2023 css: layout: box-model: What is the difference between inner and outer display values?
+- [source](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#outer_display_type)
+- Outer display values: Looking at the outside elements for deciding how it is interacting. For example `block` changes surrounding elements by introducing line breaks before and after (remember a `block` box has full-with). Example:
+```css
+.block {
+  display: block;
+} 
+```
+```html
+<p>This is a paragraph with several <span class="block">spans</span> and <span>another one.</span>comes right after.</p>
+```
+- Inner display values: Looking at inside elements and deciding on layout accordingly. For example the `flex`/`grid` property does not impact neighboring elements but just child elements.
+- So if you select `flex` as display type you only define the inner display value, the outer display value will default to a value (e.g. `block` if it is a `<div>`). To still also define the outer display value you can create combinations e.g. `inline-flex`. So the element behaves on the outside like a inline element and on the inside you create flex logic. Explained in depth [here](https://www.youtube.com/watch?v=ty4lnEUy7SY)
+
+# 📅 09.01.2023 xml: What is xml and what is it used for?
+- Stands for eXtensible Markup Language, which is a widely used standard
+- the structure is described in the data itself via nested tags and attributes
+- applications:
+	- Data transfer e.g. SOAP
+	- Web: HTML and XML share SGML as common ancestor
+	- Formating: PDF, Word, Powerpoint documents
+	- Configuration data
+
+# 📅 09.01.2023 xml: What are the basic elements of a xml document?
+- XML prolog: Should include version and character encoding
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+```
+- Root element: Single parent element at the very top (in html this is the `<html>` element)
+- XML element
+- Need to have opening and closing tags
+- tag names are case-sensitive
+- attribute values need to be defined in quotes `<element style=”value”> </element>`
+- Comments are created with this: `<!-- A comment -->`
+
+# 📅 09.01.2023 html: What are the basic elements of a html document?
+- A html element has opening, closing tag and a content (there is also a empty element which has only a opening tag)
+- A content can contain other elements or a text or comments (later parsed as element, text and comment nodes in the dom)
+- A html element can have attributes with values
+
+
+# 📅 09.01.2023 xml: What are the differences between html and xml?
+- html tags are case-insensitive (where xml is case-sensitive)
+- html has predefined tags (like <h1>, <a>) where in xml it has to defined in a spec
+
+# 📅 09.01.2023 html: What are custom elements?
+- introduced with html5
+- allow users to reuse html snippets (like components for frontend-frameworks)
+- done by defining a javascript class representation of the new (or to be extended html element)
+- custom elements must contain a dash (e.g. `<my-app></my-app>`)
+- Read more [here](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements)
+
+
+# 📅 09.01.2023 html: What is the doctype declaration doing at the beginning of a document?
+```html
+<!DOCTYPE html>
+```
+- this is not a html tag but a information to the browser what to document to expect and render
+- declaration is not case-sensitive
+- the doctype allows you to invoke different rendering modes in the browser and different html specs (also xhtml) - see here [here](https://www.w3.org/QA/2002/04/valid-dtd-list.html)
+
+
+# 📅 09.01.2023 html: What are void elements?
+- html tags which do not require a closing tag
+- they are called void elements because they are empty (sometimes also referred as singleton tags or empty elements)
+- those include: `<br>`, `<col>`, `<img>`, `<hr>` and a lot more html5 tags (e.g. media tags)
+- you do not need a trailing slash like `<br/>` (only used for xhtml compatibility)
+
+# 📅 09.01.2023 html: What is xhtml?
+- was designed to create a bridge between html and xml to have a common spec
+- for example a void element like `<br>` in html is not valid xml since every element needs a a closing tag. In xhtml you need to write `<br/>`
+- should not be used anymore, use html5 instead
+-  only in very special cases where you need both properties e.g. chat logs which you want to conveniently render in the browser and use all the xml parsing capabilities and tools (e.g. with XSLT) 
+
+# 📅 09.01.2023 html: What is the head element used for?
+- Used for metadata and is not displayed/rendered by the browser
+- document title (also shown in browser tab or when saving as favourite)
+- character set
+- styles (load external style sheets) - with `<link>`
+- scripts (load external javascript) - with `<script>`
+- custom favicons (comes from ​​”favorites icon”)
+- metadata for search engines like author, keywords (formerly), description (SEO) - this also pops up in the search results then (or when pasting a link on social media)
+- other functionalities like automatic refresh of the page (see `meta/http-equiv/refresh`)
+- Should live inside html tag and before body tag 
+- Example
+```html
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <meta
+        name="description"
+        content="Some description text." />
+    <title>My title</title>
+  </head>
+  <body>
+    <p>Visible body</p>
+  </body>
+</html>
+```
+
+# 📅 09.01.2023 html: How to add a emoji as a favicon?
+- Define this in the html `<head>`
+```html
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>My title</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👵</text></svg>">
+  </head>
+  <body>
+    <p>Visible body</p>
+  </body>
+</html>
+```
+
+# 📅 09.01.2023 html: How to load javascript only when dom is rendered?
+- with the `defer` keyword
+```html
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>My title</title>
+    <script src="script.js" defer></script> 
+  </head>
+  <body>
+    <p>Visible body</p>
+  </body>
+</html>
+```
+
+# 📅 09.01.2023 html: How to specify different languages in html?
+- Important for search engines and browsers to filter for languages or offer translation services
+- Can be applied on document level or to specific element with the `lang` keyword
+```html
+<!DOCTYPE html>
+<html lang="en-US">
+   <body>
+    <span lang=”zh-Hans”>野外</span>
+  </body>
+</html>
+```
+
+# 📅 09.01.2023 html: What is the difference between block and inline elements?
+- For block elements, every element after a block element will appear on a new line
+- Inline Elements do not trigger a line break, often used for text e.g. `<a>`, `<em>`, `<strong>`
+
+# 📅 09.01.2023 html: What are boolean attributes?
+- booleans in html are usually modelled by just repeating the attribute as the value (resulting to true)
+```html
+<input type="text" disabled="disabled" />
+```
+- which also can be written as such
+```html
+<input type="text" disabled/>
+```
+- for a falsy value just do not set the attribute
+
+
+# 📅 09.01.2023 html: How to write special characters?
+- Possible with the so called entity references
+- `<`: `&lt;`
+- `>`: `&gt;`
+- `"`: `&quot;`
+- `'`: `&apos;`
+- `&`: `&amp;`
+- For more see [here](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references)
+
+# 📅 09.01.2023 html: What is the purpose of HTML?
+- Provide layout and formatting
+- Basic styling (without css!)
+- Help out search engines to find things (e.g. `<author>` or `<article>` tag), adding a semantic structure
+
 # 📅 14.12.2022 java: oop: What are the basic terms with easy explanations?
 - things a object knows about itself -> instance variables
 - things an object can do -> methods
