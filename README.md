@@ -21,6 +21,168 @@
 
 ---
 
+# 📅 13.01.2023 css: How does flexbox work?
+- the parent container decides about the layout of the child elements (inner display value), use it with `display:flex` (note the the out display value still remains `block` for the parent container, to change this you would do `inline-flex`)
+- How does flexbox behave if there is limited space available?
+	- per default it just shrinks the size so that all flex items stay in one line
+	- with `flex-wrap:wrap` flex items start to wrap to the next line
+	- if you want to prohibit that a single flex item does not shrink, keeps its original size you would use `flex-shrink: 0`
+	- if you want to take make a single flex item take up the remaining space `flex-grow: 1` (number denote proportions to one another)
+	- `flex-basis:0` does not consider the original size for growing. So all boxes start at zero length or height and grow from there. 
+	- shorthand for the properties above: `flex: <flex-grow> <flex-shrink> <flex-basis>`, for example: `flex: 1 200px 0px` means that each item gets `200px` at least and after that it will be split according to priority (equally because all elements have `1`)
+- Layout of elements are based on the axis (`flex-direction`)
+- when direction is row-based (`row`) (*default!*)
+	- main axis (horizontal across flex box)
+	- cross axis (vertical across the flex box)
+- when direction is column-based (`column`)
+	- main axis (vertical across the flex box) 
+	- cross axis (horizontal across flex box)
+- There is three properties to control layout
+- `justify-content`: aligns the flex items on main axis
+	- `flex-start`: At the beginning of the main axis (default)
+	- `center`: Align at center of main axis
+	- `space-between`: Takes all the space (left/right position) and equally distributes the space between the flex items (`space-around` also considers spacing around the outer elements)
+- `align-items`: aligns the elements along the cross-axis
+	- `stretch`: Fill out all available space along the cross-axis (default). If the parent does not have a fixed height all elements will have the same size as the biggest element.
+	- `flex-start`: Keep original size of the element in the cross-axis dimension (e.g. when `height` is set in a row based layout) and align to beginning of axis
+	- `flex-center`: Keep original size but align to center of cross axis (*used very often for centering*)
+- `align-content`: align content when there are multiple lines in a flex-box. It controls how all the elements will be laid out along the cross-axis of the container. This is usually only visible if the flex-box has a fixed height and space needs to be distributed. Possible values are `flex-end`, `flex-start`, `center`, `space-between`
+- Change single elements
+- If you want to overwrite the cross-axis alignment for a single flex item you can use the `align-self` property e.g. with values like `center`, `flex-end`, `flex-start`
+- If you want to change the order (independent of dom element order) use `order: n`. Don’t use this, since this messes up the flow of the screen reader and also tabbing through form items.
+
+# 📅 13.01.2023 css: How does css grid work?
+- flexbox layouts across one dimension, the grid layout across two dimensions, use it with `display:grid`. Per default we only get a 1-column grid.
+- the parent container decides about the layout of the elements (inner display value)
+- Terminology:
+- grid items, elements with a certain size and position
+- grid tracks, row/columns that the grid is composed of
+- grid gaps, referred as gutters
+- Syntax:
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr ; /* Defines two columns, first having double the width as the second - fr, fractions*/
+  grid-auto-rows: 50px; /* each not-defined row will have 50px of height. Without each row has the height needed by the content */
+  grid-template-rows: 10px 20px; /* Alternatively you can explicitly define each row, here two rows. Usually you do not know the amount of rows but maybe you want to style the first row as a header with a specific height?  */
+ grid-row-gap: 10px; /* specify space between rows, also grid-column-gap, gap for both */
+}
+```
+- Note that fractions `fr` distribute only available space in fractions, if one element needs more space due to content there is less space to distribute
+- To define either row or columns in the `grid-template-`(`rows`/`columns`) you can also use `repeat(5,1fr)` to define 5 equally sized rows/columns in one go (without having to write them out one after another)
+- If you have content which overflow the height of the specified row size, but you still want to have a minimum height defined you can use  `grid-auto-rows: minmax(50px, auto)`. Which ends up using either the size of the content but at least `50px`.
+- How to position specific elements across cells instead of using the auto-placement described above?
+- Option 1: With grid-area you can assign specific elements to the grid layout 
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+“header header” /* first row */
+“sidebar content”
+“sidebar content”;
+}
+
+.header {
+  grid-area: header; /* The element with that class will be stretched out along the cells annotated with header*/
+}
+```
+	- Option 2: Specify for each element in each column and row it should start and end 
+```css
+.header {
+  grid-column-start: 1;  /* shorthand for both: grid-column: 1 / 3 */
+  grid-column-start: 3;  /* You actually count the grid tracks/the empty space between as columns. To cover two cells you cross over three gaps. -1 spans to the last column */
+
+}
+```
+	- for specifying a row use `grid-row-start`/`end` or the `grid-row` shorthand (this will still span over 1 column even without specifying it)
+	- for spanning over `n` rows or columns just `span(n)` as property value
+	- `span(1)` is the default for either column and row area 
+- Align grid and items (*justify-* is always row direction, *align-* is always column direction)
+	- `justify-content`, align elements horizontally, along the row-axis. For example `center`, `start`, `end`
+	- `align-content`, align the elements vertically, along the column axis, for example `center` or `stretch` to stretch the elements along the y-axis
+	- `justify-items`(row)/`align-items`(column) is to align/stretch them inside the different row/column. Per default both are set to stretch.
+	- To overwrite item layout on a item basis you can specify `justify-self`/`align-self`
+
+# 📅 13.01.2023 css: layout: What is understood under normal flow?
+- the site layout without any css for example the behavior caused by default `display` like `block` and `inline` elements, the element order defined in the source and no stacking on top of each other
+- the normal flow is just the default layout of the html elements, but you can change everything through custom css. Try keeping the semantically correct html elements even if they do not match your layout/visual preference and change it with css. For example if you need a list items `<li>` which are `inline`and not `block` do this with css instead of using `<span>` or something else which does not match the semantic meaning of list
+
+# 📅 13.01.2023 css: layout: How do floats work and what are they still good for?
+- the float annotated element is taken out of the normal flow and aligned for example to the `left` and all block elements following afterwards surround the content (like a floating image in a newspaper or drop-caps)
+- Ideally you would add some `margin` to the annotated element to create some additional space (does not work to add margin to the text because the annotated element is not part of the normal flow anymore, not-seen by the text)
+
+# 📅 13.01.2023 css: layout: What is positioning for?
+- `position` is usually not used for the main layout but more for fine-tuning specific elements
+- `static` is the default, element is part of the normal flow
+- `relative` is a offset to the original position in normal flow
+- `absolute` is moved out of the normal flow, only reference is the parent container
+- `fixed` is moved out of the normal flow, only reference is the viewport
+- `sticky` is a combination of `relative` and `fixed` (when it hits boundaries)
+
+# 📅 13.12.2022 css: layout: How to do sticky positioning?
+- Element stays in the normal flow until it hits the viewport position defined with `top`/`left` and then stays in a fixed position on the screen
+```css
+.positioned {
+  position: sticky;
+  top: 10px;
+  left: 10px;
+}
+```
+- the above pushes the element actually `10px` down and to the right. Think of it as pushing from the `top` and `left`
+- A typical use case for sticky positioning is a scrolling index, where the current header of a sections sticks at the top and is overlapped by the next header
+
+# 📅 13.12.2022 css: How does responsive design work?
+- HTML itself (with no CSS) is fully responsive with a few exceptions like long lines of text, especially when adding CSS dynamic behavior is needed
+- Responsive web design is a approach, a set of best practices to gather a good web experience to all types of devices
+- Tools for responsiveness 
+- Grid/flexbox is responsive by default
+- Fluid images
+- min/max values for properties
+- Viewport units (`vw`/`vh` - % of viewport)
+- Use of media-queries (adaptive layout)
+- With media queries you would define certain breakpoints for the different targeted devices
+	- for mobile usually a single-column layout
+	- for wider screen devices a multi-column layout
+	- have the mobile experience in mind first is a common practice in web design (mobile first approach)
+	- best is to use relative units rather than absolute units for media queries
+- Use `columns` to not having super long lines of text when reading
+- If you want to adapt the font-size based on the viewport never use viewport values alone but combine it with a fixed value (otherwise the user won’t be able to zoom in)
+- This would be a appropriate example
+```css
+.heading {
+  font-size: calc(2rem + 1vw);
+}
+```
+- Include the viewport meta tag in the header (always). This tells the browser to set the viewport to the dimensions of the screen
+```html
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+```
+
+# 📅 13.12.2022 css: How do media queries work?
+- media queries allow to set certain breakpoints and associate certain selectors to apply certain rule changes based if the media condition is true
+- Syntax
+	- Logical operators like `and`, `not`, `and only`
+	- Mediatypes (they are always mandatory before specifying a rule)
+- `screen` (screen media)
+- `print` (printed document)
+- `all` (both above)
+- Orientation
+	- `landscape`, usually desktop
+	- `portrait`, usually mobile
+	- Example: `@media (orientation: landscape)`
+- Pointing device, is it is possible to hover over elements, touchscreen and keyboard only evaluate to false
+	- `@media (hover: hover)`
+- Complete example
+```css
+@media screen and (min-width: 80rem) {
+  .container {
+	background: gray;
+  }
+}
+```
+- Note: With a well-thought grid, flexbox layout you might not need media queries at all
+
 # 📅 12.01.2023 css: layout: box-model: How does margin work for `block` elements?
 - Margin values can be either positive or negative, creating additional space or remove additional space around the content-box (this can also cause overlapping)
 - Margin collapsing: The margin values of two neighboring boxes are 
