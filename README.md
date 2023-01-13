@@ -204,7 +204,7 @@ html {
 	- `<img>` is the default case which needs to be provided in any case
 - How to deal with sizing?
 	- `width: 100%` would not be good because a image with intrinsic width smaller then the parent container width would be stretched and would not look good
-	- `max-width: 100%` does not force to stretch (image never breaks the boundaries of parent container) but also scales the image down if the intrinsic width of the image is higher.
+	- `max-width: 100%` does not force to stretch (image never breaks the boundaries of parent container) but also scales the image down if the intrinsic width of the image is higher (this approach is called fluid images)
 - How to make an image maintain the aspect ratio of the parent container (automatically crop it)?
 ```css
 img {
@@ -942,6 +942,7 @@ git push origin --tags
 }
 ```
 - Some usecases would be a navigation banner, or a chat bot icon
+- `top: 0` results in sticking at the very top
 
 # 📅 06.12.2022 css: layout: How to do relative positioning?
 - You would use this if you want to finetune a layout but do not want to change the other elements layout
@@ -949,14 +950,20 @@ git push origin --tags
 ```css
 #target{
     position: relative;
-    top: -10px; /* relative to orginal position */
+    top:  10px; /* relative to orginal position */
+    left: 10px;
 }
 ```
+- the above pushes the element actually `10px` down and to the right. Think of it as pushing from the `top` and `left`
 
 # 📅 06.12.2022 css: layout: What is the difference between block elements and inline elements?
-- Block elements are a line break after them like `body`,`br`,`div`,`article`,`ul`,`li`,`...`
+- Block elements provoke a line break after them like `body`,`br`,`div`,`article`,`ul`,`li`,`...`
+    - they usually take up all the width of the parent element
+    - the try to accomodate the contents by growing the height (sometimes called block dimension)
 - Inline elements do not have breaks like `a`,`span`,`code`, `input`,`img`,`...`
+    - the size depends entirely on the content, you can't set `width`/`height` attributes (except images)
 - Those elements default for `display` property to either `block` or `inline`
+- both `display` types have also different `margin`, `padding`, `border` effects regarding the interaction with other elements (more in-depth in box-model)
 
 # 📅 06.12.2022 css: What are the common unit types and when to use them?
 - There is absolute length units (like `px`, `mm`, `pt`) and relative ones (`em`, `ch`, `%`)
