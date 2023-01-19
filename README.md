@@ -345,6 +345,7 @@ html {
 # 📅 11.01.2023 html: How to ensure responsiveness of images (without css)?
 - Why without css? You end up not even loading unneeded images on dom load, since the html is taking care of it
 - *resolution switching*: Having several resolutions of the image depending on the screen/layout (download low-resolution version on mobile) and/or vector graphics can be a good alternative
+- 🤖: *To ensure responsiveness of images without CSS, you can use the srcset attribute on the img tag to specify different image files to be used at different screen sizes.*
 ```html
 <img
   srcset="profile-400w.jpg 400w, profile-800w.jpg 800w"
@@ -364,9 +365,9 @@ html {
 ```
 	- `<source>` contain the images options with the media conditions
 	- `<img>` is the default case which needs to be provided in any case
-- How to deal with sizing?
+- How to deal with sizing? (fluid images)
 	- `width: 100%` would not be good because a image with intrinsic width smaller then the parent container width would be stretched and would not look good
-	- `max-width: 100%` does not force to stretch (image never breaks the boundaries of parent container) but also scales the image down if the intrinsic width of the image is higher (this approach is called fluid images)
+	- `max-width: 100%` does not force to stretch (image never breaks the boundaries of parent container) but also scales the image down if the intrinsic width of the image is higher
 - How to make an image maintain the aspect ratio of the parent container (automatically crop it)?
 ```css
 img {
@@ -461,11 +462,16 @@ object-fit: cover;
 
 # 📅 10.01.2023 html: How to create hyperlinks?
 - this is what makes the web a web
+- 🤖: *To create hyperlinks, use the a tag with the href attribute to specify the URL to be linked to.*
 - Syntax
 ```html
-​​<p>Here is a <a
+​​<p>Here is a
+    <a
 href="https://www.google.com/"
-title="Some description”>link</a></p>
+title="Some description">
+link
+    </a>
+</p>
 ```
 - `href` also called the target or hypertext reference
 - `title` provides some description which appears as tooltip on hover
@@ -483,21 +489,21 @@ title="Some description”>link</a></p>
 	- you can send the mail with cc, bcc, subject and body ([reference](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#specifying_details))
 
 # 📅 10.01.2023 html: What are description lists?
+- 🤖: *Description lists are used to create a list of terms and their associated descriptions. The dl tag is used for the list container, dt for the term, and dd for the description.*
 - A little bit like `ul`/`ol` in the sense of that this is a list structure but no nesting allowed and used for describing semantic value pairs
 - This can be used for example by search machines to extract a glossary out of a article (you can also have multiple terms (`<dt>`) per description (`<dd>`) or the other way round
 - Example of [w3](https://www.w3.org/TR/html401/struct/lists.html#h-10.3)
 ```html
-<DL>
-  <DT>Dweeb
-  <DD>young excitable person who may mature
-    into a <EM>Nerd</EM> or <EM>Geek</EM>
+<dl>
+  <dt>Dweeb</dt>
+  <dd>young excitable person who may mature into a ...</dd>
 
-  <DT>Hacker
-  <DD>a clever programmer
+  <dt>Hacker</dt>
+  <dd>a clever programmer</dd>
 
-  <DT>Nerd
-  <DD>technically bright but socially inept person
-</DL>
+  <dt>Nerd</dt>
+  <dd>technically bright but socially inept person</dd>
+</dl>
 ```
 
 # 📅 10.01.2023 html: How to quote html?
@@ -512,6 +518,7 @@ title="Some description”>link</a></p>
 - for inline quotations use `<q>` (with optional `cite` attribute)
 
 # 📅 10.01.2023 html: How to create abbreviations/acronyms?
+- 🤖: *To create abbreviations/acronyms, use the abbr tag with the title attribute to provide the full term.*
 - the text node of `<abbr>` contains the abbreviation and the `title` attribute the long form (which is shown on hover)
 ```html
 <p>This <abbr title="Very bad word">@/$&</abbr> is happening again! :(</p>
@@ -527,18 +534,21 @@ title="Some description”>link</a></p>
 - Use `<samp>` for terminal output
 
 # 📅 10.01.2023 html: What are semantic elements and why do they exist?
+- 🤖: *Semantic elements are HTML tags that give meaning to the structure of the content on a web page. They exist to help search engines and assistive technologies understand the purpose of the content.*
 - Semantic elements clearly describe the content contained whereas non-semantic like `<div>` or `<span>` do not
 - although this does not impact layout or visuals (done with css) this is very important for
 - search engines, since search engines depend on this they punish or reward this with different SEO outcomes
 - visually impaired people who navigate a webpage via a screen reader and depend on those tags for understanding the logical structure of the document
-- developers, easier to read (on contract to a div soup)
+- developers, easier to read (in contrast to a "div soup")
 - Following a convention of semantic elements allow to target them directly with css and therefore not needing classes and id’s (in many cases). There is even [drop-in css boilerplate](https://dohliam.github.io/dropin-minimal-css/) frameworks which allow you to style the whole document based only on the element tags
 - Some of them are to structure the common areas of a website
-<p align="center"><img height=400 src="https://www.w3schools.com/html/img_sem_elements.gif" /></p><br>
+
+<p align="center"><img height=400 src="https://www.w3schools.com/html/img_sem_elements.gif" /><p><br>
+
 - header: heading, logo and tagline of website (`<header>`)
 - navigation bar: consistent layout across the pages, links to other pages (often together with header) (`<nav>`)
 - main content which subsections like article and section (`<main>`, `<article>`, `<section>`). This is unique to the page and will always change from page to page. A section should always start with a heading and contain several articles or the other way round.
-- sidebar: supplements main content (`<main>`) like quotes, info, secondary navbar (context dependent) (`<aside>`)
+- sidebar: supplements main content (`<main>`) like quotes, info, or related prodicts, secondary navbar (context dependent) (`<aside>`)
 - footer: copyright, fineprint (`<footer>`) 
 
 # 📅 10.01.2023 html: How to debug html?
@@ -673,6 +683,7 @@ padding-left: 4px;
 - Other shorthands are for example `font`, `background`, `border` and `margin`
 
 # 📅 10.01.2023 html: What is a dom tree?
+- 🤖: *The DOM (Document Object Model) tree is a way of representing the structure of an HTML or XML document as a tree-like structure, where elements are the branches and the text content is the leaves of the tree.*
 - When the browser downloads the html it parses it and represents the document structure as a tree in memory, a document object model (dom)
 - Each element, attribute or text content becomes a dom node
 - CSS will be downloaded and parsed in a second step and will be then applied to each node before the dom is rendered to the user
@@ -775,6 +786,7 @@ a {
 
 
 # 📅 09.01.2023 html: What is the doctype declaration doing at the beginning of a document?
+- 🤖: *The doctype declaration at the beginning of a document is used to specify which version of HTML the document is using.*
 ```html
 <!DOCTYPE html>
 ```
@@ -784,18 +796,21 @@ a {
 
 
 # 📅 09.01.2023 html: What are void elements?
+- 🤖: *Void elements are HTML tags that don't have a closing tag and don't have any content. Examples include `<img>` and `<br>`.*
 - html tags which do not require a closing tag
 - they are called void elements because they are empty (sometimes also referred as singleton tags or empty elements)
 - those include: `<br>`, `<col>`, `<img>`, `<hr>` and a lot more html5 tags (e.g. media tags)
 - you do not need a trailing slash like `<br/>` (only used for xhtml compatibility)
 
 # 📅 09.01.2023 html: What is xhtml?
+- 🤖: *XHTML is a version of HTML that adheres to stricter rules for well-formedness, such as all elements must be closed and all attributes must have a value.*
 - was designed to create a bridge between html and xml to have a common spec
 - for example a void element like `<br>` in html is not valid xml since every element needs a a closing tag. In xhtml you need to write `<br/>`
 - should not be used anymore, use html5 instead
 -  only in very special cases where you need both properties e.g. chat logs which you want to conveniently render in the browser and use all the xml parsing capabilities and tools (e.g. with XSLT) 
 
 # 📅 09.01.2023 html: What is the head element used for?
+- 🤖: *The head element is used to contain metadata about the document, such as the title, which is used by browsers and search engines.*
 - Used for metadata and is not displayed/rendered by the browser
 - document title (also shown in browser tab or when saving as favourite)
 - character set
