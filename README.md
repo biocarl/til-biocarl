@@ -21,6 +21,12 @@
 
 ---
 
+
+# 📅 23.01.2023 css: What is the purpose of css?
+- Styling (visual appearance of content) like colors and fonts
+- Layout (how content is layed out accross the available screen) - also adapting to different screen sizes
+- Animations (keyframe animations, etc.)
+
 # 📅 13.01.2023 css: How does flexbox work?
 - the parent container decides about the layout of the child elements (inner display value), use it with `display:flex` (note the the out display value still remains `block` for the parent container, to change this you would do `inline-flex`)
 - How does flexbox behave if there is limited space available?
@@ -601,11 +607,16 @@ link
 
 
 # 📅 10.01.2023 css: How are conflicting styling rules resolved (cascading/specificity/inheritance)?
-- Note: In case of a conflicting declaration block not the entire rule takes precedence but rules for single attributes are prioritized 
-- *Specificity*: Can be visualized like a waterfall: “At the top, we have more general selectors and as we trickle down specificity grows more and more… specific.”
+- In general: In case of a conflicting declaration block not the entire rule takes precedence but rules for single attributes are prioritized
+- Cascading is the algorithm which defines which rules is applied in the end and follow the following increasingly important stages:
+- Source-Order
+- Specificity
+- Origin: browser style, CSS from a browser extension, CSS from dev (see also layers)
+- Important-Statement
+- **Specificity**: Can be visualized like a waterfall: “At the top, we have more general selectors and as we trickle down specificity grows more and more… specific.”
 - Most general: Universal selector -> Elements -> Classes -> IDs -> Inline Styling -> !important: Most specific
 - See more [here](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
-- *Cascade*: In case two selectors have the same precedence the rule defined last in the stylesheet will be applied (source order). You can even have the same rule in the same declaration block. This becomes useful for a fallback strategy (in this case if the `calc` function is available the line will be ignored but the previous line still is evaluated) 
+- **Source order**: In case two selectors have the same precedence the rule defined last in the stylesheet will be applied (source order). You can even have the same rule in the same declaration block. This becomes useful for a fallback strategy (in this case if the `calc` function is available the line will be ignored but the previous line still is evaluated) 
 ```css
 .box {
   width: 200px;
