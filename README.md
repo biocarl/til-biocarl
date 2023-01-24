@@ -21,6 +21,15 @@
 
 ---
 
+# 📅 24.01.2023 revealjs: How to use speaker notes
+- In combination with `reveal-md` just start the line as follows
+```plaintext
+# Title
+- Some bullet
+Notes: This is a speaker note not visible
+```
+- In localhost presentation mode just press `S` for opening the presenter mode
+
 # 📅 24.01.2023 github: HTTPS clone with 2FA
 - Generate new token [here](https://github.com/settings/tokens)
 - On `git clone` provide username and as password use the token
