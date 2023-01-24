@@ -21,6 +21,30 @@
 
 ---
 
+# 📅 24.01.2023 revealjs: How to use flex-box layout with markdown?
+- You can always html in markdown slide, but in order to evaluate markdown inside a html text node you need to leave two line breaks
+
+```plaintext
+<script>
+    .container{
+        display: flex;
+    }
+</script>
+
+# Slide title
+
+<div class="container">
+
+
+- A unorder list with entries
+- second entry
+
+This element will be in the second column
+
+</div>
+```
+
+
 # 📅 24.01.2023 revealjs: How to use speaker notes
 - In combination with `reveal-md` just start the line as follows
 ```plaintext
@@ -383,6 +407,7 @@ html {
 ```
 	- `<source>` contain the images options with the media conditions
 	- `<img>` is the default case which needs to be provided in any case
+- both *art direction* and *resolution switching* pick a different source depending on the screen size. In the first case however the browser does not have a choice which image to choose (since it enforces the intended layout). In the second case the browser can also consider available bandwith.
 - How to deal with sizing? (fluid images)
 	- `width: 100%` would not be good because a image with intrinsic width smaller then the parent container width would be stretched and would not look good
 	- `max-width: 100%` does not force to stretch (image never breaks the boundaries of parent container) but also scales the image down if the intrinsic width of the image is higher
