@@ -21,6 +21,9 @@
 
 ---
 
+# 📅 24.01.2023 github: HTTPS clone with 2FA
+- Generate new token [here](https://github.com/settings/tokens)
+- On `git clone` provide username and as password use the token
 
 # 📅 23.01.2023 css: What is the purpose of css?
 - Styling (visual appearance of content) like colors and fonts
