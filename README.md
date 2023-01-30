@@ -21,6 +21,22 @@
 
 ---
 
+# 📅 30.01.2023 revealjs: How to link with id anchors?
+- This markdown slide
+```plaintext
+# This is a header
+```
+- You can link with an document fragment anchor like this
+```bash
+http://localhost:1948/intro.md#this-is-a-header
+```
+- Make sure that those are unique across the document
+
+
+# 📅 30.01.2023 revealjs: How to host a folder of md slides?
+- Just point it to the folder itself, use the parent folder of the slides otherwise the relative image links won't work
+
+
 # 📅 24.01.2023 revealjs: How to use flex-box layout with markdown?
 - You can always html in markdown slide, but in order to evaluate markdown inside a html text node you need to leave two line breaks
 
