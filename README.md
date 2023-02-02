@@ -21,6 +21,9 @@
 
 ---
 
+# 📅 02.02.2023 intellij: What to do when cloning of private repos of organization fails?
+- One possible reason is that the Intellij OAuth App does not have permissions to do so, change this [here](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-your-membership-in-organizations/requesting-organization-approval-for-oauth-apps)
+
 # 📅 30.01.2023 revealjs: How to link with id anchors?
 - This markdown slide
 ```plaintext
