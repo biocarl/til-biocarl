@@ -21,6 +21,11 @@
 
 ---
 
+# 📅 05.02.2023 revealjs: How to show a website fullscreen on a slide?
+```html
+<!-- .slide: data-background-iframe="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" -->
+```
+
 # 📅 02.02.2023 intellij: What to do when cloning of private repos of organization fails?
 - One possible reason is that the Intellij OAuth App does not have permissions to do so, change this [here](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-your-membership-in-organizations/requesting-organization-approval-for-oauth-apps)
 
