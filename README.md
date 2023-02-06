@@ -169,6 +169,7 @@ Notes: This is a speaker note not visible
 	- `align-content`, align the elements vertically, along the column axis, for example `center` or `stretch` to stretch the elements along the y-axis
 	- `justify-items`(row)/`align-items`(column) is to align/stretch them inside the different row/column. Per default both are set to stretch.
 	- To overwrite item layout on a item basis you can specify `justify-self`/`align-self`
+- the `auto` keyword automatically defines width based on the content (widest element in the column)
 
 # 📅 13.01.2023 css: layout: What is understood under normal flow?
 - the site layout without any css for example the behavior caused by default `display` like `block` and `inline` elements, the element order defined in the source and no stacking on top of each other
