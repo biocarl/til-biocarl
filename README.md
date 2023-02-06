@@ -21,6 +21,9 @@
 
 ---
 
+# 📅 05.02.2023 revealjs: How to print a slide to pdf
+- Append `?print-pdf` to localhost url (or use `reveal-md` tool)
+
 # 📅 05.02.2023 revealjs: How to show a website fullscreen on a slide?
 ```html
 <!-- .slide: data-background-iframe="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" -->
@@ -1178,6 +1181,7 @@ git push origin --tags
     z-index: 4; /* High number puts the element in the foreground */
 }
 ```
+- this only works if the parent container is also positioned in absolute or static way, if not the reference is the viewport. (but won't stick to the viewport as in fixed or sticky)
 
 # 📅 06.12.2022 css: layout: How to do fixed positioning?
 - Fixed positioning allows you to position an element relative to the browser window.
