@@ -3602,6 +3602,7 @@ String wholeResponse = scanner.nextLine();
 - Formative feedback: happens during teaching, while you see students applying newly learned knowledge
     - Monitor learnings from student, allowing to modify content if specific need is identified
     - Motivate students to pay attention
+    - Important to communicate: Student can't fail on a formative test. It is just a information for student and teacher where to focus next
 - Summative feedback: at the end, final learning outcome is tested for, often to account for external stakeholders
 - A good metaphor for both: The cook tasting the food while cooking is formative feedback, the guest evaluating the meal is summative feedback 
 
