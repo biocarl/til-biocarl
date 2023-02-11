@@ -3603,6 +3603,7 @@ String wholeResponse = scanner.nextLine();
     - Monitor learnings from student, allowing to modify content if specific need is identified
     - Motivate students to pay attention
 - Summative feedback: at the end, final learning outcome is tested for, often to account for external stakeholders
+- A good metaphor for both: The cook tasting the food while cooking is formative feedback, the guest evaluating the meal is summative feedback 
 
 # 📅 08.10.2022 training: How to formulate learning outcomes
 - European Quality Framework (EQF) := europe learning outcomes-based framework which helps to translate between the national qualifications frameworks
