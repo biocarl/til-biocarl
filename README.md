@@ -21,6 +21,12 @@
 
 ---
 
+# 📅 13.02.2023 git: What to do when git push freezes?
+- One possible reason can be that the postBuffer for files is to small (default 1Mib)
+```bash
+git config --global http.postBuffer 157286400
+```
+
 # 📅 05.02.2023 revealjs: How to print a slide to pdf
 - Append `?print-pdf` to localhost url (or use `reveal-md` tool)
 
