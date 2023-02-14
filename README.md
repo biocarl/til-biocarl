@@ -21,11 +21,153 @@
 
 ---
 
+
+# 📅 14.02.2023 consulting: Why best practice are bad
+- they do not assume context. Instead of formulas and recipes we need patterns and sensible defaults
+- Best practices try to impose a clear domain on complex environment which is bound to  fail (see cynefin)
+
+# 📅 14.02.2023 css: What are ways of debugging css code?
+- First and foremost: Browser Developer Tools (Chrome/Mozilla)
+- But sometimes you also want to visualize the boxes in a useful way
+- Use `outline`, better than `border` because it does not take up any space
+```css
+* {
+    box-sizing: border-box;
+    outline: 1px solid limegreen !important;
+}
+```
+- If you want to to visualize overlaps use a rgba `background` color
+```css
+* {
+    box-sizing: border-box;
+    background: rgb(0 100 0 / 0.1) !important;
+}
+```
+- For both it makes sense to use `!important` in order to really overwrite every single css rule
+
+# 📅 14.02.2023 css: What is the difference between root selector and html element selector?
+- `html` tag is root element, top layer of inheritance
+```css
+html {
+
+}
+
+/* Equivalent, although this has higher specificity */
+:root {
+
+}
+```
+- `:root` always overwrite `html` selector. The distinction exists because CSS works on DOM structure and does not need html to work: *"As an aside, CSS is not just about HTML. It will work with a DOM created in any namespace from any source. In particular it will work with DOMs created from XML. So the root element is not necessarily the <html> element."*
+
+# 📅 14.02.2023 css: How to style user selection?
+- Style the text user selection with this pseudo-selector
+```css
+::selection {
+  background: black;
+  color: white;
+}
+```
+
+# 📅 14.02.2023 html: How to align text with html only (deprecated)?
+- You can align in html (without css), although it is **deprecated**
+```html
+<h1 align="center">This is centered text</h1>
+```
+
+# 📅 14.02.2023 fun: Unicode characters I love
+- Fish sequence: 𓆝 𓆟 𓆞 ‧̍̊˙· 𓆝 °
+- Bears: 
+```plaintext
+ᶘ ͡°ᴥ͡°ᶅ
+
+٩ʕ•͡×•ʔ۶
+
+ʕ◉ᴥ◉ʔ
+```
+
+
+# 📅 14.02.2023 intellij: Do auto-refresh for web preview when editing html/css
+- Useful if you want to see the change directly while live-coding (although an explicit save is sometimes better for asking questions)
+- To toggle just search for the following command `Reload page in built-in preview` and select either `On Save` or `On Change` 
+- Further [reading](https://www.jetbrains.com/help/idea/settings-tools-web-browsers.html#ws_configure_browsers_reload_behavior)
+
+
+# 📅 14.02.2023 revealjs: Exclude certain elements on pdf export
+- When you export pdf via the `?print-pdf` and browser native print function you can make usage of the media query targeting print
+```css
+@media print {
+    .exclude {
+        display: none;
+    }
+}
+```
+- Just annotate the elements you want to exclude on print
+- Not possible for hiding whole slides (alternative approach would be to write a pre-processor script deleting out those slides when printing)
+
+
 # 📅 13.02.2023 git: What to do when git push freezes?
 - One possible reason can be that the postBuffer for files is to small (default 1Mib)
 ```bash
 git config --global http.postBuffer 157286400
 ```
+
+# 11.02.2023 training: What is the central idea of Papert's education critique?
+- Described in his book Mindstorms
+- Additional resources: https://medium.com/bits-and-behavior/mindstorms-what-did-papert-argue-and-what-does-it-mean-for-learning-and-education-c8324b58aca4
+- formal notations like F=m*a are useful for science and application but very bad for learning. Learning requires a much more experimental, iterative and intuitive process
+- this iterative character is much more like children naturally learn
+- do not start with the abstract but find a imperfect language which connects to the current worldview way of thinking of the students, creating resonance and relatedness
+- those easy languages provide a trial and error experience and therefore learning, especially a easy programing language which provides visual output is very powerful (Papert's programing language Logo) since experience is very direct and correlated to actions
+- this process of constructing knowledge is best achieved my not having a curriculum but more a open space which enables the students to grow on abilities and knowledge which is already there
+- A good example is the box-model template, explore by your own how padding, margin and border works. What happens when you do A?
+
+# 11.02.2023 training: Why are mental models so important as a learner?
+- the ultimate goal of teaching should be developing a mental model in the student. That is the thing they we remember, refine and work with
+- it does not need to be correct but it needs to be intrinsically constructed by making your own experiences, it will eventually float to some more truthy model
+- mental models are created through understanding, filling in the gaps
+- For example when teaching some Unix commands, it's not about knowing all the commands but more about piping, directories and environment variables and how they play together and how to find out missing information
+
+#  11.02.2023 training: What is the difference between a tutorial and a manual?
+- a tutorial is for a complete beginner to build up a basic mental model
+- a manual is for a more advanced learner who wants fill in the gaps of his mental model
+
+#  11.02.2023 training: How to do formative tests in a good way?
+- *Target group*: Can be either for one person or whole group
+- *Type of questions*: Question should be simple to answer and should not interrupt the lesson flow too much
+- *Formats*: Multiple choice questions for the group are a good way of doing them (MCQ). Here it is essential to design them well, create distractors and discuss them if a lot of students voted for it. Design formative questions requires quite some bit of thinking and deep knowledge about the domain "to make a point" with this question. That's why it is key to deeply understand the topic first
+- *Frequency*: Do formative tests every 15-20 mins for 1-2 minutes (makes sure that you know quickly when you loose a large part of the group)
+- Formative feedback is a good basis for deciding where to go next
+    - If the majority chooses the wrong answer you should go back explaining the concepts
+    - If the minority chooses the wrong answer it depends on how well engaged and patient the group is (or come up with a bonus task)
+
+
+#  11.02.2023 training: What are notional machines?
+- A notional machine is a way of describing a basic mental model the learner should develop to associate the written code with the real device excecuting it
+- A notional machine is a sufficiently precise model of how the language works alias how it interacts with the machine in order to get the job done
+- At university level this would be for example the register automata or the Turing Maschine
+- But for children or a more practical audience this is too abstract and more intuitive models can be catered to the student
+- Those models open up a specific language which help to explain those concepts in a more pragmatic way
+- Examples
+  - Metaphors like box or whiteboard metaphor for variables
+  - Representations of variables with e.g. stickies 
+  - Simple rules everyone understands
+  - Using existing knowledge e.g. explain while-loop with for-loop
+<p align="center"><img height=400 src="https://raw.githubusercontent.com/biocarl/img/master/notational.jpeg" /></p>
+
+#  11.02.2023 training: What makes a good notional machine?
+- Should be factually correct (most of the times)
+- Can leave out information to reduce complexity (e.g. in Java explaining references is enough, no need to explain memory addresses)
+- Use good metaphors
+- In the words of du Bulay, a notional machine is "the best lie that explains what the computer does"
+- See a good example for python [here](https://teachtogether.tech/en/index.html#s:models-notional)
+
+
+#  11.02.2023 training: What is understood under the expert blind spot?
+- When you are deep into a topic you easily forget how difficult it was at the beginning
+- Tackle this by
+   - Slowing down
+   - Cultivate empathy
+   - Always learn something new by yourself
 
 # 📅 05.02.2023 revealjs: How to print a slide to pdf
 - Append `?print-pdf` to localhost url (or use `reveal-md` tool)
@@ -1268,9 +1410,13 @@ h1 {
 img[height]{
     width: auto;
 }
-/* you can also match for specific attribute values (equal '=', contains '*=', starting with '^=', ending with '$=' */
+/* You can also match for specific attribute values (equal '=', contains '*=', starting with '^=', ending with '$=' */
 img[height=200]{
     width: 100px;
+}
+/* You can also combine several attribute selectors, in this case both attributes need to be set with the specified value in order to match the element. */
+input[name="Sex"][value="M"]{
+    color: green;
 }
 /* Append/Prepend to element e.g. prepending '>>>' before each header */
 h1:before { /* also :after */
@@ -1279,7 +1425,7 @@ h1:before { /* also :after */
 ```
 
 # 📅 06.12.2022 css: How to combine css selectors?
-- style several entities at once
+- style several entities at once, called a **grouping selector**
 ```css
 h1, h2 {
     color: blue;
@@ -1296,7 +1442,7 @@ span > .important {
 }
 
 ```
-- match all span elements with a important class
+- match all span elements with a important class, called **compound selector**
 ```css
 span.important {
     color: red;
