@@ -21,6 +21,28 @@
 
 ---
 
+# 📅 21.02.2023 revealjs: How to style a background of specific slide?
+- This example is using a background template in `base.css` which is injected into the reveal-md runner
+- In Markdown you annotate the current slide with a class you use for selection (in this case `exercise`)
+```html
+<!-- .slide: class="exercise" -->
+```
+- In `base.css` you target `.reveal` which is the overall parent container. This contains all sections (individual slides) as childs and the currently show slide is annotated with `present` class
+```css
+.reveal:has(section.exercise.present) {
+    background-image: linear-gradient(to bottom, #339966, #006666); 
+}
+```
+- To inject in external template into the slide use `reveal-md ... --theme "path/to/url/base.css"`. If you host the file host it on something like Github pages to allow cross-origin access
+
+# 📅 21.02.2023 css: How to select a parent element which has certain child elements?
+- `:has` pseud-class allows to check what children the parent element has (does not have to be a direct child)
+- In this case we look for an element annotated with `.parent` which has one child which is annotated with `child` and `present` class
+```css
+.parent:has(.child.present) {
+  border: 1px solid red; 
+}
+
 
 # 📅 14.02.2023 consulting: Why best practice are bad
 - they do not assume context. Instead of formulas and recipes we need patterns and sensible defaults
