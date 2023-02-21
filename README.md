@@ -48,6 +48,7 @@
 ```
 - To inject in external template into the slide use `reveal-md ... --theme "path/to/url/base.css"`. If you host the file host it on something like Github pages to allow cross-origin access
 
+
 # 📅 21.02.2023 css: How to select a parent element which has certain child elements?
 - `:has` pseud-class allows to check what children the parent element has (does not have to be a direct child)
 - In this case we look for an element annotated with `.parent` which has one child which is annotated with `child` and `present` class
@@ -55,6 +56,7 @@
 .parent:has(.child.present) {
   border: 1px solid red; 
 }
+```
 - Also investigate similar pseudo-class `:where()`
 
 
