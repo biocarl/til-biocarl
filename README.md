@@ -21,6 +21,19 @@
 
 ---
 
+
+# 📅 21.02.2023 revealjs: How to style markdown elements?
+- Specific single elements like this
+```markdown
+- Item 1 <!-- .element: class="highlight" -->
+- Item 2
+```
+- The whole slide
+```markdown
+<!-- .slide: data-background="#ff0000" -->
+# Slide 1
+```
+
 # 📅 21.02.2023 revealjs: How to style a background of specific slide?
 - This example is using a background template in `base.css` which is injected into the reveal-md runner
 - In Markdown you annotate the current slide with a class you use for selection (in this case `exercise`)
@@ -42,6 +55,7 @@
 .parent:has(.child.present) {
   border: 1px solid red; 
 }
+- Also investigate similar pseudo-class `:where()`
 
 
 # 📅 14.02.2023 consulting: Why best practice are bad
