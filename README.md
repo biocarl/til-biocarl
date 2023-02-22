@@ -21,6 +21,36 @@
 
 ---
 
+# 21.02.2023 mariadb: How to create a database?
+- Sometimes also called schema: `CREATE DATABASE db1;`
+
+# 21.02.2023 mariadb: mac: How to connect to database with root user?
+**Scenario 1**
+- On unix systems the default password for root users is managed through the unix sudo
+- You can login into the current instance with `sudo mysql -u root`
+- But for jdbc or a workbench connection you can not authenticate with sudo but need a proper password
+- To change this do the following commands
+- 1. First verify that the passwords are managed through an unix `auth_socket`
+```sql
+USE mysql;
+SELECT User, Host, plugin FROM mysql.user;
+```
+- 2. Change auth method to `mysql_native_password`
+```sql
+UPDATE user SET plugin='mysql_native_password' WHERE User='root';
+FLUSH PRIVILEGES;
+```
+**Scenario 2**
+- You have a mysql native password but you do not know which, change it
+    - 1. Connect with sudo: `sudo mysql -u root`
+    - 2. Change password: `ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';`
+    - 3. Connect: `mysql -h 127.0.0.1  -P 3306 -proot -u root db1`
+
+# 21.02.2023 mariadb: mac: How to start the server?
+- For mac you can install via brew: `brew install mariadb`
+- Start the service: `mysql.server start`
+- Of if using brew, auto-start: `brew services start mariadb`
+
 # 21.02.2023 pega: What is pega?
 - A bpm tool which uses Java concepts
 - Building enterprise applications
