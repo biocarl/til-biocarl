@@ -21,6 +21,65 @@
 
 ---
 
+# 21.02.2023 pega: What is pega?
+- A bpm tool which uses Java concepts
+- Building enterprise applications
+- BPM: Business Process Management
+- Also used for CRM (Customer Relation Management, like Salesforce) and RPA (Robotic Process Automation)
+
+# 21.02.2023 pega: What is a business process?
+- For instance in a bank there is major business processes like
+	- Savings account
+	- Loan processing
+	- Collection Process
+- You need to store the data and to capture the data
+- They follow a certain flow and logic, at the end usual some manual approval 
+
+# 21.02.2023 pega: What is the history of pega?
+- Involve business people when creating business processes (low-code solution)
+- Licensed // Not Open-Source
+- A lot of pre-packaged modules for instance “Sending E-Mail“, which are commonly used in companies
+- Written in Java
+
+# 21.02.2023 pega: What happens when Pega is not used anymore?
+- The skills/concepts you learn are be reusable for other similar technologies (like Salesforce, Appianm Camunda, UI Path)
+
+# 21.02.2023 pega: What is a Pega Dev-Ops team?
+- Product Owner: Owns the requirements etc.
+- Business Analyst: Bridge between Business and IT, writes stories
+- Lead System Architect (LSA), highest certification required, designs the whole thing
+- Senior System Architect
+- System Architect
+
+# 21.02.2023 pega: What does a Pega application consist of?
+- Web/App server (you will get er/war files from Pega): Supports many different server technologies (e.g. Apache Tomcat, Weblogic)
+- Database server: Supports many different database technologies (e.g. PostgresSQL, MySQL)
+- Usually you want to decide for one standard and technology and have this across the entire organisation
+- Internally it also uses Kafka, 
+
+# 21.02.2023 pega: In which environments do I usually work as a pega developer?
+- Dev Studio: Where I can do low-level coding
+- App Studio: Low-Code Platform (for Business People), should be main focus
+- Admin Studio: For example background jobs, API documentation etc.
+- Prediction Studio: For doing some predictions
+
+# 21.02.2023 pega: What should I know about the Dev Studio?
+- You have application dashboard
+- Tests
+- Commit history
+- Data Model
+- Background Jobs for example for reporting
+- Integration (connect with API’s) - hard topic
+- System Configuration 
+
+# 21.02.2023 pega: What does Pega has to do with Java?
+- [source](https://docs-previous.pega.com/sites/default/files/help_v73/concepts/concepts2/conceptsjavadevelopers.htm)
+- rules := code
+- Configure some rule forms (instead of Java source code) and Pega will execute them (behind the scenes Pega assembles piece of executable Java code) - [here some example](https://academy.pega.com/topic/rules-and-rule-types/v2) for control flow
+- In some cases you can also insert Java source code into rule forms
+- In general OOP principles are also important in Pega ([source](https://academy.pega.com/topic/object-oriented-pega-development/v1))
+- Bundle rules into classes described [here](https://docs-previous.pega.com/rules-management/87/organizing-rules-classes)
+- For example parent/child cases described [here](https://academy.pega.com/topic/child-cases/v1)
 
 # 📅 21.02.2023 revealjs: How to style markdown elements?
 - Specific single elements like this
