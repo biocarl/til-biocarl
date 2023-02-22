@@ -21,6 +21,12 @@
 
 ---
 
+
+# 21.02.2023 office365: How to use bookings for a public appointment calendar?
+- *The Microsoft Appointments app is a scheduling tool designed to help businesses manage and organize appointments with customers.*
+- Link to [tool](https://outlook.office.com/bookings)
+
+
 # 21.02.2023 mariadb: How to create a database?
 - Sometimes also called schema: `CREATE DATABASE db1;`
 
