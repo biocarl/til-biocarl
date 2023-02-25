@@ -60,6 +60,7 @@ svg path {
     stroke: black;
 }
 ```
+- For more supported properties have a look at [css-tricks](https://css-tricks.com/svg-properties-and-css/)
 
 # 21.02.2023 office365: How to use bookings for a public appointment calendar?
 - *The Microsoft Appointments app is a scheduling tool designed to help businesses manage and organize appointments with customers.*
