@@ -22,10 +22,48 @@
 ---
 
 
+# 25.02.2023 css: layout: How to simulate an inline SVG as background image?
+- The approach is to overlay them
+```css
+.overlay-container {
+    position: relative;
+    width: 70%; /* In case you want to limit overall container */
+}
+.forground-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+```
+- With the following CSS
+```html
+ <div class="overlay-container">
+        <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" fill="red" />
+        </svg>
+        <div class="forground-container"></div>
+</div>
+```
+- The SVG should now scale accordingly (if you do not have dynamic `width`/`height` attributes set and use the viewport)
+- For extreme screen sizes use media queries if needed
+
+# 25.02.2023 css: How to style a inline SVG?
+- There is two properties you can target
+- Since it is inline you can give each path an id/class and select for this (use also `<g>` tag for grouping)
+- The following selects for all paths in an SVG
+```css
+svg path {
+    fill: deepskyblue;
+    stroke: black;
+}
+```
+
 # 21.02.2023 office365: How to use bookings for a public appointment calendar?
 - *The Microsoft Appointments app is a scheduling tool designed to help businesses manage and organize appointments with customers.*
 - Link to [tool](https://outlook.office.com/bookings)
-
 
 # 21.02.2023 mariadb: How to create a database?
 - Sometimes also called schema: `CREATE DATABASE db1;`
