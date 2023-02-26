@@ -21,6 +21,12 @@
 
 ---
 
+# 26.02.2023 unix: How to create a symbolic link?
+```bash
+ln -s /original-location /destination-location
+```
+- Always use absolute paths for example with `$(realpath <FILE>)`
+
 # 26.02.2023 revealjs: How to add plugins to reveal-md?
 - Either through CLI runner or `reveal-md.json` config file, approach described [here](https://github.com/webpro/reveal-md/issues/102#issuecomment-692494366)
 
