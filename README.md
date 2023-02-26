@@ -21,6 +21,8 @@
 
 ---
 
+# 26.02.2023 revealjs: How to add plugins to reveal-md?
+- Either through CLI runner or `reveal-md.json` config file, approach described [here](https://github.com/webpro/reveal-md/issues/102#issuecomment-692494366)
 
 # 25.02.2023 css: layout: How to simulate an inline SVG as background image?
 - The approach is to overlay them
