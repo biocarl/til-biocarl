@@ -21,6 +21,28 @@
 
 ---
 
+
+
+# 27.02.2023 mariadb: How to automatically create database upon connection?
+- Just append the following string to your jdbc connection string: `?createDatabaseIfNotExist=true`
+
+
+# 27.02.2023 mariadb: How to debug connection problems?
+- There is different logs you can access [here](https://mariadb.com/kb/en/overview-of-mariadb-logs/)
+- Retrieve the path of error log file: `SHOW VARIABLES LIKE 'log_error';`
+- Set the correct dialect for mariadb:
+```yml
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+```
+
+# 26.02.2023 css: svg: How does the viewBox work?
+- Consists of four values
+- `min-x`, `min-y`: Represents the top left coordinates of the viewport
+- `width`, `height`: Spanning from the left-coordinate
+
+
 # 26.02.2023 unix: How to create a symbolic link?
 ```bash
 ln -s /original-location /destination-location
