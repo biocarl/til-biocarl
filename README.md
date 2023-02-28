@@ -21,6 +21,73 @@
 
 ---
 
+# 28.02.2023 css: emoji: How to provide small emojis as part of fonts?
+- Generate a emoji poster with the emojis you need [here](https://emoji.supply/)
+- Settle for one specific font and for each letter figure our some positioning for each sprite:
+```css
+div::first-letter {
+    /* You can als provide images as background*/
+    background-image: url("chicken.png");
+    /* and select a certain zoom + offset*/
+    background-size: 710px;
+    background-position-x: 1px;
+    background-position-y: 0px;
+    background-clip: text;
+    
+    /* If you want that the font takes the texture of the background do this: */
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+```
+- Since you can not select single letters in a text node (except `first-letter`) you have to define a bunch of classes like this
+```html
+<p>
+    <span class="A">A</span><span class="b">b</span>
+</p>
+```
+- You do not have to worry that the image will be downloaded several times, every browser caches this;)
+
+# 28.02.2023 css: How to color a certain region of a single character?
+- This is by defining a certain background an clip that background based on the forground text
+- The text itself has the clipped region as texture if you set the `color`/`text-fill-color` to transparent
+```css
+/* Clipping a gradient background */
+div span:nth-child(1) {
+    background: linear-gradient(to right, #1c87c9 50%, #8ebf42 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;   
+}
+
+/* Clipping a fading out background, making the character fade out from top -> bottom */
+div span:nth-child(2) {
+    background: linear-gradient(to top, rgba(100,100,100,0.2) 1%, rgba(100,100,100,0.9) 80%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+/* Also use ::first-letter if you want to target first character of text node */
+div::first-letter {
+    /* You can als provide images as background*/
+    background-image: url("chicken.png");
+    /* and select a certain zoom + offset*/
+    background-size: 710px;
+    background-position-x: 1px;
+    background-position-y: 0px;
+    background-clip: text;
+    
+    /* If you want that the font takes the texture of the background do this: */
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+```
+```html
+<div>
+    Following text
+    <span>A</span>
+    <span>B</span>
+</div>
+```
 
 
 # 27.02.2023 mariadb: How to automatically create database upon connection?
