@@ -21,6 +21,23 @@
 
 ---
 
+
+# 28.02.2023 css: mediaquery: How to query expect a certain region?
+```css
+@media not (500px <= width <= 800px) {
+    /* Selects all screens which are outside of the range of 500 - 800
+       0 - 499 and 801 - ∞)
+    */
+}
+```
+- When you want to do this you could also ask yourself, if it does not make more sense to do it the other way round, have the contrary as default values and overwrite it with a media query
+```css
+@media (500px <= width <= 800px) {
+    /* Selects the same but inside of range */
+}
+```
+
+
 # 28.02.2023 css: emoji: How to provide small emojis as part of fonts?
 - Generate a emoji poster with the emojis you need [here](https://emoji.supply/)
 - Settle for one specific font and for each letter figure our some positioning for each sprite:
