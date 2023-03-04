@@ -2847,7 +2847,8 @@ document.write("1+2",1+1,"<div>someDomElement</div>");
 ```
 
 # 📅 09.11.2022 javascript: oop: How to do OOP?
-- The analogon of a object is usually a simple map where we also introduce functions
+- There is two types of objects
+- The **object literal** which behaves like a simple map where we can also introduce functions
 ```javascript
 var person1 = {
     name : "James",
@@ -2874,7 +2875,7 @@ for(key in person1){
 var hasName = "name" in person1;
 ```
 
-- If you want to define a generic object there is also object constructors
+- The second object **generic object** is constructed from a class there is also object constructors (usueful if you want to enforce a certain state which you can't model any more with type constraints e.g. with TS)
 - Note the differences to the object map (use of `this`, `=` instead of `:`, field declarations ending with `;`)
 ```javascript
 function Person(name, age){
