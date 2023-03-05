@@ -21,6 +21,14 @@
 
 ---
 
+# 04.03.2023 git: How to undo the last commit but keep the changes in working directory?
+- Either soft-reset via cli: `git reset HEAD~1 --soft`
+- Or via IntelliJ (also works with several commits at once)
+1. Go to Version control window (Git)
+2. Right-click on a commit before your last one.
+3. Click "Reset current branch to here..."
+4. Pick Soft (very important!!!)
+[source](https://stackoverflow.com/questions/19859486/how-to-un-commit-last-un-pushed-git-commit-without-losing-the-changes)
 
 # 28.02.2023 css: mediaquery: How to query expect a certain region?
 ```css
