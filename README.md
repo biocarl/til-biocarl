@@ -523,9 +523,14 @@ Notes: This is a speaker note not visible
 ```
 - In localhost presentation mode just press `S` for opening the presenter mode
 
-# 📅 24.01.2023 github: HTTPS clone with 2FA
-- Generate new token [here](https://github.com/settings/tokens)
-- On `git clone` provide username and as password use the token
+# 📅 24.01.2023 github: HTTPS clone with 2FA and renew a token
+- Generate a new token [here](https://github.com/settings/tokens)
+	- select `repo` entirely
+- Use the token as a password (when e.g. cloning or pulling)
+- If you already set a token and it is expired, globally reset the credentials here
+```bash
+git config --global --unset user.password
+```
 
 # 📅 23.01.2023 css: What is the purpose of css?
 - Styling (visual appearance of content) like colors and fonts
