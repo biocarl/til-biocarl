@@ -2241,6 +2241,7 @@ id,race,skin_color
 # 📅 17.11.2022 vuejs: How to create an app?
 - In `main.js` the vue app is created via `createApp`, with a mandatory options object, containing
     - `data` which is the data model which is used in the view/html template
+    - Check out the other options [here](https://012.vuejs.org/api/options.html): `props`, `methods`, `computed`, `el`, `template`, but also custom things like `directives`
 ```javascript
 const app = Vue.createApp(
     { data: function {
