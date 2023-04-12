@@ -21,6 +21,10 @@
 
 ---
 
+# 12.04.2023 intellij: How to import a project unpacked from a ZIP file export?
+- `Open ...` -> `Select Unpacked Zip file`
+
+
 # 04.03.2023 git: How to undo the last commit but keep the changes in working directory?
 - Either soft-reset via cli: `git reset HEAD~1 --soft`
 - Or via IntelliJ (also works with several commits at once)
