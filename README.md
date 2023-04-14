@@ -21,6 +21,10 @@
 
 ---
 
+# 14.04.2023 gson: Gson uses only fields for serialization
+- gson uses only fields for serialization, use jackson instead
+
+
 # 12.04.2023 intellij: How to import a project unpacked from a ZIP file export?
 - `Open ...` -> `Select Unpacked Zip file`
 
