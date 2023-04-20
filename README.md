@@ -4215,6 +4215,7 @@ public class Main implements InterfaceA, InterfaceB {
 - can only contain abstract methods (not considering default methods since Java 8), abstract classes commonly contain also methods with implementation
   - no instance instance variables (abstract class can have instance variables)
   - interface also can’t have a constructor
+- Usually a abstract class with only abstract methods does not make sense. A abstract class you usually would choose if you want to have mutable state in the mother class (and abstract because you do not want to initiate that mother class e.g. Animal object does not make sense)
 
 # 📅 02.10.2022 java: oop: polymorphism: What is purpose of default methods in interfaces?
 - default methods allows for having a method body (not abstract anymore)
