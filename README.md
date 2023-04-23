@@ -21,6 +21,10 @@
 
 ---
 
+
+# 23.04.2023 intellij: Resizing web preview
+- Web preview can actually be resized (this always works 🎉) if you drag the window size in the tab section at the very top 
+
 # 14.04.2023 gson: Gson uses only fields for serialization
 - gson uses only fields for serialization, use jackson instead
 
