@@ -21,6 +21,12 @@
 
 ---
 
+# 10.05.2023 javascript: Remove all css from a webpage
+```javascript
+document
+  .querySelectorAll('style,link[rel="stylesheet"]')
+  .forEach(item => item.remove())
+```
 
 # 23.04.2023 intellij: Resizing web preview
 - Web preview can actually be resized (this always works 🎉) if you drag the window size in the tab section at the very top 
