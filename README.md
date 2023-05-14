@@ -21,6 +21,10 @@
 
 ---
 
+# 14.05.2023 ssh: SSH into remote server with private key
+- `ssh user@IP -i PRIVATE_KEY_FILE`
+- Make sure that you always encrypt the file with a passphrase (e.g. when exporting the key with 1password)
+
 # 10.05.2023 javascript: Remove all css from a webpage
 ```javascript
 document
