@@ -21,6 +21,10 @@
 
 ---
 
+# 17.05.2023 canvas: How to export and import quizz files in canvas?
+- You can convert a csv file to a quiz file (qti) format ([here](https://dl.sps.northwestern.edu/canvas/2021/06/add-quiz-questions-to-canvas-by-converting-csv-files-to-qti-zip-files/))
+- You can export a quizz under Course Settings ([here](https://community.canvaslms.com/t5/Canvas-Question-Forum/Exporting-Question-Banks/m-p/192299))
+
 # 14.05.2023 ssh: SSH into remote server with private key
 - `ssh user@IP -i PRIVATE_KEY_FILE`
 - Make sure that you always encrypt the file with a passphrase (e.g. when exporting the key with 1password)
