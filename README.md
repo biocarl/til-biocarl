@@ -21,6 +21,11 @@
 
 ---
 
+
+# 25.05.2023 dokku: How to deploy a static page?
+- Just add an empty `.static` file to your root project
+- This will trigger the [nginx buildpack](https://github.com/dokku/heroku-buildpack-nginx) and host the index.html and all other files in root as static files
+
 # 17.05.2023 canvas: How to export and import quizz files in canvas?
 - You can convert a csv file to a quiz file (qti) format ([here](https://dl.sps.northwestern.edu/canvas/2021/06/add-quiz-questions-to-canvas-by-converting-csv-files-to-qti-zip-files/))
 - You can export a quizz under Course Settings ([here](https://community.canvaslms.com/t5/Canvas-Question-Forum/Exporting-Question-Banks/m-p/192299))
