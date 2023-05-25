@@ -21,6 +21,11 @@
 
 ---
 
+# 25.05.2023 dokku: How to route all subdomains to an application?
+- Use this command `dokku domains:add appname .domain.tld`
+- the `.` in front of the domain is the wildcard syntax
+- Of course you also need an A record in your DNS settings (e.g. cloudflare)
+- [source](https://github.com/dokku/dokku/issues/3075#issuecomment-368224059)
 
 # 25.05.2023 dokku: How to deploy a static page?
 - Just add an empty `.static` file to your root project
