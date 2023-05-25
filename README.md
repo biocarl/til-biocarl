@@ -21,6 +21,14 @@
 
 ---
 
+# 25.05.2023 markdown: What are the standard rules of converting a header into a anchor name?
+- [source (Gitlab)](https://docs.gitlab.com/ee/user/markdown.html#header-ids-and-links)
+	- All text is converted to lowercase
+	- All non-word text (e.g., punctuation, HTML) is removed
+	- All spaces are converted to hyphens
+	- Two or more hyphens in a row are converted to one
+	- If a header with the same ID has already been generated, a unique incrementing number is appended, starting at 1.
+
 # 25.05.2023 dokku: How to route all subdomains to an application?
 - Use this command `dokku domains:add appname .domain.tld`
 - the `.` in front of the domain is the wildcard syntax
