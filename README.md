@@ -3891,7 +3891,7 @@ public class Main implements InterfaceA, InterfaceB {
 - reference types are also copied over by value, the address of the object. You now manipulate the same underlying object since it is still the same reference
 
 # 📅 25.09.2022 java: methods: What happens if you pass in an array to a method?
-- In the case of an array, which is also a reference type, the array reference is passed by value
+- In the case of an array, which is also a reference type, the array is passed in as a reference. Meaning the manipulating the reference will also change the original array
 
 # 📅 25.09.2022 java: methods: How do we return values from a method?
 - Once the end of the method is reached it automatically returns to the caller, you can also manually trigger it by writing `return;` but this is not needed
