@@ -1,0 +1,730 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2706
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 AppleColorEmoji;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww34060\viewh18720\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: Why should you learn javascript?\
+- Not really an alternative (except wasm) when you want to do something in the frontend (client/browser)\
+- You can manipulate HTML, CSS and have custom logic in frontend\
+- there is also other frontend languages you can use but even those languages are in the end transpiled to javascript\
+- you can run javascript also in backend with technologies like node.js\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  21.11.2022 javascript: What is ECMAScript?\
+- Since each browser has its own Javascript interpreter a standard was needed to ensure the written Javascript is compatible with all the different browsers\
+- Common verisons are\
+    - ES6(ECMAScript 2015)\
+    - ES7(ECMAScript 2016)\
+    - ES8(ECMAScript 2017)\
+- Since 2016 version are usually named by the year only\
+- For versions and compatibility see [here](https://www.w3schools.com/js/js_versions.asp)\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  07.06.2023 javascript: Why are classes bad in javascript?\
+- [source](https://dev.to/giantmachines/stop-using-javascript-classes-33ij)\
+- Use modules instead because they are lot easier to mix\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  07.06.2023 javascript: What are object literals?\
+- They are like hash maps in Java\
+```javascript\
+// create an empty object - no class was needed !!\
+var hero = \{\};\
+ \
+hero.name = \'91Hulk;  \
+hero.strength = 44;\
+```\
+- Java analoge (note that value type is of type Object)\
+```java\
+Map<String,Object> hero = new HashMap<>();\
+ \
+hero("name\'94,\'94Hulk);  \
+hero("strength", 44);\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: How to interact with the dom?\
+- Access dom elements (via different selectors (CSS))\
+```javascript\
+// Access dom tree directly\
+document.childNodes[1].style.backgroundColor = 'green'; // should always target <html> tag\
+// Access dom element(s) based on id\
+document.getElementById("someId").innerHtml = "newValue";\
+// Access dom elements based on tag type\
+document.getElementsByTagName("p")[0].style.backgroundColor = 'black'; // style first match\
+```\
+\
+- Check/change attributes of elements\
+```javascript\
+someNode.hasAttribute("id");\
+someNode.getAttribute("id");\
+someNode.setAttribute("id", "so22");\
+someNode.attributes[0].nodeName; //access all attributes\
+someNode.attributes[0].nodeValue;\
+```\
+\
+- Create elements and associate with DOM tree\
+```javascript\
+// Create element\
+var myDiv = document.createElement("div");\
+myDiv.innerHtml = "Some text here";\
+\
+// plug into dom tree\
+someOtherNode.appendChild(myDiv); // inserts as last child of someOtherNode\
+someOtherNode.insertBefore(myDiv,someNode.childNodes[0]); // inserts as first child of someOtherNode\
+\
+// Write to document directly\
+document.write("1+2",1+1,"<div>someDomElement</div>");\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: oop: How to do OOP?\
+- There is two types of objects\
+- The **object literal** which behaves like a simple value map where we can also introduce functions\
+```javascript\
+var person1 = \{\
+    name : "James",\
+    age : 12,\
+    greet: function (name)\{\
+        return "Hey "+ name + ", my name is "+ this.name;\
+    \}\
+\};\
+\
+// access/assign values\
+person1.name = "Dr. James";\
+person1["name"] = "Dr. James"; //analogous\
+\
+// delete a specific property\
+delete person1.age;\
+```\
+- Map analogy because you can also access fields via key-value notation\
+```javascript\
+// iterate over all fields (not so good to use, use `for \'85 of` with `Object.keys()` instead\
+for(key in person1)\{\
+    console.log(person1[k]); // access value like you would access an ordinary map\
+\}\
+// Check if property is in object\
+var hasName = "name" in person1;\
+```\
+\
+- The type is the **generic object**\
+	- is constructed with a constructor function (name needs to be capitalized and then called with `new`)\
+	- useful if you want to enforce a certain state which you can't model any more with type constraints e.g. with TS\
+- Note the differences to the object map (use of `this`, `=` instead of `:`, field declarations ending with `;`)\
+```javascript\
+function Person(name, age)\{\
+    this.name = name;\
+    this.age = age;\
+    this.greet = function (name)\{\
+        return "Hey "+ name + ", my name is "+ this.name;\
+    \};\
+\}\
+var person2 = new Person("Billy", 12);\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: oop: What does \'91this\'92 mean in Javascript?\
+- As in Java it references the object where the keyword `this` is called\
+- But while for instance a function (here `greet(name)`) in Java it is always bound to a specific class/object, we can pass the function as a value to some other context\
+```javascript\
+function Person(name, age)\{\
+    this.name = name;\
+    this.greet = function (name)\{\
+        return "Hey "+ name + ", my name is "+ this.name;\
+    \};\
+\}\
+var person2 = new Person("Billy", 12);\
+var notWorking = person2.greet;\
+```\
+- Now this references the context (global scope) where notWorking would be called, which does not have `name` defined. To fix this we can artificially set the context with the following syntax\
+```javascript\
+notWorking.call(person2); // this would work again\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  07.06.2023 javascript: oop: How does prototypal inheritance work?\
+- Each object can directly inherit from another object (each object therefore has a reference to `__proto__`\
+- The parents object is called the prototype\
+```javascript\
+// shared values\
+Person.prototype.isSmartestSpecies = false; // shared value for all persons\
+// shared functions (aka prototype methods)\
+Person.prototype.compare = function(p1, p2)\{\
+    return p1.age.compare(p2.age);\
+\};\
+// you can also overwrite methods (all objects have toString)\
+Person.prototype.toString = ...\
+// You can also assign a whole object literal as the prototype\
+Person.prototype = \{ height : 200\};\
+```\
+- When accessing a property it will first try to find the property in the object itself, then in the prototype (think of it as fallback values)\
+- you should not use prototype inheritance, use proper classes instead\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: How does regex work?\
+```javascript\
+var regex = /^A.\{4\}/;\
+regex.test("Abcde");\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: How does exception handling work?\
+```javascript\
+// catch error\
+try\{\
+    // throw a new error\
+    throw new RangeError("Out of range!");\
+\}catch (ex)\{\
+    if(ex instanceof RangeError)\{\
+        console.log("Range error occured");\
+    \}\
+\}\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: How to interact with the browser (apart from DOM manipulation)?\
+- Read/Write current url/host/pathf\
+```javascript\
+alert(window.location.href);\
+alert(window.location.hostname);\
+alert(window.location.pathname);\
+// you can also dynamically change those\
+window.location.href = "www.google.com";\
+```\
+- You can reload the window\
+```javascript\
+window.location.reload(true);\
+```\
+- Go back and forth through browser history\
+```javascript\
+history.forward();\
+history.back();\
+// to jump several at once do\
+history.go(-2); // jump 2 backwards\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: datatypes: How to create variables?\
+- Javascript has a dynamic type system, "figures out the types at runtime"\
+```javascript\
+var someInteger = 3;\
+var someString = "hi";\
+```\
+- This is often very confusing and dangerous, this is why supersets like TS were created\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: datatypes: Which range does the integer type hold?\
+- Accessable via constants\
+```javascript\
+var someInteger = Number.MAX_VALUE; // or Number.MIN_VALUE\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: datatypes: How to work with decimal numbers?\
+- Precision is up to 16 digits\
+```javascript\
+// test\
+0.2 = 0.1000000000000000000000000001 + 0.1000000000000000000000000001\
+```\
+- Rounding to two decimal places\
+```javascript\
+(120.122/12).toFixed(2);\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: datatypes: What are some math functions are available?\
+```javascript\
+Math.abs(-3);\
+Math.ceil(4.4);\
+Math.floor(4.4);\
+Math.log(10);\
+Math.min(10,1);\
+Math.max(10,1);\
+Math.pow(10);\
+Math.sqrt(10);\
+```\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: datatypes: How to generate a random number?\
+```javascript\
+var from = 3;\
+var to = 14;\
+Math.floor((Math.random()*to)+from);\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: datatypes: How to parse a string into a number?\
+```javascript\
+Number("3.41");\
+// or specific type\
+parseInt("21");\
+parseFloat("3.2")\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: datatypes: How to work with strings?\
+- The usual string methods\
+```javascript\
+var someString = "ab" + "cdefgh";\
+someString.length; // number of characters\
+someString.indexOf;("ab") // 0 (start of string)\
+someString.slice(2,5); // get substring by index\
+someString.substring(2,2); // same as above but second argument is length starting from position 2022\
+someString.replace("ab", "--");\
+someString.charAt(2); // access char array\
+someString.split(";"); // returns string array based on delimiter\
+someString.trim(); // trim leading/trailing whitespaces\
+someString.toLowerCase();\
+```\
+- Flank strings with certain CSS styling tags\
+```javascript\
+var message = "Welcome!";\
+// all those returns dom elements\
+message.big();\
+message.bold();\
+message.fontcolor("blue");\
+message.fontsize("5em");\
+message.italics();\
+message.link("www.google.com");\
+message.small();\
+message.strike();\
+message.sub(); // lowered\
+message.sup(); // uppered\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: datatypes: What is the difference between == and ===?\
+`==` verifies that values are equal, `===` value and type is verfied for equality\
+- `===` should always be preferred\
+```javascript\
+7 == "7" -> true\
+7 === "7" -> false\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: datatypes: How to create and use arrays?\
+- Can create multiple different datatypes in the same array (remember, dynamic types)\
+- You also do not have to define a specific size\
+- acts more like a array list in Java\
+\
+```javascript\
+var notes = ["Hello World", 42, [1, 2]] // all types can live in same array\
+notes[0] = "Eii mundo!"; // replace at index 0\
+\
+// splice method (does modify array itself!)\
+// first parameter is start index, second how many entries to delete and third (optional) what to insert instead\
+// returns elements which were deleted/replaced and operates on existing one\
+notes.splice(0,2,"new1", "new2", "new3"); // returns ["Hello World", 42] and notes is now ["new1", "new2", "new3", [1,2]]\
+\
+notes.unshift("addNewFirstElement"); // adds to first position\
+notes.push(\'93lastNewEntry","lastEntry"); //add item to end\
+\
+notes.shift(); // delete first item\
+notes.pop(); // Remove last item\
+\
+// convert array to string\
+notes.valueOf();\
+notes.toString(); // above does the same thing\
+notes.join(","); // join with delimiter\
+\
+//delete index\
+delete notes[0]; // delete element\
+\
+//sorting\
+notes.sort(); // but is only lexicographic sorting!\
+// if you want to sort numbers\
+var numbers = [1,3,42,2]\
+numbers.sort(function (x,y) \{ return x - y\}); // ascending sort (do y - x for descending)\
+\
+//combine two arrays into one\
+var newArray = notes.concat(numbers);\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: How to work with functions?\
+- Create a function (no types signature - for params or return values)\
+```javascript\
+function myFunction(param1, param2)\{\
+    return param1 != param2;\
+\}\
+```\
+- But we do not have to provide parameters and can access an unknown amount of params with `arguments` (like varargs in Java)\
+```javascript\
+function myWiredFunction()\{\
+    return arguments.length;\
+\}\
+myWiredFunction(1,2,3,4,5,6,7,10,11); // 9\
+```\
+\
+- In javascript we can pass functions as a parameter to another function (see also higher order functions and function as first class citizens)\
+```javascript\
+function multiplyBy5(number)\{\
+    return number*5;\
+\}\
+\
+function repeatFunctionTimes3(func,initalNumber)\{\
+    return func(func(func(initalNumber)));\
+\}\
+\
+var result = repeatFunctionTimes3(multiplyBy5,2); // 10 -> 50 -> 250\
+```\
+- In the same way you can also assign functions to variables\
+```javascript\
+var f1 = function (number)\{\
+    return number*5;\
+\}\
+```\
+- allowing you to store them also in arrays\
+```javascript\
+var functions = [function (number)\{ return number*2;\}, function (number)\{ return number*3;\}];\
+functions[0](2); //4\
+functions[1](2); //6\
+```\
+\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  07.06.2023 javascript: How do closures work?\
+- A function which you can pass as a parameter into another function\
+- **and** which remembers about variables outside it's block scope for later use \
+```javascript\
+var destination = \'91Rome\'92;\
+ \
+var travel = function() \{  \
+    console.log(\'91Travel to ' + destination);\
+\}\
+\
+travel(); \
+```\
+- In Java the variable `destination` needs to be immutable, in Javascript this is not the case (allowing for powerful use cases)\
+- For example you can created encapsulated modules: \
+```javascript\
+function createAnimal(animalName) \{\
+ \
+    var name = animalName;\
+ \
+    return  \{\
+        makeNoise: function() \{\
+          console.log('A noise by ' + name);\
+        \}\
+    \}; \
+\}\
+let someAnimal  = createAnimal('tiger');\
+someAnimal.makeNoise();\
+```\
+- the above snippet just gave as an encapsulated state since name can't be changed from the outside (like private member variables)\
+\
+\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: Where to inject javascript?\
+- Trigger javascript when clicking on a link (href keeps page from reloading when link is clicked)\
+```html\
+<a href="JavaScript:void(0)" onClick="alert('Hello world!';)" >\
+```\
+- React to changes in a form (is only triggered once cursor leaves form)\
+```html\
+<input type="text" id="input1" onChange="alert(document.getElementById(input1).value);" >\
+```\
+- React to mouse movements on whole body\
+```javascript\
+document.body.onmousemove = function (e) \{\
+        alert(e.pageX + " and " + e.pageY);\
+\};\
+```\
+- Self-reference dom with 'this'\
+```html\
+<!--self-reference dom with 'this' -->\
+<a onClick="this.style.color='gray';" >\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: What trigger events are there for dom elements?\
+```html\
+<a onClick="alert('hi')" >\
+<!-- when hovering over mouse -->\
+<a onmouseover="alert('hi')" >\
+<!-- when leaving dom element with mouse -->\
+<a onmouseout="alert('hi')" >\
+<!-- when double clicking -->\
+<a ondblclick="alert('hi')" >\
+<!-- when pressing and pulling down with mouse -->\
+<a onmousedown="alert('hi')" >\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: How to dynamically load javascript from 3rd party server and evaluate the code?\
+```javascript\
+let options = \{\
+    method: 'GET',\
+    headers: \{\}\
+    \};\
+\
+fetch('https://raw.githubusercontent.com/Fowler1234/custom-plugins/main/CustomImagePlugin.js', options)\
+.then(response => response.text())\
+.then(body => \{\
+    console.log(body);\
+    eval(body);\
+    \});\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  09.11.2022 javascript: Boilerplate for having dynamically generated pages\
+- For quick local prototyping\
+```html\
+<body>\
+    <div>\
+        <div>Page: <span id="counter-view"> 0</span></div>\
+        <div onclick="nextPage()"> Next page</div>\
+        <div id="main"><div id="child"> </div></div>\
+    </div>\
+</body>\
+\
+<script>\
+    const page0 = document.createElement("div");\
+    page0.setAttribute("style", `height: 100%; width: 100%; background-color: #679c92`);\
+    page0.setAttribute("id","child");\
+\
+page0.innerHTML = (`\
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">\
+\
+    <div class="text-center p-5" style="margin: 70px;">\
+        <div style="border-radius: 0 0 15px 15px; background-color: #4b756d">\
+            <img class="mb-4" src="https://raw.githubusercontent.com/biocarl/img/master/minions/minion-carl.png" height="110" width="110" alt="SomeLogo">\
+            <br>\
+            <br>\
+            <h3 style="padding-bottom: 20px;margin:-20px;font-family: 'Copperplate', cursive;color:white">PAGE0</h3>\
+        </div>\
+    </div>\
+`);\
+\
+const page1 = document.createElement("div")\
+page1.setAttribute("style", `height: 100%; width: 100%; background-color: #679c92`)\
+page0.setAttribute("id","child")\
+page1.innerHTML = (`\
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">\
+\
+    <div class="text-center p-5" style="margin: 70px;">\
+        <div style="border-radius: 0 0 15px 15px; background-color: #4b756d">\
+            <img class="mb-4" src="https://raw.githubusercontent.com/biocarl/img/master/minions/minion-carl.png" height="110" width="110" alt="SomeLogo">\
+            <br>\
+            <br>\
+            <h3 style="padding-bottom: 20px;margin:-20px;font-family: 'Copperplate', cursive;color:white">PAGE1</h3>\
+        </div>\
+    </div>\
+`);\
+\
+\
+var VIEWS = [page0, page1];\
+var COUNTER = 0\
+document.getElementById('main').replaceWith(VIEWS[COUNTER]);\
+\
+function nextPage()\{\
+    console.log("Switching page");\
+    COUNTER++;\
+    document.getElementById('child').replaceWith(VIEWS[COUNTER]);\
+    document.getElementById('counter-view').innerHTML = COUNTER;\
+\}\
+\
+</script>\
+```\
+\
+# 10.05.2023 javascript: Remove all css from a webpage\
+```javascript\
+document\
+  .querySelectorAll('style,link[rel="stylesheet"]')\
+  .forEach(item => item.remove())\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  05.12.2022 javascript: What is hoisting?\
+- All variable or function declarations are moved to the top of the file/or scope so you do not have to order the functions accordingly\
+```javscript\
+console.log (var1);\
+var var1 = "hey";\
+//results in\
+var var1;\
+console.log(var1); //still undefined\
+var1 = "hey";\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  05.12.2022 javascript: What is the difference between var, let and const?\
+- `var` can be locally or globally scoped (depending on if you declare it in function or outside in file)\
+    - can be updated but also redeclared\
+```javascript\
+var var1 = "Hello";\
+var var1 = "redeclared";\
+var1 = "update";\
+// problem: it also redeclares from nested scope\
+if (isSunshine) \{\
+        var var1 = "onlyInternal?";\
+\}\
+console.log(var1); // can result in 'onlyInternal?'\
+```\
+- `let` can be updated but not redeclared (in nested scope it will be a second scoped local var instead): this is why you should prefer using `let`\
+- Both `var` and `let` declarations are hoisted but `var` will result in undefined at runtime and `let` in a Reference Error\
+- Since `var` is so unintuitive, you should not use it - use `let` or `const` instead\
+- `const` is like `let` but is final, meaning it needs to be assigned at the moment of declaration and can't be updated (but we still can update properties of an object)\
+\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  25.11.2022 javascript: How to destructure function parameters?\
+- Destructuring object based on keys\
+```javascript\
+func(\{name: "Lara", age: 29\});\
+\
+// you just need to write the keys in the data structure syntax\
+function func(\{name, age\}) \{\
+    console.log(`$\{name\} && $\{age\}`)\
+\}\
+// give different local var name\
+function func(\{name: n1, age: a1\}) \{\
+    console.log(`$\{n1\} && $\{a1\}`)\
+\}\
+// give default value\
+function func(\{name = 'James', age = 12\}) \{\
+    console.log(`$\{name\} && $\{age\}`)\
+\}\
+// and combined\
+// give default value\
+function func(\{name: n1 = 'James', age: a1 = 12\}) \{\
+    console.log(`$\{n1\} && $\{a1\}`)\
+\}\
+```\
+- More on destructuring [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) e.g. arrays\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  25.11.2022 javascript: How to assign several properties to a object at once?\
+- Option 1 (ES2015)\
+```javascript\
+const originalObject = \{\
+    school: "Bogy",\
+    studentCount: 30,\
+    country: "Germany"\
+\};\
+const thingsToChange = \{\
+    school: "Bogy+VHG",\
+    studentCount: 60,\
+\};\
+\
+const combinedObject = Object.assign(\{\}, originalObject, thingsToChange);\
+// resulting in\
+combinedObject = \{\
+    school: "Bogy+VHG",\
+    studentCount: 60,\
+    country: "Germany"\
+\};\
+```\
+- Option 2 (ES2016)\
+```javascript\
+const combinedObject = \{...originalObject, school: "Bogy+VHG", studentCount: 60\}\
+// or with object reference (don't mix up the order!)\
+\{...originalObject, ...thingsToChange\}\
+```\
+\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  23.11.2022 javascript: How to create a copy of an array?\
+- Example for `reverse()` because this mutates original array\
+```javascript\
+[...numbers].reverse()\
+```\
+- `...` is the [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) where you expand a list into arguments\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  22.11.2022 javascript: How to do string interpolation?\
+- Use the backtick syntax with `$\{variable\}`\
+```javascript\
+console.log(`also for normal String`);\
+console.log(`string text $\{1+1\} string text`);\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  22.11.2022 javascript: How to create anonymous functions?\
+```javascript\
+// you can pass this a parameter directly or by assigning it to a reference\
+function (a, b) \{\
+    return a + b;\
+\};\
+// Since ES6\
+(a, b) => a + b;\
+```\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  21.11.2022 javascript: What is Typescript?\
+- A superset of Javascript\
+- Extends the language by a static type system\
+\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  21.11.2022 javascript: What is JSX?\
+- A Javascript extension allowing to work with xml sytnax\
+- Stands for Javascript XML\
+- Originally HTML (subset of XML) with javascript in `<script>` tags, now it is the other way round: Javascript with xml tags\
+- Allows you to something like this\
+```javascript\
+var nav-bar = (\
+    <ul id="nav-bar">\
+        <li><a href="#">Home</a></li>\
+        <li><a href="#">Settings</a></li>\
+        <li><a href="#">About</a></li>\
+    </ul>\
+);\
+```\
+- Since JSX is not supported by browsers, written JSX code needs to converted into ordinary Javascript code (done by a preprocessor)\
+\
+\
+# 
+\f1 \uc0\u55357 \u56517 
+\f0  17.11.2022 javascript: What evaluates to false (aka falsy values)?\
+```javascript\
+// 0 or "0"\
+arr = [];\
+(0 == false)\
+(arr.length == false) // eventually usueful\
+("0" == false) // type converted into number\
+(undefined == false) // type converted into number\
+(null == false)\
+(NaN == false)\
+```\
+- when talking about the opposite of falsy we often talk about the truthiness of e.g. a property\
+\
+}
