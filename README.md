@@ -22,7 +22,13 @@
 ---
 
 
-
+# 21.06.2023 revealjs: How to target images when using markdown syntax?
+- My current approach, use attribute selector which selects on end of value string
+```css
+div[src$="love.png"] {
+  height: 200px;
+}
+```
 
 # 21.06.2023 intellij: How to create links in markdown?
 - Right-Click on text you want to link, select the 🔗 symbol and it will automatically link the text in the clipboard
