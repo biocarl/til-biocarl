@@ -24,7 +24,8 @@
 
 
 
-
+# 21.06.2023 intellij: How to create links in markdown?
+- Right-Click on text you want to link, select the 🔗 symbol and it will automatically link the text in the clipboard
 
 # 25.05.2023 markdown: What are the standard rules of converting a header into a anchor name?
 - [source (Gitlab)](https://docs.gitlab.com/ee/user/markdown.html#header-ids-and-links)
