@@ -21,6 +21,22 @@
 
 ---
 
+# 22.06.2023 spring: jpa: h2: How to store a string of more than 255 chars?
+- Annotate the field with `@Lob` ([source](https://www.baeldung.com/hibernate-lob))
+```java
+@Entity
+@Table(name="user")
+public class User {
+
+    @Id
+    private String id;
+	    
+    @Lob
+    @Column(name = "name", columnDefinition="VARCHAR(1000)")
+    private String name;
+    // ...
+}
+```
 
 # 21.06.2023 revealjs: How to target images when using markdown syntax?
 - My current approach, use attribute selector which selects on end of value string
