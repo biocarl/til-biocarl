@@ -21,6 +21,22 @@
 
 ---
 
+
+# 23.06.2023 ssh: How to automatically use a private ssh key depending on host and user?
+- Store the following (with the correct values) into the `~/.ssh/config` file
+```plaintext
+Host some-name
+     HostName 50.56.101.167
+     User     me
+     IdentityFile ~/.ssh/new_rsa
+```
+- `HostName` can be also a domain name
+- `User` can be ommited, but needs to be provided once you connect (with `@`)
+- `IdentityFile` is where the private key is located
+
+# 23.06.2023 ssh: How to add a public key to a existing server?
+- Store the contents of your public key (usually a `id_rsa.pub`) into the `.ssh/authorized_keys` on the remote server
+
 # 22.06.2023 spring: jpa: h2: How to store a string of more than 255 chars?
 - Annotate the field with `@Lob` ([source](https://www.baeldung.com/hibernate-lob))
 ```java
