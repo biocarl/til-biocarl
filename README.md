@@ -21,7 +21,24 @@
 
 ---
 
-
+# 23.06.2023 training: tools: How to illustrate something on a window screen?
+- Concept is called a *telestrator*
+- A good one for Mac is [telestrator](https://github.com/steveruizok/telestrator)
+ - Mac-App is called `TLDraw`
+ - Paint Panel appears when bumping to the left-side of the screen
+ - Shortcuts:
+   	Frequent commands
+	- `Escape` to deactivate the app
+  	- `Command + E` to clear the screen
+	- `Command + F` to toggle fading
+  	- `Command + Z` to undo
+	Shapes
+	- `E` for ellipse tool
+	- `R` for rectangle tool
+	- `A` for arrow tool
+	- `D` for draw tool
+- Alternative would be [obs](https://obsproject.com/), which is for the most cases a little bit overpowered
+  
 # 23.06.2023 ssh: How to automatically use a private ssh key depending on host and user?
 - Store the following (with the correct values) into the `~/.ssh/config` file
 ```plaintext
