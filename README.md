@@ -21,6 +21,13 @@
 
 ---
 
+# 25.06.2023 canvas: How to work with question banks?
+- Usually it is more convient to have question banks and then dynamically populate quizzes with question from the question banks
+- If you have created a quizz which is not part of the question bank you need to export it (settings/export course content) and then import the qti file
+- You know have the quizz twice, delete the duplicate
+- You should now have the quizz also present as a question bank entry
+- [source](https://www.youtube.com/watch?v=iJTogbhoeoY)
+
 # 23.06.2023 training: tools: How to illustrate something on a window screen?
 - Concept is called a *telestrator*
 - A good one for Mac is [telestrator](https://github.com/steveruizok/telestrator)
