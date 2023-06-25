@@ -25,7 +25,7 @@
 # 25.06.2023 canvas: text2qti: How to convert a qti file into markdown?
 - Some quick script to save some manual work
 ```bash
-cat qti-file.xml | grep mattext | recode html..ascii | sed -e 's/<[^>]*>//g'`
+cat qti-file.xml | grep mattext | recode html..ascii | sed -e 's/<[^>]*>//g'
 ```
 - Install [recode](https://github.com/pinard/Recode) first for making this work
 - Tested on Mac/Unix
