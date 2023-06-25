@@ -21,7 +21,17 @@
 
 ---
 
-# 25.06.2023 canvas: How to work with question banks?
+
+# 25.06.2023 canvas: How to export question banks?
+- Approach 1: Only works if you do not have groups within the quizz
+	- You either add all questions to a quizz and export that quizz in a qti file
+	- If you import it later it will automatically become a question bank
+ 	- With the qti file you can also [work outside of canvas](https://www.reddit.com/r/opensource/comments/sifqsq/qti_files_can_anyone_give_me_a_guide_to_the/)
+- Approach 2: Always move them to the next course
+- Approach 3: Make markdown the source of truth and only import [converted qti files](https://github.com/gpoore/text2qti)
+
+
+# 25.06.2023 canvas: How to convert a quizz into a question banks?
 - Usually it is more convient to have question banks and then dynamically populate quizzes with question from the question banks
 - If you have created a quizz which is not part of the question bank you need to export it (settings/export course content) and then import the qti file
 - You know have the quizz twice, delete the duplicate
