@@ -22,6 +22,29 @@
 ---
 
 
+# 25.06.2023 canvas: text2qti: How to create markdown based question sets?
+- Ask the actual question when enumerating the question and not in the paragraph
+  ```plaintext
+  1. Question
+  	Paragraph
+   
+  ```
+- You should use the following header setting for each quozz
+  ```plaintext
+  Quiz title: Week 2
+  Quiz description: Here we want to check the contents of week 2.
+  shuffle answers: true
+  ```
+- Frequently used formats
+  ```plaintext
+  1. Single choice question
+  a) Wrong answer
+  *b) Correct answer
+  2. Multiple choice question
+  [*] Correct Answer 1
+  [*] Correct Answer 2
+  [] Wrong answer
+  ```
 # 25.06.2023 canvas: How to export question banks?
 - Approach 1: Only works if you do not have groups within the quizz
 	- You either add all questions to a quizz and export that quizz in a qti file
