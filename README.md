@@ -22,6 +22,14 @@
 ---
 
 
+# 25.06.2023 canvas: text2qti: How to convert a qti file into markdown?
+- Some quick script to save some manual work
+```bash
+cat qti-file.xml | grep mattext | recode html..ascii | sed -e 's/<[^>]*>//g'`
+```
+- Install [recode](https://github.com/pinard/Recode) first for making this work
+- Tested on Mac/Unix
+
 # 25.06.2023 canvas: text2qti: How to create markdown based question sets?
 - Ask the actual question when enumerating the question and not in the paragraph
   ```plaintext
@@ -35,6 +43,8 @@
   Quiz description: Here we want to check the contents of week 2.
   shuffle answers: true
   ```
+- Learnings
+  - Always leave a empty line between paragraph and answer choices
 - Frequently used formats
   ```plaintext
   1. Single choice question
@@ -45,6 +55,7 @@
   [*] Correct Answer 2
   [] Wrong answer
   ```
+  
 # 25.06.2023 canvas: How to export question banks?
 - Approach 1: Only works if you do not have groups within the quizz
 	- You either add all questions to a quizz and export that quizz in a qti file
