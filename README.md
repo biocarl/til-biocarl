@@ -24,6 +24,7 @@
 
 # 08.07.2023 music: mantra: Gayatri Mantra
 
+```plaintext
 // Capo 3rd
 // Chords: Am Em F G 
 Om Bhur Buvah svaha
@@ -33,9 +34,11 @@ Thath savithur varenyam
 Bhargo devasya dhimahi
 
 Dhiyo yonah prachodaya
+```
 
 # 08.07.2023 music: mantra: Shiva Shambho
 
+```plaintext
 // Chords: Am G
 Am
 Shiva Shiva Shiva Shambho
@@ -45,10 +48,11 @@ Am
 Mahadeva Shambho
 Am             G
 Mahadeva Shambho
-
+```
 
 # 08.07.2023 music: mantra: Maha Mantra
 
+```plaintext
 // Capo 3rd
 // Chords: Am G C Em
 Am                 G              Am
@@ -59,15 +63,18 @@ C                 G
 Hare Rama Hare Rama
 Am                Em
 Rama Rama Hare Hare
+```
 
 # 08.07.2023 music: mantra: Sita Ram
 
+```plaintext
 // Source: Moji Kirtan
 // Am C G F
 Am            C                G                          F
 Sita Ram Jai Jai Ram Sita Ram Jai Jai Ram (2x)
 F               Am              C                          G
 Sita Ram Jai Jai Ram Sita Ram Jai Jai Ram (2x)
+```
 
 # 25.06.2023 canvas: text2qti: How to convert a qti file into markdown?
 - Some quick script to save some manual work
