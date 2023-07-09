@@ -484,7 +484,7 @@ FLUSH PRIVILEGES;
 - Bundle rules into classes described [here](https://docs-previous.pega.com/rules-management/87/organizing-rules-classes)
 - For example parent/child cases described [here](https://academy.pega.com/topic/child-cases/v1)
 
-# 📅 21.02.2023 revealjs: How to style markdown elements?
+# 21.02.2023 revealjs: How to style markdown elements?
 - Specific single elements like this
 ```markdown
 - Item 1 <!-- .element: class="highlight" -->
@@ -496,7 +496,7 @@ FLUSH PRIVILEGES;
 # Slide 1
 ```
 
-# 📅 21.02.2023 revealjs: How to style a background of specific slide?
+# 21.02.2023 revealjs: How to style a background of specific slide?
 - This example is using a background template in `base.css` which is injected into the reveal-md runner
 - In Markdown you annotate the current slide with a class you use for selection (in this case `exercise`)
 ```html
@@ -511,7 +511,7 @@ FLUSH PRIVILEGES;
 - To inject in external template into the slide use `reveal-md ... --theme "path/to/url/base.css"`. If you host the file host it on something like Github pages to allow cross-origin access
 
 
-# 📅 21.02.2023 css: How to select a parent element which has certain child elements?
+# 21.02.2023 css: How to select a parent element which has certain child elements?
 - `:has` pseud-class allows to check what children the parent element has (does not have to be a direct child)
 - In this case we look for an element annotated with `.parent` which has one child which is annotated with `child` and `present` class
 ```css
@@ -522,11 +522,11 @@ FLUSH PRIVILEGES;
 - Also investigate similar pseudo-class `:where()`
 
 
-# 📅 14.02.2023 consulting: Why best practice are bad
+# 14.02.2023 consulting: Why best practice are bad
 - they do not assume context. Instead of formulas and recipes we need patterns and sensible defaults
 - Best practices try to impose a clear domain on complex environment which is bound to  fail (see cynefin)
 
-# 📅 14.02.2023 css: What are ways of debugging css code?
+# 14.02.2023 css: What are ways of debugging css code?
 - First and foremost: Browser Developer Tools (Chrome/Mozilla)
 - But sometimes you also want to visualize the boxes in a useful way
 - Use `outline`, better than `border` because it does not take up any space
@@ -545,7 +545,7 @@ FLUSH PRIVILEGES;
 ```
 - For both it makes sense to use `!important` in order to really overwrite every single css rule
 
-# 📅 14.02.2023 css: What is the difference between root selector and html element selector?
+# 14.02.2023 css: What is the difference between root selector and html element selector?
 - `html` tag is root element, top layer of inheritance
 ```css
 html {
@@ -559,7 +559,7 @@ html {
 ```
 - `:root` always overwrite `html` selector. The distinction exists because CSS works on DOM structure and does not need html to work: *"As an aside, CSS is not just about HTML. It will work with a DOM created in any namespace from any source. In particular it will work with DOMs created from XML. So the root element is not necessarily the <html> element."*
 
-# 📅 14.02.2023 css: How to style user selection?
+# 14.02.2023 css: How to style user selection?
 - Style the text user selection with this pseudo-selector
 ```css
 ::selection {
@@ -568,13 +568,13 @@ html {
 }
 ```
 
-# 📅 14.02.2023 html: How to align text with html only (deprecated)?
+# 14.02.2023 html: How to align text with html only (deprecated)?
 - You can align in html (without css), although it is **deprecated**
 ```html
 <h1 align="center">This is centered text</h1>
 ```
 
-# 📅 14.02.2023 fun: Unicode characters I love
+# 14.02.2023 fun: Unicode characters I love
 - Fish sequence: 𓆝 𓆟 𓆞 ‧̍̊˙· 𓆝 °
 - Bears: 
 ```plaintext
@@ -586,13 +586,13 @@ html {
 ```
 
 
-# 📅 14.02.2023 intellij: Do auto-refresh for web preview when editing html/css
+# 14.02.2023 intellij: Do auto-refresh for web preview when editing html/css
 - Useful if you want to see the change directly while live-coding (although an explicit save is sometimes better for asking questions)
 - To toggle just search for the following command `Reload page in built-in preview` and select either `On Save` or `On Change` 
 - Further [reading](https://www.jetbrains.com/help/idea/settings-tools-web-browsers.html#ws_configure_browsers_reload_behavior)
 
 
-# 📅 14.02.2023 revealjs: Exclude certain elements on pdf export
+# 14.02.2023 revealjs: Exclude certain elements on pdf export
 - When you export pdf via the `?print-pdf` and browser native print function you can make usage of the media query targeting print
 ```css
 @media print {
@@ -605,7 +605,7 @@ html {
 - Not possible for hiding whole slides (alternative approach would be to write a pre-processor script deleting out those slides when printing)
 
 
-# 📅 13.02.2023 git: What to do when git push freezes?
+# 13.02.2023 git: What to do when git push freezes?
 - One possible reason can be that the postBuffer for files is to small (default 1Mib)
 ```bash
 git config --global http.postBuffer 157286400
@@ -669,18 +669,18 @@ git config --global http.postBuffer 157286400
    - Cultivate empathy
    - Always learn something new by yourself
 
-# 📅 05.02.2023 revealjs: How to print a slide to pdf
+# 05.02.2023 revealjs: How to print a slide to pdf
 - Append `?print-pdf` to localhost url (or use `reveal-md` tool)
 
-# 📅 05.02.2023 revealjs: How to show a website fullscreen on a slide?
+# 05.02.2023 revealjs: How to show a website fullscreen on a slide?
 ```html
 <!-- .slide: data-background-iframe="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" -->
 ```
 
-# 📅 02.02.2023 intellij: What to do when cloning of private repos of organization fails?
+# 02.02.2023 intellij: What to do when cloning of private repos of organization fails?
 - One possible reason is that the Intellij OAuth App does not have permissions to do so, change this [here](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-your-membership-in-organizations/requesting-organization-approval-for-oauth-apps)
 
-# 📅 30.01.2023 revealjs: How to link with id anchors?
+# 30.01.2023 revealjs: How to link with id anchors?
 - This markdown slide
 ```plaintext
 # This is a header
@@ -692,11 +692,11 @@ http://localhost:1948/intro.md#this-is-a-header
 - Make sure that those are unique across the document
 
 
-# 📅 30.01.2023 revealjs: How to host a folder of md slides?
+# 30.01.2023 revealjs: How to host a folder of md slides?
 - Just point it to the folder itself, use the parent folder of the slides otherwise the relative image links won't work
 
 
-# 📅 24.01.2023 revealjs: How to use flex-box layout with markdown?
+# 24.01.2023 revealjs: How to use flex-box layout with markdown?
 - You can always html in markdown slide, but in order to evaluate markdown inside a html text node you need to leave two line breaks
 
 ```plaintext
@@ -720,7 +720,7 @@ This element will be in the second column
 ```
 
 
-# 📅 24.01.2023 revealjs: How to use speaker notes
+# 24.01.2023 revealjs: How to use speaker notes
 - In combination with `reveal-md` just start the line as follows
 ```plaintext
 # Title
@@ -729,7 +729,7 @@ Notes: This is a speaker note not visible
 ```
 - In localhost presentation mode just press `S` for opening the presenter mode
 
-# 📅 24.01.2023 github: HTTPS clone with 2FA and renew a token
+# 24.01.2023 github: HTTPS clone with 2FA and renew a token
 - Generate a new token [here](https://github.com/settings/tokens)
 	- select `repo` entirely
 - Use the token as a password (when e.g. cloning or pulling)
@@ -738,12 +738,12 @@ Notes: This is a speaker note not visible
 git config --global --unset user.password
 ```
 
-# 📅 23.01.2023 css: What is the purpose of css?
+# 23.01.2023 css: What is the purpose of css?
 - Styling (visual appearance of content) like colors and fonts
 - Layout (how content is layed out accross the available screen) - also adapting to different screen sizes
 - Animations (keyframe animations, etc.)
 
-# 📅 13.01.2023 css: How does flexbox work?
+# 13.01.2023 css: How does flexbox work?
 - the parent container decides about the layout of the child elements (inner display value), use it with `display:flex` (note the the out display value still remains `block` for the parent container, to change this you would do `inline-flex`)
 - How does flexbox behave if there is limited space available?
 	- per default it just shrinks the size so that all flex items stay in one line
@@ -773,7 +773,7 @@ git config --global --unset user.password
 - If you want to overwrite the cross-axis alignment for a single flex item you can use the `align-self` property e.g. with values like `center`, `flex-end`, `flex-start`
 - If you want to change the order (independent of dom element order) use `order: n`. Don’t use this, since this messes up the flow of the screen reader and also tabbing through form items.
 
-# 📅 13.01.2023 css: How does css grid work?
+# 13.01.2023 css: How does css grid work?
 - flexbox layouts across one dimension, the grid layout across two dimensions, use it with `display:grid`. Per default we only get a 1-column grid.
 - the parent container decides about the layout of the elements (inner display value)
 - Terminology:
@@ -827,15 +827,15 @@ git config --global --unset user.password
 	- To overwrite item layout on a item basis you can specify `justify-self`/`align-self`
 - the `auto` keyword automatically defines width based on the content (widest element in the column)
 
-# 📅 13.01.2023 css: layout: What is understood under normal flow?
+# 13.01.2023 css: layout: What is understood under normal flow?
 - the site layout without any css for example the behavior caused by default `display` like `block` and `inline` elements, the element order defined in the source and no stacking on top of each other
 - the normal flow is just the default layout of the html elements, but you can change everything through custom css. Try keeping the semantically correct html elements even if they do not match your layout/visual preference and change it with css. For example if you need a list items `<li>` which are `inline`and not `block` do this with css instead of using `<span>` or something else which does not match the semantic meaning of list
 
-# 📅 13.01.2023 css: layout: How do floats work and what are they still good for?
+# 13.01.2023 css: layout: How do floats work and what are they still good for?
 - the float annotated element is taken out of the normal flow and aligned for example to the `left` and all block elements following afterwards surround the content (like a floating image in a newspaper or drop-caps)
 - Ideally you would add some `margin` to the annotated element to create some additional space (does not work to add margin to the text because the annotated element is not part of the normal flow anymore, not-seen by the text)
 
-# 📅 13.01.2023 css: layout: What is positioning for?
+# 13.01.2023 css: layout: What is positioning for?
 - `position` is usually not used for the main layout but more for fine-tuning specific elements
 - `static` is the default, element is part of the normal flow
 - `relative` is a offset to the original position in normal flow
@@ -843,7 +843,7 @@ git config --global --unset user.password
 - `fixed` is moved out of the normal flow, only reference is the viewport
 - `sticky` is a combination of `relative` and `fixed` (when it hits boundaries)
 
-# 📅 13.12.2022 css: layout: How to do sticky positioning?
+# 13.12.2022 css: layout: How to do sticky positioning?
 - Element stays in the normal flow until it hits the viewport position defined with `top`/`left` and then stays in a fixed position on the screen
 ```css
 .positioned {
@@ -855,7 +855,7 @@ git config --global --unset user.password
 - the above pushes the element actually `10px` down and to the right. Think of it as pushing from the `top` and `left`
 - A typical use case for sticky positioning is a scrolling index, where the current header of a sections sticks at the top and is overlapped by the next header
 
-# 📅 13.12.2022 css: How does responsive design work?
+# 13.12.2022 css: How does responsive design work?
 - HTML itself (with no CSS) is fully responsive with a few exceptions like long lines of text, especially when adding CSS dynamic behavior is needed
 - Responsive web design is a approach, a set of best practices to gather a good web experience to all types of devices
 - Tools for responsiveness 
@@ -882,7 +882,7 @@ git config --global --unset user.password
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 ```
 
-# 📅 13.12.2022 css: How do media queries work?
+# 13.12.2022 css: How do media queries work?
 - media queries allow to set certain breakpoints and associate certain selectors to apply certain rule changes based if the media condition is true
 - Syntax
 	- Logical operators like `and`, `not`, `and only`
@@ -906,13 +906,13 @@ git config --global --unset user.password
 ```
 - Note: With a well-thought grid, flexbox layout you might not need media queries at all
 
-# 📅 12.01.2023 css: layout: box-model: How does margin work for `block` elements?
+# 12.01.2023 css: layout: box-model: How does margin work for `block` elements?
 - Margin values can be either positive or negative, creating additional space or remove additional space around the content-box (this can also cause overlapping)
 - Margin collapsing: The margin values of two neighboring boxes are 
 	- in case of the same sign, max(abs(marginA), abs(marginB)) - so always the most negative or positive
 	- in case of different sign, being added to each other, marginA-marginB (in case margin is < 0)
 
-# 📅 12.01.2023 css: layout: box-model: How does the box-model work for `inline` elements?
+# 12.01.2023 css: layout: box-model: How does the box-model work for `inline` elements?
 - Vertical margins, padding and borders will be applied but won’t affect other inline boxes to create space
 - Horizontal margins, padding and borders will be applied and will also affect spacing to other inline boxes
 - In simple language: Space creating attributes like margin, padding and border will always work on the element itself. So in all directions. But since it is an outer display value it can also end up influencing other `inline` elements around it. For `inline` this is only the case for left/right elements but not top/bottom elements. When applying padding in all directions, another element located left would be pushed away by the padded element (since it just got bigger - maintaining the layout) but a element located above the padded element would stay at its place. Padding the element even further could even end up overlapping the top element.
@@ -931,7 +931,7 @@ This is a very long text with a <span>span</span> inside the text. Here is some 
 ```
 - If you want to avoid the overlapping (since vertical elements are not pushed away) but still want to have it inline you can use `inline-block`. This also allows you to specify `width`/`height`
 
-# 📅 12.01.2023 css: How to style borders?
+# 12.01.2023 css: How to style borders?
 - Usually we use a shorthand to target all sides and several properties at once
 ```css
 .box {
@@ -941,7 +941,7 @@ This is a very long text with a <span>span</span> inside the text. Here is some 
 - but those can be also target individually e.g. `border-top`, `border-width` or even `border-top-width`
 - To created rounded corners use the `border-radius` property provide two arguments for horizontal and vertical radius (in `px`, `em` or `%`). You can also target single sides like `  border-top-right-radius: 15% 35%;`
 
-# 📅 12.01.2023 css: How to style text to be vertical?
+# 12.01.2023 css: How to style text to be vertical?
 - Just use the property `writing-mode`
 ```css
 h1 {
@@ -951,7 +951,7 @@ h1 {
 }
 ```
 
-# 📅 12.01.2023 css: How to handle overflow?
+# 12.01.2023 css: How to handle overflow?
 - Overflow happens if the content does not fit into the box (and the box does not have appropriate space to grow e.g. through `height` constraint)
 - Controlled by property `overflow` (per default `visible`, because you do not want to hide something and a user might miss a important information)
 - Cropping overflowing content with `hidden`, to create a scroll-window use `scroll`
@@ -959,7 +959,7 @@ h1 {
 - For text you usually do not want to overflow but want to wrap the text (see `overflow-wrap` and `word-break`)
 - Use `overflow: auto` to let the browser decide which scrollbars are needed
 
-# 📅 12.01.2023 css: What is the difference between `em` and `rem` unit?
+# 12.01.2023 css: What is the difference between `em` and `rem` unit?
 - Ems, `em` corresponds to `font-size` of the parent element (`rem` of root element), use for response designs. `1.4rem` is 1.4 times the fontsize of the root element of the document
 - `%` work is the same way as `em` but is using e.g. `70%` of the parents element of a specific property. `em` is always using the `font-size` independent where the value is used
 - Example: In first list font size is always double because it refers to parent element. In the second the root element is static, so nesting does not change the font-size
@@ -1007,20 +1007,20 @@ html {
 </ul>
 ```
 
-# 📅 12.01.2023 css: How does sizing work?
+# 12.01.2023 css: How does sizing work?
 - there is two types of sizes
 - intrinsic size e.g. the dimensions of a picture, or zero size of a div without content or some size with content
 - extrinsic size is a size we explicitly define via constraints `width`/`height`. Can cause overflow
 - upper/lower bounds for sizes e.g. `min-height`/`max-height` for dealing with variable amount of content (and avoiding overflow). Also for example for big images to not break the layout
 
 
-# 📅 12.01.2023 css: What are replaced elements?
+# 12.01.2023 css: What are replaced elements?
 - css can not affect the internal layout of those elements
 - Example: image, video and forms
 - this is also the case when placed in a flex or grid layout
 - as for `block` elements, replaced elements also respect `weight`/`height` attributes
 
-# 📅 12.01.2023 css: How to use custom variables?
+# 12.01.2023 css: How to use custom variables?
 - Reuse specific values throughout the stylesheet
 ```css
 :root {
@@ -1036,7 +1036,7 @@ span a {
 }
 ```
 
-# 📅 12.01.2023 css: How to style text?
+# 12.01.2023 css: How to style text?
 ```css
 p {
   color: blue;
@@ -1049,7 +1049,7 @@ p {
 }
 ```
 
-# 📅 12.01.2023 css: How to use web fonts?
+# 12.01.2023 css: How to use web fonts?
 - Custom font will be downloaded together with css
 ```css
 @font-face {
@@ -1065,7 +1065,7 @@ html {
 
 
 
-# 📅 11.01.2023 html: How to ensure responsiveness of images (without css)?
+# 11.01.2023 html: How to ensure responsiveness of images (without css)?
 - Why without css? You end up not even loading unneeded images on dom load, since the html is taking care of it
 - *resolution switching*: Having several resolutions of the image depending on the screen/layout (download low-resolution version on mobile) and/or vector graphics can be a good alternative
 - 🤖: *To ensure responsiveness of images without CSS, you can use the srcset attribute on the img tag to specify different image files to be used at different screen sizes.*
@@ -1101,7 +1101,7 @@ object-fit: cover;
 }
 ```
 
-# 📅 11.01.2023 html: How to create tables?
+# 11.01.2023 html: How to create tables?
 - table and cells adapt to content and not to parent size dimensions
 ```html
 <table>
@@ -1129,19 +1129,19 @@ object-fit: cover;
 - Defining `<colgroup>`/`<col>` in the table allows to create some style columns so css can access specific columns for styling (otherwise you would have to select every nth row via css which is quite tedious)
 - Defining `<caption>` in the table adds a caption (important also for screen reader)
 
-# 📅 11.01.2023 css: What is a reset/normalizer stylesheet?
+# 11.01.2023 css: What is a reset/normalizer stylesheet?
 - Browser already already come with some basic default formatting e.g. blue links, bold headers, bullet points, search box, button, space between paragraphs for html (even without CSS) often called browser defaults or user agent styles
 - you can also disable those in your browser and you will see that there is no formatting left at all, not even line-breaks and spacing
 - This styling can be inconsistent across browser, a reset stylesheet aims to remove those inconsistencies by applying some default values (first described by [meyerweb](https://meyerweb.com/eric/tools/css/reset/)
 - Popular normalizer stylesheet is [normalize.css](https://necolas.github.io/normalize.css/)
 
-# 📅 11.01.2023 css: How does compatibility work?
+# 11.01.2023 css: How does compatibility work?
 - CSS is in the end just a specification published by the [CSS Working Group](https://www.w3.org/Style/CSS/)
 - Browser have to implement that specification and make sure that a certain piece of CSS code results in the define visual outcome. Although all major browser manufacturers comply to those specifications at some point they usually take some time to comply
 - Backwards compatibility is usually always ensured (a website from the year 2000 should still run today). Also old browser won’t break a website since declarations which are not understood by the browser are just ignored.
 - Usually you find Browser compatibility tables online which show which feature is rolled out in which browser
 
-# 📅 11.01.2023 css: What are the ways of adding CSS to a html document?
+# 11.01.2023 css: What are the ways of adding CSS to a html document?
 - External stylesheet (put this in your head), relative path or absolute url
 ```html
 <!DOCTYPE html>
@@ -1175,7 +1175,7 @@ object-fit: cover;
 </html>
 ```
 
-# 📅 10.01.2023 html: How to style text with html?
+# 10.01.2023 html: How to style text with html?
 - `<b>`/`<strong>` for bold
 - `<i>` for italic
 - `<u>` for underlined
@@ -1184,7 +1184,7 @@ object-fit: cover;
 - `<del>` for deleted text (crossed through)
 - `<sub>`/`<sup>` for sub/superscript
 
-# 📅 10.01.2023 html: How to create hyperlinks?
+# 10.01.2023 html: How to create hyperlinks?
 - this is what makes the web a web
 - 🤖: *To create hyperlinks, use the a tag with the href attribute to specify the URL to be linked to.*
 - Syntax
@@ -1212,7 +1212,7 @@ link
 	- `<a href="mailto:bioflash@web.de">Send me</a>`
 	- you can send the mail with cc, bcc, subject and body ([reference](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#specifying_details))
 
-# 📅 10.01.2023 html: What are description lists?
+# 10.01.2023 html: What are description lists?
 - 🤖: *Description lists are used to create a list of terms and their associated descriptions. The dl tag is used for the list container, dt for the term, and dd for the description.*
 - A little bit like `ul`/`ol` in the sense of that this is a list structure but no nesting allowed and used for describing semantic value pairs
 - This can be used for example by search machines to extract a glossary out of a article (you can also have multiple terms (`<dt>`) per description (`<dd>`) or the other way round
@@ -1230,7 +1230,7 @@ link
 </dl>
 ```
 
-# 📅 10.01.2023 html: How to quote html?
+# 10.01.2023 html: How to quote html?
 - By using the `<blockquote>`, a `cite` attribute optionally provides the source of the quote
 ```html
 <blockquote
@@ -1241,7 +1241,7 @@ link
 ```
 - for inline quotations use `<q>` (with optional `cite` attribute)
 
-# 📅 10.01.2023 html: How to create abbreviations/acronyms?
+# 10.01.2023 html: How to create abbreviations/acronyms?
 - 🤖: *To create abbreviations/acronyms, use the abbr tag with the title attribute to provide the full term.*
 - the text node of `<abbr>` contains the abbreviation and the `title` attribute the long form (which is shown on hover)
 ```html
@@ -1249,7 +1249,7 @@ link
 ```
 - `<acronym>` is deprecated
 
-# 📅 10.01.2023 html: How to render code in html?
+# 10.01.2023 html: How to render code in html?
 - Most of the below tags will style the code with monospace font by default, they are more for semantic clarity and/or will be targeted by css frameworks (like styling of code)
 - Use `<code>` for block element and code formatting
 - Use `<pre>` if you want to keep whitespaces and newlines
@@ -1257,7 +1257,7 @@ link
 - Use `<kbd>` for key names of keyboard
 - Use `<samp>` for terminal output
 
-# 📅 10.01.2023 html: What are semantic elements and why do they exist?
+# 10.01.2023 html: What are semantic elements and why do they exist?
 - 🤖: *Semantic elements are HTML tags that give meaning to the structure of the content on a web page. They exist to help search engines and assistive technologies understand the purpose of the content.*
 - Semantic elements clearly describe the content contained whereas non-semantic like `<div>` or `<span>` do not
 - although this does not impact layout or visuals (done with css) this is very important for
@@ -1275,7 +1275,7 @@ link
 - sidebar: supplements main content (`<main>`) like quotes, info, or related prodicts, secondary navbar (context dependent) (`<aside>`)
 - footer: copyright, fineprint (`<footer>`) 
 
-# 📅 10.01.2023 html: How to debug html?
+# 10.01.2023 html: How to debug html?
 - Browsers are usually parse and interpret HTML permissively, meaning that even with errors the page is still rendered (browsers usually have built-in mitigation strategies how to deal with erroneous html, compare source code and created dom by the browser)
 - Most commonly is looking at the code and get support by IDE for missing enclosing tags etc.
 - Or validate html with [Markup Validation Service](https://validator.w3.org/)  by W3C
@@ -1284,7 +1284,7 @@ link
 	- Properly intent the html document
 	- Check for closing tags
 
-# 📅 10.01.2023 html: How to add images?
+# 10.01.2023 html: How to add images?
 - Never use images hosted in places you do not own and you have to explicit permission linking from (called hotlinking)
 - Use a `alt` text for accessibility/search engines/bad internet connection (same for `title`)
 ```html
@@ -1304,7 +1304,7 @@ link
 ```
 - A caption is also for people who see an image, the alt text is a substitute for the picture. Caption and alt text should not be identical
 
-# 📅 10.01.2023 html: How does embedding a 3rd party website work?
+# 10.01.2023 html: How does embedding a 3rd party website work?
 - when embedding of other webpages makes sense and is allowed: youtube videos, statistics and badges of social media, payment buttons/options
 - In order to embed a website (via `<iframe>`) the host server needs to allow this (see [X-Frame-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options)), preventing clickjacking
 ```html
@@ -1324,7 +1324,7 @@ link
 - always set the `sandbox` attribute, not allowing the externally website anything (like calling javascript or manipulating the parent documents dom)
 
 
-# 📅 10.01.2023 css: How are conflicting styling rules resolved (cascading/specificity/inheritance)?
+# 10.01.2023 css: How are conflicting styling rules resolved (cascading/specificity/inheritance)?
 - In general: In case of a conflicting declaration block not the entire rule takes precedence but rules for single attributes are prioritized
 - Cascading is the algorithm which defines which rules is applied in the end and follow the following increasingly important stages:
 - Source-Order
@@ -1363,7 +1363,7 @@ link
 }
 ```
 
-# 📅 10.01.2023 css: syntax: What is the general syntax?
+# 10.01.2023 css: syntax: What is the general syntax?
 - CSS declaration block
 ```css
 /* CSS declaration block */
@@ -1374,7 +1374,7 @@ p {  /* selector*/
 - property and values are american english and case-insensitive and must not contain whitespace
 - wrong syntax of CSS declaration will be simply ignored
 
-# 📅 10.01.2023 css: syntax: What are CSS functions?
+# 10.01.2023 css: syntax: What are CSS functions?
 - CSS also supports some native functions to calculate things at runtime
 ```css
 .square {
@@ -1384,7 +1384,7 @@ width: calc(90% - 10px);  /* 90% of the parent width*/
 	- other functions are `transform: rotate(0.8turn);`, `color: rgba(200,200,200,0.1);`
 
 
-# 📅 10.01.2023 css: syntax: What are CSS @rules and how you use them?
+# 10.01.2023 css: syntax: What are CSS @rules and how you use them?
 - @rules are some instruction to the browser which modify CSS behavior
 - Some examples
 - `@import`: Import another stylesheet e.g. `@import "partial.css";`
@@ -1398,7 +1398,7 @@ width: calc(90% - 10px);  /* 90% of the parent width*/
 ```
 - for more see [here](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule) 
 
-# 📅 10.01.2023 css: syntax: What are shorthand properties?
+# 10.01.2023 css: syntax: What are shorthand properties?
 - Summarizes several CSS declarations into one line
 ```css
 padding: 1px 2px 3px 4px; /* clockwise from the top */
@@ -1411,13 +1411,13 @@ padding-left: 4px;
 - Be careful with incomplete value in shorthands. CSS will fill those out with default values leading to potentially overwrite old values you did not intend
 - Other shorthands are for example `font`, `background`, `border` and `margin`
 
-# 📅 10.01.2023 html: What is a dom tree?
+# 10.01.2023 html: What is a dom tree?
 - 🤖: *The DOM (Document Object Model) tree is a way of representing the structure of an HTML or XML document as a tree-like structure, where elements are the branches and the text content is the leaves of the tree.*
 - When the browser downloads the html it parses it and represents the document structure as a tree in memory, a document object model (dom)
 - Each element, attribute or text content becomes a dom node
 - CSS will be downloaded and parsed in a second step and will be then applied to each node before the dom is rendered to the user
 
-# 📅 10.01.2023 css: What are CSS cascade layers?
+# 10.01.2023 css: What are CSS cascade layers?
 - Allows you to put your css rules in different layers so that they take precedence over a different set of rules (independent of specificity or source order)
 - In general the following order of priority: default browser style sheet, user style sheets, author/developer styles sheets, important declarations
 - In the author/developer style sheets we have to possibility to introduce addition ordering with cascade
@@ -1442,7 +1442,7 @@ a {
 }
 ```
 
-# 📅 10.01.2023 css: layout: box-model: What are block and inline display types and how are they connected to the box model?
+# 10.01.2023 css: layout: box-model: What are block and inline display types and how are they connected to the box model?
 - Everything in css is a *box*, the layout is determined by the `display` property and either targets
 - *outer display type*: This does not impact the child elements of the container but how it interact with other elements, the pageflow
 - `block`
@@ -1461,7 +1461,7 @@ a {
 - The *box model* (content, border, padding, margin) fully applies to `block` elements and only partially to `inline` elements
 
 
-# 📅 10.01.2023 css: layout: box-model: What is the difference between inner and outer display values?
+# 10.01.2023 css: layout: box-model: What is the difference between inner and outer display values?
 - [source](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#outer_display_type)
 - Outer display values: Looking at the outside elements for deciding how it is interacting. For example `block` changes surrounding elements by introducing line breaks before and after (remember a `block` box has full-with). Example:
 ```css
@@ -1475,7 +1475,7 @@ a {
 - Inner display values: Looking at inside elements and deciding on layout accordingly. For example the `flex`/`grid` property does not impact neighboring elements but just child elements.
 - So if you select `flex` as display type you only define the inner display value, the outer display value will default to a value (e.g. `block` if it is a `<div>`). To still also define the outer display value you can create combinations e.g. `inline-flex`. So the element behaves on the outside like a inline element and on the inside you create flex logic. Explained in depth [here](https://www.youtube.com/watch?v=ty4lnEUy7SY)
 
-# 📅 09.01.2023 xml: What is xml and what is it used for?
+# 09.01.2023 xml: What is xml and what is it used for?
 - Stands for eXtensible Markup Language, which is a widely used standard
 - the structure is described in the data itself via nested tags and attributes
 - applications:
@@ -1484,7 +1484,7 @@ a {
 	- Formating: PDF, Word, Powerpoint documents
 	- Configuration data
 
-# 📅 09.01.2023 xml: What are the basic elements of a xml document?
+# 09.01.2023 xml: What are the basic elements of a xml document?
 - XML prolog: Should include version and character encoding
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1496,17 +1496,17 @@ a {
 - attribute values need to be defined in quotes `<element style=”value”> </element>`
 - Comments are created with this: `<!-- A comment -->`
 
-# 📅 09.01.2023 html: What are the basic elements of a html document?
+# 09.01.2023 html: What are the basic elements of a html document?
 - A html element has opening, closing tag and a content (there is also a empty element which has only a opening tag)
 - A content can contain other elements or a text or comments (later parsed as element, text and comment nodes in the dom)
 - A html element can have attributes with values
 
 
-# 📅 09.01.2023 xml: What are the differences between html and xml?
+# 09.01.2023 xml: What are the differences between html and xml?
 - html tags are case-insensitive (where xml is case-sensitive)
 - html has predefined tags (like <h1>, <a>) where in xml it has to defined in a spec
 
-# 📅 09.01.2023 html: What are custom elements?
+# 09.01.2023 html: What are custom elements?
 - introduced with html5
 - allow users to reuse html snippets (like components for frontend-frameworks)
 - done by defining a javascript class representation of the new (or to be extended html element)
@@ -1514,7 +1514,7 @@ a {
 - Read more [here](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements)
 
 
-# 📅 09.01.2023 html: What is the doctype declaration doing at the beginning of a document?
+# 09.01.2023 html: What is the doctype declaration doing at the beginning of a document?
 - 🤖: *The doctype declaration at the beginning of a document is used to specify which version of HTML the document is using.*
 ```html
 <!DOCTYPE html>
@@ -1524,21 +1524,21 @@ a {
 - the doctype allows you to invoke different rendering modes in the browser and different html specs (also xhtml) - see here [here](https://www.w3.org/QA/2002/04/valid-dtd-list.html)
 
 
-# 📅 09.01.2023 html: What are void elements?
+# 09.01.2023 html: What are void elements?
 - 🤖: *Void elements are HTML tags that don't have a closing tag and don't have any content. Examples include `<img>` and `<br>`.*
 - html tags which do not require a closing tag
 - they are called void elements because they are empty (sometimes also referred as singleton tags or empty elements)
 - those include: `<br>`, `<col>`, `<img>`, `<hr>` and a lot more html5 tags (e.g. media tags)
 - you do not need a trailing slash like `<br/>` (only used for xhtml compatibility)
 
-# 📅 09.01.2023 html: What is xhtml?
+# 09.01.2023 html: What is xhtml?
 - 🤖: *XHTML is a version of HTML that adheres to stricter rules for well-formedness, such as all elements must be closed and all attributes must have a value.*
 - was designed to create a bridge between html and xml to have a common spec
 - for example a void element like `<br>` in html is not valid xml since every element needs a a closing tag. In xhtml you need to write `<br/>`
 - should not be used anymore, use html5 instead
 -  only in very special cases where you need both properties e.g. chat logs which you want to conveniently render in the browser and use all the xml parsing capabilities and tools (e.g. with XSLT) 
 
-# 📅 09.01.2023 html: What is the head element used for?
+# 09.01.2023 html: What is the head element used for?
 - 🤖: *The head element is used to contain metadata about the document, such as the title, which is used by browsers and search engines.*
 - Used for metadata and is not displayed/rendered by the browser
 - document title (also shown in browser tab or when saving as favourite)
@@ -1567,7 +1567,7 @@ a {
 </html>
 ```
 
-# 📅 09.01.2023 html: How to add a emoji as a favicon?
+# 09.01.2023 html: How to add a emoji as a favicon?
 - Define this in the html `<head>`
 ```html
 <!DOCTYPE html>
@@ -1582,7 +1582,7 @@ a {
 </html>
 ```
 
-# 📅 09.01.2023 html: How to load javascript only when dom is rendered?
+# 09.01.2023 html: How to load javascript only when dom is rendered?
 - with the `defer` keyword
 ```html
 <!DOCTYPE html>
@@ -1597,7 +1597,7 @@ a {
 </html>
 ```
 
-# 📅 09.01.2023 html: How to specify different languages in html?
+# 09.01.2023 html: How to specify different languages in html?
 - Important for search engines and browsers to filter for languages or offer translation services
 - Can be applied on document level or to specific element with the `lang` keyword
 ```html
@@ -1609,11 +1609,11 @@ a {
 </html>
 ```
 
-# 📅 09.01.2023 html: What is the difference between block and inline elements?
+# 09.01.2023 html: What is the difference between block and inline elements?
 - For block elements, every element after a block element will appear on a new line
 - Inline Elements do not trigger a line break, often used for text e.g. `<a>`, `<em>`, `<strong>`
 
-# 📅 09.01.2023 html: What are boolean attributes?
+# 09.01.2023 html: What are boolean attributes?
 - booleans in html are usually modelled by just repeating the attribute as the value (resulting to true)
 ```html
 <input type="text" disabled="disabled" />
@@ -1625,7 +1625,7 @@ a {
 - for a falsy value just do not set the attribute
 
 
-# 📅 09.01.2023 html: How to write special characters?
+# 09.01.2023 html: How to write special characters?
 - Possible with the so called entity references
 - `<`: `&lt;`
 - `>`: `&gt;`
@@ -1634,12 +1634,12 @@ a {
 - `&`: `&amp;`
 - For more see [here](https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references)
 
-# 📅 09.01.2023 html: What is the purpose of HTML?
+# 09.01.2023 html: What is the purpose of HTML?
 - Provide layout and formatting
 - Basic styling (without css!)
 - Help out search engines to find things (e.g. `<author>` or `<article>` tag), adding a semantic structure
 
-# 📅 14.12.2022 java: oop: What are the basic terms with easy explanations?
+# 14.12.2022 java: oop: What are the basic terms with easy explanations?
 - things a object knows about itself -> instance variables
 - things an object can do -> methods
 -  A `class is not the `object: e.g. a list of contacts, a contact form is `class` defining how a contact looks like, and `object` is a specific entry
@@ -1648,7 +1648,7 @@ a {
 - `class` is a blueprint for a `object` and tells JVM how how to make an object of that type
 
 
-# 📅 14.12.2022 fun: What are some common animal sounds? (onomotopoeia)
+# 14.12.2022 fun: What are some common animal sounds? (onomotopoeia)
 - [source](https://www.fluentu.com/blog/english/animal-sounds-in-english/)
 - Cats — `meow`
 - Dogs — `woof`
@@ -1662,7 +1662,7 @@ a {
 - Birds — `chirp`
 - Mosquitoes — `buzz`
 
-# 📅 14.12.2022 programming: How do I approach a programming problem?
+# 14.12.2022 programming: How do I approach a programming problem?
 - Read through the whole problem statement (!)
 - Which data types are involved. Do I already have all of them available or do I have to convert something?
   - Which of the types are primitive? I can do very little with them (look for static methods `Primitive.method`) or use the wrapper types instance methods
@@ -1670,35 +1670,35 @@ a {
 - Learn how to read documentation of available methods with its parameters
 - What is the first step I can do to come close to the solution? Can I simplfy the problem somehow?
 
-# 📅 14.12.2022 intellij: Convenient tools 
+# 14.12.2022 intellij: Convenient tools 
 - Show shortcuts when using the mouse, [key-promoter-x](https://plugins.jetbrains.com/plugin/9792-key-promoter-x)
 
-# 📅 14.12.2022 java: Why can't you overwrite static methods?
+# 14.12.2022 java: Why can't you overwrite static methods?
 - static methods in Java are resolved at compile time
 - since method overriding is part of Runtime Polymorphism, static methods can't be overridden
 
-# 📅 14.12.2022 training: What will you learn in a coding bootcamp?
+# 14.12.2022 training: What will you learn in a coding bootcamp?
 - You will start walking but it will take a lot longer to master the skill
 - Recommended [article](https://norvig.com/21-days.html)
 
-# 📅 14.12.2022 memes: What are some good source for memes?
+# 14.12.2022 memes: What are some good source for memes?
 - [xkcd.com/](xkcd)(and [site](https://explainxkcd.com/wiki/index.php/1188:_Bonding) which explains some of those)
 - [/r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/) on reddit
 - SD,MJ etc ;)
 
 
-# 📅 14.12.2022 h2: How to access the ui locally?
+# 14.12.2022 h2: How to access the ui locally?
 - Add this in `application.yaml/.properties`: `spring.h2.console.enabled=true`
 - And access via url: `http://localhost:8080/h2-console`
 
 
-# 📅 08.12.2022 vuejs: How to style bind css functions?
+# 08.12.2022 vuejs: How to style bind css functions?
 - Treat the function as a string and concat the function call if you have arguments
 ```html
 <li :style="{filter: 'brightness('+ (1 - depth/10) +')'}"  >{{name}}</li>
 ```
 
-# 📅 08.12.2022 github actions: How to reuse workflows?
+# 08.12.2022 github actions: How to reuse workflows?
 - For the workflow you want to reuse change the `on` trigger to `on: [workflow_call]`
 - and reference that workflow from another workflow like this
 ```yaml
@@ -1710,7 +1710,7 @@ jobs:
     uses: ./.github/workflows/build-job.yaml
 ```
 
-# 📅 08.12.2022 github actions: How to upload and download artefacts/files?
+# 08.12.2022 github actions: How to upload and download artefacts/files?
 ```yaml
 name: "Workflow for uploading/downloading files"
 on: [push]
@@ -1729,24 +1729,24 @@ jobs:
          name: "Users.txt"
 ```
 
-# 📅 08.12.2022 devops: What is continous integration?
+# 08.12.2022 devops: What is continous integration?
 - The idea is that developers should aim for integration into the shared repository as soon as possibily
 - Integration here means resolve merge conficts but also pass the automated suite of tests/and or manually validate new changes
 - The overall goal is that software is always in a state where it can be released and deployed to production
 - One methodlogy to achieve this is for example trunk-based development (avoiding branches alltogether)
 
-# 📅 08.12.2022 devops: What is devops?
+# 08.12.2022 devops: What is devops?
 - Devops is a general approach which tries to improve the path to production
 - it puts emphasis on people, processes, and technology in order to focus on the fast iterations and product value (agile mindset)
 - the general idea is that infrastructure related tasks should be at best fully automated so that developers can focus on developing new features or incorporate collected feedback
 
-# 📅 08.12.2022 devops: What is the difference between Continuous delivery and continuous deployment?
+# 08.12.2022 devops: What is the difference between Continuous delivery and continuous deployment?
 - They are both almost identical, they both encompass building and testing and releasing updates
 - The difference is that Continuous Delivery software is only released but not deployed to a production environment
 - This allows the team to manually review changes and decide if the changes should be deployed to production
 - With Continuous Deployment the only quality gate before source is deployed to production are the tests, everything is fully automated
 
-# 📅 07.12.2022 vuejs: How to share css between components?
+# 07.12.2022 vuejs: How to share css between components?
 - Extract into shared css and do this in each component
 ```html
 <style scoped>
@@ -1754,7 +1754,7 @@ jobs:
 </style>
 ```
 
-# 📅 06.12.2022 vite: How to debug preview app?
+# 06.12.2022 vite: How to debug preview app?
 - Disable minify of js in `vite.config.js` so you can inspect javascript in browser
 ```json
 { //config
@@ -1765,17 +1765,17 @@ jobs:
 ```
 -
 
-# 📅 06.12.2022 npm: How to list a dependency tree?
+# 06.12.2022 npm: How to list a dependency tree?
 ```bash
 npm list --depth=10
 ```
 
-# 📅 06.12.2022 npm: How to update dependencies?
+# 06.12.2022 npm: How to update dependencies?
 ```bash
 npm update --save // to store it in package.json
 ```
 
-# 📅 06.12.2022 vite: How to user-test production ready app?
+# 06.12.2022 vite: How to user-test production ready app?
 ```bash
 # Instead of only using hot-reload dev command with vite
 vite
@@ -1789,13 +1789,13 @@ vite build && vite preview
 }
 ```
 
-# 📅 06.12.2022 git: How to create a tag and push it?
+# 06.12.2022 git: How to create a tag and push it?
 ```bash
 git tag TAG_NAME
 git push origin --tags
 ```
 
-# 📅 06.12.2022 css: How to preverse whitespace in a text node?
+# 06.12.2022 css: How to preverse whitespace in a text node?
 ```css
 #target{
     white-space: pre; /* use pre-wrap to keep wraps*/
@@ -1806,12 +1806,12 @@ git push origin --tags
 ```
 
 
-# 📅 06.12.2022 css: What are some interesting use-cases for pseudo-classes?
+# 06.12.2022 css: What are some interesting use-cases for pseudo-classes?
 - `:first-letter`, matches first letter of text (same for `:first-line`)
 - `:first-child`, matches first child (same for `:last-child`, `:nth-child(2)`)
 - `:hover`, matches element when it is hovered over
 
-# 📅 06.12.2022 css: How to create element counters?
+# 06.12.2022 css: How to create element counters?
 - In css you can keep track the number of times an element appears on a page with the counter variable you define
 - In this example you have several `.bubble` elements on the page and you want to number them
 ```css
@@ -1824,7 +1824,7 @@ git push origin --tags
 }
 ```
 
-# 📅 06.12.2022 css: layout: How to do absolute positioning?
+# 06.12.2022 css: layout: How to do absolute positioning?
 - Absolute positioning allows you to position an element relative to its parent container
 ```css
 #target{
@@ -1836,7 +1836,7 @@ git push origin --tags
 ```
 - this only works if the parent container is also positioned in absolute or static way, if not the reference is the viewport. (but won't stick to the viewport as in fixed or sticky)
 
-# 📅 06.12.2022 css: layout: How to do fixed positioning?
+# 06.12.2022 css: layout: How to do fixed positioning?
 - Fixed positioning allows you to position an element relative to the browser window.
 - The element will remain in the same position on the page, even if the user scrolls the page
 ```css
@@ -1851,7 +1851,7 @@ git push origin --tags
 - Some usecases would be a navigation banner, or a chat bot icon
 - `top: 0` results in sticking at the very top
 
-# 📅 06.12.2022 css: layout: How to do relative positioning?
+# 06.12.2022 css: layout: How to do relative positioning?
 - You would use this if you want to finetune a layout but do not want to change the other elements layout
 - It is called relative because you define offsets relative to its original position
 ```css
@@ -1863,7 +1863,7 @@ git push origin --tags
 ```
 - the above pushes the element actually `10px` down and to the right. Think of it as pushing from the `top` and `left`
 
-# 📅 06.12.2022 css: layout: What is the difference between block elements and inline elements?
+# 06.12.2022 css: layout: What is the difference between block elements and inline elements?
 - Block elements provoke a line break after them like `body`,`br`,`div`,`article`,`ul`,`li`,`...`
     - they usually take up all the width of the parent element
     - the try to accomodate the contents by growing the height (sometimes called block dimension)
@@ -1872,7 +1872,7 @@ git push origin --tags
 - Those elements default for `display` property to either `block` or `inline`
 - both `display` types have also different `margin`, `padding`, `border` effects regarding the interaction with other elements (more in-depth in box-model)
 
-# 📅 06.12.2022 css: What are the common unit types and when to use them?
+# 06.12.2022 css: What are the common unit types and when to use them?
 - There is absolute length units (like `px`, `mm`, `pt`) and relative ones (`em`, `ch`, `%`)
 - Pixel, `px`, use for example for raster images or any fixed size requirements
 - Ems, `em` corresponds to font-size of current element (`rem` of root element), use for response designs. `1.4rem` is 1.4 times the fontsize of the root element of the document.
@@ -1886,7 +1886,7 @@ git push origin --tags
     - For padding/margins you should use `rem`, if in component it is better for reusability
     - For media queries always use `em` (never use `px`) - [source](https://cloudfour.com/thinks/the-ems-have-it-proportional-media-queries-ftw/)
 
-# 📅 06.12.2022 css: layout: box-model: What is the difference between border, margins and padding (box model)?
+# 06.12.2022 css: layout: box-model: What is the difference between border, margins and padding (box model)?
 - Both padding and margin are used to create space around elements
 - Boader is surrounding all of your content and padding, outside the border is the margin defined
 - Or put differently: Margin is used to create space around an element, while padding is used to create space within an element (e.g. button).
@@ -1895,7 +1895,7 @@ git push origin --tags
     - Be aware then margins auto-collapse - think of it as a min space between two elements if two elements have margin=100px then the total space between will be 100px. padding is added though since it is part of the element within the boarders
     - Be aware that margin is not part of the click region (contrary to padding)
 
-# 📅 06.12.2022 css: What are the different css selectors?
+# 06.12.2022 css: What are the different css selectors?
 - [source](https://www.w3schools.com/cssref/css_selectors.php)
 ```css
 /* Matches dom tags */
@@ -1929,7 +1929,7 @@ h1:before { /* also :after */
 }
 ```
 
-# 📅 06.12.2022 css: How to combine css selectors?
+# 06.12.2022 css: How to combine css selectors?
 - style several entities at once, called a **grouping selector**
 ```css
 h1, h2 {
@@ -1982,7 +1982,7 @@ section p span {
 }
 ```
 
-# 📅 06.12.2022 css: How to style several entities at once?
+# 06.12.2022 css: How to style several entities at once?
 - Just comma-seperate them
 ```css
 h1, h2 {
@@ -1990,7 +1990,7 @@ h1, h2 {
 }
 ```
 
-# 📅 06.12.2022 css: How to select every element there is?
+# 06.12.2022 css: How to select every element there is?
 ```css
 /* Matches everything */
 * {
@@ -2005,7 +2005,7 @@ div * {
 
 
 
-# 📅 06.12.2022 css: How to import other css files?
+# 06.12.2022 css: How to import other css files?
 - Imports must be at the very top of the file
 ```css
 @import "someOtherFile.css"
@@ -2014,13 +2014,13 @@ div * {
 
 
 
-# 📅 05.12.2022 node: How to use import statements in node?
+# 05.12.2022 node: How to use import statements in node?
 - ES6 Modules are not supported by default in node.js
 - In `package.json` you need to add `"type":"module"`
 - and instead of `require` you need to use now `import { someFunction } from  "../../src/functions.js";` or e.g. `import assert from "assert";`
 - of course this requires that you also use the correponding `export` statements
 
-# 📅 25.11.2022 mocha: What is it and for what do we use it?`
+# 25.11.2022 mocha: What is it and for what do we use it?`
 - Install and run `npm install --save-dev mocha && npm test`
 - Provided you create a npm task like this (in `package.json`)
 ```json
@@ -2048,7 +2048,7 @@ describe('Unit test helper functions', function () {
 ```
 
 
-# 📅 23.11.2022 vuejs: How to pass data into a component?
+# 23.11.2022 vuejs: How to pass data into a component?
 - There is ways of doing this
     - via probs (think of them like parameters or attributes in the html context)
     - via slots (like text nodes, think of parameterized templates)
@@ -2095,13 +2095,13 @@ app.component('my-component-name', {
 ```
 - `<slot>` is like a placeholder where we can inject text node content into
 
-# 📅 23.11.2022 vuejs: Why can't you alert/log in a v-directive expression?
+# 23.11.2022 vuejs: Why can't you alert/log in a v-directive expression?
 - Due to the restricted exposure of globals, see [here](https://vuejs.org/guide/essentials/template-syntax.html#restricted-globals-access)
 - Template expression are sandboxed and can only access certain globals like `Math` or `Date`
 - If you want to log something in a template expression of a click handler just write wrap this in a method and reference it in the expression
 - If you want to expose certain globals you can do this in [`app.config.globalProperties`](https://vuejs.org/api/application.html#app-config-globalproperties)
 
-# 📅 23.11.2022 programming: What is the difference between a statement and a expression?
+# 23.11.2022 programming: What is the difference between a statement and a expression?
 - [source](https://www.baeldung.com/cs/expression-vs-statement)
 - An expression is a piece of code that can be evaluated to a value. Often you can think of it as something you could write into a `return` statement
     - `1+2`
@@ -2109,7 +2109,7 @@ app.component('my-component-name', {
     - `1 < 4`
 - An statement is valid code which can stand for itself and resembles a complete piece of information the compiler/computer can react on. Usually a statement returns `void`
 
-# 📅 23.11.2022 programming: What are the different cases used in programming languages?
+# 23.11.2022 programming: What are the different cases used in programming languages?
 - Camel case
     - is usually `lowerCamelCase`
     - Origin: By Newton Love, "he mentioned that the humpiness of the style made him call it HumpyCase at first"
@@ -2125,14 +2125,14 @@ app.component('my-component-name', {
 - Read more on different formating options [here](https://en.wikipedia.org/wiki/Naming_convention_(programming)#Multiple-word_identifiers) and [here](https://stackoverflow.com/questions/17326185/what-are-the-different-kinds-of-cases)
 
 
-# 📅 23.11.2022 vuejs: How render a element n times?
+# 23.11.2022 vuejs: How render a element n times?
 - Render a `div` 10 times
 ```html
 <div v-for="n in 10">{{ n }}</div>
 ```
 - If you want to render several elements without a enclosing div you can wrap this in a `<template>` tag and add the `v-for` directive there
 
-# 📅 23.11.2022 vuejs: How render a object (key/value) with a loop?
+# 23.11.2022 vuejs: How render a object (key/value) with a loop?
 ```html
 <li v-for="(value, key) in propertyObject">
   {{ key }}: {{ value }}
@@ -2140,7 +2140,7 @@ app.component('my-component-name', {
 ```
 - optionally you can also access the index with a third parameter
 
-# 📅 23.11.2022 vuejs: How so vue directives work?
+# 23.11.2022 vuejs: How so vue directives work?
 - Vue directives are instruction for VueJS to do things in a certain way
 - General syntax
 <p align="center"><img height=400 src="https://vuejs.org/assets/directive.69c37117.png" /></p><br>
@@ -2154,7 +2154,7 @@ app.component('my-component-name', {
 ```
 
 
-# 📅 23.11.2022 vuejs: How to bind multiple attributes to an element at once?
+# 23.11.2022 vuejs: How to bind multiple attributes to an element at once?
 - Usually you would define a attribute object and bind that to an element
 ```javascript
 // return data() from app
@@ -2174,14 +2174,14 @@ app.component('my-component-name', {
 ```
 - as a binding object you can also use computed attributes which is quite powerful (e.g. calculate booleans in property and not inline in template)
 
-# 📅 23.11.2022 vuejs: How to evaluate HTML when injecting into a template?
+# 23.11.2022 vuejs: How to evaluate HTML when injecting into a template?
 - There is a `v-html` directive, which you would use like this
 ```html
 <p>Evaluated html: <span v-html="someHTML"></span></p>
 ```
 - Note this evalates raw html and no template syntax like bindings etc. (for this you should use components)
 
-# 📅 22.11.2022 npm: How to run several tasks at once?
+# 22.11.2022 npm: How to run several tasks at once?
 - The usual unix operators apply
 ```bash
 # Run run sequentially
@@ -2194,7 +2194,7 @@ app.component('my-component-name', {
 "dev": "concurrently --kill-others \"command1\" \"command2\""
 ```
 
-# 📅 22.11.2022 vuejs: vite: How to inject environment dependent variables on build time?
+# 22.11.2022 vuejs: vite: How to inject environment dependent variables on build time?
 - Vite has the concept of different modes: `development` (on `dev` task) and `production` (on `build` task)
 - Depending on the mode environment variables are loaded from either `.env` (always loaded) or `.env.development`/`.env.production` (overwrites more general definition)
 - A env-file is a simple key-value mapping, variables need to be prepended with `VITE_` for exposing them to the application
@@ -2210,7 +2210,7 @@ console.log(import.meta.env.MODE); // or check for boolean: import.meta.env.PROD
 ```
 
 
-# 📅 22.11.2022 vuejs: How to react on a state update with a side-effect?
+# 22.11.2022 vuejs: How to react on a state update with a side-effect?
 - In vue you can bind state changes to a attribute (`v-bind:..`) or a text node (`{{...}}`)
 - But also a value calcultion with `computed` properties
 - If you just want to trigger a side-effect like an API call on state change, use `Watcher`
@@ -2232,7 +2232,7 @@ export default {
     - create a `computed` composite and observe this
     - or store it in a composite object in the first place (but then do not forget to use a [Deep Watcher](https://vuejs.org/guide/essentials/watchers.html#deep-watchers) -> `deep:true` option)
 
-# 📅 22.11.2022 vuejs: How does the component lifecycle work?
+# 22.11.2022 vuejs: How does the component lifecycle work?
 - Most important state changes are
     - `created`: Here you would normally fetch data before populating the view of a component
     - `mounted`: Used when you need the rendered dom for applying a side-effect
@@ -2248,23 +2248,23 @@ export default {
 ```
 
 
-# 📅 21.11.2022 unix: How to change to different user in cli?
+# 21.11.2022 unix: How to change to different user in cli?
 - `su -i "USER"`
 
-# 📅 21.11.2022 npm: What is npm?
+# 21.11.2022 npm: What is npm?
 - A package manager for node.js (Javascript)
 
-# 📅 21.11.2022 npm: How to update?
+# 21.11.2022 npm: How to update?
 - `npm update -g`
 
-# 📅 21.11.2022 vuejs: What is vite?
+# 21.11.2022 vuejs: What is vite?
 - The official build tool for vue
 
 
-# 📅 21.11.2022 networking: What is a CDN?
+# 21.11.2022 networking: What is a CDN?
 - CDN := A content delivery network delivering content from a content delivery server based on the geographical location of the client
 
-# 📅 21.11.2022 vuejs: What is the difference between views and components?
+# 21.11.2022 vuejs: What is the difference between views and components?
 - A View is a specific component which is used for routing (orchestrated by Vue Router)
 - When a certain route is matching view is shown in the corresponding `<RouterView />`
 - Example of how a router could look like
@@ -2288,13 +2288,13 @@ export default [
 - A view itself usually would contain some other resuseable components
 - The distinction between views and components is a artifical one and does not have to be followed, it is just a convention scaffolding tools like `vite` is using
 
-# 📅 21.11.2022 How to test my frontend with backend rest dependencies?
+# 21.11.2022 How to test my frontend with backend rest dependencies?
 - Spin up local backend yourself
 - Spin up a mock server serving a REST api, recommended tool: [json-server](https://github.com/typicode/json-server)
 - Tooling for intercepting calls (also possible from Chrome Browser), recommended tool: [msw](https://github.com/mswjs/msw)
 
 
-# 📅 17.11.2022 sql: normalization: What is understood under 4NF?
+# 17.11.2022 sql: normalization: What is understood under 4NF?
 - **If we break 3NF we also violate 4NF**
 - **If we do have multi-valued dependencies on a non-key attribute we break 4NF**
 - For example a NPC with a certain race can have one of several skin-colors, this needs to be moved out to a separate table
@@ -2307,12 +2307,12 @@ id,race,skin_color
 ```
 - if not moved out you might add a new color to a race but only for a certain sub-race which was not the original intent of the database designer
 
-# 📅 17.11.2022 sql: normalization: What is understood under 5NF?
+# 17.11.2022 sql: normalization: What is understood under 5NF?
 - **If we break 4NF we also violate 5NF**
 - **If we can think of creating the existing table based on joining imagined subtables we break 5NF**
 
 
-# 📅 17.11.2022 vuejs: How to create an app?
+# 17.11.2022 vuejs: How to create an app?
 - In `main.js` the vue app is created via `createApp`, with a mandatory options object, containing
     - `data` which is the data model which is used in the view/html template
     - Check out the other options [here](https://012.vuejs.org/api/options.html): `props`, `methods`, `computed`, `el`, `template`, but also custom things like `directives`
@@ -2352,7 +2352,7 @@ const app = Vue.createApp(
     - here you have to use kebab-case for components to comply to the Dom parsing of the browser
     - For more in-DOM template implications see [here](https://vuejs.org/guide/essentials/component-basics.html#dom-template-parsing-caveats)
 
-# 📅 17.11.2022 vuejs: What does {{someThing}} mean in my html?
+# 17.11.2022 vuejs: What does {{someThing}} mean in my html?
 - Called mustache syntax and allows us to run javascript in our html (without an explicit script syntax)
 ```html
 <h1>{{alert('Hello World!')}}</h1>
@@ -2372,7 +2372,7 @@ const app = Vue.createApp(
 - What the framework additionaly is doing is running this code whenever that specifc value has changed
 - For more read into `Vue's Reactivity System`
 
-# 📅 17.11.2022 vuejs: What is attribute binding?
+# 17.11.2022 vuejs: What is attribute binding?
 - With the moustache syntax `{{}}` you can only use in text nodes but not for values of HTML attributes
 - Given you expose `url` field
 ```javascript
@@ -2393,7 +2393,7 @@ const app = Vue.createApp(
 - if the bound value is null or undefined the attribute will be removed
 - those custom dom attributes like `v-bind` are called vue directives, see [here](https://vuejs.org/api/built-in-directives.html) for complete overview of native directives
 
-# 📅 17.11.2022 vuejs: What is conditional rendering?
+# 17.11.2022 vuejs: What is conditional rendering?
 - Like a if-else helping you to decide which dom elements you want to render
 ```javascript
 // return data() from app
@@ -2423,7 +2423,7 @@ const app = Vue.createApp(
 ```
 - When rendering the dom the `<template>` tag will be not part of it
 
-# 📅 17.11.2022 vuejs: How to render lists?
+# 17.11.2022 vuejs: How to render lists?
 - for creating several elements at once we need to use the `v-for` directive on the element we want to repliate e.g. `<li>`
 - same principle as a for-each loop, for each element `item` of `items`
 - The current element can be accessed with the alias `item`
@@ -2454,7 +2454,7 @@ const app = Vue.createApp(
 ```
 - Alternatively we can also use the current index of each element e.g. key="item_"+index
 
-# 📅 17.11.2022 vuejs: How to do event handling?
+# 17.11.2022 vuejs: How to do event handling?
 - First the event handler needs to be written and registred in the vue app (in the `methods` field of our options object)
 - Note how data attributes are referenced with `this`. You can also assign other attributes to `this` but they want be reactive as they are when declared in the `data` object
 ```javascript
@@ -2477,7 +2477,7 @@ const app = Vue.createApp(
 <button @click="alertTheWorld">Click-me!</button>
 ```
 
-# 📅 17.11.2022 vuejs: How to add click handlers to a list of elements?
+# 17.11.2022 vuejs: How to add click handlers to a list of elements?
 ```javascript
 // return data() from app
 {
@@ -2513,7 +2513,7 @@ computed: {
 }
 ```
 
-# 📅 17.11.2022 vuejs: How to do style binding?
+# 17.11.2022 vuejs: How to do style binding?
 - **Inline styling**
 - Notice the shortcut hand `:attribute` for style, which is binding a style object to the style attribute
 ```html
@@ -2544,7 +2544,7 @@ computed: {
 - **Reference and toggle css classes: Class binding**
 - See `How to do class binding?`
 
-# 📅 17.11.2022 vuejs: How to do class binding?
+# 17.11.2022 vuejs: How to do class binding?
 ```css
 .disabledElement{
     background-color: #FFFf;
@@ -2560,7 +2560,7 @@ computed: {
 <button class="button" :class="[isDisabled ? disabledElement : fancyHighlightedButtonClass]" >Enter VR</button>
 ```
 
-# 📅 17.11.2022 vuejs: What are computed properties and how to use them?
+# 17.11.2022 vuejs: What are computed properties and how to use them?
 - Allows to compute certain values in the vue backend without needing to this in the html (caches the value)
 - in the end it is functions but in the html you can reference them as a data property
 ```javascript
@@ -2578,7 +2578,7 @@ const app = Vue.createApp(
 - You can also use computed properties to calculate values and have a different type as output
 - Creating a message like this: `message=this.author.books.length > 0 ? 'Yes' : 'No'`
 
-# 📅 17.11.2022 vuejs: What are components?
+# 17.11.2022 vuejs: What are components?
 - Basic building blocks of a vue.js app
 - You can block them into each other into a component hierachy. A component can have child components.
 - Usually stored in a sperate javascript file (need to import it seperately then)
@@ -2625,7 +2625,7 @@ app.component('my-component-name', {
 </style>
 ```
 
-# 📅 17.11.2022 vuejs: How to trigger state changes outside of component?
+# 17.11.2022 vuejs: How to trigger state changes outside of component?
 - In short, emit an event to the parent component that a certain thing happened
 - Note the `$` prefix, this is reserved for Vue's internal API's (same for `_` which is for internal properties)
 ```javascript
@@ -2659,7 +2659,7 @@ const app = Vue.createApp(
     - Pass down a hook which updates parent state
     - Use tech like `vuex store` which maintains a global state everyone can read and write from
 
-# 📅 17.11.2022 vuejs: How to create forms?
+# 17.11.2022 vuejs: How to create forms?
 - `v-bind`/`:attribute` only binds from vue backend to template (on-way)
 - `v-model` creates a two-way binding (change on one side, updates the other side
 ```javascript
@@ -2696,7 +2696,7 @@ app.component('my-form', {
 - `prevent` of `@submit.prevent` is also an modifier prevent browser refresh on submit
 
 
-# 📅 14.11.2022 sql: How to update a value in a row?
+# 14.11.2022 sql: How to update a value in a row?
 ```sql
 UPDATE customer SET name = "James Potter"
 WHERE id = 1;
@@ -2706,13 +2706,13 @@ UPDATE customer SET order_count = order_count + 1
 
 ```
 
-# 📅 14.11.2022 sql: How sort returned rows?
+# 14.11.2022 sql: How sort returned rows?
 ```sql
 SELECT * FROM customer
 ORDER BY age DESC; -- opposite is 'ASC'
 ```
 
-# 📅 14.11.2022 sql: What are the naming conventions?
+# 14.11.2022 sql: What are the naming conventions?
 - Use understores where you would end up using whitespaces `order_count`
 - Always prefer lower-case for table, column names
 - For tables, try to use a singular collective name e.g. `stuff`
@@ -2737,7 +2737,7 @@ SELECT c.last_name
         ON o.id = c.order_id
 ```
 
-# 📅 14.11.2022 sql: How and when to self-join within a table?
+# 14.11.2022 sql: How and when to self-join within a table?
 - Why?
     - Often used if a value references in to another row and you want to return actual values of that row and not reference
     - This scenario is often the case for employee hierachies e.g. person A needs to work for person B
@@ -2754,13 +2754,13 @@ ORDER BY manager;
 ```
     - In the above case, the top manager which does not refer to anyone would be ommited (to include him/her use `LEFT JOIN` with `IFNULL`)
 
-# 📅 14.11.2022 sql: What is a index?
+# 14.11.2022 sql: What is a index?
 - ELI5: A data structure used to speed up queries
 - Without an index a simple `WHERE` statement forces the query algorithm to over each field and check if e.g. a equal check is satified
 - With a faster data structure (e.g. tree-like) that search can be shortned substantially, decreasing query time by a lot
 - You can think of it like a map where the key is the value you define a index on and the value is the containing row
 
-# 📅 14.11.2022 sql: normalization: What is normalization and the different normal forms?
+# 14.11.2022 sql: normalization: What is normalization and the different normal forms?
 - Normalization is structuring data in such a way so that
     - it can't express redundant information
     - easier to understand and extend
@@ -2770,7 +2770,7 @@ ORDER BY manager;
     - like safety assessments
 - Good beginner introduction into normalization [here](https://www.youtube.com/watch?v=GFQaEYEc8_8&list=PPSV)
 
-# 📅 14.11.2022 sql: normalization: What is understood under 1NF?
+# 14.11.2022 sql: normalization: What is understood under 1NF?
 - **If we use row order to convery information we violate 1NF**
 - Row order is never considered in a relational database
 - If you need to express an order of entries then introduce a sorting key e.g. `priority`
@@ -2796,7 +2796,7 @@ mal13,coin,110
 ```
 - the primary key would be `PK(username,item_type)` since each single value would potentially not be unique
 
-# 📅 14.11.2022 sql: normalization: What is understood under 2NF?
+# 14.11.2022 sql: normalization: What is understood under 2NF?
 - **If we break 1NF we also violate 2NF**
 - Having redundant values in your table creates several problems
     - Deletion anomaly happens if we extend a a column to a table which have rows which do not need to exist
@@ -2810,7 +2810,7 @@ mal13,coin,110
     - `age` depends not entirely on `PK(username,item_type)` since age does not change for a specific username/item_type combination. It only depends on username
 - 🛠 Repair this: here we should realize that a `user` is an important concept in its own write, create a user table and add the `age` column there. then `age` will depend entirely on `PK(username)`
 
-# 📅 14.11.2022 sql: What is the usecase of EXISTS?
+# 14.11.2022 sql: What is the usecase of EXISTS?
 - `EXISTS` returns true if a subquery returned results and (!) short circuits if there is a match
 - Use-case: Retrieve all customers which have bought at least product below 100$
 ```sql
@@ -2832,7 +2832,7 @@ SELECT * FROM customer as c
 - But with `JOIN` the whole table is joined and matching process is not short-circuited
 - [further](https://stackoverflow.com/a/7082510)
 
-# 📅 14.11.2022 sql: normalization: What is understood under 3NF?
+# 14.11.2022 sql: normalization: What is understood under 3NF?
 - **If we break 2NF we also violate 3NF**
 - When having two columns depending on each other (transitive dependency) it can happen that you update one but fail to update the other, you end up with a data inconsistency
 - Example would be a `skill_level` (1,2,...9) and `skill_band` ("beginner", "intermediate", "expert"). `skill_band` depends on `skill_level`
@@ -2846,23 +2846,23 @@ Every (non-key) attribute in a table should depend
             and nothing but the key.
 ```
 
-# 📅 10.11.2022 sql: What is the difference between Datetime, timestamp?
+# 10.11.2022 sql: What is the difference between Datetime, timestamp?
 - `TIMESTAMP` is like a unix timestamp denoting a point in time in UTC, is converted back and forth when retrieved
 - `DATETIME` is stored with the current timezone and not converted in UTC
 - `TIMESTAMP` is usually used for internal creation/update timestamps
 
-# 📅 10.11.2022 sql: What is the difference between VARCHAR, TEXT and BLOB?
+# 10.11.2022 sql: What is the difference between VARCHAR, TEXT and BLOB?
 - `TEXT` datatype is quite similar to `VARCHAR` - see differences [here](https://www.navicat.com/en/company/aboutus/blog/1308-choosing-between-varchar-and-text-in-mysql)
 - both of them are a bunch of bytes with an character set associated to it
 - A blob stores binary data, just a bunch of bytes used for example to store image data
 - To convert between binary and text representation see [charset conversion](https://dev.mysql.com/doc/refman/8.0/en/charset-conversion.html)
 
-# 📅 10.11.2022 sql: What is the difference between SET and ENUM?
+# 10.11.2022 sql: What is the difference between SET and ENUM?
 - both of them act as a constraint on values entered into the column
 -`ENUM`, like radio fields: you can choose one of the accepted values. Error value 0 or empty string are rejected
 -`SET`, like checkbox fields: you can choose choose multiple of the accepted values. Empty string is not rejected since it always part of `SET`
 
-# 📅 10.11.2022 sql: How to rewrite a inner join with a WHERE statement?
+# 10.11.2022 sql: How to rewrite a inner join with a WHERE statement?
 - from a performance standpoint both statements are the same
 ```sql
 SELECT product_name, category_name
@@ -2874,24 +2874,24 @@ WHERE product.category_id = catgegory.id;
 - `INNER JOIN` is easy to replace with `OUTER JOIN
 - `STRAIGHT JOIN` also allows to define inner/outer loop, joining order
 
-# 📅 10.11.2022 sql: What is the ANSI Syntax?
+# 10.11.2022 sql: What is the ANSI Syntax?
 - ANSI SQL := a series of standards for modeling and manipulating data
 - Some vendors comply to that standard, some not or only partially
 
-# 📅 10.11.2022 sql: Which JOINS will I use the most often?
+# 10.11.2022 sql: Which JOINS will I use the most often?
 - Most frequent `JOINS` you will end up using
 - `INNER JOIN`
 - `LEFT OUTER JOIN` aka. `LEFT JOIN`
 
 
-# 📅 07.11.2022 sql: How to check for null values?
+# 07.11.2022 sql: How to check for null values?
 ```sql
 SELECT product_name, price
 FROM product
 WHERE price = NULL -- `IS NULL` also works
 ```
 
-# 📅 07.11.2022 sql: What is understood under a OUTER JOIN?
+# 07.11.2022 sql: What is understood under a OUTER JOIN?
 - Outer join returns all rows even if no matches are found
 - `LEFT JOIN`: Return all rows from the table on the left, `RIGHT JOIN` on the right
 - It is common practice to avoid right outer joins, seldomly used since people got used to start with the table "which has all of the non-orphan items"
@@ -2901,7 +2901,7 @@ FROM product LEFT JOIN category
 ON product.category_id = catgegory.id;
 ```
 
-# 📅 07.11.2022 sql: What is understood under a CROSS JOIN?
+# 07.11.2022 sql: What is understood under a CROSS JOIN?
 - A `CROSS JOIN` includes data from both tables
 - Has no conditions
 - Rarely used
@@ -2910,7 +2910,7 @@ SELECT product_name, category_name
 FROM product CROSS JOIN category
 ```
 
-# 📅 07.11.2022 sql: What is understood under a UNION?
+# 07.11.2022 sql: What is understood under a UNION?
 - A `UNION` combines the results of two or more `SELECT` statements
 - Each `SELECT` must return the same columns (same amount, name, datatype)
 ```sql
@@ -2924,7 +2924,7 @@ FROM customer_vip
 WHERE MONTH(birth_date) = 9
 ```
 
-# 📅 07.11.2022 sql: How to match specific strings?
+# 07.11.2022 sql: How to match specific strings?
 - (1) Native matcher
 - `%` acts as the wildcard (zero or more Characters)
 - `_` matches any single character, can be repeated e.g. `LIKE "M__"` to match `Max`
@@ -2941,7 +2941,7 @@ FROM product
 WHERE product_name REGEXP "^A" AND "ck$|er$"
 ```
 
-# 📅 07.11.2022 sql: How to work with alias 'AS'?
+# 07.11.2022 sql: How to work with alias 'AS'?
 - aliases do only exist for the lifetime of the query
 - For columns:
 ```sql
@@ -2965,13 +2965,13 @@ FROM product AS p
 WHERE p.product_name LIKE "A__"
 ```
 
-# 📅 07.11.2022 sql: How do aggregate functions work?
+# 07.11.2022 sql: How do aggregate functions work?
 - Aggregate functions reduce a set of values to a single value
 - They ignore `NULL` values (except for `COUNT(*)`)
 - Often used in combination of `GROUP BY` where the aggregation functions are applied on the created buckets, not before!
 - Common aggregation functions: `AVG`, `COUNT`, `MAX`, `MIN`, `STDEV`, `SUM` (see [more here](https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html))
 
-# 📅 07.11.2022 sql: How does GROUP BY work?
+# 07.11.2022 sql: How does GROUP BY work?
 - groups rows that have the same values into summary rows, those are almost always aggregated with a aggregation function
 - not when selecting for columns which are not part of the `GROUP BY` only the row with the first occurence of a matching group-by key will be shown (in the example only James Bond is shown)
 ```sql
@@ -3016,7 +3016,7 @@ HAVING COUNT(*) = 1
 SELECT DISTINCT birth_date FROM customer
 ```
 
-# 📅 07.11.2022 sql: How do views work?
+# 07.11.2022 sql: How do views work?
 - `SELECT` statements which results are stored in the database
 ```sql
 CREATE VIEW customer_statistics AS
@@ -3037,7 +3037,7 @@ AVG(order_count) AS "Average Shopper";
 - `GROUP BY` and `HAVING`
 
 
-# 📅 07.11.2022 sql: How to temporaryly add a virtual column to a complete table?
+# 07.11.2022 sql: How to temporaryly add a virtual column to a complete table?
 - You can also use wildcard in combination to the notation of comma-separated fields for `SELECT`
 ```sql
 SELECT *, (order_count * average_item_price) AS Average_order FROM customer
@@ -3045,7 +3045,7 @@ SELECT *, (order_count * average_item_price) AS Average_order FROM customer
 - The opposite of a [virtual column](https://en.wikipedia.org/wiki/Virtual_column) is a persistent column
 - virtual columnn do not use any space on disk but have to pre always calculated on demand
 - virtual column are also called 'generated columns' in MySQL
-# 📅 07.11.2022 sql: What are stored programs?
+# 07.11.2022 sql: What are stored programs?
 - Different types
 - **Stored procedures**:
 - Executed by application which has access to your database
@@ -3079,7 +3079,7 @@ CALL get_customers()
 - **Triggers**: Executed when `INSERT`, `UPDATE` and `DELETE` commands are executed
 - **Events**: Executed at scheduled times
 
-# 📅 03.11.2022 clojure: Using d3 in clojurescript
+# 03.11.2022 clojure: Using d3 in clojurescript
 - [source](https://lambdaisland.com/blog/2018-04-26-d3-clojurescript)
 ```clojure
 ;; in project.clj
@@ -3105,28 +3105,28 @@ js/window
 ;; <div id=“”my-id> </div>
 ```
 
-# 📅 03.11.2022 clojure: How to import javascript libraries into clojurescript?
+# 03.11.2022 clojure: How to import javascript libraries into clojurescript?
 - There is a wrapper project called [cljsjs](http://cljsjs.github.io/)
 - work through the `:foreign-libs`
 - gives the cljs compiler some hints and of course load the js library in the frontend
 
-# 📅 02.11.2022 sql: What is a database?
+# 02.11.2022 sql: What is a database?
 - is just data which is structure into rows and columns like a speadsheet
 - Columns define the structure of the data, 1 col defines one type of data the database stores
 - Rows contain the data, one row holding data to a specific entity
 - Sending commands are called query, the database then returns results
 
-# 📅 02.11.2022 sql: What is a primary key?
+# 02.11.2022 sql: What is a primary key?
 - A value to describe a unique entity in a table
 - A non-unique key is a non-primary key
 
-# 📅 02.11.2022 sql: How to create a database/schema?
+# 02.11.2022 sql: How to create a database/schema?
 - In mysql databases are also referred as schemas
 ```sql
 CREATE SCHEMA `my_db`
 ```
 
-# 📅 02.11.2022 sql: How to create a table? What data types are available?
+# 02.11.2022 sql: How to create a table? What data types are available?
 - sql names are always in upper-case letters
 ```sql
 CREATE TABLE customer(
@@ -3160,7 +3160,7 @@ TIME ->  '823:59:59.999999';
 YEAR ->  '1993';
 ```
 
-# 📅 02.11.2022 sql: How to insert data into a table?
+# 02.11.2022 sql: How to insert data into a table?
 - non-specified fields will be populated with NULL or DEFAULT value
 ```sql
 INSERT INTO customer (first_name, last_name, id) -- columns you want to insert values in
@@ -3176,7 +3176,7 @@ VALUES
 ```
 - When the order of the values is the same as in the table definition and you supply all of them, you can omit the colum names
 
-# 📅 02.11.2022 sql: How to query data from a table?
+# 02.11.2022 sql: How to query data from a table?
 ```sql
 -- '*' = select all rows with all columns from table
 SELECT * FROM customer;
@@ -3214,7 +3214,7 @@ ORDER BY age; -- when reversing the order at DESC at the very end
 SELECT * FROM customer WHERE age >= 18 LIMIT 10;
 ```
 
-# 📅 02.11.2022 sql: How to combine data fields into a temporary single field?
+# 02.11.2022 sql: How to combine data fields into a temporary single field?
 ```sql
 SELECT CONCAT (first_name, '---', last_name) AS Name, zip, sex
 FROM customer
@@ -3227,7 +3227,7 @@ Name,zip,sex
 'Allan---Watts',12021, 'M'
 ```
 
-# 📅 02.11.2022 sql: What native column-wise functions exist?
+# 02.11.2022 sql: What native column-wise functions exist?
 ```sql
 -- SUM up values
 SELECT sex, SUM(order_count) as Order_Count FROM customer;
@@ -3235,7 +3235,7 @@ SELECT sex, SUM(order_count) as Order_Count FROM customer;
 SELECT DISTINCT age from customer ORDER BY age;
 ```
 
-# 📅 02.11.2022 sql: What are the different possible data constraints?
+# 02.11.2022 sql: What are the different possible data constraints?
 - `NOT NULL`: Field can't be null
 - `DEFAULT`: Assigns default value when row without data is created
 - `UNSIGNED`: No negative values are allowed
@@ -3244,7 +3244,7 @@ SELECT DISTINCT age from customer ORDER BY age;
 - can only be used on value per table
 - and musst be either unique or primary key
 
-# 📅 02.11.2022 sql: How to alter an existing table?
+# 02.11.2022 sql: How to alter an existing table?
 - altering table also possible with MySQL worksbench: Right-Click on table -> `... Alter table`
 ```sql
 -- add new column
@@ -3261,7 +3261,7 @@ TRUNCATE TABLE customer;
 DROP TABLE customer;
 ```
 
-# 📅 02.11.2022 sql: Why to index in a database and how to do this?
+# 02.11.2022 sql: Why to index in a database and how to do this?
 - Helps to find a row based on an index field faster
 ```sql
 -- Create index based on 1 col
@@ -3270,7 +3270,7 @@ CREATE INDEX customer_idx ON customer(first_name);
 CREATE INDEX customer_idx_2 ON customer(first_name, second_name);
 ```
 
-# 📅 02.11.2022 sql: What is a foreign key?
+# 02.11.2022 sql: What is a foreign key?
 - A unique identifier which corresponds to a primary key of another table
 - You can have multiple foreign keys in a table but only one primary key
 - Primary key can be made up out of several columns, called composite primary keys
@@ -3285,7 +3285,7 @@ id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY);
 ```
 
 
-# 📅 02.11.2022 sql: How to combine data from two tables with a INNER JOIN?
+# 02.11.2022 sql: How to combine data from two tables with a INNER JOIN?
 - `INNER JOIN` := Combines records from two tables whenever there are matching values in a common field.
 ```sql
 -- here you can already SELECT columns which exist in either one or the other table
@@ -3294,7 +3294,7 @@ SELECT product_name, category_name
 FROM product INNER JOIN category
 ON product.category_id = catgegory.id;
 ```
-# 📅 02.11.2022 sql: How to do INNER JOIN with several tables?
+# 02.11.2022 sql: How to do INNER JOIN with several tables?
 - Just write several `JOIN` statements after `FROM`
 - For clarity and to avoid name conflicts provide table name as scope for each field you want to select
 ```sql
@@ -3306,7 +3306,7 @@ INNER JOIN history
 ON product.history_id = history.id;
 ```
 
-# 📅 02.11.2022 clojure: Java interops
+# 02.11.2022 clojure: Java interops
 - [source/further info](https://clojure.org/reference/java_interop)
 - construct a new object
 ```clojure
@@ -3329,23 +3329,23 @@ ON product.history_id = history.id;
 (System/getProperty "java.vm.version")
 ```
 
-# 📅 26.10.2022 vim: Search and replace
+# 26.10.2022 vim: Search and replace
 - Through whole file (whole line, with confirmation) `:%s/PATTERN/REPLACEMENT/gc` (`%` is shorthand for `1,$` - whole file)
 - From current line till end of file: `:.,$s/PATTERN/REPLACEMENT/gc` 
 - From current line to the next 10 lines: `:10:$s/PATTERN/REPLACEMENT/gc` 
 - For more range options see `:h range`
 
-# 📅 26.10.2022 training: What are scientic communities who research on computer science education?
+# 26.10.2022 training: What are scientic communities who research on computer science education?
 - [SIGCSE](http://sigcse.org/) := Technical Symposium on Computer Science Education 
 - [ITiCSE](http://iticse.acm.org/) := Conference on Innovation and Technology in Computer Science Education, 
 - [ICER](https://icer.hosting.acm.org) := International Computing Education Research Conference
 
-# 📅 26.10.2022 training: What are Parsons problems?
+# 26.10.2022 training: What are Parsons problems?
 - A parson problem usually consists of several code fragments which have to be arranged in the correct order to solve a certain problem
 - At the very beginning this can make sense to focus on controll-flow and algorithmic thinking and not syntax
 - Proofed to be more engaging than e.g. multiple choice exercises
 
-# 📅 26.10.2022 training: How to get into the beginner mindset?
+# 26.10.2022 training: How to get into the beginner mindset?
 - Experienced developers usually do not need to do a lot of algorithmic thinking because most of the patterns are already memorized
 - Example: Determine the maximum of a list of integers
     - beginner needs to remember syntax, how to iterate over a list, using a accumulator variable etc.
@@ -3354,14 +3354,14 @@ ON product.history_id = history.id;
     - is the process of analysing the discrepancy between what happens and what should happen
     - beginners have to constantly recall what should happen while still having to search for the root cause
 
-# 📅 26.10.2022 training: How to design good exercises to practice with?
+# 26.10.2022 training: How to design good exercises to practice with?
 - Goal: Moving from hard "hard and boring" to "easy and exciting" [source](http://ksiresearchorg.ipage.com/vlss/journal/VLSS2017/vlss17paper_10.pdf)
 - Design them with sub-goals in mind
 - Use authentic tasks (more engaging) working with video, audio, images
 - Whenever putting exercises in context be aware that this might put of certain students (e.g. some person might not identify with games or references to alcohol) 
 - Don't shy away to use boilerplate code to reduce complexity and increase fun
 
-# 📅 26.10.2022 training: Why are sub-goals for exercises so important?
+# 26.10.2022 training: Why are sub-goals for exercises so important?
 - [source](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006023)
 - helps with the frustration of tackling big problems with no solution in mind
 - helps recognizing patterns, that certain steps are very similiar between problems (isomorphism)
@@ -3371,12 +3371,12 @@ ON product.history_id = history.id;
     - In the same way we do not teach reading by reading a classic novel but in slow pace
     - We teach by "using shorter books with simpler words and larger print" ([source](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006023))
 
-# 📅 26.10.2022 training: How to make live-coding more effective?
+# 26.10.2022 training: How to make live-coding more effective?
 - [source](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006023)
 - Do not spend too much time on writing boilerplate code which is not related to the core idea you want to teach, use starter/template code instead
 - Have students make predictions of certain outcomes of the live-coding (engages with the problem and results in more learning when guess was wrong)
 
-# 📅 26.10.2022 training: Why is live coding so effective?
+# 26.10.2022 training: Why is live coding so effective?
 - [source](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006023)
 - Easier to catch more explorative questions of the 'what-if' kind
 - Instructor ends up teaching a lot of implicit concepts he was not consciously aware of (like editor commands)
@@ -3384,7 +3384,7 @@ ON product.history_id = history.id;
 - Oberserving and learning how instructor runs into problems (very valuable knowledge for beginners)
 - Observing how intructor mentally deals with mistakes (hopefully in a positive, kind way)
 
-# 📅 26.10.2022 training: How to use peer instructions?
+# 26.10.2022 training: How to use peer instructions?
 - [source](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006023)
 - by Eric Mazur at Harvard
 - provides "one-to-one mentorship in a scalable way"
@@ -3396,7 +3396,7 @@ ON product.history_id = history.id;
 - similiar to the Liberating Structure [1-2-4-all](https://www.liberatingstructures.com/1-1-2-4-all/)
 
 
-# 📅 26.10.2022 Fun: Joke for QA's
+# 26.10.2022 Fun: Joke for QA's
 
 ```plaintext
 A QA engineer walks into a bar.
@@ -3412,12 +3412,12 @@ The bar bursts into flames, killing everyone.
 ```
 - source: @brenankeller
 
-# 📅 09.10.2022 training: What is understood under Learning By Doing?
+# 09.10.2022 training: What is understood under Learning By Doing?
 - Also known by action learning
 - Speak from actual experience and prioritize content accordingly
 - Create increasingly difficult exercises
 
-# 📅 09.10.2022 training: Why is the growth mindset for learning so important?
+# 09.10.2022 training: Why is the growth mindset for learning so important?
 - [source](https://www.youtube.com/watch?v=hiiEeMN7vbQ)
 - Understand that you can grow through hard work, struggling with challenges
 - Instead of giving students a ‘failed’ mark, give them a ‘not-yet’ mark, they have to see them on a learning curve, path into the future
@@ -3431,21 +3431,21 @@ The bar bursts into flames, killing everyone.
     - Appreciate when they try but fail (create fail fast culture)
     - Put students into reflection mode
 
-# 📅 09.10.2022 training: What formats enable Peer-to-peer learning?
+# 09.10.2022 training: What formats enable Peer-to-peer learning?
 - One or more students (or coworkers) teach other students (or coworkers)
 - How?
     - A lot of group activities and discussions with clear goals
     - Let students review each other's work
     - Encourage to help each other
 
-# 📅 09.10.2022 training: How to embedd the concept of life-long learning into teaching?
+# 09.10.2022 training: How to embedd the concept of life-long learning into teaching?
 - Learning happens all the time (not only formal setting) and during life-time
 - How?
     - Stay in contact after learning format (e.g. alumnis)
     - Share your own learning habits (e.g. books, podcasts) - be a role model
     - Teaching mindset: You can’t know everything from start, will take time
 
-# 📅 09.10.2022 training: How to structure a training day?
+# 09.10.2022 training: How to structure a training day?
 - General
     - Always do breaks
     - Mark very clearly when we enter which format of the day
@@ -3493,18 +3493,18 @@ The bar bursts into flames, killing everyone.
     - Prepare the audience before presentation of a new topic with readings, tutorial, podcasts etc.
     - Usually given as homework/prep work
 
-# 📅 08.10.2022 intellij: Navigation of window splits
+# 08.10.2022 intellij: Navigation of window splits
 - If there is several split windows open you can drag and drop a tab into a certain window and it will appear there
 - in project menu select several at once and press `Shift + Ctrl + Enter` to open all files in different tabs and `Shift + Enter` to open them in separate windows
 
 
-# 📅 08.10.2022 intellij: Rename variable/class/interface
+# 08.10.2022 intellij: Rename variable/class/interface
 - `(Fn)` + `⇧` + `F6`: Rename variable/class/interface
 - `Command` + `Option` + `L`: Format class
 - `Command` + `N`: Generate
 
 
-# 📅 08.10.2022 intellij: Live templates for Java
+# 08.10.2022 intellij: Live templates for Java
 - `main`: generate main
 ``` java
 public static void main(String[] args){
@@ -3553,28 +3553,28 @@ if (var == null) {
 
 
 
-# 📅 08.10.2022 java: How does import work in Java?
+# 08.10.2022 java: How does import work in Java?
 - how that import is just a alias for a package path, show that you can also write package name in front of the class (instead of import)
 - two exceptions for imports: java.lang e.g. String, System
 - Is not something as include in Python
 
 
-# 📅 08.10.2022 java: exceptions: Checked vs unchecked Exceptions
+# 08.10.2022 java: exceptions: Checked vs unchecked Exceptions
 - checked exceptions: must be handled by code (try/catch or `throws` on method) - inherit from `Exception`
 - unchecked exceptions: do not need to be explicitly checked - inherit from `RuntimeException`
   - runtime exceptions could have been avoided by the caller e.g. out-of-bound exception (check size first), NullPointerException (check if null first)
 - People usually prefer using a RuntimeException since it produces cleaner code and do not necessarily follow the original convention
 
-# 📅 08.10.2022 java: Chaining streams
+# 08.10.2022 java: Chaining streams
 - Based on OO principle: Each class does one thing well
 - You can connect a Object stream to either a byte stream or something else
 - gives you the ability to mix and match different combinations of connection and chain streams, resulting a highly custom chains
 
-# 📅 08.10.2022 java: annotations: Purpose of `@Override` annotation
+# 08.10.2022 java: annotations: Purpose of `@Override` annotation
 - Not only a visual marker!
 - `@Override` serves as a marker for the compiler and will trigger an error if the annotated method actually does not overwrite a method of a super class e.g. if you have the method header wrong
 
-# 📅 08.10.2022 java: Boilerplate for CLI menu
+# 08.10.2022 java: Boilerplate for CLI menu
 ```java
 import java.util.Scanner;
  
@@ -3604,7 +3604,7 @@ else if (option == 4) {
 ```
 
 
-# 📅 08.10.2022 java: The two built-in math constants
+# 08.10.2022 java: The two built-in math constants
 - Are only high-precision approximations
 ```java
 import java.lang.Math;
@@ -3612,12 +3612,12 @@ Math.PI;
 Math.E;
 ```
 
-# 📅 08.10.2022 java: How to create a random integer?
+# 08.10.2022 java: How to create a random integer?
 ```java
 int randomNumber = ThreadLocalRandom.current().nextInt(1, 6); // from 1..5
 ```
 
-# 📅 08.10.2022 java: How to use the Java scanner?
+# 08.10.2022 java: How to use the Java scanner?
 - `nextXY()` just returns next token of that type, have to call several times for retrieving all entered tokens e.g. firstName and secondName
 - Scanner is only blocking on `next` if no token is present in the memory buffer
 ```java
@@ -3632,11 +3632,11 @@ String wholeResponse = scanner.nextLine();
 ```
 
 
-# 📅 08.10.2022 java: Allowed characters for variable names
+# 08.10.2022 java: Allowed characters for variable names
 - Letters, `_`, numbers, `$`
 - For example `int ____ = 4;` is valid Java
 
-# 📅 08.10.2022 java: Escape sequences
+# 08.10.2022 java: Escape sequences
 - `\a`:		Alert (bell, alarm)
 - `\b`:		Backspace (deletes previous character) - useful for deleting last character of string
 - `\f`:		Form feed (new page)
@@ -3650,12 +3650,12 @@ String wholeResponse = scanner.nextLine();
 - `\\`:		Backslash
 
 
-# 📅 08.10.2022 java: What is understood under lexical scope?
+# 08.10.2022 java: What is understood under lexical scope?
 - Relates to context where you can use a variable
 - Local variable is bound to the scope where it is declared
 - Moving a declaration to a parent scope can give you access but does not guarantee that variable is initialized. Solution give it a default value.
 
-# 📅 08.10.2022 java: How to teach the first steps in Java?
+# 08.10.2022 java: How to teach the first steps in Java?
 - [source](https://www.udemy.com/course/java-for-absolute-beginners)
 - Show a classic recipe and convert it step by step into a Java program
     - Create method to create a cake, body, semicolons
@@ -3671,12 +3671,12 @@ String wholeResponse = scanner.nextLine();
 - Strings
     - Quotation marks demark beginning and end of text
 
-# 📅 08.10.2022 psychology: Search Inside Yourself
+# 08.10.2022 psychology: Search Inside Yourself
 - Movement to bring mindfulness to work life
 - Example format: /Minute to Arrive/ - breath a minute before the next meeting
 
 
-# 📅 08.10.2022 training: HIIT workouts for the body vs HILT workouts for learning
+# 08.10.2022 training: HIIT workouts for the body vs HILT workouts for learning
 - [source](https://medium.com/@quixotic_scholar/studying-to-the-hilt-why-learning-should-look-more-like-exercise-cbfae517f14b)
 - In the same way HIIT workouts increase muscle growth by short bursts of very tiring exercise, it also works for memory
 - What strengthens memory is not the classic spaced repetition of facts but the difficulty/failure of retrieval. Space repetition is just one way to achieve this (“verge of forgetting”)
@@ -3706,7 +3706,7 @@ String wholeResponse = scanner.nextLine();
     - Driving indicator should be -brain burn- and not initial performance
 
 
-# 📅 08.10.2022 training: What types of feedback are important?
+# 08.10.2022 training: What types of feedback are important?
 - Formative feedback: happens during teaching, while you see students applying newly learned knowledge
     - Monitor learnings from student, allowing to modify content if specific need is identified
     - Motivate students to pay attention
@@ -3714,7 +3714,7 @@ String wholeResponse = scanner.nextLine();
 - Summative feedback: at the end, final learning outcome is tested for, often to account for external stakeholders
 - A good metaphor for both: The cook tasting the food while cooking is formative feedback, the guest evaluating the meal is summative feedback 
 
-# 📅 08.10.2022 training: How to formulate learning outcomes
+# 08.10.2022 training: How to formulate learning outcomes
 - European Quality Framework (EQF) := europe learning outcomes-based framework which helps to translate between the national qualifications frameworks
 - A learning outcome is defined by EQF as follows
     - Knowledge: Person has to understand and remember
@@ -3723,7 +3723,7 @@ String wholeResponse = scanner.nextLine();
 - EQF defines 8 maturity levels of learning outcomes - see [source](https://europa.eu/europass/en/description-eight-eqf-levels)
 
 
-# 📅 08.10.2022 training: What is understood under Accelerated Learning?
+# 08.10.2022 training: What is understood under Accelerated Learning?
 - Keep your lessons short (15 - 20 mins)
 - Prepare lesson well so you can react to specific needs in the lesson
 - Start the lesson with learning outcomes and why they are important (motivation)
@@ -3732,26 +3732,26 @@ String wholeResponse = scanner.nextLine();
     - More in-depth reading [source](https://fs.blog/learning/)
 
 
-# 📅 02.10.2022 java: oop: inheritance: Why does a constructor from a child class always have to first call the parent constructor?
+# 02.10.2022 java: oop: inheritance: Why does a constructor from a child class always have to first call the parent constructor?
 - Because a constructor should ensure that an object is ready for use before anything else, as a child class we need to fulfill the requirements of the parent class
 - if you call super afterwards and first call `someMethodOnSuper();` you run into the risk to an `//ERROR some super field not yet constructed`
 - if you do not call super, it automatically tries to call the super empty constructor (forces you to use a specific one if no default is available)
 
-# 📅 02.10.2022 java: oop: inheritance: What are some ways of prohibiting inheritance?
+# 02.10.2022 java: oop: inheritance: What are some ways of prohibiting inheritance?
 - `final` class or method
 - Don't make public class (just omit, only accessible within the package)
 - Only private constructors (this is the reason why you can’t inherit from a singleton)
 
-# 📅 02.10.2022 java: oop: inheritance: What is the motivation of prohibiting inheritance with the final keyword?
+# 02.10.2022 java: oop: inheritance: What is the motivation of prohibiting inheritance with the final keyword?
 - Make sure that people do not subclass a class of an instance you expect as parameters and then break your internals (see also Liskov Substitution Principle and design by contract). Example would be to make valiations more strict than the one of the superclass
 - By for example making the class final you effectively force the consumer to use composition since inheritance is not possible
 
-# 📅 02.10.2022 java: oop: inheritance: What can I do if I want to avoid calling an overwritten method in the parent but still want to use the original one?
+# 02.10.2022 java: oop: inheritance: What can I do if I want to avoid calling an overwritten method in the parent but still want to use the original one?
 - You should not allow to overwrite the method in the first place
 - Make the method final and define a method like `methodImpl` which can be overwritten and call it from the final method
 - for more details also look at Template method pattern and here: [source](https://stackoverflow.com/a/43210059)
 
-# 📅 02.10.2022 java: oop: inheritance: What is understood under the diamond problem in Java?
+# 02.10.2022 java: oop: inheritance: What is understood under the diamond problem in Java?
 - If you inherit from multiple classes (`Class A,B`) which have a conflict e.g. both have the same method `methodA`.
 - If `ClassC extends ClassA, ClassB` the compiler would not know if `ClassA.method` or `ClassB.methodA` should be taken when calling `ClassC`
 - This is the reason why up to Java 8, only single inheritance was allowed, with default methods for interfaces this becomes possible for example:
@@ -3787,7 +3787,7 @@ public class Main implements InterfaceA, InterfaceB {
 ```
 
 
-# 📅 02.10.2022 java: oop: polymorphism: What is polymorphism?
+# 02.10.2022 java: oop: polymorphism: What is polymorphism?
 - Simply put: Object can take its form of one of his super types
 - Polymorphism := Can have many forms, treat something based on a minimal set of things you need to know (smallest common denominator) but the implementation of those methods are as specific as possible (dynamic dispatch)
 -  By inheriting from the superclass you define a contract for all subclasses (smallest common denominator)
@@ -3798,13 +3798,13 @@ public class Main implements InterfaceA, InterfaceB {
 - Just because someone says human to you doesn't mean you don't remember what your name is. (reference type vs object type)
 
 
-# 📅 02.10.2022 java: oop: polymorphism: Where do we see the concept of polymorphism in the Java Standard library?
+# 02.10.2022 java: oop: polymorphism: Where do we see the concept of polymorphism in the Java Standard library?
 - Superclass of every object is `Object`
 - `System.out.println(Object object)` would run the  `toString()` method, choosing the most specific implementation
 - Common scenario is having an array list of super types and we all process them based on the super type for example number
 
 
-# 📅 02.10.2022 java: oop: polymorphism: What is understood under dynamic dispatch?
+# 02.10.2022 java: oop: polymorphism: What is understood under dynamic dispatch?
 - Dynamic dispatch := In OO when a method is called on super type the last overwritten method in the line of inheritance will be called. Java is calling the method based on its object type not variable type. (this one is about implementation)
 - Polymorphism := Set of methods which can be called are defined by the variable type not object type. (this one is about which function names are exposed)
 - `Account account = new SpecialAccount();`
@@ -3812,18 +3812,18 @@ public class Main implements InterfaceA, InterfaceB {
 - `SpecialAccount` is object type
 
 
-# 📅 02.10.2022 java: oop: polymorphism: How does dynamic dispatch work exactly?
+# 02.10.2022 java: oop: polymorphism: How does dynamic dispatch work exactly?
 - Dynamics dispatch: JVM looks for lowest in class hierarchy tree, if lowest doesn't have that method looks at parent and so forth (looks for most specific version for that object)
 
 
-# 📅 02.10.2022 java: oop: polymorphism: How to do type conversion within class hierarchies?
+# 02.10.2022 java: oop: polymorphism: How to do type conversion within class hierarchies?
 - you can convert the type back to a more specific class if we need to call methods which are not part of the superclass
 - but we need to verify during runtime that we actually have an object available for that subtype we want to cast to
 - you can only cast up and down not across types - results in a runtime error
 - can be done with `instanceof`
 
 
-# 📅 02.10.2022 java: oop: polymorphism: When is `instanceof` not considered a bad practice?
+# 02.10.2022 java: oop: polymorphism: When is `instanceof` not considered a bad practice?
 - usually `instanceof` is considered bad practice: the whole point of polymorphism is to implement different behaviors in different types and not caring about the specific type
 - but there is exceptions to this rule: [source](https://stackoverflow.com/a/18456129)
   - if you want to check for equality based on a specific class/interface in the hierarchy (though this is dangerous if subclass overwrites this behavior - dynamic dispatch)
@@ -3831,12 +3831,12 @@ public class Main implements InterfaceA, InterfaceB {
   - try to take performance shortcut, for example checking size in `Iterables` if it is a collection (just  call `.size()`) and or else iterate over whole list to count
 - as a simple rule: if you use `instanceof` internally this should never be guessed from the outside. You should not react to certain types so you return something different. It is more like to take shortcuts or compensate for inconsistencies
 
-# 📅 02.10.2022 java: oop: encapsulation: What is the difference between abstraction and encapsulation?
+# 02.10.2022 java: oop: encapsulation: What is the difference between abstraction and encapsulation?
 - Abstraction is the act of hiding complex logic from the outside, having relevant logic all contained in one place
 - Encapsulation is the fact of hiding information so outside entities can not change internal state without considering certain defined constraints. Usually you can only manipulate state through well defined methods which act like a gateway and dictate how and under which circumstances internal state can and should be modified
 
 
-# 📅 02.10.2022 java: oop: polymorphism: What is an abstract class?
+# 02.10.2022 java: oop: polymorphism: What is an abstract class?
 - sometimes you want to write a class that can not be instantiated
 - its main purpose is to be extended
 - car example: vehicle abstract class, and boat and car can be initiated
@@ -3844,17 +3844,17 @@ public class Main implements InterfaceA, InterfaceB {
 - car example: `move` method from vehicle class. There is no common movement which would make sense that child classes inherit
 
 
-# 📅 02.10.2022 java: oop: polymorphism: What are interfaces?
+# 02.10.2022 java: oop: polymorphism: What are interfaces?
 - in common language, a way in which two things interact (power plug)
 - for instance when we create a class with public methods, we define an interface with the outside world (in contrary to the private methods which are not part of the interface)
 
 
-# 📅 02.10.2022 java: oop: polymorphism: Why use interfaces and not abstract classes?
+# 02.10.2022 java: oop: polymorphism: Why use interfaces and not abstract classes?
 - so in some sense the interface does not really do a lot, all methods are abstract, so the class needs to implement it anyway. So you might be thinking … what is the whole point? Once again, polymorphic behavior - the interface can also be used as a type. But still, why not using abstract class? Because Java only allows single inheritance (see also diamond problem): You can implement as many interfaces as you want to
 
 
 
-# 📅 02.10.2022 java: oop: polymorphism: What is the difference between interface and an abstract class?
+# 02.10.2022 java: oop: polymorphism: What is the difference between interface and an abstract class?
 - they both
   - can not be instantiated
   - contain static variables
@@ -3864,26 +3864,26 @@ public class Main implements InterfaceA, InterfaceB {
   - interface also can’t have a constructor
 - Usually a abstract class with only abstract methods does not make sense. A abstract class you usually would choose if you want to have mutable state in the mother class (and abstract because you do not want to initiate that mother class e.g. Animal object does not make sense)
 
-# 📅 02.10.2022 java: oop: polymorphism: What is purpose of default methods in interfaces?
+# 02.10.2022 java: oop: polymorphism: What is purpose of default methods in interfaces?
 - default methods allows for having a method body (not abstract anymore)
 - advantages
 -  Before Java 8, all classes implementing a interface would break if a new method was added since abstract methods need to be implemented, default method is offering a fallback for that method if it was not overwritten yet
 - sometimes only implementation is necessary for a method defined in a interface, no need to define it in any implementing class. Example: Method which just logs that a class implementing logging interface was called
 
-# 📅 02.10.2022 intellij: Window split and navigation in vim
+# 02.10.2022 intellij: Window split and navigation in vim
 - `:vsp` and `:sp`: for moving current window in vertical or horizontal split
 - `Ctrl-W` + `h/j/k/l`: for navigating between the windows
 - `Ctrl` + `ww`: For cycling through all windows
 
-# 📅 01.10.2022 java: oop: basics: What happens if you do not specify any access modifier on a Java class?
+# 01.10.2022 java: oop: basics: What happens if you do not specify any access modifier on a Java class?
 - when not specifying any access modifier (like private/public) it evaluates to package-private access level
 - field can only accessed by other classes or child classes which are in the same package
 - if child class is different package it can’t be accessed
 
-# 📅 01.10.2022 java: oop: basics: What is abstraction?
+# 01.10.2022 java: oop: basics: What is abstraction?
 - Abstraction := Implementation hiding (do not expose complexity to user). He does not need to understand it in order to use it
 
-# 📅 01.10.2022 java: oop: basics: What is a constructor?
+# 01.10.2022 java: oop: basics: What is a constructor?
 - Is a method which runs if you create a new object
 - Must have the same name as the class and does not have a return type and must be public
 - if you do not declare a constructor, Java creates a default constructor
@@ -3892,7 +3892,7 @@ public class Main implements InterfaceA, InterfaceB {
 - If constructor and setters need same invariant check you can use the setters in the constructor
 - we can also overload constructors
 
-# 📅 01.10.2022 java: oop: basics: What are the default values for non-initialized primitive-typed variables?
+# 01.10.2022 java: oop: basics: What are the default values for non-initialized primitive-typed variables?
 - Default values are given when member variable or variable in length-only initialized array (like new int[4])
 - For local variable compiler always forces you to assign a value
 - byte: `0`
@@ -3905,28 +3905,28 @@ public class Main implements InterfaceA, InterfaceB {
 - string (or any object): `null`
 - boolean: `false`
 
-# 📅 01.10.2022 java: oop: basics: What are the three variable types in OO and what is their lifetime/memory location?
+# 01.10.2022 java: oop: basics: What are the three variable types in OO and what is their lifetime/memory location?
 - member/instance variables (disappears with object, on heap)
 - local variables (disappears with method, on stack)
 - static/class variables (disappears at end of program, PermGen section of heap)
 
-# 📅 01.10.2022 java: oop: basics: When defining a custom constructor for a class the default one has to be explicitly defined. Why is this a good idea?
+# 01.10.2022 java: oop: basics: When defining a custom constructor for a class the default one has to be explicitly defined. Why is this a good idea?
 - With a constructor you define what state you want to allow, you set up certain constraints. Still allowing a default constructor would circumvent the constraints
 
-# 📅 01.10.2022 java: oop: basics: What are some use cases of setting a static variable dynamically?
+# 01.10.2022 java: oop: basics: What are some use cases of setting a static variable dynamically?
 - If you do this (at all), always keep those static variables private and thread-safe
 - A counter of created objects which increments in the constructor
 - Singleton pattern keeping one instance of an object instead of creating a new one upon request
 
-# 📅 01.10.2022 java: oop: basics: What is the difference between state and attribute of an object?
+# 01.10.2022 java: oop: basics: What is the difference between state and attribute of an object?
 - Attributes are considered immutable and only set upon creation and stay as such during object lifetime (in Java with final keyword) e.g. brandName of a car
 - State is mutable and exposed with setters or indirectly e.g. velocity of a car
 
-# 📅 01.10.2022 java: oop: basics: Why is the public static void main function static and not bound to an object?
+# 01.10.2022 java: oop: basics: Why is the public static void main function static and not bound to an object?
 - Following the convention the JVM just needs to know the class with the main entrypoint and triggers that function first
 - if the function would be bound to an object the JVM would not know how to construct the object (which which arguments of the constructor) or several constructors make the construction ambiguous
 
-# 📅 01.10.2022 java: oop: encapsulation: What is encapsulation?
+# 01.10.2022 java: oop: encapsulation: What is encapsulation?
 - Encapsulation := Keep logic/behavior and data/state/attributes together which should be together: Modularize logic/state into object.
 - Allow/Restrict access (see access modifiers)
 - Keeping things private lets you change implementation without introducing breaking changes because consumers do not couple to internals
@@ -3935,18 +3935,18 @@ public class Main implements InterfaceA, InterfaceB {
 - When not specifying private or public it is per default package private - can be only access within the package
 
 
-# 📅 01.10.2022 java: oop: encapsulation: What are the different access modifiers for member/static fields?
+# 01.10.2022 java: oop: encapsulation: What are the different access modifiers for member/static fields?
 - public, all fields can be accessed from everywhere, even from an outside class
 - private, those fields do not get inherited (but are still there, just can’t be accessed)
 - protected, inherited but not accessed by outside classes
 - no modifier, package private access level: can only accessed by other classes or child classes which are in the same package
 
-# 📅 01.10.2022 java: oop: encapsulation: What is the advantage of having setters and getters and keeping fields private?
+# 01.10.2022 java: oop: encapsulation: What is the advantage of having setters and getters and keeping fields private?
 - Object is in control of its own fields
 - Add validations and setters
 - “it is private because we do not want other classes to access it, at least not directly”
 
-# 📅 01.10.2022 java: oop: encapsulation: What is JavaBean?
+# 01.10.2022 java: oop: encapsulation: What is JavaBean?
 - A Java standard on how a data encapsulating class should look like.
 - All fields private
 - Getters/Setters
@@ -3955,7 +3955,7 @@ public class Main implements InterfaceA, InterfaceB {
 - A lot of libraries follow that standard.
 
 
-# 📅 01.10.2022 java: oop: encapsulation: Why is the concept of JavaBeans bad?
+# 01.10.2022 java: oop: encapsulation: Why is the concept of JavaBeans bad?
     - Quote: "The JavaBeans pattern has serious disadvantages." — Joshua Bloch, Effective Java
     - It encourages you to use objects with inconsistent state. You can create an object with an empty default constructor and no overarching constraint checking is done if all fields are populated one by one over setters.
 - Better use proper constructors and for more complex patterns a builder pattern or parameter objects.
@@ -3963,29 +3963,29 @@ public class Main implements InterfaceA, InterfaceB {
 - But still sometimes you have to live with JavaBeans when it comes to integrating with existing frameworks e.g. mapping a JSON to a DTO with Jackson requires a JavaBean (unless you go for records)
 
 
-# 📅 01.10.2022 java: oop: encapsulation: Why are mutable, public, static variables usually a bad idea?
+# 01.10.2022 java: oop: encapsulation: Why are mutable, public, static variables usually a bad idea?
 - Everyone can access and change those values and a reader never know when the state is changing ending up as a global variable
 - Global variables are bad because they are implicit arguments to every single function
 - Additionally they are not thread-safe if you do not make them so
 - further arguments: [source](http://wiki.c2.com/?GlobalVariablesAreBad)
 
 
-# 📅 01.10.2022 java: oop: encapsulation: Why is it a good idea to use setter in constructor?
+# 01.10.2022 java: oop: encapsulation: Why is it a good idea to use setter in constructor?
 - Because you can allow for constraint checking which is then evaluated once you set a value or create an object with that value
 - But generally people agree of not reusing the setter and instead defining static evaluation rules which are used in constructor and setters in order to avoid that instance methods are used which maybe already assume a certain state of the object which might be not given in the constructor yet
 - read more here: [source](https://softwareengineering.stackexchange.com/a/329830)
 
-# 📅 01.10.2022 java: oop: composition: Why do you model things in different classes?
+# 01.10.2022 java: oop: composition: Why do you model things in different classes?
 - In real life you also have things which contain other things like a book has pages but also a employee has a manager (`hasA` relation)
 - Each entity you can represent as class
 - You can put all the fields into one class but sometimes a subset of fields coherently fit well together and you can extract them out into a separate class and pass them in from the outside
 - You start to associate classes with each other
 
 
-# 📅 01.10.2022 java: oop: composition: What is composition?
+# 01.10.2022 java: oop: composition: What is composition?
 - a composition is a special form of association relationship where the the other can’t without the other for instance a room can’t exist without a house
 
-# 📅 01.10.2022 java: oop: composition: What is the law of demeter?
+# 01.10.2022 java: oop: composition: What is the law of demeter?
 - Also called the law of least knowledge
 - One object should only have the least required knowledge about the immediate object it contains: only talk to immediate friends
 - Applied principle of information hiding
@@ -3997,13 +3997,13 @@ public class Main implements InterfaceA, InterfaceB {
 - Disadvantage: End up writing a lot of wrapper methods which can actually introduce more coupling e.g. moving all chaining  logic `a.b().c()` into `a` instead of leaving the responsibility with the nested classes
 
 
-# 📅 01.10.2022 java: oop: composition: When to use method chaining?
+# 01.10.2022 java: oop: composition: When to use method chaining?
 - You really should break the /law of demeter/ when you represent data as objects (e.g. `school.classroom().chairs()`) and if you expose fluid api of some kind
 
-# 📅 01.10.2022 java: oop: inheritance: What is inheritance?
+# 01.10.2022 java: oop: inheritance: What is inheritance?
 - Inheritance := One way of duplicating logic and data of classes and extend on it
 
-# 📅 01.10.2022 java: oop: inheritance: When to use inheritance?
+# 01.10.2022 java: oop: inheritance: When to use inheritance?
 - Inheritance has two benefits
   - Subtyping, acting like the same type - polymorphism
   - Subclassing, reusing code by accessing fields and methods
@@ -4011,14 +4011,14 @@ public class Main implements InterfaceA, InterfaceB {
 - If it is about subtyping you can still consider introducing a common interface
 - But still if you go for composition you might have a lot of delegation methods (vs just inheriting the methods)
 
-# 📅 01.10.2022 java: oop: inheritance: When to do method overwriting?
+# 01.10.2022 java: oop: inheritance: When to do method overwriting?
 - Subclass can provide a different implementation of a method than its parent class
 - “If a subclass does not like how a inherited method works, it may change it”
 - If you still want to call the old/super method in the overwritten method (e.g. if you just want to add a counter before or after) you can reference it by calling `super.method()`
 
 
 
-# 📅 25.09.2022 java: arrays: Why to use dynamic arrays aka ArrayList?
+# 25.09.2022 java: arrays: Why to use dynamic arrays aka ArrayList?
 - Problem with array
 - Fixed size you define at the initialization of the array (often it is not known what size you need beforehand)
 - sometimes people make those arrays very big to be on the safe side
@@ -4038,33 +4038,33 @@ public class Main implements InterfaceA, InterfaceB {
 - `arrayList.clear();`
 
 
-# 📅 25.09.2022 java: methods: Why do we use methods in Java?
+# 25.09.2022 java: methods: Why do we use methods in Java?
 - Methods are discrete units of code, help you to break up large programs in manageable and reusable chunks and helps you to abstract away logic (e.g. complicated formula)
 - Method invocation = One method transfers control to some other method by calling it. Original method has to wait till the second is finished.
 
-# 📅 25.09.2022 java: methods: Why do we have parameters in methods?
+# 25.09.2022 java: methods: Why do we have parameters in methods?
 - Scope: A method can’t access variables from the calling context, therefore you need to pass variables through the method
 - Variable is declared in the method header
 - By this methods become very powerful: They are reusable by passing in different input parameters
 
-# 📅 25.09.2022 java: methods: What does it mean if we have pass-by-value semantics for method parameters?
+# 25.09.2022 java: methods: What does it mean if we have pass-by-value semantics for method parameters?
 - All values you put are copied for the local scope of the function
 - reference types are also copied over by value, the address of the object. You now manipulate the same underlying object since it is still the same reference
 
-# 📅 25.09.2022 java: methods: What happens if you pass in an array to a method?
+# 25.09.2022 java: methods: What happens if you pass in an array to a method?
 - In the case of an array, which is also a reference type, the array is passed in as a reference. Meaning the manipulating the reference will also change the original array
 
-# 📅 25.09.2022 java: methods: How do we return values from a method?
+# 25.09.2022 java: methods: How do we return values from a method?
 - Once the end of the method is reached it automatically returns to the caller, you can also manually trigger it by writing `return;` but this is not needed
 - If you put `return` before the end you get an error because you have defined code afterwards
 - Behind a condition this can be quite useful in the form of a guard clause
   Instead of just returning from a method we can also return with a value
 
-# 📅 25.09.2022 java: methods: What is the difference between method and functions?
+# 25.09.2022 java: methods: What is the difference between method and functions?
 - Function is a piece of code with a name and can accept parameters (needs to be explicitly passed in) and return something (would be a static function in Java). Sometimes also called class method since the function is associated with a class
 - Method is a piece of code which is always associated with an object and can access the object (would be non-static in Java)
 
-# 📅 25.09.2022 java: methods: How can you pass an unknown number of arguments to a function?
+# 25.09.2022 java: methods: How can you pass an unknown number of arguments to a function?
 - Possible with varargs and useful if you have to to deal with an indeterminate number of objects
 - famous example is `String.format()` or `System.out.printf()`
 - or another example:
@@ -4076,12 +4076,12 @@ System.out.println(item);
   }
 ```
 
-# 📅 25.09.2022 java: methods: recursion: How does recursion work?
+# 25.09.2022 java: methods: recursion: How does recursion work?
 - Recursion in the end simulates loops and vice versa.
 - The state is just passed down to the next iteration by encoding some state in the method parameters. The execution condition of a loop can be compared with the base condition of a method
 - recursion also allows to branch of in several recursion trees which is much harder to project into simple loops
 
-# 📅 25.09.2022 java: methods: recursion: Why can method recursion potentially trigger a stackoverflow?
+# 25.09.2022 java: methods: recursion: Why can method recursion potentially trigger a stackoverflow?
 - Stackoverflow in simple words
 - If one method calls the other which calls the first one - the calls are stuck in an infinite loop
 - But whenever a method is called it gets added to a area of memory called the stack which is at some point full and the program crashes
@@ -4090,23 +4090,23 @@ System.out.println(item);
 - if program does not terminate it stacks up infinite number of local variables and function definitions without removing because there all methods are waiting for the previous one to return
 - to circumvent this there is also the approach of tail-recursive
 
-# 📅 25.09.2022 java: oop: basics: What are objects and classes and how are they connected to reference types?
+# 25.09.2022 java: oop: basics: What are objects and classes and how are they connected to reference types?
 - Objects/instances are created from classes, class serves as a blueprint which you can create several objects/instances
 - Create a objects based on a class has the type of that class e.g. `Thing thing = new Thing();` → if we define a new class we also define a new type (reference type)
 
 
 
 
-# 📅 18.10.2022 Clojure: Access javascript objects from clojurescript
+# 18.10.2022 Clojure: Access javascript objects from clojurescript
 - `(.-body js/document)`: For attributes
 - `(.toString js/document)`: For functions
 - `(.. js/document -location -href -length)`: For nested attributes
 
 
-# 📅 18.10.2022 Mac: Shortcut for emoji dialog
+# 18.10.2022 Mac: Shortcut for emoji dialog
 - `Strg` + `Command` + `Space`
 
-# 📅 28.09.2022 python: Spin-Up local server for serving files
+# 28.09.2022 python: Spin-Up local server for serving files
 
 -   useful if you want to link local files in a Google Doc document
 -   currently Google Doc only allows http/https protocol and not brower based local file like `file:///`
@@ -4120,7 +4120,7 @@ python3 -m http.server 8000
 -   for pdf\'s you can also link to a specific page like `http://0.0.0.0:8000/some.pdf#page=5`
 
 
-# 📅 24.09.2022 java: datatypes: strings: How does String pooling work?
+# 24.09.2022 java: datatypes: strings: How does String pooling work?
 - String is a reference type and object always lies on the heap
 - A string either lies on the common heap or in the string pool (special section of heap)
 - When initializing with String literal it checks if the object already exists in String pool, if not it creates a new one in that pool
@@ -4129,7 +4129,7 @@ python3 -m http.server 8000
 - See also this image here: [source](https://s1.o7planning.com/en/10217/images/20233.png)
 
 
-# 📅 24.09.2022 java: datatypes: strings: How should you care about the intern() method when it comes to String pooling?
+# 24.09.2022 java: datatypes: strings: How should you care about the intern() method when it comes to String pooling?
 - One might think, I do not really think about String poolings because I just should not use the explicit String constructor and only use String literals to initialize Strings
 - that is not true, see here
 ```java
@@ -4140,25 +4140,25 @@ assertFalse(value2 == value1);
 assertTrue(value2.intern() == value1);
 ```
 
-# 📅 24.09.2022 java: datatypes: strings: Why do certain unicode characters do not work in Java?
+# 24.09.2022 java: datatypes: strings: Why do certain unicode characters do not work in Java?
         - The compiler interprets unicode literals very early in the process and for instance in the case of the linefeed/newline character it would interpret the character in the source code itself
 - char hello = `\u000a`; // does not compile but the escaped char analogon does compile: `\n`
 
-# 📅 24.09.2022 java: loops: For what are loops good for?
+# 24.09.2022 java: loops: For what are loops good for?
 - Enables you to repeat sections of code in your program
 
-# 📅 24.09.2022 java: loops: Which convention to follow for a for-loop condition?
+# 24.09.2022 java: loops: Which convention to follow for a for-loop condition?
 - `i < n` or `i <= n-1` in loop-condition?
 - First version cleaner: usually everyone knows that index starts at 0, so array[n] people know is creating a out-of-bound
 - Second version is extra work (although compile usually produces same bytecode)
 - Second one is good if you want to iterate only to a specific boundary and that boundary is inclusive
 
-# 📅 24.09.2022 java: loops: For what to use the break and the continue keyword in loops?
+# 24.09.2022 java: loops: For what to use the break and the continue keyword in loops?
 - `break`: causes the program to jump out of the loop
 - `continue`: causes the program to only skip the current iteration
 
 
-# 📅 24.09.2022 java: loops: When do you use which loop?
+# 24.09.2022 java: loops: When do you use which loop?
 - while-loop
     - Almost  like a if-statement replace `if` with `while`
     - Instead the program continues after the end of the if-construct and will jump back up to the top. Will run the body again till the condition is false
@@ -4176,28 +4176,28 @@ assertTrue(value2.intern() == value1);
 - forEach loop
     - If you really just want to access elements of an array and you don’t need the index it makes code simpler to read
 
-# 📅 24.09.2022 java: arrays: What are good metaphors for multidimensional arrays?
+# 24.09.2022 java: arrays: What are good metaphors for multidimensional arrays?
 - A two dimensional array can be thought of a table with rows and columns
 - A three dimensional array can be thought of a table whereas each cell has a book with pages
 - A n-dimensional array can also be described as a nested folder structure and the actual elements are the files
 - In short: Multidimensional arrays, are arrays inside arrays
 
-# 📅 24.09.2022 java: arrays: What are some helper methods to work with arrays?
+# 24.09.2022 java: arrays: What are some helper methods to work with arrays?
 - `Arrays.fill(array,2)`
 - `Arrays.binarySearch`
 - `Arrays.asList()`
 
-# 📅 24.09.2022 java: arrays: Where should you put the [] - after type or after variable name?
+# 24.09.2022 java: arrays: Where should you put the [] - after type or after variable name?
 - `String[] args` (more common, Java Standard)
 - `String args[]`
 - there are also other arguments in combination with generics where this can cause problems with the latter version (can’t find source)
 
-# 📅 24.09.2022 java: arrays: What are arrays and why to use them?
+# 24.09.2022 java: arrays: What are arrays and why to use them?
 - A variable up to now can only hold value at a time like `int firstElement; int secondElement`
 - Arrays can store multiple values at once `int[] array = {1, 2, 4};`
 - Each element can be identified by an index number
 
-# 📅 24.09.2022 java: arrays: What are the steps to array creation?
+# 24.09.2022 java: arrays: What are the steps to array creation?
 - 1. Declare array with `int[] arr;`
 - 2. Create array = `arr = new int[10];` //initialized with default values,0
 - 3. Initialize with specific values via assignment `arr[0]=3;`
@@ -4207,11 +4207,11 @@ assertTrue(value2.intern() == value1);
   - To overwrite existing array use new keyword
 
 
-# 📅 24.09.2022 Fun: If the client does not pay for a website
+# 24.09.2022 Fun: If the client does not pay for a website
 
 -   [link to repo](https://github.com/kleampa/not-paid)
 
-# 📅 23.09.2022 Workshop: Game-Retrospective
+# 23.09.2022 Workshop: Game-Retrospective
 
 -   Create a game board with fields (with special actions)
 -   Members get a dice and move along the board one by one
@@ -4223,12 +4223,12 @@ assertTrue(value2.intern() == value1);
     -   Give a suggestion what to improve next iteration. If the majority likes the idea you are allowed to throw a dice again
     -   Propose a topic/challenge and facilitate a small discussion for the next n minutes
 
-# 📅 22.09.2022 intellij: Pass to pass VM options to run configuration
+# 22.09.2022 intellij: Pass to pass VM options to run configuration
 
 -   `Edit Configuration` \> `Modify Options` \> `Add VM Options`
 -   Example entry for setting a system property: `-Dfail_on_exception=true`
 
-# 📅 21.09.2022 junit: Run test classes from one accumulating classes, sharing common annotations
+# 21.09.2022 junit: Run test classes from one accumulating classes, sharing common annotations
 
 -   Use this approach only if you want to share annotations in one class
 -   `@BeforeEach`, `@AfterEach`, `@ExtendWith` are all also applied to the nested ones
@@ -4249,27 +4249,27 @@ public class SuperTest {
 public abstract ChildATest {}
 ```
 
-# 📅 21.09.2022 Gradle: Pass system property to gradle task
+# 21.09.2022 Gradle: Pass system property to gradle task
 
 -   Retrieve system property from calling side and pass it to executing jvm: `systemProperty "myvariable", System.getProperty("myvariable")`
 
-# 📅 19.09.2022 Java: `@Inherited` annotation
+# 19.09.2022 Java: `@Inherited` annotation
 
 -   Meta annotation which tells compiler that annotated annotation will be inherited to child classes
 -   this is only valid for classes, on methods it is ignored.
 
 
-# 📅 18.09.2022 java: control-flow: What are the boolean operators in Java?
+# 18.09.2022 java: control-flow: What are the boolean operators in Java?
 - `||` evaluates as the logical true: at least one has to be true
 - `&&` evaluates as logical and: both have to be true. If first was is false, does not check the second one
 - they are called Short circuit operators: JVM only checks one part before moving to the next one (see also Short-circuit evaluation)
 
-# 📅 18.09.2022 java: control-flow: What are some clean code guidelines for boolean expressions?
+# 18.09.2022 java: control-flow: What are some clean code guidelines for boolean expressions?
 - Example: `if(isAgeOver70 || (isAgeOver18 && hasVipPass))`
 - Keep single boolean values first
 - When there are boolean values which are a logical unit, put `()` around it
 
-# 📅 18.09.2022 java: control-flow: What does the modern switch expression since Java 14 look like?
+# 18.09.2022 java: control-flow: What does the modern switch expression since Java 14 look like?
 - you can also use the yield keyword if having a multiline statement
   #+BEGIN_SRC Java
   DayOfWeek day = DayOfWeek.FRIDAY;
@@ -4283,11 +4283,11 @@ case WEDNESDAY              -> 9;
 };
 #+END_SRC
 
-# 📅 18.09.2022 java: datatypes: strings: How are String represented in Java?
+# 18.09.2022 java: datatypes: strings: How are String represented in Java?
         -  As immutable char array (!= final since you can also not modify single entries)
         -  `new String(char[])` - you are essentially telling the compiler to autobox a String object around your array of characters
 
-# 📅 18.09.2022 java: datatypes: strings: What is a char and how does it relate to a unicode and code points?
+# 18.09.2022 java: datatypes: strings: What is a char and how does it relate to a unicode and code points?
 - Unicode is a mapping between code points (integers) and single graphemes: letter, digit, punctuation mark, whitespace, control characters
 - Why do we need a mapping anyway: computer thinks in numbers (it has to know what to paint to the screen, ideally you want that your painted letter looks the same on someone else's computer -> that is why you have a standart)
 - In java a char is stored in 16 bit integer type and allows to represent the normal set of Unicode: Basic Multilingual Plane (BMP), in hex: U+0000 to U+FFFF
@@ -4304,17 +4304,17 @@ char char4 = 0x41;
 System.out.printf("%c,%c,%c,%c%n", char1, char2, char3, char4);
 ```
 
-# 📅 18.09.2022 java: datatypes: strings: What are the subsets and supersets of unicode?
+# 18.09.2022 java: datatypes: strings: What are the subsets and supersets of unicode?
 - Superset: There is also a an extension to Unicode called supplementary characters (U+FFFF - U+10FFFF) which can’t be stored anymore in a 16 bit char, requiring to use a `int` datatype
 - Subsets of unicode are
   - ASCII: 128 code points
   - ASCII extended: 256 code points
-# 📅 18.09.2022 java: datatypes: strings: How does Java deal with the fact that the encoding for String is UTF-16 but extensions of Unicode do not fit in 16 bit anymore?
+# 18.09.2022 java: datatypes: strings: How does Java deal with the fact that the encoding for String is UTF-16 but extensions of Unicode do not fit in 16 bit anymore?
         - when single character just model it with int
         - the methods of object wrapper allow for checking this: `Character.isLetter(0x2F81A)` returns true whereas `Character.isLetter('\uD840')` because it does not fit in char literal
         - in String you can only use chars, the solution is to represent a >16 bit char with a pair of high-surrogates and low surrogates. Even though a single char would not be recognized as letter (see above) you can check for pairs with `Character.isSurrogate` and `Character.isSurrogatePair`
 
-# 📅 18.09.2022 java: datatypes: strings: Why can you add an integer to a char?
+# 18.09.2022 java: datatypes: strings: Why can you add an integer to a char?
 - First of all, characters are also number types, precisely a 2 byte, unsigned integer number
 - 📝Explain what happens when you remove the brackets.
   ```java
@@ -4336,7 +4336,7 @@ System.out.printf("%c,%c,%c,%c%n", char1, char2, char3, char4);
       char char2 = 'A' + 1;
   ```
 
-# 📅 18.09.2022 java: datatypes: strings: Why do we obtain an int when adding to char’s?
+# 18.09.2022 java: datatypes: strings: Why do we obtain an int when adding to char’s?
 - Binary numeric promotion happens
 - if operand is of type double, the other is converted to double
 - if either operand is of type float, the other is converted to float
@@ -4345,25 +4345,25 @@ System.out.printf("%c,%c,%c,%c%n", char1, char2, char3, char4);
 - Affected operators: / , %, ,+ , -, <, <=, >,  >=, == ,!=,  &, ^
 - source: [source](https://docs.oracle.com/javase/specs/jls/se7/html/jls-5.html#jls-5.6.2)
 
-# 📅 18.09.2022 java: datatypes: strings: What are some useful applications for realizing that chars are just integers?
+# 18.09.2022 java: datatypes: strings: What are some useful applications for realizing that chars are just integers?
 - If you want to know where letter Y lies in the alphabet: `int position = ‘Y’ - ‘A’`
 
-# 📅 18.09.2022 java: datatypes: strings: Why should you use a StringBuilder when concating a string a lot of times?
+# 18.09.2022 java: datatypes: strings: Why should you use a StringBuilder when concating a string a lot of times?
 - everytime you create a concat something to a string it creates a new object on the heap
 - StringBuilder is implemented similar as an arrayList dynamically resizing, allowing also to manipulate characters in between without needing to allocate a new data structure
 - always prefer StringBuilder over StringBuffer (latter is slower but guarantees thread-safety)
 
-# 📅 18.09.2022 java: datatypes: strings: Why is StringBuilder implemented as an array and not a linked list?
+# 18.09.2022 java: datatypes: strings: Why is StringBuilder implemented as an array and not a linked list?
 - Array super fast because continuous block (append, random access etc.). Even when it comes to insertion of the middle of the string, a linked list still needs to iterate to the middle of the list.
 
-# 📅 18.09.2022 What is the difference between binary and text files?
+# 18.09.2022 What is the difference between binary and text files?
 - Everything in memory or written to a file is represented in bytes (4 bit)
   When reading from a file we retrieve a continuous stream of bytes:
 - Text stream := stream on bytes which has some markers and conventions to be converted to a text encoding
 - Binary stream := a stream of bytes without any convention, you really need the knowledge how the information was encoded by the program in order to recover the information
 - Further reading: [source](https://www.nayuki.io/page/what-are-binary-and-text-files)
 
-# 📅 18.09.2022 java: datatypes: strings: How to format a String in Java? What comes closest to string interpolation?
+# 18.09.2022 java: datatypes: strings: How to format a String in Java? What comes closest to string interpolation?
 
 ``` java
 String.format(“We have %d cats”, 7) // digit
@@ -4382,7 +4382,7 @@ String.format(“%h”, new String(“”)); //prints the hash code
 // %tA -> “sunday” (can do time and date)
 ```
 
-# 📅 18.09.2022 java: datatypes: strings: How to format output in Java?
+# 18.09.2022 java: datatypes: strings: How to format output in Java?
 - Instead of doing
 ``` java
 System.out.println(String.format(“We have %d cats”, 7));  
@@ -4394,7 +4394,7 @@ System.out.printf(“We have %d cats%n”, 7);
 ```
 
 
-# 📅 17.09.2022 java: operators: What types of operators exist?
+# 17.09.2022 java: operators: What types of operators exist?
 - Arithmetic Operators
 - Unary Operators
 - Assignment Operator
@@ -4404,26 +4404,26 @@ System.out.printf(“We have %d cats%n”, 7);
 - Bitwise Operators
 - Shift Operators
 
-# 📅 17.09.2022 java: operators: What can you do with the modulo operator?
+# 17.09.2022 java: operators: What can you do with the modulo operator?
 - Gives you the remainder of the division (“Teilen mit Rest”), so not the main part but just the remainder
 
-# 📅 17.09.2022 java: operators: What is the difference between post/pre-in/decrement operators?
+# 17.09.2022 java: operators: What is the difference between post/pre-in/decrement operators?
         - called unary operators because they only need one operand
 - Post-increment operator: var++: Calculation and assignment happens before execution of next line
 - Pre-increment operator: --var: Calculation and assignment happens instantly
 - In short:  int x = 0; int z = ++x; //z=1; (x++//z=2;)
 - In short: int incMe =0; print(incMe++);//0 print(++incMe) //2
 
-# 📅 17.09.2022 java: operators: What are bitwise operators?
+# 17.09.2022 java: operators: What are bitwise operators?
 - Work on integers by manipulation the binary representation
 - Operations: OR (|), AND (&), XOR (^), Complement (`)
 - You can also combine it with assignment operator e.g.  a &= b;
 
-# 📅 17.09.2022 java: operators: What are shift operators?
+# 17.09.2022 java: operators: What are shift operators?
 - Shifting all bits to the left/right
 - Unsigned shift, is padded with zeros (only right shift exists)
 
-# 📅 17.09.2022 java: operators: What are some use cases for bitwise and shift operators?
+# 17.09.2022 java: operators: What are some use cases for bitwise and shift operators?
 - Encode boolean array in integer e.g. set boolean on 7nth position to true
 -  `a |= (1 << 7);`
 - source: [source](https://www.geeksforgeeks.org/bit-manipulation-technique-to-replace-boolean-arrays-of-fixed-size-less-than-64/)
@@ -4433,28 +4433,28 @@ System.out.printf(“We have %d cats%n”, 7);
 - theInteger >> 1 and theInteger << 1 and
 - all of those tricks usually are not needed, hard to read or done by the compiler anyway
 
-# 📅 17.09.2022 java: operators: Which operators are overloaded in Java?
+# 17.09.2022 java: operators: Which operators are overloaded in Java?
 - Overloaded `+` and `+=` is working differently for Strings and numeral types
 - `*`,`/` and `%` are overloaded for integer and double types
 - Java does not allow you to do custom defined operator overloading (only with some compiler extensions)
 
-# 📅 17.09.2022 java: control-flow: What do we understand under control flow and what are the basic elements of it?
+# 17.09.2022 java: control-flow: What do we understand under control flow and what are the basic elements of it?
 - Control flow is the order statements are executed in, it is like the path the program takes through the code
 - For example: If statements, switch statements and ternary operator
 
-# 📅 17.09.2022 java: control-flow: What is the basic idea of if-statements?
+# 17.09.2022 java: control-flow: What is the basic idea of if-statements?
 - `If` statement evaluates a boolean as condition
 - With `else` you can frame it as a either-or situation
 - Can also add `else if` block but only one block will run of the overall `if-else` construct: as soon as the program finds one which is true it will skip all the others
 
-# 📅 17.09.2022 java: control-flow: What is the basic idea of switch-statements?
+# 17.09.2022 java: control-flow: What is the basic idea of switch-statements?
 - `switch` statement is based on cases and you do not need to write a equals/== condition each time
 - `default` acts as `else`
 - Removing `break` allows to go through several cases (if condition matches)
 - there is also a newer version which allows for assigning to a variable
 
 
-# 📅 12.09.2022 Gradle: Define custom gradle source sets
+# 12.09.2022 Gradle: Define custom gradle source sets
 
 -   `src/main/java` and `src/test/java` are assumed default source directories
 -   to create custom source sets:
@@ -4500,14 +4500,14 @@ sourceSets{
 
 -   For more information on configuring test task see here [here](https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/testing/Test.html)
 
-# 📅 11.09.2022 java: datatypes: wrapper: Why is it called Integer and not Int?
+# 11.09.2022 java: datatypes: wrapper: Why is it called Integer and not Int?
 - Because classes naming convention favors no abbreviations
 - same goes for char/Character
 
-# 📅 11.09.2022 java: datatypes: wrapper: What are the issues of primitive object wrappers?
+# 11.09.2022 java: datatypes: wrapper: What are the issues of primitive object wrappers?
 - `Integer integerInstance = null; (5 == integerInstance)` results in null pointer exception when trying to unbox it. Primitives either need to be initialized or have a default value and can be never null
 
-# 📅 11.09.2022 java: datatypes: overflow: What happens when a primitive variable is overflowing?
+# 11.09.2022 java: datatypes: overflow: What happens when a primitive variable is overflowing?
 - Overflow-Metaphor: Datatypes are like cups, you spill in water, overflows
 - exceeding the range results in integer-wraparound (see also, signed bits, binary, two complements)
 - 📝Exercise:  Show what happens if int is overflowing. Compare this behavior with BigDecimal.
@@ -4526,7 +4526,7 @@ largeValue = largeValue.add(BigInteger.ONE);
 ```
 - Overflow for double types remain at Double.MAX_VALUE if you add 1 (due to fixed number of significant bits) or if we do `MAX *2` to `Double.POSITIVE_INFINITY`
 
-# 📅 11.09.2022 java: datatypes: overflow: What happens when a double type underflows?
+# 11.09.2022 java: datatypes: overflow: What happens when a double type underflows?
 - Usually does either return to negative number range exceeded or decimal places exceeded
 - underflow for double types results in Zero
 - 📝Exercise:  Show what happens if double is underflowing.
@@ -4536,21 +4536,21 @@ for(int i = 1073; i <= 1076; i++) {
 }
 ```
 
-# 📅 11.09.2022 java: datatypes: overflow: How to decide which datatype to use?
+# 11.09.2022 java: datatypes: overflow: How to decide which datatype to use?
 - small numbers you know how they behave: int
 - always use double for decimal, but for currency use BigDecimal
 
-# 📅 11.09.2022 java: datatypes: overflow: How does the compiler deal with leading zeros of a binary literal?
+# 11.09.2022 java: datatypes: overflow: How does the compiler deal with leading zeros of a binary literal?
 - For example you can have something like `byte data = 0b0000110011;`
 - because for the compiler it is just an int literal which happens to fit into byte even if byte itself does not have that many binary places
 
-# 📅 11.09.2022 java: datatypes: numbers: Why are calculations with double types often inaccurate?
+# 11.09.2022 java: datatypes: numbers: Why are calculations with double types often inaccurate?
 - Reason 1: Some numbers require an infinite number of decimals to be repeated like π.
 - in math real numbers are continuous, computers intrinsically know discrete math (0's and 1's)  e.g. 2π*r will always rendered and calculated as discrete points
 - Reason 2: Numbers like 0.1 are only approximations because of the way how floats are stored in binary: [source](https://en.wikipedia.org/wiki/Binary_number#Fractions)
 - when doing calculations, you also need to round at some point
 
-# 📅 11.09.2022 java: datatypes: numbers: How are floats represented in binary?
+# 11.09.2022 java: datatypes: numbers: How are floats represented in binary?
 - source [source](https://introcs.cs.princeton.edu/java/91float)
 - floats are represented in binary (32 bit), accumulating 2^32 real numbers. But of course not all, since there is infinite (even between 0-1)
 - 1 bit for sign of number, some bits for exponent (float 8, double 11), and some bits (float 23, double 52) for the mantisse
@@ -4559,79 +4559,79 @@ for(int i = 1073; i <= 1076; i++) {
 - Example for a binary fraction: 0.1101 represents 1/2 + 1/4 + 1/16 = 13/16 = 0.8125
 - but it is not possible to represent 0.1 in binary only to approximate it with 0.09999 (you can only work with 1/(2^n) fractions to approximate that number. Approximation depends on the resolution, bits available for the mantisse
 
-# 📅 11.09.2022 java: datatypes: numbers: What is the difference between precision and accuracy?
+# 11.09.2022 java: datatypes: numbers: What is the difference between precision and accuracy?
 - Example: Approximation of π := 3.133333333 has a precision of 10 decimal digits but accuracy of only 2
 
-# 📅 11.09.2022 java: datatypes: numbers: What are some important rules when doing floating point arithmetics?
+# 11.09.2022 java: datatypes: numbers: What are some important rules when doing floating point arithmetics?
 - When comparing floats always compare them with a certain delta (unless you can be sure that they are multiples of exact representations e.g. 1/4)
 - In general, always prefer double over float (better accuracy), memory/speed won't be crucial most of the time
 - When working with currency, always use BigDecimal (you can control precision)
 - 1 != 0.1+0.1.. : Rounding errors, all depends on the precision. Try using BigDecimal if this resolves the issue?
 
-# 📅 11.09.2022 java: datatypes: numbers: How do arithmetic operators 'decide' which datatype to use?
+# 11.09.2022 java: datatypes: numbers: How do arithmetic operators 'decide' which datatype to use?
 - In general: Always results in a data type which represents the datatype of the widest operand
 - but integer types (char, short, int) are always widened to default numeral type, int
 - this also means if you do ‘c’ + 12 it always happens this: ((int) ‘c’) + 12 (not course not if you concat with string, overloaded)
 - double/int ->double
 - if you do int var1 = (int) double/int; you lose that widening of course and result will be truncated
 
-# 📅 10.09.2022 mac: Repeat keys on long-press
+# 10.09.2022 mac: Repeat keys on long-press
 
 -   `defaults write -g ApplePressAndHoldEnabled -bool false`
 
-# 📅 10.09.2022 mac: Custom keyboard layout with Ukulele
+# 10.09.2022 mac: Custom keyboard layout with Ukulele
 
 -   `New from current Input source ...` to load current keyboard map
 -   Edit with right click, `Edit key` and specifiy output and modifier
 -   Move file into `/Library/Keyboard Layouts/`, restart and select layout under keyboard preferences
 -   IntelliJ: If you want to use the option modifier key you need to select `Keymap` -\> `IntelliJ Idea Classic` (and not mac)
 
-# 📅 10.09.2022 java: datatypes: numbers: For what do you use the hexadecimal system?
+# 10.09.2022 java: datatypes: numbers: For what do you use the hexadecimal system?
 - base 16: Using: 0 - 9, A - F
 - presenting Unicode/ASCII characters, RGB colors (#  symbol): #66_92_E3 (r,g,b), MAC addresses, assembly, memory addresses
 
-# 📅 10.09.2022 java: datatypes: numbers: Why do we use hexadecimal representation if we know the decimal?
+# 10.09.2022 java: datatypes: numbers: Why do we use hexadecimal representation if we know the decimal?
 - Because you can nicely represent e.g. 8 bit byte with two hex digits ranging from 00 - FF.
 - So for example: 5A means 5:101, A:10(base 10):1010 -> 1011010. In short it is easier to represent large numbers, maps conveniently to binary, and if you need to flip a bit, at max four bits need to change (maybe),  keeping it human readable
 
-# 📅 10.09.2022 java: datatypes: numbers: How to convert between binary, hex and octal in Java?
+# 10.09.2022 java: datatypes: numbers: How to convert between binary, hex and octal in Java?
 - You do not really convert between the both because they are just different representations of the same thing. When you want to show them as a string you need conversion though because default is always decimal when printing.
 - To convert to String representation e.g.  `Integer::toHexString(int num)`
 - To parse e.g. hex string into int `Integer.parseInt("0xAB", 16)`
 
-# 📅 10.09.2022 java: datatypes: casting: What is an implicit typecast?
+# 10.09.2022 java: datatypes: casting: What is an implicit typecast?
 - Implicit typecast := When one data type is widened to another datatype
 - Only happens if conversion is without data loss. (from int to -> long)
 - also called Widening Casting,  Automatic Type Conversion
 - also happens if you have cast to objects more up in the hierarchy (Child -> Parent)
 
-# 📅 10.09.2022 java: datatypes: casting: What is an explicit typecast?
+# 10.09.2022 java: datatypes: casting: What is an explicit typecast?
 - Explicit typecast := Explicitly specify that conversion should be done and potentially losing data
 - e.g. `double a = 1.1; int b = (int) a;` will remove decimal part
 - in other words, chop of if data type can hold less
 - Narrowing Casting, Need Explicit Conversion
 - also needed if you want to move down into class hierarchy (Parent -> Child)
 
-# 📅 10.09.2022 java: datatypes: casting: Can you also cast booleans?
+# 10.09.2022 java: datatypes: casting: Can you also cast booleans?
 - Not from integers: Java can't represent false as 0 or null and can't represent true as non-zero
 - But convert from String
 - returns boxed primitive: `Boolean.valueOf(“TrUe”);`, is case-insensitive
 - returns primitive: `Boolean.parseBoolean("true")`
 
-# 📅 10.09.2022 java: datatypes: wrapper: Why do we have object wrapper for primitives?
+# 10.09.2022 java: datatypes: wrapper: Why do we have object wrapper for primitives?
 - Consistent API e.g. toString(), convenient methods (in the spirit of OO, encapsulated)
 - We can only provide Object as a generic type, or more general: Polymorphism
 - We can have static util methods associated to it's type
 
-# 📅 10.09.2022 java: datatypes: wrapper: What is understood under auto/unboxing?
+# 10.09.2022 java: datatypes: wrapper: What is understood under auto/unboxing?
 - Convert primitive types back and forth to their object wrapper classes e.g. int -> Integer
 
-# 📅 10.09.2022 java: datatypes: wrapper: When does auto/unboxing happen?
+# 10.09.2022 java: datatypes: wrapper: When does auto/unboxing happen?
 - Assignment of literal to object wrapper: e.g. here Character ch = 'a';
 - Passing as a parameter: ints to a ArrayList<Integer> it does not crash at runtime because at compile time it actually does this: list.add(Integer.valueOf(i))
 - Different example: i % 2 -> compile time: i.intValue() % 2)
 
-# 📅 10.09.2022 java: datatypes: wrapper: Can you do a widening conversion and autoboxing in the same assignment?
+# 10.09.2022 java: datatypes: wrapper: Can you do a widening conversion and autoboxing in the same assignment?
 - Example:
 - `Long var1 = 12;` // does not compile
 - `long var2 = 12;` // compiles
@@ -4641,12 +4641,12 @@ for(int i = 1073; i <= 1076; i++) {
 - This is the case because you do not have literals of bytes or shorts, only of int. If you want to make this possible: `byte b = 0b0;` and not force the user to do this `byte b = (byte) 0;` you have to allow implicit narrowing conversion for literals
 
 
-# 📅 08.09.2022 github: Exclude filenames from search
+# 08.09.2022 github: Exclude filenames from search
 
 -   for instance if you want to exlude the actual implementation source (which many people fork) and want to see how that piece of code is used
 -   `-filename:composer.json`
 
-# 📅 08.09.2022 cs: Shannon Entropy
+# 08.09.2022 cs: Shannon Entropy
 
 -   [source](https://www.quantamagazine.org/how-claude-shannons-concept-of-entropy-quantifies-information-20220906/)
 -   if you want to store/communicate for instance a series of random coin flips you need a lot of information because the series does not follow a inherit structure: What is the amount of information needed to accurately transmit the message?
@@ -4660,7 +4660,7 @@ for(int i = 1073; i <= 1076; i++) {
 -   also used to detect secrets in code (see secret detection), but also information compression
 -   for example when compressing a video pixels and how they change to the next frame also allow for pattern prediction (similar to language patterns)
 
-# 📅 08.09.2022 Team: Tech Health Check The following questions can be answered or voted on with 3 degrees on satisfaction
+# 08.09.2022 Team: Tech Health Check The following questions can be answered or voted on with 3 degrees on satisfaction
 
 -   How is the experience of building your service?
 -   How is the experience of testing your service?
@@ -4668,7 +4668,7 @@ for(int i = 1073; i <= 1076; i++) {
 -   How is the experience of operating your service?
 -   Health of Codebase?
 
-# 📅 08.09.2022 Java: Using testcontainer
+# 08.09.2022 Java: Using testcontainer
 
 -   call docker container from Java
 -   You can either use a ready-made dependency which wraps test container logic around the container or do it yourself to not having to use a generic container (e.g. not good if you want to bind certain methods to a custom type when e.g. mocking this out as a dependency)
@@ -4709,7 +4709,7 @@ public class MyCustomContainer extends GenericContainer<MyCustomContainer> {
 }
 ```
 
-# 📅 08.09.2022 Java: Parsing cli args with commons-cli
+# 08.09.2022 Java: Parsing cli args with commons-cli
 
 -   allows for several identical flags `./tool --flag1 arg1 --flag2 args2`
 -   allows for required params
@@ -4740,7 +4740,7 @@ try {
 }
 ```
 
-# 📅 07.09.2022 InfoSec: Secret dectection
+# 07.09.2022 InfoSec: Secret dectection
 
 -   many of the reported incidents are usually due to checking in hard-coded secrets into code
 -   How does it work? Tools commonly look for
@@ -4762,7 +4762,7 @@ try {
     -   [trufflehog](https://github.com/trufflesecurity/trufflehog)
     -   [trivy](https://github.com/aquasecurity/trivy)
 
-# 📅 07.09.2022 Java: Handle blank strings in System.out.format with conditional prefix (hacky/bad idea)
+# 07.09.2022 Java: Handle blank strings in System.out.format with conditional prefix (hacky/bad idea)
 
 -   **!!** This also works with strings you want to print out, because i̱s interpreted only then
 -   Use this when you need to construct a string with optional fields which also influence previous characters
@@ -4777,19 +4777,19 @@ import static java.util.Optional.ofNullable;
 System.out.format("12:12:22+%s", ofNullable(timezone).orElse("\b"));
 ```
 
-# 📅 04.09.2022 java: datatypes: What datatype is an array?
+# 04.09.2022 java: datatypes: What datatype is an array?
 - "An object is a class instance or an array."
 
-# 📅 04.09.2022 java: datatypes: What are variables, type, declaration, initialization and assignment?
+# 04.09.2022 java: datatypes: What are variables, type, declaration, initialization and assignment?
 - Very similar to variables in mathematics - writing it like `x = 10; ` is almost valid Java but we need to define what type it is
 - `=` called assignment operator, assigns the value on the right to the variable of the left
 - A variable first gets declared (so Java knows what type it is) and then initialized (which creates the actual data type with its value)
 -  Initialization is the first assignment to a variable, afterwards assignment is a synonym for replacing with new value
 
-# 📅 04.09.2022 java: datatypes: numbers: What is a bad joke regarding integers?
+# 04.09.2022 java: datatypes: numbers: What is a bad joke regarding integers?
 - "Isn't this int-eresting?"
 
-# 📅 04.09.2022 java: datatypes: numbers:  What are integer types and double types?
+# 04.09.2022 java: datatypes: numbers:  What are integer types and double types?
 - Integer is another word for whole numbers, also sometime called integral, means that its spectrum is discrete and the smallest difference between any two distinct values is 1
 - integer types, but are different range
 - byte (8 bits): -128 … 127
@@ -4802,21 +4802,21 @@ System.out.format("12:12:22+%s", ofNullable(timezone).orElse("\b"));
 - double: varies in precision (double-precision (15-16 decimal digits)
 
 
-# 📅 04.09.2022 java: datatypes: numbers:  What does it mean that the char is an integer/integral type?
+# 04.09.2022 java: datatypes: numbers:  What does it mean that the char is an integer/integral type?
 - Chars are just small integers, precisely a 4 byte, unsigned integer number which also happen to map to a unicode symbol
 - You can also do this: `char char1 = 0b1111_1111_1000_0111;`
 
-# 📅 04.09.2022 java: datatypes: numbers: What is the default datatype for integer literals?
+# 04.09.2022 java: datatypes: numbers: What is the default datatype for integer literals?
 - `int`, that is why the compiler complains if you want to assign a long without the `L`: e.g. `2147483648L`
 - you can also not do this: `Long x = 250;`, because this would need require two conversions (widening conversion int to long and autoboxing to Long), which is not allowed by spec
 
-# 📅 04.09.2022 java: datatypes: numbers: Can you also use the scientific notation in Java?
+# 04.09.2022 java: datatypes: numbers: Can you also use the scientific notation in Java?
 - Yes, you can e.g. `1e+3`
 - you can also use `_` to e.g. triple group large numbers (for for visual separation)
 - for hexadecimal numbers you use p instead of e (since e is a hexadecimal digit)
 
 
-# 📅 04.09.2022 java: datatypes: numbers: How do positive and negative Zero behave in Java?
+# 04.09.2022 java: datatypes: numbers: How do positive and negative Zero behave in Java?
 source: [source](https://www.baeldung.com/java-overflow-underflow)
 - has the following ‘wired’ behavior
 
@@ -4828,23 +4828,23 @@ assertTrue(1/a == Double.POSITIVE_INFINITY);
 assertTrue(1/b == Double.NEGATIVE_INFINITY);
 ```
 
-# 📅 04.09.2022 java: datatypes: numbers: Why can double data types result in NaN?
+# 04.09.2022 java: datatypes: numbers: Why can double data types result in NaN?
 - Math.sqrt(-3.0) (floats represent real and not complex numbers!) - test with Double.isNaN()
 - Also if you divide by zero. Follows the convention that arithmetic  operations do not throw an exception
 
-# 📅 04.09.2022 java: datatypes: numbers: What numeral representations are supported in Java?
+# 04.09.2022 java: datatypes: numbers: What numeral representations are supported in Java?
 - decimal (base 10): 7
 - binary (base 2): 0b101
 - hexadecimal (base 16)
 - 0xAB, octal (base 8): 01
 
-# 📅 04.09.2022 java: datatypes: numbers: Can you also have bin, hex, octa numbers on other number types than int?
+# 04.09.2022 java: datatypes: numbers: Can you also have bin, hex, octa numbers on other number types than int?
 - Yes and no
 - Yes, you can assign those to all integer types, including char
 - But also no because you are still using an int literal and Java does a narrowing conversion to char, short, byte… (see JLS §5.2 Assignment Conversion)
 - For numbers bigger than int you need to mark with e.g. with `0x..12L`, because the compiler interprets the literal as int first before doing the widening conversion
 
-# 📅 04.09.2022 java: datatypes: numbers: Why does a computer use a binary system but not a decimal system?
+# 04.09.2022 java: datatypes: numbers: Why does a computer use a binary system but not a decimal system?
 - Computer runs using millions of electronic switches (transistors), representing either on or off
 - Those two states we can represent mathematically as binary numbers 0,1
 - Same goes for a hard drive
@@ -4852,25 +4852,25 @@ assertTrue(1/b == Double.NEGATIVE_INFINITY);
 - both states are corresponding to 0,1
 - the reader detects the directions and translates this to a byte stream and the writer reorients particles according to the byte stream input
 
-# 📅 04.09.2022 java: datatypes: numbers: What are bytes and bits?
+# 04.09.2022 java: datatypes: numbers: What are bytes and bits?
 - binary system: the language of computers, base 2 (translates to Boolean logic, electric switch). "voltage applied" and "no voltage"
 - 1 byte  == 8 bits
 - Each bit (standing for binary digit) is a binary digit of 0 or 1
 - Highest number is 127 which can be represented by 1 byte: 0100_0000, the leading bit is reserved for the sign (unsigned 1 byte could hold 255)
 
-# 📅 04.09.2022 java: datatypes: numbers: Why are the numeral systems for decimal, hexadecimal etc. called “base” 10,16?
+# 04.09.2022 java: datatypes: numbers: Why are the numeral systems for decimal, hexadecimal etc. called “base” 10,16?
 - Because the available bit representations are calculated with base^#digits  e.g. 2^8 for a byte
 
-# 📅 04.09.2022 java: datatypes: numbers: How are negative numbers represented in binary?
+# 04.09.2022 java: datatypes: numbers: How are negative numbers represented in binary?
 - Signed Magnitude Method: first bit position is reserved for sign(0 -> + and 1 -> -)
 - 2’s Complement: Invert all bits from the positive and then add one (used in Java)
 
-# 📅 04.09.2022 java: datatypes: numbers: For what octal is the representation good?
+# 04.09.2022 java: datatypes: numbers: For what octal is the representation good?
 - base 8 (good for describing power of 2 e.g. 2^3 (base 10) == 10 (base 8)
 
 
 
-# 📅 03.09.2022 InfoSec: Security by obscurity
+# 03.09.2022 InfoSec: Security by obscurity
 
 -   Concept of breaking standards to make it more difficult for an malicious user/hacker/bot to enter a system
 -   Examples
@@ -4879,29 +4879,29 @@ assertTrue(1/b == Double.NEGATIVE_INFINITY);
     -   Next to user agent also check for tls handshake e.g. you can fingerprint curl with this - see [here](https://daniel.haxx.se/blog/2022/09/02/curls-tls-fingerprint/)
 -   This strategy is usually only good for keeping unsophisticated bots out. But even they can [fusk](https://en.m.wikipedia.org/wiki/Fusker), crawl, brute force a lot of those mitigations
 
-# 📅 03.09.2022 vim: Delete everything from cursor to the beginning of the line
+# 03.09.2022 vim: Delete everything from cursor to the beginning of the line
 - `d0`
 
-# 📅 03.09.2022 java: platform: What is a JDK and SDK in Java?
+# 03.09.2022 java: platform: What is a JDK and SDK in Java?
 - Java SE JDK or Java SDK usually contains everything you need: compiler, interpreter, documentation, debugger, disassembler
 
-# 📅 03.09.2022 java: platform: What are the steps a Java code goes through to run on a maschine?
+# 03.09.2022 java: platform: What are the steps a Java code goes through to run on a maschine?
 - javac (compiler): (1) Converts Java code into bytecode and does processing of annotations. Here a lot of language specifications are checked type and syntax checks and first optimizations
 - java (bytecode interpreter): (2) Runs .class files by starting runtime environment (JRE) and execution of specific main method and interprets this to maschine native code
 
-# 📅 03.09.2022 java: platform: What is the difference between JVM and JRE?
+# 03.09.2022 java: platform: What is the difference between JVM and JRE?
 - Java runtime environment (JRE) is Platform specific implementation of Java virtual Machine (JVM)
 - e.g. Oracle implementation of JVM is written in C
 - there is many implementations etc e.g. GraalVM
 - JRE (in addition of the JVM implementation) also contains core libraries and often a JIT compiler
 - JRE does not contain bytecode compiler and other development tools which makes it  a lot smaller than the JDK’s
 
-# 📅 03.09.2022 java: platform: Why does every Java .class file start with the magic bytes C0FEBABE?
+# 03.09.2022 java: platform: Why does every Java .class file start with the magic bytes C0FEBABE?
 - magic number is for identifying the class file format (e.g. for JPEG it is FFD8)
 - origin trivia is is explained here: [source](https://news.ycombinator.com/item?id=33049423)
 - You can check this with `xxd` SomeClass.java in the CLI
 
-# 📅 03.09.2022 java: platform: What does a just-in-time (JIT) compiler do?
+# 03.09.2022 java: platform: What does a just-in-time (JIT) compiler do?
 - compiles bytecode to native machine code at runtime when possible or when there is time
     - the rest is just interpreted normally from the JVM
     - if there native code (provided by JIT) available the JVM would take that piece of code instead
@@ -4910,13 +4910,13 @@ assertTrue(1/b == Double.NEGATIVE_INFINITY);
 - if a method is called even more times, the JIT compiler tries to optimize the method even more (several levels of optimizations)
 
 
-# 📅 03.09.2022 java: platform: How do you package a program with source code?
+# 03.09.2022 java: platform: How do you package a program with source code?
 - Java Archive (JAR) := Compile Java classes to class files and point to class of main entrypoint in the manifest file. If you want to look at the original Java class file you need some decompiler
 
-# 📅 03.09.2022 java: platform: How to check the current vm?
+# 03.09.2022 java: platform: How to check the current vm?
 - `System.out.println(VM.current().details());`
 
-# 📅 03.09.2022 java: platform: What is the difference between heap and stack?
+# 03.09.2022 java: platform: What is the difference between heap and stack?
 - JVM divides memory (RAM) in those two areas
 - Stack
     - static memory allocation
@@ -4934,23 +4934,23 @@ assertTrue(1/b == Double.NEGATIVE_INFINITY);
     - not thread-safe
     - Strings are objects and therefore in the heap
 
-# 📅 03.09.2022 java: platform: How can threads access stack and heap?
+# 03.09.2022 java: platform: How can threads access stack and heap?
 - heap is global access and all threads can access it
 - thread local area is a special area of the heap where each thread has can store objects which are not accessible by other threads
 - stack is bound to a specific thread (private scope)
 
-# 📅 03.09.2022 java: platform: What is the lifetime of stack and heap?
+# 03.09.2022 java: platform: What is the lifetime of stack and heap?
 - stack: once something in thread finishes execution like return when method   stackframe is removed
 - heap: Garbage collector takes care of it (only if no ref is pointing to it)
 
-# 📅 03.09.2022 java: platform: Can I skip all the bytecode intermediates and compile directly to native code?
+# 03.09.2022 java: platform: Can I skip all the bytecode intermediates and compile directly to native code?
 - Yes, you can do this with e.g. with GraalVm’s native image described here: [source](https://www.graalvm.org/native-image/)
 
-# 📅 03.09.2022 java: platform: Where to get the source of truth regarding Java spec?
+# 03.09.2022 java: platform: Where to get the source of truth regarding Java spec?
 - Java Language Specification (JLS)
 - VM specs (easier to read): [source](https://docs.oracle.com/javase/specs/index.html)
 
-# 📅 03.09.2022 java: datatypes: What are the two different data types in Java?
+# 03.09.2022 java: datatypes: What are the two different data types in Java?
 - Primitive types
   - Primitive types are assigned by value e.g. `int a = 1; int b = a;`
   - simply put: How much space we set aside in memory to store the data we want to store
@@ -4963,53 +4963,53 @@ assertTrue(1/b == Double.NEGATIVE_INFINITY);
 
 
 
-# 📅 02.09.2022 Testing: Testing beforehand vs Improved observability
+# 02.09.2022 Testing: Testing beforehand vs Improved observability
 
 -   Sometimes things are very hard to test
 -   If the potential failure scenarios are not too severe you can also opt for putting metrics in place alerting if something is off
 -   For example infrastructure code you often do not unit test but try to alert when certain configuration is wrong (service not available, open ports etc.)
 
-# 📅 02.09.2022 Ruby: Monkey patching
+# 02.09.2022 Ruby: Monkey patching
 
 -   Monkey patching := Dynamically modify classes/modules/attributes at runtime, allowing for instance to replace methods with side effects in a test
 -   Usually only scripting languages allow this (like Ruby/Python)
 -   Often used for patching a bug from a third party lib
 
-# 📅 01.09.2022 Docker: Override entrypoint with interactive shell on container start
+# 01.09.2022 Docker: Override entrypoint with interactive shell on container start
 
 -   `docker run -it --entrypoint /bin/bash IMAGE`
 
-# 📅 01.09.2022 Git: Switch to previous branch
+# 01.09.2022 Git: Switch to previous branch
 
 -   `git switch -`
 
-# 📅 31.08.2022 Docker: Use alpine image with bash
+# 31.08.2022 Docker: Use alpine image with bash
 
 -   Add this to `Dockerfile`: `RUN apk update && apk add bash`
 
-# 📅 31.08.2022 Gradle: Zip/Tar
+# 31.08.2022 Gradle: Zip/Tar
 
 -   you can use [tarTree](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:tarTree(java.lang.Object)) and [zipTree](https://docs.gradle.org/current/javadoc/org/gradle/api/Project.html#zipTree-java.lang.Object)
 
-# 📅 31.08.2022 Gradle: Exposed standard paths
+# 31.08.2022 Gradle: Exposed standard paths
 
 -   `$buildDir`: where the build folder is generated
 -   `src/config.xml`: relative path only from where `build.gradle` is located
 
-# 📅 29.08.2022 Fun: Random fun commit messages
+# 29.08.2022 Fun: Random fun commit messages
 
 -   [whatthecommit](http://whatthecommit.com/)
 
-# 📅 29.08.2022 Git: Clone from branch directly
+# 29.08.2022 Git: Clone from branch directly
 
 -   `git clone --branch <branch> <url>`
 
-# 📅 27.08.2022 Fun: Sleep sort
+# 27.08.2022 Fun: Sleep sort
 
 -   find a numerical representation of each entry and spawn a separate thread for each entry only printing the result after the specified time
 -   [source](https://rosettacode.org/wiki/Sorting_algorithms/Sleep_sort)
 
-# 📅 27.08.2022 InfoSec: Web beacon
+# 27.08.2022 InfoSec: Web beacon
 
 -   Web beacon:= describes several techniques to determine if someone has visited a website, read a Email or accessed certain content
 -   Most simple approach: Embedded Image in email and verify in asset server logs if asset was accessed
@@ -5024,7 +5024,7 @@ assertTrue(1/b == Double.NEGATIVE_INFINITY);
     -   configure client to not download Assets in emails
     -   Use mail filters (see milter) and configure mail transfer agents (MTA)
 
-# 📅 19.08.2022 java: Thread-Safety and how to achieve it
+# 19.08.2022 java: Thread-Safety and how to achieve it
 
 -   Java has this out of the box, running several worker threads in JVM
 -   thread-safety := Different thread can access the same ressource without conflict like simultaneous updates etc.
@@ -5033,7 +5033,7 @@ assertTrue(1/b == Double.NEGATIVE_INFINITY);
     -   Immutable objects (state can\'t be changed after construction and therefore not shared)
     -   🚧 Add others, see TODO\'s
 
-# 📅 18.08.2022 mac: How keys map to windows keys
+# 18.08.2022 mac: How keys map to windows keys
 
 -   Command (or Cmd) `⌘` : Windows logo key
 -   Option `⌥` : Same as `Alt`
@@ -5042,15 +5042,15 @@ assertTrue(1/b == Double.NEGATIVE_INFINITY);
 -   Caps Lock `⇪`: analogous
 -   `Fn`: analogous
 
-# 📅 18.08.2022 mac: Paste without formatting
+# 18.08.2022 mac: Paste without formatting
 
 -   `⌘` + `⌥` + `⇧` + `V` : Paste without formatting
 
-# 📅 14.08.2022 android: How to make file transfer work
+# 14.08.2022 android: How to make file transfer work
 
 -   if device is not found, go to `Developer options` -\> `Default USB configuration` (not found via search!) -\> `File Transfer`
 
-# 📅 14.08.2022 InfoSec: Smartphone as a single point of failure
+# 14.08.2022 InfoSec: Smartphone as a single point of failure
 
 -   [source](https://news.ycombinator.com/item?id=32396685)
 -   Nowdays everything goes over 2FA, if you loos your phone or is stolen you potentially lock out yourself out of a lot of services, requiring a lot of effort to recover all accounts
@@ -5063,7 +5063,7 @@ assertTrue(1/b == Double.NEGATIVE_INFINITY);
 -   One-time password (OTP) := Server sends out one-time password via E-Mail/SMS.
 -   More about pros/cons of TOTP/OTP can be read [here](https://www.transmitsecurity.com/blog/totp-the-good-the-bad-and-the-ugly)
 
-# 📅 12.08.2022 intellij: Why are annotations like `@Override` evaluated while editing?
+# 12.08.2022 intellij: Why are annotations like `@Override` evaluated while editing?
 
 -   IntelliJ is generating a (unified) abstract syntax tree (AST/UAST) called Program Structure Interface (PSI) while you type
 -   Syntax errors are generated by iterating over the PSI tree and check with some language specific grammars for errors, see [here](https://plugins.jetbrains.com/docs/intellij/syntax-errors.html)
@@ -5072,7 +5072,7 @@ assertTrue(1/b == Double.NEGATIVE_INFINITY);
 -   With the PSI tree you can do a lot of things out of the box when you want to write your own plugins e.g. finding overwritten methods [here](https://plugins.jetbrains.com/docs/intellij/psi-cookbook.html) for a super method
 -   Lombok for instance is using a lot of annotation post processing capabilities, instead of generating code based on code only at compile time you can utilize a plugin for IntelliJ which integrates with the PSI and dynamically generate required sources based on the annotations you provide (not needing to wait for compiling source first)
 
-# 📅 11.08.2022 psychology: Visualizations of common work psychology
+# 11.08.2022 psychology: Visualizations of common work psychology
 
 -   Credits go to [@alexmaesej](https://www.instagram.com/alexmaesej)
 -   Growth mindset and working on a annoying problem:
@@ -5097,13 +5097,13 @@ assertTrue(1/b == Double.NEGATIVE_INFINITY);
 -   Splitting sub tasks of story to not get overwhelmed:
 <p align="center"><img height=400 src="https://raw.githubusercontent.com/biocarl/img/master/psychology/one_step_at_a_time.png" /></p>
 
-# 📅 10.08.2022 Fun: Where does the name git come from?
+# 10.08.2022 Fun: Where does the name git come from?
 
 -   Torvalds the creator of `git` stated: \"I\'m an egotistical bastard, and I name all my projects after myself. First \'Linux\', now \'git\'.\"
 -   `git` means unpleasant person in British English slang
 -   man pages describes Git as \"the stupid content tracker\"
 
-# 📅 10.08.2022 Fun: Where does the term logging come from?
+# 10.08.2022 Fun: Where does the term logging come from?
 
 -   comes from \"logbook\", which originates from how pirates used to measure the speed of their boat and then write their values into their logbook
 -   how did they measure the speed?
@@ -5113,7 +5113,7 @@ assertTrue(1/b == Double.NEGATIVE_INFINITY);
 
     -   1.  Write it into your logbook
 
-# 📅 09.08.2022 Maven: How to pass in environment variables or system properties in cli
+# 09.08.2022 Maven: How to pass in environment variables or system properties in cli
 
 ``` {.bash}
 # for system property
@@ -5122,7 +5122,7 @@ mvn test -DSYSTEM_PROPERTY="PROPERTY_VALUE"
 ENV="VALUE mvn test
 ```
 
-# 📅 05.08.2022 Java: How to pass in environment variables as annotation parameter?
+# 05.08.2022 Java: How to pass in environment variables as annotation parameter?
 
 -   in short, you can\'t generate values dynamically to pass into a annotation because the annotations are evaluated at compile time (baked into the `.class` file)
 -   but you can defer evaluation to runtime, this really depends on the implementation of the annotation
@@ -5135,12 +5135,12 @@ public class SomeClass(){}
 
 -   a value resolver is then running during runtime, calling (in this case) `System.getenv(String)`
 
-# 📅 05.08.2022 Fun: Online games to play within the team
+# 05.08.2022 Fun: Online games to play within the team
 
 -   [garticphone](https://garticphone.com/)
 -   [codenames](https://codenames.game/)
 
-# 📅 03.08.2022 consulting: Pyramid principle
+# 03.08.2022 consulting: Pyramid principle
 
 -   helps to prioritize contents when you having limited time
 -   Steps
@@ -5163,29 +5163,29 @@ public class SomeClass(){}
     -   story of the slides should be understandable just by the titles
     -   every slide has only one topic, if not split
 
-# 📅 03.08.2022 vim: Better word navigation with `e`
+# 03.08.2022 vim: Better word navigation with `e`
 
 -   instead of `w` also consider using `e` which jumps to the end of each word
 -   if you want to cut the end of a word instead of `dt<whitespace>` use `de` (delete beginning of word `db`)
 
-# 📅 03.08.2022 vim: Replacement mode
+# 03.08.2022 vim: Replacement mode
 
 -   `R`: Enters replace mode (leave with `ESC`)
 
-# 📅 02.08.2022 microservice: Types of monoliths
+# 02.08.2022 microservice: Types of monoliths
 
 -   Single Process Monolith := Code is deployed in a single process. In some sense distributed because it talks e.g. with a database.
 -   Modular Monolith := Consists of modules where it can be independently worked on but still requires one overall deployment.
 -   Distributed Monolith := Different service but need to be deployed together. Usually occurs when the information hiding principle was not applied.
 
-# 📅 02.08.2022 microservice: Advantage of monoliths
+# 02.08.2022 microservice: Advantage of monoliths
 
 -   Often simpler developer workflows, monitoring and trouble shooting
 -   Often e2e testing is simpler
 -   Code reuse is easier
 -   Fast changing domain
 
-# 📅 01.08.2022 queues: Why to use Avro vs JSON for the event format?
+# 01.08.2022 queues: Why to use Avro vs JSON for the event format?
 
 -   (+) optional specification for the event including versioning (public documentation)
 -   (+) more space-efficient (e.g. uses pointers to field descriptors, therefore not repeated)
@@ -5193,7 +5193,7 @@ public class SomeClass(){}
 -   (-) binary format
 -   other option to Avro is Protobuf
 
-# 📅 01.08.2022 InfoSec: Types of Application Security Testing (AST)
+# 01.08.2022 InfoSec: Types of Application Security Testing (AST)
 
 -   [source](https://www.hackedu.com/blog/sast-vs-dast-vs-iast)
 -   The general idea of shifting security left
@@ -5254,7 +5254,7 @@ public class SomeClass(){}
     -   IAST
         -   Contrast Assess
 
-# 📅 01.08.2022 InfoSec: Pentesting 101
+# 01.08.2022 InfoSec: Pentesting 101
 
 -   Usually split up in three phases
 -   1.) Explore e.g. Crawl pages, find different entry points, OSINT, software/patches installed, hidden contents
@@ -5273,7 +5273,7 @@ public class SomeClass(){}
         -   vulnerability type
         -   Severity
 
-# 📅 29.7.2022 Clojure: Learnings about instaparse
+# 29.7.2022 Clojure: Learnings about instaparse
 
 -   a parse library where you just need to define a context-free grammar
 -   when you want to match a certain rule, but hide it in the output you can wrap `<>` around
@@ -5287,35 +5287,35 @@ public class SomeClass(){}
 
 -   Do comments with `(* Unordered lists *)`
 
-# 📅 29.07.2022 hikari: Connection pool datasource
+# 29.07.2022 hikari: Connection pool datasource
 
 -   Important parameters
     -   `maximum-pool-size`: Defines number of allowed connection to datasource, connections will be reused
         -   `minimum-idle`: Defines the number of connections which will be established right away, even though they are not needed (defaults to `maximum-pool-size`)
 -   [see documentation](https://github.com/brettwooldridge/HikariCP)
 
-# 📅 29.07.2022 IntelliJ: Refactor current selection/scope
+# 29.07.2022 IntelliJ: Refactor current selection/scope
 
 -   `CRTL` + `ALT` + `SHIFT` + `T`: `Refactor this ...`
 
-# 📅 29.07.2022 Workshop: Find out reasons for a check-in over several dimensions
+# 29.07.2022 Workshop: Find out reasons for a check-in over several dimensions
 
 -   **1. Step:** Voting on several dimensions with a gradient (e.g. Fun `(--1--, --2--, --3--)`)
 -   **2. Step:** You could span a two-dimensional field where you allow votees to also arrange reasons for their voting on that voting matrix: Fun `(--1-(sticky1)-, --2--, --3-(sticky2)-)`
 -   **3. Step:** Votees can vote again on the dimension for further discussion
 
-# 📅 29.07.2022 Fun: Agile Rhapsody
+# 29.07.2022 Fun: Agile Rhapsody
 
 -   One of the more famous agiles songs - [link](https://www.youtube.com/watch?v=MCwJfETgiVo)
 
-# 📅 29.07.2022 InfoSec: CIS benchmarks
+# 29.07.2022 InfoSec: CIS benchmarks
 
 -   Center for Internet Security (CIS) := Non-Profit to establish global guidelines for good security standards.
 -   CIS benchmarks := benchmark can be used to help an organization build a set of security policies and processes to protect data and assets for a certain technology.
     -   benchmarks available for cloud platforms (like gcp, aws, azure etc.)
 -   Tools which are also checking for CIS benchmarks: gcp security control center, snyk, prisma cloud
 
-# 📅 22.07.2022 InfoSec: Injection vulnerabilities
+# 22.07.2022 InfoSec: Injection vulnerabilities
 
 -   Local File Inclusion (LFI) := Web application loads up files on the file system that should not be available
     -   Change `http://example.com/file.php?file=main_page.php` to `http://example.com/file.php?file=../../../etc/passwd`
@@ -5327,22 +5327,22 @@ public class SomeClass(){}
     -   SSRF is the more general concept and is not bound to a specific file
 -   Cross Site Script Inclusion (XSS) := Malicious script in the generated html, whereas backend is only vector but client in frontend is target
 
-# 📅 21.07.2022 Clojure: Print to stderr
+# 21.07.2022 Clojure: Print to stderr
 
 ``` {.Clojure}
 (.println *err* (str "uha!"))
 ```
 
-# 📅 21.07.2022 Git: Show last stashes
+# 21.07.2022 Git: Show last stashes
 
 -   `git stash list`: Show last stashes
 
-# 📅 21.07.2022 Team: PowerPoint Karaoke
+# 21.07.2022 Team: PowerPoint Karaoke
 
 -   candidate has to present a deck of slides about a topic he never has seen before
 -   there is a whole [community](https://de.wikipedia.org/wiki/Powerpoint-Karaoke) around it with tournaments etc.
 
-# 📅 21.07.2022 InfoSec: PII vs PHI
+# 21.07.2022 InfoSec: PII vs PHI
 
 -   Personally Identifiable Information (PII) := Information that can be used to deferr someones identity.
     -   Leakage of PII can lead to \"issues like personal embarrassment, workplace discrimination, and identity theft\"
@@ -5350,11 +5350,11 @@ public class SomeClass(){}
     -   \"violation of these can lead to severe legal consequences\"
     -   can lead to embarrassment, financial harm, potential discrimination based on health-issues
 
-# 📅 20.07.2022 Unix: Using grep recursively and for specific file type
+# 20.07.2022 Unix: Using grep recursively and for specific file type
 
 -   `grep -r --include "*.txt" <patterm> .`: Search through folders recursively including extension filter
 
-# 📅 20.07.2022 Java: Source-level annotation Processing
+# 20.07.2022 Java: Source-level annotation Processing
 
 -   Annotation Processing := process of generating code at compile time to handle the annotations
 -   Allows you to generate additional source files at compilation stage
@@ -5363,7 +5363,7 @@ public class SomeClass(){}
 -   those source files are scanned again for annotations, cycle is repeated till no new files are generated
 -   tutorial how to build custom processing is [here](https://www.baeldung.com/java-annotation-processing-builder)
 
-# 📅 20.07.2022 Java: Do semantic comparision/assertion on two different DTOs with assertj
+# 20.07.2022 Java: Do semantic comparision/assertion on two different DTOs with assertj
 
 ``` {.Java}
 import static org.assertj.core.api.Assertions.assertThat;
@@ -5374,7 +5374,7 @@ assertThat(actual).usingRecursiveComparison()
                 ) .isEqualTo(expected);
 ```
 
-# 📅 20.07.2022 Java: MapStruct Basics
+# 20.07.2022 Java: MapStruct Basics
 
 -   Learnings and comments (source: [here](https://www.baeldung.com/mapstruct))
     -   generates mapper classes at compile time (see `build/generated/sources/annotationProcessor`)
@@ -5450,7 +5450,7 @@ tasks.withType(JavaCompile) {
 @Mapper(unmappedTargetPolicy = ReportingPolicy.ERROR)
 ```
 
-# 📅 20.07.2022 Java: Annotation Theory
+# 20.07.2022 Java: Annotation Theory
 
 -   Annotations can be either interpreted at compile time or at runtime
 -   How are annotations e.g. `@Test` related to introspection/reflection? ([source](https://stackoverflow.com/a/1918154))
@@ -5458,7 +5458,7 @@ tasks.withType(JavaCompile) {
     -   the process of retrieving the metadata of an object at runtime is called *introspection* (see introspection) `anObj.getClass()`
     -   after retrieving the `meta-object` you can also retrieve the annotations `aClass.getAnnotations`
 
-# 📅 20.07.2022 Java: Introspection vs Reflection
+# 20.07.2022 Java: Introspection vs Reflection
 
 -   Reflection := Ability to introspect upon itself and manipulating internal properties of the progam.
     -   e.g. retrieve names of all methods of a class.
@@ -5470,25 +5470,25 @@ tasks.withType(JavaCompile) {
     -   performance is bad
     -   read more [here](https://docs.oracle.com/javase/tutorial/reflect/index.html)
 
-# 📅 20.07.2022 Gradle: How to find out the latest version available of your dependency
+# 20.07.2022 Gradle: How to find out the latest version available of your dependency
 
 -   Either use a plugin like [gradle-versions-plugin](https://github.com/ben-manes/gradle-versions-plugin)
 -   or check in the gradle file for the dependency repository (`repositories{}`) and look at their website which usually provides a search interface
     -   [Maven Central](https://search.maven.org/)
     -   [Google Maven Repo](https://maven.google.com/)
 
-# 📅 19.07.2022 Gradle: Continuous build
+# 19.07.2022 Gradle: Continuous build
 
 -   Gradle allows to watch for changes and trigger specified task on changes again with
 -   `gradle -t <task>`: watch for changes and retrigger task on e.g. file changes
 -   you can also use `--continuous` instead of `-t`
 -   [source](https://docs.gradle.org/2.5/userguide/continuous_build.html)
 
-# 📅 19.07.2022 Api: On status codes 200 vs 204 (No-Content)
+# 19.07.2022 Api: On status codes 200 vs 204 (No-Content)
 
 -   When the call was successful but there is no content you can use `204` e.g. used when sending a `PUT` request
 
-# 📅 18.07.2022 InfoSec: False positives in dependency OWASP checker
+# 18.07.2022 InfoSec: False positives in dependency OWASP checker
 
 -   OWASP dependency check is scanning dependencies based on a CVE which is associated with several CPE\'s, that CPE (similiar to a regex) is sometimes not well defined matching dependencies which are not related
 -   Common Platform Enumeration (CPE) := A industry standard to define a specific hardware or software component.
@@ -5501,19 +5501,19 @@ tasks.withType(JavaCompile) {
 -   you can check for the exact matching reason on `build/reports/dependency-check-report.html` once you run `gradle dependencyCheckAnalyze`
 -   reading [more](https://jeremylong.github.io/DependencyCheck/general/suppression.html) about it and also how to [read the report](https://jeremylong.github.io/DependencyCheck/general/thereport.html)
 
-# 📅 18.07.2022 Chrome: Switch to left/right tab
+# 18.07.2022 Chrome: Switch to left/right tab
 
 -   `Ctrl + ⇧Shift +Tab↹`: Switch to left
 -   `Ctrl + Tab↹`: Switch to right
 
-# 📅 15.07.2022 Pattern: Why should you not validate on an outgoing request DTO
+# 15.07.2022 Pattern: Why should you not validate on an outgoing request DTO
 
 -   **good idea when**: if you always have the most up-to-date api definition of the provider you send a request to and callouts are expensive. Allowing you to instantly assume that clients returns a Bad Request
 -   **bad idea when**: but once calling site has a older version being more restrictive than the up-to-date provider definition, the validation is neither in the interest of the calling site (otherwise you would just validate the incoming request dto or check invariants in code) nor for the provider site
     -   Example: consumer is failing on required field, provider would not because it is now optional
 -   **bad idea when** the calling site is a pass-through application (see \'dumb pipelines\')
 
-# 📅 14.07.2022 Java: Manually validate fields of DTO e.g. @NotBlank fields
+# 14.07.2022 Java: Manually validate fields of DTO e.g. @NotBlank fields
 
 ``` {.Java}
 import javax.validation.Validator;
@@ -5525,11 +5525,11 @@ Set<ConstraintViolation<Driver>> violations = validator.validate(driver);
 
 -   see also [here](https://reflectoring.io/bean-validation-with-spring-boot/#validator)
 
-# 📅 13.07.2022 Vim: Format function body
+# 13.07.2022 Vim: Format function body
 
 -   `vi}=`
 
-# 📅 12.07.2022 Java: Reading ressource files relative to src folder of class
+# 12.07.2022 Java: Reading ressource files relative to src folder of class
 
 ``` {.Java}
 getClass().getResourceAsStream("/file_located_in_ressource_folder.json")
@@ -5537,22 +5537,22 @@ getClass().getResourceAsStream("/file_located_in_ressource_folder.json")
 
 -   here it is important that file will be loaded from the target/build folder, so if you do not build your project files won\'t be copied over into the target folder
 
-# 📅 12.07.2022 IntelliJ: How test run configurations work
+# 12.07.2022 IntelliJ: How test run configurations work
 
 -   How does IntelliJ ensure that a certain maven/gradle lifecycle is run before the rests are execuuted?
 -   For every run configuation usually a build phase is executed before the launch of the actual run
     -   Click on a test class to be executed and run the tests \| Edit Run Configuration \| Modify Options \| Before Lunch \| Add before lunch task
     -   this ensure e.g. that all classes are compiled before a test is executed
 
-# 📅 12.07.2022 IntelliJ: Set breakpoint on exception in debug mode
+# 12.07.2022 IntelliJ: Set breakpoint on exception in debug mode
 
 -   Go to: Run \| View Breakpoints \| Exception Breakpoints (Language specific)
 
-# 📅 12.07.2022 Vim: Prepend newline before pattern match
+# 12.07.2022 Vim: Prepend newline before pattern match
 
 -   `:%s/\./\0\r/g`: Adds a new line before each `.` in line
 
-# 📅 08.07.2022 Maven: Lifecycle
+# 08.07.2022 Maven: Lifecycle
 
 -   when you run `mvn install` you trigger the following steps (see [lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)):
     -   `process-resources`
@@ -5567,7 +5567,7 @@ getClass().getResourceAsStream("/file_located_in_ressource_folder.json")
     -   `-DskipTests=true`: skips tests
     -   `-U`: forces a check for updated releases and snapshots on remote repositories
 
-# 📅 08.07.2022 Eventual consistency
+# 08.07.2022 Eventual consistency
 
 -   Eventual consistency := Eventually reflecting the same data in a distributed system.
     -   usually fast
@@ -5578,21 +5578,21 @@ getClass().getResourceAsStream("/file_located_in_ressource_folder.json")
     -   data syncronzation between two db\'s: depends when sync run is
 -   In such situations you usually want to have some reconciliation processes in place ensuring that the data is in sync
 
-# 📅 30.06.2022 Consulting: Talking about velocity
+# 30.06.2022 Consulting: Talking about velocity
 
 -   *Person 1 : Your team is slow.*
 -   *Person 2 : Slow, compared to what?*
 
-# 📅 29.06.2022 Windows: Layout if second screen is not next up on top of primary screen
+# 29.06.2022 Windows: Layout if second screen is not next up on top of primary screen
 
 -   in display settings you can simply graphically move the physical location of each screen
 -   if you move the secondary monitor on top of the primary you simply need to break through the top margin of the primary screen to get to the secondary one
 
-# 📅 29.06.2022 Windows: Move current window to different screen
+# 29.06.2022 Windows: Move current window to different screen
 
 -   `Windows + Shift + Left Arrow`
 
-# 📅 28.06.2022 Fun: 36 Methods of Mathematical Proof
+# 28.06.2022 Fun: 36 Methods of Mathematical Proof
 
 -   ([source](http://jwilson.coe.uga.edu/EMT668/EMAT6680.F99/Challen/proof/proof.html))
 -   **Proof by obviousness**: \"The proof is so clear that it need not be mentioned.\"
@@ -5632,7 +5632,7 @@ getClass().getResourceAsStream("/file_located_in_ressource_folder.json")
 -   **Proof by authority**: \"Well, Don Knuth says it\'s true, so it must be!\"
 -   **Proof by intuition**: \"I have this gut feeling.\"
 
-# 📅 27.06.2022 InfoSec: Risk responses / risk treatments
+# 27.06.2022 InfoSec: Risk responses / risk treatments
 
 -   usually part of a risk managment plan (enumerating risks with likelihood)
 -   4 classic ways of dealing with risk
@@ -5641,7 +5641,7 @@ getClass().getResourceAsStream("/file_located_in_ressource_folder.json")
     -   **mitigate**, close the loopwhole
     -   **accept**, choose to move ahead e.g. do not protect internal tool since it is not exposed to the public internet and there is a low probabiliy to be attacked
 
-# 📅 27.06.2022 InfoSec: How to decide on priority when it comes to brainstorming threats in a Threat Modelling session?
+# 27.06.2022 InfoSec: How to decide on priority when it comes to brainstorming threats in a Threat Modelling session?
 
 -   Usually, priority = impact \* probability
 -   probability is super hard to estimate for average team members because
@@ -5654,7 +5654,7 @@ getClass().getResourceAsStream("/file_located_in_ressource_folder.json")
 -   if the effort is very low (e.g. can be exploited by an automated attack), then probablity is very high e.g. bot scanning for open ports
 -   probability can be also phrased as, has this been see in the wild before?
 
-# 📅 27.06.2022 InfoSec: Privacy
+# 27.06.2022 InfoSec: Privacy
 
 -   What is privacy?
     -   Legal definition: e.g. Gdpr
@@ -5671,7 +5671,7 @@ getClass().getResourceAsStream("/file_located_in_ressource_folder.json")
 -   Homomorphic encryption := Encrypted computation, you can process data without decrypting it
 -   Federated computing := Data stays on local devices
 
-# 📅 27.06.2022 InfoSec: How to be a good security champion?
+# 27.06.2022 InfoSec: How to be a good security champion?
 
 -   Go through Checklists/Assesments
 -   What data are we handling?
@@ -5682,15 +5682,15 @@ getClass().getResourceAsStream("/file_located_in_ressource_folder.json")
     -   outside expectations? Company policies?
     -   Gaps from previous assessment?
 
-# 📅 24.06.2022 Git: Search through commit messages
+# 24.06.2022 Git: Search through commit messages
 
 -   `git log --grep "message".`
 
-# 📅 24.06.2022 Git: Stash and pop automatically when rebase
+# 24.06.2022 Git: Stash and pop automatically when rebase
 
 -   `git rebase origin/master --autostash`
 
-# 📅 23.06.2022 Gradle: Implicit transparency when providing subtasks
+# 23.06.2022 Gradle: Implicit transparency when providing subtasks
 
 -   When following dependency graph of task is given
 
@@ -5705,7 +5705,7 @@ Some generic task A has a direct dependency on taskB and taskD (usually denoted 
     -   the consequences are not intended because it will likely happen that taskD is run before taskC since it is only waiting for taskB
     -   Usually a warning is given by gradle, see [here](https://docs.gradle.org/7.4.2/userguide/validation_problems.html#implicit_dependency)
 
-# 📅 23.06.2022 Gradle: Add replace string in file (hacky)
+# 23.06.2022 Gradle: Add replace string in file (hacky)
 
 -   Gradle allows for replacing contents of the files in a copy process
 -   we therefore first copy something in a tmp folder, delete the original file and then copy it back
@@ -5741,13 +5741,13 @@ _rmOrigin.finalizedBy _copyBack
 _copyBack.finalizedBy _rmTmp
 ```
 
-# 📅 23.06.2022 Gradle: Import groovy helpers into gradle script
+# 23.06.2022 Gradle: Import groovy helpers into gradle script
 
 ``` {.groovy}
 apply from: 'utils.gradle'
 ```
 
-# 📅 23.06.2022 Gradle: Define several task dependencies inside a task
+# 23.06.2022 Gradle: Define several task dependencies inside a task
 
 ``` {.groovy}
 task someTask {
@@ -5757,7 +5757,7 @@ task someTask {
 }
 ```
 
-# 📅 21.06.2022 Docker Compose: Add container name to reference container from `docker`
+# 21.06.2022 Docker Compose: Add container name to reference container from `docker`
 
 ``` {.yaml}
 version: '3'
@@ -5768,11 +5768,11 @@ services:
     container_name: my-app # this is the container name, also docker can handle this
 ```
 
-# 📅 20.06.2022 Docker: Hack for entrypoint to keep container running
+# 20.06.2022 Docker: Hack for entrypoint to keep container running
 
 -   `tail -F anything`: Will never terminate since it is waiting for file \'anything\' to appear
 
-# 📅 20.06.2022 Gradle: Create task, ignoring exit value and print errors
+# 20.06.2022 Gradle: Create task, ignoring exit value and print errors
 
 ``` {#Gradle Cli task .Bash}
 task cliTask(type: Exec) {
@@ -5788,7 +5788,7 @@ task cliTask(type: Exec) {
 }
 ```
 
-# 📅 16.06.2022 Workshop: How to plan out a workshop (or retro)
+# 16.06.2022 Workshop: How to plan out a workshop (or retro)
 
 -   \(1\) Think of the different stages of the **process**
     -   Example: 1) Reflect on past 2) extract learnings 3) think of future 4) anticipate based on learnings what might help to make it better
@@ -5796,7 +5796,7 @@ task cliTask(type: Exec) {
 -   \(3\) Think of which **methologies** you want to use in each step
     -   Example: 1) Small warmup game 2) Brainstorming in group -\> Vote on Top-3 3) Discussion in small groups 4) Quick presentation
 
-# 📅 14.06.2022 Gradle: See how long each build steps takes
+# 14.06.2022 Gradle: See how long each build steps takes
 
 ``` {.Bash}
 gradle --profile
@@ -5804,7 +5804,7 @@ gradle --profile
 
 -   outputs html
 
-# 📅 14.06.2022 Team: Servant leadership
+# 14.06.2022 Team: Servant leadership
 
 -   [source](https://asana.com/resources/servant-leadership)
 -   Not mission but employee is the main focus
@@ -5812,7 +5812,7 @@ gradle --profile
 
 <p align="center"><img height=400 src="https://raw.githubusercontent.com/biocarl/img/master/servant_leadership.png" /></p>
 
-# 📅 14.06.2022 Git: Revert last n commits in one commit
+# 14.06.2022 Git: Revert last n commits in one commit
 
 ``` {.Bash}
 git revert --no-commit HEAD~3..
@@ -5821,7 +5821,7 @@ git commit -m "Revert of last 3 commits"
 
 -   only working if not merge commit present in the commits to be reverted
 
-# 📅 13.06.2022 microservice: Pattern Index from book *Monolith to Microservices* **Splitting the monotlith**
+# 13.06.2022 microservice: Pattern Index from book *Monolith to Microservices* **Splitting the monotlith**
 
 -   Branch by abstraction: Coexisting two implementations of the same functionality in the same codebase at the same time, allowing for a new implementation to be incrementally developed until it can replace the old implementation. (p.104)
 -   Decorating collaborator: Trigger functionality running in a separate microservice by sniffing requests sent to the monolith, and the responses that are sent back in return. (p.118)
@@ -5859,7 +5859,7 @@ git commit -m "Revert of last 3 commits"
 -   Synchronize data in application: Syncroniye data between the sources of truth from inside a single application (p.143)
 -   Tracer write: Incrementally migrate data from one source to another tolerating two sources during the migration (p.149)
 
-# 📅 13.06.2022 Pattern: \"Keep the pipes dumb, the endpoints smart\" - Martin Fowler
+# 13.06.2022 Pattern: \"Keep the pipes dumb, the endpoints smart\" - Martin Fowler
 
 -   dumb pipelines := the transport of messages between two microservices really is not doing nothing as delivering the message (e.g. no eleborate logic (like validations) in proxy, api gateway etc.)
 -   smart endpoints: means that all logic (like validations etc.) resides in the microservice behind a endpoint
@@ -5868,7 +5868,7 @@ git commit -m "Revert of last 3 commits"
     -   Higher cohesion, less coupling between components (e.g. change in complicacted proxy might impact a lot of downstream services)
     -   delivery contention (see Sam Newman): a lot of teams modifying the same component
 
-# 📅 10.06.2022 Transparent remoting and location transparency
+# 10.06.2022 Transparent remoting and location transparency
 
 -   Transparent Remoting: is about making remote calls look like local calls (with proxies forwarding to remote server)
     -   you never know whether the methods are executed locally or the data has been sent over the network to be executed on a remote object
@@ -5878,7 +5878,7 @@ git commit -m "Revert of last 3 commits"
     -   so assume that all those networking issues can occur making this transparent right from the start
     -   physical location does not matter only the identifier
 
-# 📅 08.06.2022 wiremock: When you want to mock server response behavior, example for spring rest template
+# 08.06.2022 wiremock: When you want to mock server response behavior, example for spring rest template
 
 -   [Wiremock](https://wiremock.org/docs/junit-jupiter/)
 
@@ -5904,7 +5904,7 @@ class WiremockTest {
 }
 ```
 
-# 📅 08.06.2022 Mockito: Inject real autowired beans
+# 08.06.2022 Mockito: Inject real autowired beans
 
 ``` {.Java}
 @Spy
@@ -5915,13 +5915,13 @@ private Demo demo;
 
 -   this becomes especially useful if you do autowire in the depenend class and can\'t inject mocks via the constructor (this sometimes makes sense if you do not want a complicated constructor for child classes)
 
-# 📅 20.05.2022 Workshop: Nobody is perfect
+# 20.05.2022 Workshop: Nobody is perfect
 
 -   Put a question nobody can know the answer to, everyone has to put in a anonymous answers and everyone is voting what is the most realistic answer. The game master is also adding the real answer
 -   The most voted answer get points
 -   is also a game with the same name (Ravensburger)
 
-# 📅 17.05.2022 JUnit: Assert fields on thrown exception
+# 17.05.2022 JUnit: Assert fields on thrown exception
 
 ``` {.Java}
 Throwable thrownException = assertThrows(NullPointerException.class, () -> {
@@ -5930,7 +5930,7 @@ Throwable thrownException = assertThrows(NullPointerException.class, () -> {
 assertEquals(thrownException.getCode(), HttpStatus.UNPROCESSABLE_ENTITY.value());
 ```
 
-# 📅 12.05.2022 Pattern: Port and Adapters aka Hexagonal Architecture
+# 12.05.2022 Pattern: Port and Adapters aka Hexagonal Architecture
 
 -   [source](https://alistair.cockburn.us/hexagonal-architecture/)
 -   **Intent**: You want to be able to run the application independent of \'users, programs, automated test or batch scripts\' and test in isolation from its infrastructure
@@ -5949,7 +5949,7 @@ assertEquals(thrownException.getCode(), HttpStatus.UNPROCESSABLE_ENTITY.value())
     -   protocol of that port is an API, whereas the adapter converts the API to signals which are needed by the two connecting sides
     -   Example: Database connecting to port needs adapter which either converts signal into SQL, filestream or adapter to a mock-database
 
-# 📅 12.05.2022 Pattern: Application Layering
+# 12.05.2022 Pattern: Application Layering
 
 -   What do we want to achieve with layering?
     -   domain layer should not depend on low-level concerns (aka. dependency inversion)
@@ -5958,7 +5958,7 @@ assertEquals(thrownException.getCode(), HttpStatus.UNPROCESSABLE_ENTITY.value())
 -   What to watch out for
     -   avoid using modules for seperating out layers: this just creates pain (see also [screaming architecture](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html))
 
-# 📅 12.05.2022 Pattern: Saga-Pattern - Part II
+# 12.05.2022 Pattern: Saga-Pattern - Part II
 
 -   Origin from even before microservices: Splitting up long-running transactions (because they were blocking ressources for too long)
 -   Type: Orchestration (like command & controll)
@@ -5983,7 +5983,7 @@ assertEquals(thrownException.getCode(), HttpStatus.UNPROCESSABLE_ENTITY.value())
     -   foreward-compensate: just retry and do not compensate for it
 -   Alternatives to Saga patterns: Two-Phase commits
 
-# 📅 12.05.2022 Java: Creating custom annotations
+# 12.05.2022 Java: Creating custom annotations
 
 -   for class level annotation
 
@@ -5995,7 +5995,7 @@ public @interface CustomAnnotation {
 }
 ```
 
-# 📅 12.05.2022 Gradle: Share config between to different tasks
+# 12.05.2022 Gradle: Share config between to different tasks
 
 ``` {.groovy}
 def commonConfig = {
@@ -6008,12 +6008,12 @@ task runSomething() {
 }
 ```
 
-# 📅 11.05.2022 Gradle: Managing gradle dependencies
+# 11.05.2022 Gradle: Managing gradle dependencies
 
 -   Get to know which version a dependency has and the decision for it (see Dependency mediation)
     -   `gradle dependencyInsight --dependency package_name`
 
-# 📅 11.05.2022 Workshop: More tech/developer experience orientated healthcheck
+# 11.05.2022 Workshop: More tech/developer experience orientated healthcheck
 
 -   source is from spotify ([source](https://engineering.atspotify.com/2014/09/squad-health-check-model/))
 -   **Support**: Getting support and help when asked for it
@@ -6027,7 +6027,7 @@ task runSomething() {
 -   **Process**: Ways of working
 -   **Teamwork**: Bunch of individuals vs. team.
 
-# 📅 10.05.2022 Mockito: Fundamentals
+# 10.05.2022 Mockito: Fundamentals
 
 -   Initalize by
 
@@ -6072,7 +6072,7 @@ verifyNoInteractions(mockedList);
 
 *Usually you want to test your code with real inputs and expected outputs and usually these will be data structures or pojos.* - [source](https://softwareengineering.stackexchange.com/a/363127)
 
-# 📅 09.05.2022 Spring: Get request context to retrieve things like headers globally
+# 09.05.2022 Spring: Get request context to retrieve things like headers globally
 
 -   Each request is served in a single threat which contains the request context
 -   If not needed outside of controller, you can obtain headers via `@RequestHeader` annotation
@@ -6091,7 +6091,7 @@ String retrieveHeaderFromRequest(){
 }
 ```
 
-# 📅 09.05.2022 Spring: Interceptors 101
+# 09.05.2022 Spring: Interceptors 101
 
 -   when to use: cross-cutting concerns
 -   Spring Rest Templates allows to specify interceptors to modify request before it is sent ([source](https://programmer.group/spring-resttemplate-uses-interceptors-to-configure-http-request-headers.html))
@@ -6114,7 +6114,7 @@ public class CustomInterceptor implements ClientHttpRequestInterceptor {
 }
 ```
 
-# 📅 06.05.2022 Workshop: City-Retrospective
+# 06.05.2022 Workshop: City-Retrospective
 
 -   Icebreaker: Which city is best for some certain activities?
     -   List of Cities and symbols to vote on: party, nature, food, bicycle, architecture
@@ -6122,7 +6122,7 @@ public class CustomInterceptor implements ClientHttpRequestInterceptor {
 -   Brainstorming: Traffic jam? neighborhoods? urban gardening?
 -   Action items: Let\'s make our city better
 
-# 📅 03.05.2022 InfoSec: Terms in Security
+# 03.05.2022 InfoSec: Terms in Security
 
 -   VicSocks := victim sockets, malware opening a socket on victims maschine to use their IP for malicious activity
 -   Credential Stuffing := Instead of bruteforcing a system with random credentials a password dump from previous breaches is used
@@ -6132,7 +6132,7 @@ public class CustomInterceptor implements ClientHttpRequestInterceptor {
         -   check against password dumps and request to change passwords
         -   Google Capture
 
-# 📅 28.04.2022 Networking: Firewalls 101
+# 28.04.2022 Networking: Firewalls 101
 
 -   on OSI layers 3-4
 -   IP, port, access controll list
@@ -6149,7 +6149,7 @@ public class CustomInterceptor implements ClientHttpRequestInterceptor {
         -   it is very difficult to distinguish them from legitimate traffic, eventually resulting in DoS for the real users
         -   a WAF for instance would keep track of malicous IP\'s dynamically and block those once a certain pattern in requests is identified
 
-# 📅 28.04.2022 Networking: OSI Model 101
+# 28.04.2022 Networking: OSI Model 101
 - OSI := open systems interconnection, is a communication standard between computers
 - when OSI layer is used
     - characterizing network issues
@@ -6163,7 +6163,7 @@ public class CustomInterceptor implements ClientHttpRequestInterceptor {
     - Layer 2 (Data Link): TBD
     - Layer 1 (Physical): TBD
 
-# 📅 28.04.2022 JUnit: Tags
+# 28.04.2022 JUnit: Tags
 
 - helps you to filter for certain annotated tests (include/exclude)
 - use `@Tag` on either class or method level
@@ -6176,12 +6176,12 @@ public class CustomInterceptor implements ClientHttpRequestInterceptor {
 
 in mvn use: `mvn test -Dgroups=group3,group2`
 
-# 📅 28.04.2022 Infrastructure: Open Policy Agent (OPA)
+# 28.04.2022 Infrastructure: Open Policy Agent (OPA)
 -   [source](https://www.openpolicyagent.org/)
 -   you define policies and a agent is checking them (compliance)
 -   e.g. use terraform plan json output and feed it into agent
 
-# 📅 28.04.2022 QA: Synthetic monitoring
+# 28.04.2022 QA: Synthetic monitoring
 -   a small subset of tests you execute on your prod environment in a regular fashion and create alerts on it
 -   sometimes called semantic monitoring
 -   can be combined with canary releases
@@ -6191,7 +6191,7 @@ in mvn use: `mvn test -Dgroups=group3,group2`
 -   usually quite expensive to implement system-wide
 -   [further reading](https://martinfowler.com/bliki/SyntheticMonitoring.html)
 
-# 📅 26.04.2022 QA: Performance tetsing of microservice in isolation vs system-wide tests
+# 26.04.2022 QA: Performance tetsing of microservice in isolation vs system-wide tests
 -   Benefits of testing system in isolation
     -   see if changes you introduced decrease performance
     -   since you test system in isolation you can benchmark against a baseline (regression-testing)
@@ -6201,7 +6201,7 @@ in mvn use: `mvn test -Dgroups=group3,group2`
 -   It often makes sense to do both but the question how often and when you run those
     -   e.g. running system in isolation you could do on every deploy and system-wide on every release
 
-# 📅 26.04.2022 Maven: Maven Enforcer Plugin
+# 26.04.2022 Maven: Maven Enforcer Plugin
 -   like a unit test for maven files
     -   built-in rule: Dependency Convergence
         -   fail if two dependencies A,B depend on a different version of another dependency C
@@ -6209,7 +6209,7 @@ in mvn use: `mvn test -Dgroups=group3,group2`
 -   Dependency mediation
     -   Maven/Gradle always has to set for one version otherwise we would get a scope conflict (same class names etc.)
 
-# 📅 26.04.2022 Maven: Multi-Module project
+# 26.04.2022 Maven: Multi-Module project
 -   Define root and module poms
 ``` {.xml}
 <!-- In root pom -->
@@ -6231,7 +6231,7 @@ in mvn use: `mvn test -Dgroups=group3,group2`
     - in inheriting pom only artifact, groupId
     - exclusions are also inherited
 
-# 📅 25.04.2022 Java: Memory management Shown my Native Memory Tracking
+# 25.04.2022 Java: Memory management Shown my Native Memory Tracking
 - Heap: Java objects
     - globally accessable
 - Non-Heap
@@ -6261,7 +6261,7 @@ in mvn use: `mvn test -Dgroups=group3,group2`
  -XX:MaxRAMPercentage
 ```
 
-# 📅 25.04.2022 Team: Meeting rules
+# 25.04.2022 Team: Meeting rules
 -   👥: Team and 👩‍🏫: Facilitator
 -   Before the meeting
     -   👩‍🏫 Before sending out the invite go through the 7Ps below and put relevant information in the invite (like outcome and preparation)
@@ -6280,26 +6280,26 @@ in mvn use: `mvn test -Dgroups=group3,group2`
     -   👩‍🏫 Update the Meeting notes and follow up with action items e.g. updating a LADR
     -   👥 Everyone should go through the meeting notes and provide comments if necessary
 
-# 📅 22.04.2022 IntelliJ: Shelve and unshelve changes
+# 22.04.2022 IntelliJ: Shelve and unshelve changes
 -   Like stashing a change list (creating a patch), which you can apply later again
 -   this happens automatically in IntelliJ when you pull with changes in working dir
 
-# 📅 22.04.2022 Jackson: Objectmapper for enums
+# 22.04.2022 Jackson: Objectmapper for enums
 -   Serialization: `@JsonValue`, indicates a single method that the library will use to serialize the entire instance. e.g. `toString()`
 -   Deserialization : `@JsonCreator`, just out this on the constructor and specificy the primitives you want to create the object from
 
-# 📅 21.04.2022 Networking: DNS server mappings are cached locally Working on Windows OS
+# 21.04.2022 Networking: DNS server mappings are cached locally Working on Windows OS
 -   `nslookup  <url>` does reach out to dns server to retrieve IP
 -   `tracert <url>` goes same route as os, uses cache (not reaching out to dns server every time)
 -   `ipconfig /flushdns` clear local cache
 -   there is also a local dns lookup
     -   specified via Windows `c:\Windows\System32\Drivers\etc\hosts` file
 
-# 📅 20.04.2022 Networking: Principle of Round Robin
+# 20.04.2022 Networking: Principle of Round Robin
 -   Easy process for network/process schedulers to distribute load/data amongst workers etc.
 -   Round-robin DNS: Principle applied on redundant DNS servers, like a load balancer
 
-# 📅 19.04.2022 Networking: Fundamentals
+# 19.04.2022 Networking: Fundamentals
 -   `nslookup <url>`: Nameserver lookup, shows responding dns server for that url and the ip\'s it is resolving to
 -   `route print` / `netstat -r`: Showing routing tables
 -   `DNS server`: Responsible to translate domain names into IP adresses
@@ -6335,7 +6335,7 @@ in mvn use: `mvn test -Dgroups=group3,group2`
     -   the problem is that the vpn is not supporting ipv6 and request to a ipv6 goes not through vpn but the internet
     -   resulting in not being able to access the website
 
-# 📅 19.04.2022 InfoSec: Threat modelling
+# 19.04.2022 InfoSec: Threat modelling
 
 -   per definition you never have a complete thread modell
 -   it is more about brainstorming possible causes to mitigate them, in reality a breach always consists of a combination of several threats
@@ -6390,7 +6390,7 @@ in mvn use: `mvn test -Dgroups=group3,group2`
 
         f\) Additionally you can also come up with low-hanging fruit (things which are easy to accomplish e.g. adding a health check)
 
-# 📅 13.04.2022 Infrastructure: Jenkins 101
+# 13.04.2022 Infrastructure: Jenkins 101
 - [source](https://joostvdg.github.io/jenkins-pipeline/core-concepts/)
 
 -   `Step`: A single task
@@ -6406,7 +6406,7 @@ in mvn use: `mvn test -Dgroups=group3,group2`
     -   stash: forward results from one step to another (IO, CPU expensive)
     -   archive: expose artefacts over api/ui
 
-# 📅 13.04.2022 Python: How to mock in python
+# 13.04.2022 Python: How to mock in python
 
 -   Part of unittest (standard module in python)
     -   `from unittest import mock`
@@ -6428,43 +6428,43 @@ in mvn use: `mvn test -Dgroups=group3,group2`
     self.assertEqual(mockB.call_count, 2)
 ```
 
-# 📅 12.04.2022 Java: System.getProperty vs System.getenv
+# 12.04.2022 Java: System.getProperty vs System.getenv
 
 -   environment variables are just taken from the OS
 -   properties are like start parameters you pass in into the jvm
 -   usually prefer properties over environment variables because they are more specific in scope
     -   for environment variables you could always have another process in the same shell changing the behavior of your application
 
-# 📅 12.04.2022 Maven: Testing with Maven
+# 12.04.2022 Maven: Testing with Maven
 
 -   tests usually run with `maven-surefire-plugin`
 -   you can set filters for including/excluding classes: `<includes> <include>**/*SpecialTest*.java</include></includes>`
 -   set verbose logging (including debug) with `-X` on mvn command
 -   scope test in maven is analogous to testImplementation in gradle
 
-# 📅 12.04.2022 Java: Drawback of multi-module projects when libabries depend on a jvm
+# 12.04.2022 Java: Drawback of multi-module projects when libabries depend on a jvm
 
 -   when you have a multi-module projects and run a test task on root level, the tests of the different modules are obvisouly spawned in several jvm\'s. When you have mechanism which relies on the fact that tests are run in the same jvm (e.g. pact interactions have to be all validated before results are published) you have to put those toegther in a separate module
 
-# 📅 08.04.2022 Agile: Philosophy Kanban
+# 08.04.2022 Agile: Philosophy Kanban
 
 -   Comes from Toyota where you have different steps in automanufacture workflow, you a high flow from one state to the other
 -   At every state transition the card should move into a new process so e.g. Ready for development is not useful becaue it is just waiting there. Better to leave it in analysis and label it as ready
 -   You also should not have a sign-off column because sign-off meeting should be part of the state change to be done. If you have no such column and stories are waiting longer in dev due to waiting for a meeting sheduled to it just makes the problem more visible and should be resolved
 
-# 📅 08.04.2022 Maven: Compiling
+# 08.04.2022 Maven: Compiling
 
 -   if you have maven modules imported, compiling the dependent modules is not enough - you also have to package them
 -   otherwise you might get some `NoClassDefFoundError`
 
-# 📅 07.04.2022 Circuit breaker
+# 07.04.2022 Circuit breaker
 
 -   If you have send many requests and get a lot of errors you pause requests right away to reduce load on the target system
 -   it is difficult to decide when to allow requests again (increase limit)
 -   e.g. Histrix
 -   Different states: Open, Closed, Half-Open (probe if downstream system is ok again, low traffic)
 
-# 📅 07.04.2022 Adaptive concurrency
+# 07.04.2022 Adaptive concurrency
 
 -   [source](https://vikas-kumar.medium.com/handling-overload-with-concurrency-control-and-load-shedding-part-2-6b8b594d4405), [source~2~](https://netflixtechblog.medium.com/performance-under-load-3e6fa9a60581)
 -   Netflix switched over from circuit breakers
@@ -6472,7 +6472,7 @@ in mvn use: `mvn test -Dgroups=group3,group2`
 -   you monitor congestion and calculate limit via algorithm
 -   only works if all calling services implement this
 
-# 📅 31.03.2022 The 12 Factor App
+# 31.03.2022 The 12 Factor App
 
 -   **Config**: Externalize all config from Code
     -   Config is everything that varies accross deploys (prod/staging/tenants), code not
@@ -6488,7 +6488,7 @@ in mvn use: `mvn test -Dgroups=group3,group2`
         -   You do not mistakenly check in such config into source
         -   config is language independent
 
-# 📅 30.03.2022 QA: Learnings on pact and pact broker
+# 30.03.2022 QA: Learnings on pact and pact broker
 - why to use tagging for feature toggles? ([read more on this](https://docs.pact.io/pact_broker/tags))
   - on consumer side you have a feature toggle but you don\'t know if the provider already has the features implemented, integrated in the deployed artefact. That is why you want to tag with the consumer/provider version after deploying the artefact. You have a mapping between consumer versions of a contract and how this related to the deployed artefacts, helping you decide which feature toggles on the consumer side you can toggle on. The other way of doing it would be to check on the deployed artefacts which feature is present and which not but doing it this with the pact contracts is like putting a matching pattern over the codebase using the logic you already have set anyway for the contract testing
 - how does pending contracts work?
@@ -6498,7 +6498,7 @@ in mvn use: `mvn test -Dgroups=group3,group2`
   - once the provider meets the requirements of the new contract the pending flag is removed
   - if at another run the contract brakes on provider side the pipeline also breaks
 
-# 📅 29.03.2022 Workshop: Airport metaphor
+# 29.03.2022 Workshop: Airport metaphor
 -   Icebreaker: Where do you want to go next?
 -   Healthcheck: Check-In at airport
 -   Action items: Take-Off
@@ -6510,7 +6510,7 @@ in mvn use: `mvn test -Dgroups=group3,group2`
 -   Feedback: Stars with tripadvisor: From worst trip ever, I will do the next retro by myselves
 -   Who is next: Stuart with sunglasses
 
-# 📅 17.03.2022 Sensible practices
+# 17.03.2022 Sensible practices
 - Trunk-Based development
   - **Why**: Faster feedback, resolve merge conflicts quicker, easier to code review because smaller changes
   - Prerequisite of Continuous Integration
@@ -6545,7 +6545,7 @@ Early and continuous deployment
 -   also deploy components regulary even if there was no change to ensure that everything is still working
 -   **why**: Early feedback and repeatability
 
-# 📅 11.03.2022 - 17.03 Basics of DDD
+# 11.03.2022 - 17.03 Basics of DDD
 
 -   Domain Model := Business logic, context etc. without any technical details (including persitence etc.). Everyone involved in the development lifecycle should use that language which was agreed on (helps avoiding translation errors)
 -   Stategic vs Tactical design
@@ -6579,7 +6579,7 @@ Early and continuous deployment
         -   **Application services**: Like a controller: calling repository and public methods on domain object. Very thin layer.
         -   **Domain services**: When a business logic spans across several aggregates. Part of domain model.
 
-# 📅 25.02.2022 How to bring the quiet on board?
+# 25.02.2022 How to bring the quiet on board?
 
 -   Game \"Button\"
     -   \"Everyone speaks once before anyone speaks twice.\"
@@ -6588,7 +6588,7 @@ Early and continuous deployment
 -   Everyone has to facilitate at some point
 -   Do brainstorming not in anonymous mode
 
-# 📅 25.02.2022 Alternative way of roles and reponsibility matrix (R.A.C.I.)
+# 25.02.2022 Alternative way of roles and reponsibility matrix (R.A.C.I.)
 
 -   [source](https://en.wikipedia.org/wiki/Responsibility_assignment_matrix)
 -   For each task/domain differentiate the following
@@ -6597,7 +6597,7 @@ Early and continuous deployment
     -   Consulted: Contributors, providing input
     -   Informed: Are kept up to date
 
-# 📅 25.02.2022 Alternative way of Stackholder mapping Ask the follwing questions and then do a affinity mapping over power/interest quadrants
+# 25.02.2022 Alternative way of Stackholder mapping Ask the follwing questions and then do a affinity mapping over power/interest quadrants
 
 -   Who will be impacted by the project?
 -   Who will be responsible or accountable for the project?
@@ -6606,7 +6606,7 @@ Early and continuous deployment
 -   Who can obstruct the project?
 -   Who has been involved in this type of project in the past?
 
-# 📅 25.02.2022 Workshop formats I liked from Gamestorming book
+# 25.02.2022 Workshop formats I liked from Gamestorming book
 
 -   **Brainwriting**: Each member writes stickes with idea and passes it to the next person who refines, appends an idea to that sticky
 -   **Fishbowl**: One part of team has a discussion, the other listens and afterwards summarizes (done with inner, outer circle)
@@ -6617,7 +6617,7 @@ Early and continuous deployment
 
 <p align="center"><img height=200 src="https://raw.githubusercontent.com/biocarl/img/master/squid.jpeg" /></p>
 
-# 📅 25.02.2022 What questions to ask during a workshop (as facilitator) from Gamestorming
+# 25.02.2022 What questions to ask during a workshop (as facilitator) from Gamestorming
 
 -   **Opening**
     -   \"How do you define the problem you are facing?\"
@@ -6643,7 +6643,7 @@ Early and continuous deployment
     -   \"What can we do in the next two weeks?\"
     -   \"Who is going to do this?\"
 
-# 📅 24.02.2022 How to secure your endpoints
+# 24.02.2022 How to secure your endpoints
 
 -   Different options
     -   Lightweight Directory Access Protocol (LDAP) - [link of disadvantages](https://blog.lithnet.io/2018/03/the-ldap-authentication-anti-pattern.html)
@@ -6652,7 +6652,7 @@ Early and continuous deployment
     -   Mutual TLS - [link](https://www.cloudflare.com/learning/access-management/what-is-mutual-tls/)
         -   also ensures that traffic is encrypted
 
-# 📅 22.02.2022 How to have engaging conversations in a team (workshop)
+# 22.02.2022 How to have engaging conversations in a team (workshop)
 
 -   Add here also the campfire workshop (tell a story)
 -   Two different types of identity
@@ -6684,13 +6684,13 @@ Early and continuous deployment
     -   Put on Mural the \"Wall of Word\" -\> people can use a word and tell a story and put that stick on the \"Story Thread\", which is growing snake-like during the workshop
     -   Before you \"put out the fire\", ask if there were any lessons learned, insights or feedback
 
-# 📅 22.02.2022 Proxy environment variables in Unix
+# 22.02.2022 Proxy environment variables in Unix
 
 -   if you want to route traffic over a proxy you need to set those
 -   `http_proxy`, `https_proxy`: Sets the proxy all traffic will go through
 -   `no_proxy`: Comma-separated list of domain extensions the proxy should not be used for. For instance '.google.de', proxy will not be used for german google queries
 
-# 📅 21.02.2022 Team: Agile routines I enjoy
+# 21.02.2022 Team: Agile routines I enjoy
 
 -   Culture cafe
     -   present softskills, ways of working in a bi-weekly manner
@@ -6706,7 +6706,7 @@ Early and continuous deployment
 -   Health Check (e.g. in retros), more details elsewhere
 -   Tech Health Check
 
-# 📅 15.02.2022 A case against Spring profiles and beans depending on profiles **A case against profiles**
+# 15.02.2022 A case against Spring profiles and beans depending on profiles **A case against profiles**
 
 -   You should always externalize as much config as possible (see [12factor](https://12factor.net/config))
     -   **strict separation of config from code. Config varies substantially across deploys, code does not.**
@@ -6724,11 +6724,11 @@ Early and continuous deployment
     -   **Solution**: Use a value environment in config file and then annotate the beans like so `@ConditionalOnProperty(name="service.mock", havingValue="true")`
 -   technical learning: in `@ActiveProfiles` you do not specify several environments like in `@Profile`: `test,staging` but provide them as a array: `@ActiveProfiles({"test", "staging" })`
 
-# 📅 11.02.2022 A nice way of checking the team health in the retro
+# 11.02.2022 A nice way of checking the team health in the retro
 
 <p align="center"><img height=400 src="https://raw.githubusercontent.com/biocarl/img/master/healthcheck.PNG" /></p>
 
-# 📅 09.02.2022 What to do after a brainstorming session
+# 09.02.2022 What to do after a brainstorming session
 
 -   Pre-define brainstorming outcome by setting a meaningful space beforehand
     -   Example: Give some grid and everyone has to arrange the stickies they put there in the appropriate corners e.g. High/Low Impact/Effort - Quadrants
@@ -6743,24 +6743,24 @@ Early and continuous deployment
 -   Everyone presents their own sticky or do something else with it (e.g. invert it to the opposite)
 -   Cluster according to certain criteria: Affinity mapping (JK Method)
 
-# 📅 08.02.2022 Why you should never put PII data in url
+# 08.02.2022 Why you should never put PII data in url
 
 -   A lot of components log url, man in the middle attacs and ajax calls from the browser (e.g. malicious browser extensions/browser history), user might not be aware what link they shared
 -   **Solution**:
     -   \'Break\' with Rest and always do a POST and no GET (will be SSL encrypted)
     -   Put tokens etc in header
 
-# 📅 03.02.2022 IntelliJ Set `pwd` in Shell
+# 03.02.2022 IntelliJ Set `pwd` in Shell
 
 -   Just drag folder from tree view into shell and the `pwd` changes
 
-# 📅 21.01.2022 Token generation via metadata server (GCP)
+# 21.01.2022 Token generation via metadata server (GCP)
 
 -   when running Cloud Run you usually have a deployer service account and a runner service account
 -   In a Cloud Run Instance you can hit the metadata service endpoint which will do some Google magic to authenticate via the runner service account
 -   Example for token generation: `http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token` (switch out default with the sa account you need)
 
-# 📅 20.01.2022 Why VPC connector's are needed in GCP?
+# 20.01.2022 Why VPC connector's are needed in GCP?
 
 -   When using a Shared VPC
     -   Chunked in different subnets (IP ranges) is tied to one region (e.g. europe-west-1)
@@ -6771,7 +6771,7 @@ Early and continuous deployment
     -   `all-traffic`: Sends all outbound traffic through the connector.
     -   `private-ranges-only`: Sends only traffic to internal addresses through the VPC connector.
 
-# 📅 17.01.2022 - 19.01 Systemischer Coach - Ausbildung (Modul 1)
+# 17.01.2022 - 19.01 Systemischer Coach - Ausbildung (Modul 1)
 
 -   Methoden für Team
     -   World Cafe
@@ -6786,13 +6786,13 @@ Early and continuous deployment
         -   Danach kann der Einzelne die Vermutungen richtigstellen
     -   Kreise/Felder auf Whiteboard aufzeichnen und jeder Einzelne ordnet sich dabei zu und man bespricht das
 
-# 📅 14.01.2022 team: E.L.M.O. - The remedy against rabbitwholes
+# 14.01.2022 team: E.L.M.O. - The remedy against rabbitwholes
 
 -   E.L.M.O. := \"Enough, Let's Move On\"
 -   You would quietly raise your hand and after a critical mass of people raising their hand the people stuck in their discussion would stop and we laugh alltogether (according to theory)
 -   For mobile: [meeting cards](https://mpetersen.github.io/meeting-cards/)
 
-# 📅 11.01.2022 CIDR ranges and IPV4
+# 11.01.2022 CIDR ranges and IPV4
 
 -   How to calculate the range ([link](https://erikberg.com/notes/networks.html))
     -   you have a start IP (255 is max before next block is flipping)
@@ -6804,14 +6804,14 @@ Early and continuous deployment
     -   the range you retrieve by incrementby that amount from the start IP
 -   also watch this *<https://www.youtube.com/watch?v=MmA0-978fSk>*
 
-# 📅 11.01.2022 Rules for ankifying business knowledge
+# 11.01.2022 Rules for ankifying business knowledge
 
 -   No frameworks releated knowledge
 -   No definitions of terms you will encounter frequently
 -   Only ankify after some time (the longer the better)
 -   Review on web, always pull changes on AnkiDroid after review
 
-# 📅 11.01.2022 Conway\'s Law (Presentation by James Lewis)
+# 11.01.2022 Conway\'s Law (Presentation by James Lewis)
 
 -   Basic idea of microservices: Splitting in domains
 -   The software architecture will mirror the communication of that organisation
@@ -6823,7 +6823,7 @@ Early and continuous deployment
     -   Netflix: Teams which have to communicate with each other also physically next to each
     -   Organize product lines through whole stack/layers required
 
-# 📅 11.01.2022 Versioning in multiple environments
+# 11.01.2022 Versioning in multiple environments
 
 -   Situation: When we publish a new version it can break other applications in the system (also potentially maintained by other teams). So by publishing we potentially block all environments, of all teams
 -   Possible solutions
@@ -6833,7 +6833,7 @@ Early and continuous deployment
     -   use contract testing to avoid structural breaking changes
 -   How to decide when to push out new versions to each environment?
 
-# 📅 11.01.2022 Multitenancy
+# 11.01.2022 Multitenancy
 
 -   Definition: Sharing a single application for multiple tenants (different markets/environments) ✔️
     -   you just provide a tentant id and then request is handled accordingly by application
@@ -6855,13 +6855,13 @@ Early and continuous deployment
 
     <p align="center"><img src="https://raw.githubusercontent.com/biocarl/img/9eb6460880f5e3ec606d7128be0db658f1ddccab/The-multi-tenancy-continuum.png" /></p>
 
-# 📅 11.01.2022 How to embed images in org files (rendered on Github)
+# 11.01.2022 How to embed images in org files (rendered on Github)
 
 -   Upload to img repo and then open image in new tab and ue the githubusercontent url
 
 #+html: <p align="center"><img src="https://raw.githubusercontent.com/biocarl/img/34edba9d7e71c0887534bf0310ba0c137f59afbc/gap_map.png" /></p>
 
-# 📅 10.01.2022 InfoSec: How to tackle dependency drift?
+# 10.01.2022 InfoSec: How to tackle dependency drift?
 
 -   dependency drift :=dependencies coming out of age slowly
 -   if static version numbers
@@ -6872,13 +6872,13 @@ Early and continuous deployment
 -   when having semantic versioning of dependencies you can for instance do automatic increasing of versions on patch versions but manual increment on minor or major versions
 -   incrementing major or minor versions is usually also needing a new feature set which does not necessary increase security and requires expertise and testing for verifying that no breakin changes occur
 
-# 📅 10.01.2022 InfoSec: For what to sign a Data processing Agreement (DPA)?
+# 10.01.2022 InfoSec: For what to sign a Data processing Agreement (DPA)?
 
 -   DPA: Data processing Agreements
     -   even potentially pairing with someone who shares PII data via screensharing has to be covered
     -   also as external consultancy this is required for the client because we can often easily elevate access and therefore access prod data (think of audit logs etc.)
 
-# 📅 10.01.2022 workshop: How to run a futurespective/ Learnings from minion futurespective
+# 10.01.2022 workshop: How to run a futurespective/ Learnings from minion futurespective
 
 -   Exercises
     -   Hopes and Concerns [- link](https://www.funretrospectives.com/hopes-and-concerns/)
@@ -6897,7 +6897,7 @@ Early and continuous deployment
                 -   what bad behaviours you catch yourself doing sometimes?
                 -   which positive behaviours would you practice more?
 
-# 📅 10.01.2022 Team: High-Performing Teams
+# 10.01.2022 Team: High-Performing Teams
 
 -   Warmup-Question: Tell us a story: What was the best team you were ever part of?
 -   Five Dysfunctions of a Team (Book) [link](https://www.youtube.com/watch?v=GCxct4CR-To)
@@ -6916,7 +6916,7 @@ Early and continuous deployment
 -   **Inattention to Results**: Not paying attention to results, at least not to the collective results. Everyone is just caring about themselves
     -   Action: Focus on collective results
 
-# 📅 06.01.2022 Spring: Declare a object instance as a bean
+# 06.01.2022 Spring: Declare a object instance as a bean
 
 ``` {.java}
 @Configuration
@@ -6928,7 +6928,7 @@ public class SomeConfig {
 }
 ```
 
-# 📅 06.01.2022 Spring: Learnings about Spring Dependencies
+# 06.01.2022 Spring: Learnings about Spring Dependencies
 
 -   You can use the [Dependency Management Plugin](https://docs.spring.io/dependency-management-plugin/docs/current/reference/html/)
 -   or import bom files with gradle 5 [link](https://docs.gradle.org/5.0/userguide/managing_transitive_dependencies.html#sec:bom_import)
@@ -6946,7 +6946,7 @@ dependencyManagement {
 }
 ```
 
-# 📅 06.01.2022 QA: Learnings about pact and contract testing
+# 06.01.2022 QA: Learnings about pact and contract testing
 
 -   usually you write consumer tests in form of Unit tests and from those a pact file (contract) is generated
 
@@ -6981,7 +6981,7 @@ dependencyManagement {
     -   when using a real instance you should think of snapshoting certain db states for quicker state setups
     -   pact does not recommend to run pact tests against a public API because you can only setup the data via that API, making it slow and cubersome (also to reset)
 
-# 📅 04.01.2022 Agile: Laws
+# 04.01.2022 Agile: Laws
 
 -   **Conway's Law**
     -   \"Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization\'s communication structure\"
@@ -7009,16 +7009,16 @@ dependencyManagement {
 -   Larmans' Law
 -   Parkinsons' Law
 
-# 📅 04.01.2022 Java: slf4j vs log4j vs logback
+# 04.01.2022 Java: slf4j vs log4j vs logback
 
 -   slf4j is a specficiation which logback is implementing
 -   Log4J is the predecessor of logback
 
-# 📅 04.01.2022 Weblogic 101
+# 04.01.2022 Weblogic 101
 
 -   Application server for Java EE applications
 
-# 📅 04.01.2022 Java EE 101
+# 04.01.2022 Java EE 101
 
 -   With Java EE you can easily scale because you can distribute the EJB\'s to different servers
 -   The EJB (Enterprise Java Bean)
@@ -7028,7 +7028,7 @@ dependencyManagement {
     -   `@Remote`: The bean implementation can run on a different server, in different jvm (vs `@Local`)
 -   `@Interceptors`: Implementing cross-cutting concerns like logging, auditing. Hooks into lifecycle and executes custom code like log when EJB is destroyed
 
-# 📅 04.01.2022 Workshop: How to design workshops?
+# 04.01.2022 Workshop: How to design workshops?
 
 -   Warmup-Question: What is the first thing that comes up when you hear about that topic?
 -   Present in the beginning what the outcomes of the workshop are
@@ -7041,7 +7041,7 @@ dependencyManagement {
     -   or this [svg generator](https://app.haikei.app/)
 -   When giving homework, usually if they are given to each person without a way of controlling the outcomes it is sometimes good to give them to a pair (so the likelyhood increases that one follows up) Example: \"Homework: Give a feedback to someone\" -\> Assign pairs to do this
 
-# 📅 18.12.2021 Team: Thinking about the team
+# 18.12.2021 Team: Thinking about the team
 
 -   Good list for online games - [link](https://www.flcc.edu/pdf/studentlife/OnlineBoardGames.pdf)
 -   General ideas of LEAN
@@ -7051,7 +7051,7 @@ dependencyManagement {
         -   Self-Organizing teams
     -   Subsets are Kanban, Scrum
 
-# 📅 18.12.2021 Anti-Corruption-Layer
+# 18.12.2021 Anti-Corruption-Layer
 
 -   [source](https://dev.to/asarnaout/the-anti-corruption-layer-pattern-pcd)
 -   If you want to integrate with a legacy system, but this legacy system does not fit with your newly defined domain model
@@ -7065,14 +7065,14 @@ dependencyManagement {
     -   Do not integrate with legacy system
     -   EAI system (enterprise application integration)
 
-# 📅 17.12.2021 Git amend change in commit which was not the last one
+# 17.12.2021 Git amend change in commit which was not the last one
 
 -   Step1: `_git rebase --interactive 'bbc643cd^'_` /hash of the commit which was before the desired change (note also the carret)
 -   Step2: Change from pick to edit for the commit you want to change
 -   Step3: Add to staging and do `git commit --amend --no-edit`
 -   Step4: Do the actual change and then do `git rebase --continue`
 
-# 📅 16.12.2021 Which team should take care of service x?
+# 16.12.2021 Which team should take care of service x?
 
 -   Responsiblity: Who introduces the service and therefore should own it?
 
@@ -7080,18 +7080,18 @@ vs
 
 -   Dependency: Which team can afford to be dependent on the other team? What happens if service x does down and other team is not available?
 
-# 📅 15.12.2021 Terms
+# 15.12.2021 Terms
 
 -   WADL: Web application description language: XML description of a REST service (e.g. like swagger in yaml/json)
 -   WSDL: WADL equilvalent for SOAP service
 -   `.xsd`: A schema for an `.xml` file
 
-# 📅 15.12.2021 Deactivate IntelliJ Bell Sound for vim emulation
+# 15.12.2021 Deactivate IntelliJ Bell Sound for vim emulation
 
 -   `set visualbell`
 -   `set noerrorbells`
 
-# 📅 14.12.2021 Unix routing and networking
+# 14.12.2021 Unix routing and networking
 
 -   Check if a certain port is open
     -   `telnet ip port`
@@ -7103,7 +7103,7 @@ vs
 -   If you want to map from one IP to another IP (`127.0.0.1`)
     -   `iptables -t nat -A OUTPUT -p all -d  192.168.101.101 -j DNAT --to-destination 127.0.0.1`
 
-# 📅 10.12.2021 Gradle: Lazy and eager configuration/creation of tasks
+# 10.12.2021 Gradle: Lazy and eager configuration/creation of tasks
 
 -   Usually all tasks are configured right from scratch (configuration phase)
 -   this can lead to issues if you only want to configure certain things when you actually execute a task
@@ -7112,7 +7112,7 @@ vs
 -   for an existing task you want to configure (only when executed)
     -   `tasks.named('bootRunLocal').configure{}`
 
-# 📅 08.12.2021 Learnings about liquibase
+# 08.12.2021 Learnings about liquibase
 
 -   `relativeToChangelogFile`: Allows you to reference other changeset relative to the parent changeset and not from classpath (needed e.g. when applying liquibase migrations from different contexts local and test)
 -   a changelog file allows you to group changes based on domain/table etc.
@@ -7120,23 +7120,23 @@ vs
 -   Liquibase allows for specifying contexts so that only specific changesets are executed in a certain environment
 -   You can also specify several activities (set of configurations) which can run one after another (see runList)
 
-# 📅 08.12.2021 Curl: Simple GET with basic auth header
+# 08.12.2021 Curl: Simple GET with basic auth header
 
 -   `curl -v  -H "Authorization: Basic (base64 username:pw)"`
 
-# 📅 07.12.2021 Bash: Reverse Search in Unix
+# 07.12.2021 Bash: Reverse Search in Unix
 
 -   Search: `CRTL` + `R`
 -   Cycle through results: `CRTL` + `R`
 
-# 📅 06.12.2021 Postgres: Grants in postgres
+# 06.12.2021 Postgres: Grants in postgres
 
 -   `GRANTDELETE ON ALL TABLES IN SCHEMA PUBLIC TO root;`
     -   Grants privileges only to existing objects
 -   `ALTER DEFAULT PRIVILEGES IN SCHEMA PUBLIC GRANT DELETE ON TABLES TO root;`
     -   Grants privileges only to future created objects
 
-# 📅 06.12.2021 Api: Two ways of Api-Design
+# 06.12.2021 Api: Two ways of Api-Design
 
 -   Two common approaches (see also REST vs RPC style - [link](https://blog.jscrambler.com/rpc-style-vs-rest-web-apis))
     -   REST ressource: `/accounts`
@@ -7145,7 +7145,7 @@ vs
     -   `/create_account (for posting)`
     -   `/accounts (GET)`
 
-# 📅 25.11.2021 InfoSec: Learnings about security
+# 25.11.2021 InfoSec: Learnings about security
 
 -   General rules
 -   Build with security in mind right from the start
@@ -7200,7 +7200,7 @@ vs
         -   group those approaches in parent goals and then try to enrich the constructed tree (adding child or sibling)
         -   in a final step you should think where in the tree you can apply possible mitigations (start from bottom up). What is in your controll and what not? (Principle: Defense in depth - defend in multiple layers)
 
-# 📅 25.11.2021 Pattern: Dealing with transactions in the world of microservices
+# 25.11.2021 Pattern: Dealing with transactions in the world of microservices
 
 -   Two-Phased Commits (2PC)
 -   not acid (usually only eventually consistent, each microservice locking, executing)
@@ -7220,17 +7220,17 @@ vs
     -   Central actor which is keeping track of the states (e.g. listening to a queue) and notifying which microservices have to perform which local transaction / fixing transaction
     -   Risk: Additional point of failure, requires new microservice to maintain
 
-# 📅 24.11.2021 Git: When you clone a repo you do not want to push back to
+# 24.11.2021 Git: When you clone a repo you do not want to push back to
 
 -   `git remote -v`: List remotes if a repo
 -   `git remote rm origin`: Remove remote of a repo
 
-# 📅 24.11.2021 Database modelling
+# 24.11.2021 Database modelling
 
 -   Logical/Relational (relationships, entities) vs. Physical (how it actually looks like with datatypes) model
 -   best picks for postgres: pgModeler, Moon Modeller
 
-# 📅 24.11.2021 UML: Tool for modelling sequence diagrams
+# 24.11.2021 UML: Tool for modelling sequence diagrams
 
 -   PlantUml (also with IntelliJ Plugin and can be embedded in Confluence)
 
@@ -7241,13 +7241,13 @@ Bob --> Alice: Gives ice cream
 @enduml
 ```
 
-# 📅 11.11.2021 IntelliJ: Make Maven work in IntelliJ
+# 11.11.2021 IntelliJ: Make Maven work in IntelliJ
 
 -   Look for crossed out POM, remove from ignored files list under gradle settings
 -   In Maven Window, find root project and do clean/install
 -   Right click on project folder maven\>generate sources helped to make annotations etc. working
 
-# 📅 09.11.2021 Team: Reflections and learnings about **feedback**
+# 09.11.2021 Team: Reflections and learnings about **feedback**
 
 -   **Feedback triggers**: When is it difficult to recieve feedback? (the Book \'Thanks for the Feedback\')
     -   Truth trigger: We feel that feedback is wrong, incomplete
@@ -7292,18 +7292,18 @@ Bob --> Alice: Gives ice cream
     -   Opportunity to evoke change: If you have some small irritations you never reflected on but then bring them into contact -\> thus making you more productive
 -   Instead of framing feedback as postive and negative, frame it as +/δ (for change)
 
-# 📅 05.11.2021 workshop: Ideas to retro
+# 05.11.2021 workshop: Ideas to retro
 
 -   Energizer: Find 10 common things as a team
 -   Brainstorming: Find Good, Improve, Adventure Time (crazy, audacious ideas - do this at this end)
 -   also celebrate good things (let people present the clusters)
 -   Hide some small reference on the Mural/Jam-Board people have to find (like Wimmelbild)
 
-# 📅 21.10.2021 Terms
+# 21.10.2021 Terms
 
 -   Anti-Corruption-Layer Pattern: Create a layer to protect your domain: e.g. Player domain (in the facade it interprets what a Player can mean in other domains e.g. football or baseball player behavior)
 
-# 📅 21.10.2021 microservice: Microservices 101
+# 21.10.2021 microservice: Microservices 101
 
 - Advantages
   - autonomous teams
@@ -7331,7 +7331,7 @@ Bob --> Alice: Gives ice cream
   - Parallel Run: Can be used in combination with the ones above: calling both implementations at the same time. Usually you have a validation to check if both implemenations work in the same way
   - Change Data Capture Pattern: Listen to database changes with microservices to add additional functionality
 
-# 📅 21.10.2021 Networking 101
+# 21.10.2021 Networking 101
 
 -   **VPC**: Virtual private Cloud - Pool of shared ressources
     -   in Google this is a global construct
@@ -7379,16 +7379,16 @@ Bob --> Alice: Gives ice cream
     -   a route consists of a single destination prefix in CIDR format and a single next hop
     -   routing table stores those routes (sometimes also with distance etc.)
 
-# 📅 19.10.2021 Unix: Insert clipboard into file without editor
+# 19.10.2021 Unix: Insert clipboard into file without editor
 
 -   `cat > out.txt`, will open input mode
 -   insert clipboard and then `CRTL + C`
 
-# 📅 07.10.2021 Data Engineering
+# 07.10.2021 Data Engineering
 
 -   **Shuffling**: Usually data is distributed, meaning data is in different kinds of places. To do an operation like GroupBy they have to reside in on place. The process of moving/centralizing data is called shuffling. ([source](https://www.coursera.org/lecture/scala-spark-big-data/shuffling-what-it-is-and-why-its-important-bT1YR))
 
-# 📅 05.10.2021 How problems are solved (debug,fix,issues)
+# 05.10.2021 How problems are solved (debug,fix,issues)
 
 -   docker compose: run services seperately and then try things out from the container itself
     -   `docker-compose up SERVICE_A`
@@ -7402,20 +7402,20 @@ Bob --> Alice: Gives ice cream
 -   Use debugger, jump to exception
 -   Invest much time in reproducing issue locally first
 
-# 📅 05.10.2021 Docker Compose: Commands
+# 05.10.2021 Docker Compose: Commands
 
 -   if you want to prune volumes with docker-compose: `docker-compose down --volumes`
 -   if you want to build with docker-compose: `docker-compose up --build`
 -   if you want to copy file into container: `docker compose cp fileInHost serviceName:targetFile`
 
-# 📅 05.10.2021 Docker: Commands
+# 05.10.2021 Docker: Commands
 
 -   `docker build --tag my_new_image .` : build new image locally, run this in the same folder where Dockerfile is located
 -   `docker run -it <image> /bin/bashc` : create container and shell in
 -   `docker run -p <outer>:<inner> <tag>`: With port mapping
 -   `docker-compose exec service-name-in-docker-compose sh`: shell into existing container via service name
 
-# 📅 01.10.2021 Postgres: Commands
+# 01.10.2021 Postgres: Commands
 
 -   `\list` or `\l`: list all databases
 -   `\c <db name>`: connect to a certain database
@@ -7423,11 +7423,11 @@ Bob --> Alice: Gives ice cream
 -   `\dt *.`: list all tables in the current database regardless your `search_path`
 -   `SET search_path TO myschema,public;`: Set schema for session
 
-# 📅 01.10.2021 Unix: Fork commands and put tasks into foreground again
+# 01.10.2021 Unix: Fork commands and put tasks into foreground again
 
 -   fork command with `&` and see background tasks with `jobs` and get task into foreground with `fg`
 
-# 📅 01.10.2021 Windows: Avoid that windows goes into hibernate/sleep mode
+# 01.10.2021 Windows: Avoid that windows goes into hibernate/sleep mode
 
 ``` {.powershell}
 param($minutes = 60)
@@ -7439,12 +7439,12 @@ for ($i = 0; $i -lt $minutes; $i++) {
 }
 ```
 
-# 📅 01.10.2021 Docker: Prune volumes
+# 01.10.2021 Docker: Prune volumes
 
 -   sometimes docker [caches ressources even across projects](https://github.com/pydanny/cookiecutter-django/issues/1678), if there is some wired behavior you should prune the volumes
 -   `docker system prune -a --volumes --force` (don\'t do this in prod)
 
-# 📅 22.09.2021 Terraform: Basics
+# 22.09.2021 Terraform: Basics
 
 -   if resource is not updated you can `terraform taint` the ressource (get address by `terraform state list`)
 -   sometimes you get a state lock - to resolve this do `terraform force-unlock ID`
@@ -7453,23 +7453,23 @@ for ($i = 0; $i -lt $minutes; $i++) {
     -   resource~type~.identifier could be for example: google~pubsubtopic~.projects/{{project}}/topics/{{name}}
 -   `moved {}` block helps you to rename a ressource (or move to a module) without recreating the resource
 
-# 📅 17.09.2021 Fun: gitmoji
+# 17.09.2021 Fun: gitmoji
 
 -   there is some conventions to make commit messages mor pretty with emojis - [link](https://gitmoji.dev/)
 
-# 📅 16.09.2021 Database: Terms
+# 16.09.2021 Database: Terms
 
 -   Surrogate key, almost like a primary key
 
-# 📅 14.09.2021 Windows: Lock/Unlock F1-12 keys
+# 14.09.2021 Windows: Lock/Unlock F1-12 keys
 
 -   Press ESC + Fn to toggle
 
-# 📅 10.09.2021 Consulting: Terms
+# 10.09.2021 Consulting: Terms
 
 -   SME: Subject matter experts
 
-# 📅 09.09.2021 Terms
+# 09.09.2021 Terms
 
 -   lift & shift: Move existing on premise applications to the cloud without modifying them
 -   Roll Back the Database or Fix Forward?
@@ -7477,13 +7477,13 @@ for ($i = 0; $i -lt $minutes; $i++) {
     -   Fix forward is a lot quicker
     -   always ensure that migrationns
 
-# 📅 08.09.2021 Python: Quick start with isolated environment
+# 08.09.2021 Python: Quick start with isolated environment
 
 -   python3 -m venv venv && source venv/bin/activate
 -   pip install -r requirements.txt
 -   Use debugger: import pdb; pdb.set~trace~()
 
-# 📅 08.09.2021 pact: How to do contract testing?
+# 08.09.2021 pact: How to do contract testing?
 
 -   [source](https://www.youtube.com/watch?v=U05q0zJsKsU&list=PLwy9Bnco-IpfZ72VQ7hce8GicVZs7nm0i&index=1)
 -   In a microservice context integration is hard
@@ -7497,7 +7497,7 @@ for ($i = 0; $i -lt $minutes; $i++) {
     -   Problem: When updating the spec to v2 - a lot of consumers are breaking now
 -   Better solution: Consumer-driven contracts
 
-# 📅 07.09.2021 Pattern: Outbox pattern
+# 07.09.2021 Pattern: Outbox pattern
 
 -   outbox pattern := Create events table which is then published as events e.g. with CDC
     -   also called Transactional outbox pattern
@@ -7510,7 +7510,7 @@ for ($i = 0; $i -lt $minutes; $i++) {
         -   a lot of consumers to take care off
         -   service can\'t function without the other services (latency is determined by slowest dependent)
 
-# 📅 07.09.2021 Learnings
+# 07.09.2021 Learnings
 
 -   Reconciliations run: Check if two data sources are in sync
 -   staging tables: containing business data, prepared for being loaded by the application (cleaning/modification beforehand), only temporary
@@ -7525,17 +7525,17 @@ for ($i = 0; $i -lt $minutes; $i++) {
         -   version numbers
         -   log scanners which emit detected transactions as a change event
 
-# 📅 30.08.2021 GCP CLI
+# 30.08.2021 GCP CLI
 
 -   Showing current running builds: `gcloud builds list --ongoing`
 
-# 📅 30.08.2021 Monitoring
+# 30.08.2021 Monitoring
 
 -   Micrometer: metrics collection facade, like SLF4J but for metrics
 -   Spring Boot Actuator: provides common metrics and autoconfiguration
 -   REST vs RPC?
 
-# 📅 25.08.2021 Contract-First vs Code-First
+# 25.08.2021 Contract-First vs Code-First
 
 -   Contract-First
     -   Autogenerate DTO from existing Open-Api definition
@@ -7549,7 +7549,7 @@ for ($i = 0; $i -lt $minutes; $i++) {
     -   Generate Open-Api defintion from code
     -   (+) The agile way. Specifying it is part of the processes and not some final version (as in contract-first), less work
 
-# 📅 19.08.2021 Under the Covers of Spring Boot
+# 19.08.2021 Under the Covers of Spring Boot
 
 -   [source](https://www.youtube.com/watch?v=jDchAEHIht0)
 -   Two phases of scanning
@@ -7561,7 +7561,7 @@ for ($i = 0; $i -lt $minutes; $i++) {
         -   `TemporaryFolder`: Creates and deletes a temp folder for one test
         -   `OutputCapture`: Captures stdout and allows to do assertions on it
 
-# 📅 16.08.2021 Security
+# 16.08.2021 Security
 -   oAuth2
     -   original goal: allow 3rd party applications to access users (e.g. google) data without having their password, it now rediects to the original service (e.g. google) which then returns a access token
     -   further advantage: also all first party apps are more secure because there does exist only one oauth server which has to be secured e.g. gmail login redirects to accounts.google. Also easier to refactor (e.g. 2f-auth) because there is only one server
@@ -7574,7 +7574,7 @@ for ($i = 0; $i -lt $minutes; $i++) {
         -   Spring security needs information what to check for authentication
         -   your Database and User representation is highly specific, a `UserDetailsService` abstracts this and only returns a `UserDetails` object
 
-# 📅 12.08.2021 spring: Common data access abstractions
+# 12.08.2021 spring: Common data access abstractions
 - **JDBC**: All Java persistence is built on this. Lowest level
 - **JPA**: Agnostic way to do Java persistence without coupling your clients to Hibernate, etc.
 - **Hibernate**: object-relational mapping solution for Java environment
@@ -7584,12 +7584,12 @@ for ($i = 0; $i -lt $minutes; $i++) {
   - Is never a POJO since usually a framework provides the external system side formatting, e.g. @Entity (for db), @JsonProperty (for REST/JSON response)
   - Decouple persistence models from API models: No messy attributes as @JSONIgnore, Mixing with persistence annotations, More difficult to create a Swagger out of it because you do not want to annotate your internal data model for the API description [source](https://stackoverflow.com/a/36175349)
 
-# 📅 05.08.2021 terraform: More Terraform concepts
+# 05.08.2021 terraform: More Terraform concepts
 - `locals`: like actual variables to resuse the same expression in the same module
 - first you need to enable certain api\'s for your project before you can create the ressources (`depends_on` needed)
 - `null_ressource`: A block of coded executed on a trigger or depends on statement
 
-# 📅 04.08.2021 gcp: Popular services
+# 04.08.2021 gcp: Popular services
 - source: [Google Glossary](https://cloud.google.com/terms/services)
 - "Cloud Source Repositories": provides git version controll
 - "Cloud Build": built environment and publish artifact somewhere
@@ -7598,7 +7598,7 @@ for ($i = 0; $i -lt $minutes; $i++) {
 - "Cloud Ressource Manager": Hierachical origanization of your Cloud resources, allows access controll and configuration settings
 - "Service Networking API": Set's up subnetworks, vpc's, DNS-Record Sets
 
-# 📅 04.08.2021 terraform: Terraform 101
+# 04.08.2021 terraform: Terraform 101
 
 - General idea
 - automate manage your infrastructure: platform and services
@@ -7631,7 +7631,7 @@ for ($i = 0; $i -lt $minutes; $i++) {
 - `backend`: Defines e.g. where the state is stored (allowing colloboration)
 - `output`: Module exporting data (can be shown to user or used by other module)
 
-# 📅 29.06.2021 mockito: How to mock deeply nested object?
+# 29.06.2021 mockito: How to mock deeply nested object?
 - Verification only works with the last mock in the chain
 - Mock deeply nested object: `RETURNS_DEEP_STUPS`
 ```java
@@ -7639,20 +7639,20 @@ for ($i = 0; $i -lt $minutes; $i++) {
 Object objectMock;
 ```
 
-# 📅 29.06.2021 team: Agile routines I like
+# 29.06.2021 team: Agile routines I like
 -   Lake of feelings in [english](https://github.com/biocarl/img/blob/master/Lake%20of%20Feelings-english.png) and [german](https://github.com/biocarl/img/blob/master/Lake%20of%20Feelings.png)
 -   Inbox
 -   Walking the board
 -   Sign-Ups
 
-# 📅 29.06.2021 workshop: retro: Tipps for facilitating retros's
+# 29.06.2021 workshop: retro: Tipps for facilitating retros's
 -   Let people room to speak
 -   Don't ask if it is ok what you are doing (you are the facilitator)
 -   Don't ask closed question
 -   Make people speak as soon as possible
 -   Do less items
 
-# 📅 29.06.2021 intellij: Shortcuts
+# 29.06.2021 intellij: Shortcuts
 -   Use F2 to navigate to next error (Fn + f2)
 -   Command E: Recent files
 -   2 x CTRL: Run script from anywhere
@@ -7665,17 +7665,17 @@ Object objectMock;
     -   <Control G>: highlight next match as multiple cursors
     -   <Control + Command + G>: Highlight them all at once
 
-# 📅 29.06.2021 vim: Folding commands
+# 29.06.2021 vim: Folding commands
 -   close single fold: `zc`
 -   open single fold: `zo`
 -   close all folds: `zR`
 -   open all folds: `zM`
 
-# 📅 29.06.2021 Spring: Actuator: How to read out the heap from the jvm?
+# 29.06.2021 Spring: Actuator: How to read out the heap from the jvm?
 - Available heap: `http://localhost:7979/metrics/jvm.memory.max?tag=area:heap`
 - Used heap space: `http://localhost:7979/metrics/jvm.memory.used?tag=area:heap`
 
-# 📅 29.06.2021 knowledge: How to find things aka. Data acquisition
+# 29.06.2021 knowledge: How to find things aka. Data acquisition
 -   Cloudsearch
 -   Jira tickets from other teams
 -   Company Documentation (tech, confluence,...)
@@ -7683,31 +7683,31 @@ Object objectMock;
 -   Chats/G-Groups
 -   Always return to the initial onboarding documents - you might miss things
 
-# 📅 29.06.2021 jira: How to format text
+# 29.06.2021 jira: How to format text
 -   Jira-Formatting: [link1](https://jira.atlassian.com/secure/WikiRendererHelpAction.jspa?section=advanced) and [link2](https://jira.atlassian.com/secure/WikiRendererHelpAction.jspa?section=advanced)
 
-# 📅 29.06.2021 git: Useful bash/zsh alias
+# 29.06.2021 git: Useful bash/zsh alias
 -   git push upstream: `gpsup`
 -   git checkout -b: `gcb`
 -   Git commands for undo changes
 -   git reset --hard
 -   git clean -f
 
-# 📅 29.06.2021 unix: Edit and execute last command
+# 29.06.2021 unix: Edit and execute last command
 -   edit and execute last command: `fc`
 
-# 📅 29.06.2021 docker: Useful docker commands
+# 29.06.2021 docker: Useful docker commands
 -   List CPU's: `docker ps -q | xargs  docker stats --no-stream`
 -   Run local docker container: `docker run --publish 8090:8080 --env SPRING_PROFILES_ACTIVE=local IMAGE`
 -   Delete all docker containers originating from one image: `docker rm -f $(docker ps -a -q  --filter ancestor=postgres:13)`
 -   delete all docker containers: `docker rm -f $(docker ps -a -q)`
 
-# 📅 29.06.2021 kubectl: Useful kubectl commands
+# 29.06.2021 kubectl: Useful kubectl commands
 -   list the logs of a previously stopped pod: `kubectl logs --previous`
 -   do something with a set of grep'ed pods: `kubectl get pods | grep shard |  cut -d ' ' -f1 | xargs echo`
 -   even better, you can use `up` ([github](https://github.com/akavel/up)), to check the results
 
-# 📅 29.06.2021 postgres: Useful postgres commands
+# 29.06.2021 postgres: Useful postgres commands
 -   Show foreign tables and foreign servers: `\des+` and `\dE[S+]`
 -   where logs are stored: `SHOW log_directory;`
 -   Make a long running query: `select pg_sleep(5 * 60);`
@@ -7715,7 +7715,7 @@ Object objectMock;
 -   Sample data (for not to big table): 2. `COPY  (select * from table ORDER BY random() LIMIT 10000) TO '/home/postgres/export_10k.csv' CSV HEADER;`
 -   List indexes: `select * from pg_indexes where table not like 'pg%';`
 
-# 📅 29.06.2021 postgres: Sharding with fdw and pl-proxy
+# 29.06.2021 postgres: Sharding with fdw and pl-proxy
 -   fdw does not parallelize shard access
 -   uses flyway placeholders (via env variables or setting placeholders via fluid config)
 
@@ -7754,17 +7754,17 @@ SELECT name, id FROM table WHERE name = p_name;
 $$ LANGUAGE plproxy;
 ```
 
-# 📅 29.06.2021 kubernetes: You can patch a deployment and also inject spring variables like so
+# 29.06.2021 kubernetes: You can patch a deployment and also inject spring variables like so
 -   [source](https://github.com/spring-projects/spring-boot/wiki/Relaxed-Binding-2.0#lists-1)
 - `kubectl patch deployment $DEPLOYMENT --patch "$(cat sharding-patch.yaml)"`
 
-# 📅 25.06.2021 docker: Change local host reference to maschine host in docker image
+# 25.06.2021 docker: Change local host reference to maschine host in docker image
 - `docker exec -u 0 $CONTAINER /bin/sh -c 'sed "s/127.0.0.1/$(dig +short host.docker.internal)/g" /etc/hosts > tmp.txt && cat tmp.txt > /etc/hosts'`
 
-# 📅 11.06.2021 git: Show previous stashes
+# 11.06.2021 git: Show previous stashes
 - `git stash show -p stash@{3}`
 
-# 📅 11.06.2021 java: Collectors and teeing operator
+# 11.06.2021 java: Collectors and teeing operator
 -   Combine two collectors
 ``` {.python}
 HashMap<String, Employee> result = employeeList.stream().collect( 
@@ -7780,22 +7780,22 @@ HashMap<String, Employee> result = employeeList.stream().collect(
                         ));
 ```
 
-# 📅 11.06.2021 postgres: How to speed up index creation?
+# 11.06.2021 postgres: How to speed up index creation?
 -   Speed up index creation and maintenance work related processes
 `SET maintenance_work_mem TO '1000 MB';` `SET max_parallel_maintenance_workers TO 5;`
 
-# 📅 11.06.2021 kubernetes: Useful commands
+# 11.06.2021 kubernetes: Useful commands
 -   Shell into db
 `kubectl exec -it podname bash` `psql -U postgres -d db_name` // -c \"Direct string\" and -f \"Load from file\"
 -   Edit deployment files in prod
 `kubectl edit deployment DEPLOYMENT_ID` Sometimes needed `kubectl rollout restart deployment DEPLOYMENT_ID`
 
-# 📅 11.06.2021 postgres: What is one disadvantage of using partitioning?
+# 11.06.2021 postgres: What is one disadvantage of using partitioning?
 -   if a lot will impact query planner performance (over 500)
 -   there are not global unique constraints, only uniqueness in a partition can be guaranteed
 -   [Course](https://www.udemy.com/course/postgresql-high-performance-tuning-guide/) you want to take
 
-# 📅 11.06.2021 GSuite short links
+# 11.06.2021 GSuite short links
 -   Docs \>\> create and collaborate on documents
 `docs.new | doc.new | document.new`
 -   Sheets \>\> create and collaborate on spreadsheets
@@ -7817,7 +7817,7 @@ HashMap<String, Employee> result = employeeList.stream().collect(
 -   Keep \>\> create, edit, and share notes
 `keep.new`
 
-# 📅 30.04.2021 postgres: How to use Postgres EXPLAIN
+# 30.04.2021 postgres: How to use Postgres EXPLAIN
 
 -   What it is
 -   executed plan generated by the optimizer
@@ -7827,12 +7827,12 @@ HashMap<String, Employee> result = employeeList.stream().collect(
 -   `VERBOSE`: Print each step in the execution plan
 -   `SETTINGS`: Print all performance-relevant parameters which are different from their output
 
-# 📅 24.03.2021 postgres: Postgres Performance Optimization
+# 24.03.2021 postgres: Postgres Performance Optimization
 
 -   Tablespaces := Are the way to tell the Postgres server where to place the physical files for SQL objects.
 -   Partitoning your table is also good since you can deploy "multiple autovacuum workers on the same logical table"
 
-# 📅 16.03.2021 postgres: Roadmap for sharding
+# 16.03.2021 postgres: Roadmap for sharding
 
 -   [source](https://www.youtube.com/watch?v=C4GJAjUcAtg)
 -   Approaches
@@ -7846,7 +7846,7 @@ HashMap<String, Employee> result = employeeList.stream().collect(
 -   Streaming replication
     -   Each shard will have replicated tables from other shards (shardman us doing this)
 
-# 📅 09.03.2021 tracing: Basics of distributed tracing
+# 09.03.2021 tracing: Basics of distributed tracing
 -   Why?
   -   increasingly more distributed infrastructures
   -   microservices in isolation are easy to manage and understand but complexity arises with interaction with its environment (distributed computing)
@@ -7872,7 +7872,7 @@ HashMap<String, Employee> result = employeeList.stream().collect(
 -   **ingress operations**: the first operations handling external requests from outside that service (starting out a trace)
 -   **egress operations**: are those operations that call out to external services (ending the trace of a single service)
 
-# 📅 25.02.2021 postgres: General concepts
+# 25.02.2021 postgres: General concepts
 
 -   Views := A named query, usually combines several base tables but does not store extra data (vs materialized view)
   -   useful to wrap complex queries
@@ -7883,7 +7883,7 @@ HashMap<String, Employee> result = employeeList.stream().collect(
 -   Elasticity := Describes the flexibility how a distributed database can adapt to changes
   -   changes could be adding/removing nodes or data models (which is rather fix for relational databases)
 
-# 📅 23.02.2021 Sharding and Foreign Data Wrapper in Postgres
+# 23.02.2021 Sharding and Foreign Data Wrapper in Postgres
 
 -   Sharding is just a view to a external table, but looks like a local table
 -   Parameters required:
@@ -7924,7 +7924,7 @@ HashMap<String, Employee> result = employeeList.stream().collect(
     -   about a [elastic postgres solution](https://swarm64.com/post/scaling-elastic-postgres-cluster/)
     -   from gitlab [blog](https://about.gitlab.com/handbook/engineering/development/enablement/database/doc/fdw-sharding.html)
 
-# 📅 16.02.2021 postgres: Sharding and data structures
+# 16.02.2021 postgres: Sharding and data structures
 
 -   Table scans
   -   INDEX SCAN: Go over index b-tree and afterwards potentially over heap if not available in non-key columns. Still can be quite expensive since fetching from Heap is a random access operation (which seq scan is not)
@@ -7948,14 +7948,14 @@ HashMap<String, Employee> result = employeeList.stream().collect(
 -   Re-Sharding is very complicated (because all client has to adapt when you have application layer sharding)
 -   YouTube has introduced a service layer before it vitess.io
 
-# 📅 15.02.2021 postgres: Performance considerations
+# 15.02.2021 postgres: Performance considerations
 -   You don\'t need heap fetches if you just select the index (super fast but useless)
 -   Always avoid full table scans
 -   For looking at the details of a query always do explain analyze QUERY
 -   LIKE statements will always trigger a full select because b-tree can\'t be scanned on partial string
 -   key column: the index itself, non-key column: Include the value in the index itself so that you don\'t have to jump to the location of the whole row
 
-# 📅 23.10.2020 mongodb: MongoDb 101
+# 23.10.2020 mongodb: MongoDb 101
 
 -   Setting up mongo db locally
     -   docker pull mongo
@@ -7969,15 +7969,15 @@ HashMap<String, Employee> result = employeeList.stream().collect(
     -   show dbs
     -   use local
 
-# 📅 23.10.2020 queues: Deliver at least once principle
+# 23.10.2020 queues: Deliver at least once principle
 
 -   Messages emmited can be duplicated
 
-# 📅 23.10.2020 queues: Dead letter queue
+# 23.10.2020 queues: Dead letter queue
 
 -   Store messages which are not valid in a separate place while allowing to the main queue to continue. Usually messages on a dlq are not retried
 
-# 📅 09.10.2020 pandas: Rolling Window
+# 09.10.2020 pandas: Rolling Window
 
 -   Do a rolling window which is vectorized
 
@@ -7991,7 +7991,7 @@ df["result"] = (
 )
 ```
 
-# 📅 09.10.2020 pandas: Melting
+# 09.10.2020 pandas: Melting
 
 -   Convert columns into row values
 
@@ -8000,7 +8000,7 @@ pd.melt(df, id_vars=["week"], value_name="items", var_name="country")
 # id_vars: variables which stay as such
 ```
 
-# 📅 09.10.2020 bash: A bash script for running functions
+# 09.10.2020 bash: A bash script for running functions
 
 -   Source: @emilyagras
 -   bash script.sh run flag
@@ -8039,7 +8039,7 @@ fi
 
 ```
 
-# 📅 07.10.2020 vim: Use vim in unix pipe to do linewise operations
+# 07.10.2020 vim: Use vim in unix pipe to do linewise operations
 
 ``` {.bash}
 #vim.sh
@@ -8078,7 +8078,7 @@ done
 '<,'>!./vim g/if/norm I---
 ```
 
-# 📅 01.09.2020 pandas: Pandas merge and relational algebra
+# 01.09.2020 pandas: Pandas merge and relational algebra
 
 -   `on`: the column names to use for alligning the rows (has to be in left/right df)
 -   `left_on/right_on`: as above but to use if they are different
@@ -8093,12 +8093,12 @@ done
 -   `suffixes`: Overlapping columns which are not part of the keys are suffixed (tupel for left and right)
 -   if there are non-uniqs on both sides it results in a cartesian product of both
 
-# 📅 01.09.2020 data: Tidy Data
+# 01.09.2020 data: Tidy Data
 
 -   Denotes the concept of having a data matrix whereas each row is a observation and each column a variable and each cell a value.
 -   Using the format makes column-wise calculations and combining data much easier
 
-# 📅 01.09.2020 pandas: Cookbook examples
+# 01.09.2020 pandas: Cookbook examples
 
 ``` {.python}
 # If condition matches assign 555 to the columns BBB, CCC
@@ -8115,7 +8115,7 @@ categories = {1: 'Alpha', 2: 'Beta', 3: 'Charlie'}
 df[new_cols] = df[source_cols].applymap(categories.get)
 ```
 
-# 📅 09.08.2020 pandas: Working with data frames
+# 09.08.2020 pandas: Working with data frames
 
 -   When you want to operate on a bunch values in a series you can use this notation
 -   It seems to be a shorthand for apply
@@ -8127,12 +8127,12 @@ df.columns.str.replace(' ','_') # Returns a series with updated column names (yo
 df.column1.str.contains("Hallo") # Returns a series of bools which then can be used as a mask
 ```
 
-# 📅 09.08.2020 pandas: Convert a catamorphic function to a homomorphic one
+# 09.08.2020 pandas: Convert a catamorphic function to a homomorphic one
 
 -   A function like `sum` acts as aggregator, if you want to maintain structure you can call the function like `transform('sum')` so it will pad cells with the same result
 -   Very useful if you do something like `orders.groupby('orderid').itemprice.transform('sum')`, the result will have the same length as orders
 
-# 📅 08.08.2020 python: Use named subgroups and go functional in python
+# 08.08.2020 python: Use named subgroups and go functional in python
 
 -   By naminging subgroups \`(?P\<name\>+̣)\` you can return a \`groupdict\` containing \<name,match\> pairs.
 
@@ -8170,20 +8170,20 @@ list(map(lambda line: spec.match(line).groupdict(),
   'english': 'old variant of 攜|携[xie2]'}]
 ```
 
-# 📅 08.07.2020 clojure: Use merge-with for conflicting hash-map merges
+# 08.07.2020 clojure: Use merge-with for conflicting hash-map merges
 
 ``` {.clojure}
 (merge-with + {:a 1  :b 2} {:a 1  :b 2 :c 3})   
 ;; output {:c 3, :a 2, :b 4}
 ```
 
-# 📅 03.06.2020 clojure: Operate on only one of the key-value pairs in a hash-map
+# 03.06.2020 clojure: Operate on only one of the key-value pairs in a hash-map
 
 ``` {.clojure}
 (reduce-kv #(assoc %1 %2 (flatten %3)) {})
 ```
 
-# 📅 02.06.2020 clojure: Use matching groups when replacing with regex
+# 02.06.2020 clojure: Use matching groups when replacing with regex
 
 ``` {.clojure}
 (str/replace % #"\{:([^\s]+)[^{^}]*\}" "<$1>")
@@ -8193,12 +8193,12 @@ list(map(lambda line: spec.match(line).groupdict(),
 ;; This is very useful if you want to quote a xml element and at the same time not
 ```
 
-# 📅 28.05.2020 chrome: Make content of any website editable
+# 28.05.2020 chrome: Make content of any website editable
 
 -   `document.designMode = 'on'.`
 -   This allows you to edit content of a website directly in the view without manipulating the dom tree via for instance the Chrome Developer Tools
 
-# 📅 16.05.2020 unix: The zsh shell allows you to write to your own prompt!
+# 16.05.2020 unix: The zsh shell allows you to write to your own prompt!
 
 -   `print -z echo Hello world`
 -   I can see how this becomes very useful if you load syntax files and edit them before running them
@@ -8216,7 +8216,7 @@ $ edit syntax
 
 -   You can also try to reproduce this in other shells - [see stackoverflow ](https://unix.stackexchange.com/questions/213799/can-bash-write-to-its-own-input-stream/213821#213821)
 
-# 📅 15.05.2020 english: Name of modifier keys
+# 15.05.2020 english: Name of modifier keys
 
 -   `Strg` (Steuerungstaste) 🇩🇪 == `Ctrl` (Control-Taste) 🇨🇭/🇬🇧
 -   `⇧` == (Umschalttaste) 🇩🇪 == (Shift) 🇬🇧
@@ -8225,12 +8225,12 @@ $ edit syntax
 -   `↹` == (Tabulatortaste) 🇩🇪 == (Tab key) 🇬🇧
 -   `Fn` == (Fn-Taste) 🇩🇪 == (Fn key) 🇬🇧
 
-# 📅 15.05.2020 english: parameter vs argument
+# 15.05.2020 english: parameter vs argument
 
 -   parameter := is a variable in a method definition
 -   argument := is the data you pass into the method\'s parameters when calling the method
 
-# 📅 15.05.2020 english: Names of english symbols
+# 15.05.2020 english: Names of english symbols
 
 -   \"round brackets\" `( )`
 -   \"square brackets\" or \"box brackets\" `[ ]`
@@ -8253,11 +8253,11 @@ $ edit syntax
 -   **\<** sometimes less than
 -   **.** period, dot, full stop
 
-# 📅 14.05.2020 git: Initalize your `.gitignore`
+# 14.05.2020 git: Initalize your `.gitignore`
 
 -   `ls -a . >> .gitignore` Why did I take so long to start doing this? 🤔
 
-# 📅 13.05.2020 unix: Several commands
+# 13.05.2020 unix: Several commands
 
 -   (textutil) Resolve wired encoding issues of text/html files
 -   `textutil -convert txt *.html` batch processing (OSX)
@@ -8271,7 +8271,7 @@ $ edit syntax
 -   (vim) Show whitespace characters in vim
 -   Toggle with `:set nolist//list`
 
-# 📅 12.05.2020 unix: More commands
+# 12.05.2020 unix: More commands
 
 -   (awk) Group matches inside gawk (this does not work in the mac version)
 -   `brew install gawk`
@@ -8279,7 +8279,7 @@ $ edit syntax
 -   (sed) A how to split sentences in seperate lines
 -   `sed 's/[.!?]  */&\n/g' file.txt` where the `&` is the back reference to the match
 
-# 📅 11.05.2020 unix: awk commands
+# 11.05.2020 unix: awk commands
 
 -   (awk) Basic commands
 -   1.  Basic structure: `pattern {action}`
@@ -8310,15 +8310,15 @@ $ edit syntax
 -   `grep /pattern/ file.txt` == `awk '/pattern/'`
 -   `nl file.txt` == `awk 'print NR,$0'`
 
-# 📅 10.05.2020 vim: Use surround.vim (default in evil-mode)
+# 10.05.2020 vim: Use surround.vim (default in evil-mode)
 - In order to swap brackets or any flanking symbol (e.g. \" \", {}, \[\]) press `cs` `+` **(** for **(** as flanking symbol.
 
-# 📅 07.05.2020 trivia: Linguistics 101
+# 07.05.2020 trivia: Linguistics 101
 - For some side project of mine I need to learn some specifics how syntax and semantics of a sentence play together.
 -   Transitivity of verbs := A intransitive verb does not allow a direct object. Whereas a transitive verb requires at least one object.
 -   Topic-prominent language := A language which is syntactically structured in a way so that it focus on the topic (the given, old information), followed by a comment (for instance how that changes into a new on information)
 
-# 📅 06.05.2020 clojure: Implement atom? for clj/cljs using reader conditionals
+# 06.05.2020 clojure: Implement atom? for clj/cljs using reader conditionals
 - Some language features are not implemented the same way in clojure and clojurescript. To use the same code base for both one might use reader conditionals.
 
 ``` {.clojure}
@@ -8332,35 +8332,35 @@ $ edit syntax
 
 **Bonus:** To make this work you need to change the file extension from `.clj/.cljs` to `.cljc`
 
-# 📅 05.05.2020 Currying vs partial application
+# 05.05.2020 Currying vs partial application
 - **Partial application** means creating an intermediate function by already defining part of its arguments **Currying** means breaking down a function in a bunch of intermediate functions which take only one argument.
 - *Partial application is when you curry a function, and use some, but not all of the resulting functions.* \~ [SpoonMaiser](https://stackoverflow.com/questions/218025/what-is-the-difference-between-currying-and-partial-application#comment87580_218055)
 
-# 📅 04.05.2020 vim: Start using the jump list
+# 04.05.2020 vim: Start using the jump list
 - This is a huge productivity booster: Use `Ctrl-o` and `Ctrl-i` (in command mode) to move forwards/backwards through the jumplist. The jumplist is maintained project wide!
 - With `:jumps` you can see where you are currently located in the jumplist. The relative number `N` of jumps allows you to go directly to a jump of interest `N` `Ctrl-o`.
 - **Bonus:** If you are using this in Spacemacs a split window will open with the jump list and you can just click on the item - maintaining the split layout. I love this 💚
 
-# 📅 03.05.2020 Clojure: How to use quote and break out of it (unquote-splicing).
+# 03.05.2020 Clojure: How to use quote and break out of it (unquote-splicing).
 - Super useful when you want to write clojure/clojurescript into a file.
 
 ``` {.clojure}
 (eval (read-string (str `(+ ~@(take 10 (range)))))) ;; 45
 ```
 
-# 📅 02.05.2020 unix: Set readline to vim mode
+# 02.05.2020 unix: Set readline to vim mode
 
 ``` {.bash}
 set -o vim
 set -o emacs (default)
 ```
 
-# 📅 03.03.2020 intellij: Debugging 101
+# 03.03.2020 intellij: Debugging 101
 
 -   `Frames`: lets you navigate in call stacks of the threads.
 -   this is especially useful if you set a debug point in a method and want to know which params passed in parent evocations
 
-# 📅 01.05.2020 Clojure: Compute 2-dimensional matrix
+# 01.05.2020 Clojure: Compute 2-dimensional matrix
 - First time I found a use case for partials. I proudly present my helper function I made:
 
 ``` {.clojure}
@@ -8377,13 +8377,13 @@ set -o emacs (default)
 
 ```
 
-# 📅 30.04.2020 Spacemacs: Replace Clojure expression through its result
+# 30.04.2020 Spacemacs: Replace Clojure expression through its result
 - , e w
 
-# 📅 30.04.2020 Git: Delete last commit locally (with changes in working dir)
+# 30.04.2020 Git: Delete last commit locally (with changes in working dir)
 -   `git reset HEAD`
 
-# 📅 30.04.2020 Clojure: Rprewalk-replace Use clojure.walk/prewalk-replace to globally replace a object in arbitrarily nested object
+# 30.04.2020 Clojure: Rprewalk-replace Use clojure.walk/prewalk-replace to globally replace a object in arbitrarily nested object
 
 ``` {.clojure}
 (defn update-all-with [atom  name new-block]
