@@ -24,9 +24,11 @@
 
 # 08.07.2023 music: mantra: Gayatri Mantra
 
+**3rd Capo**
+```jtab
+Am Em F G
+```
 ```plaintext
-// Capo 3rd
-// Chords: Am Em F G 
 Om Bhur Buvah svaha
 
 Thath savithur varenyam
@@ -38,8 +40,10 @@ Dhiyo yonah prachodaya
 
 # 08.07.2023 music: mantra: Shiva Shambho
 
+```jtab
+Am G
+```
 ```plaintext
-// Chords: Am G
 Am
 Shiva Shiva Shiva Shambho
 G                            Am
@@ -51,10 +55,11 @@ Mahadeva Shambho
 ```
 
 # 08.07.2023 music: mantra: Maha Mantra
-
-```plaintext
-// Capo 3rd
-// Chords: Am G C Em
+**3rd Capo**
+```jtab
+Am G C Em
+```
+```plaintext 
 Am                 G              Am
 Hare Krishna Hare Krishna
 Am                       G        Am
@@ -66,10 +71,12 @@ Rama Rama Hare Hare
 ```
 
 # 08.07.2023 music: mantra: Sita Ram
-
+**3rd Capo**
+```jtab
+Am C G F
+```
 ```plaintext
 // Source: Moji Kirtan
-// Am C G F
 Am            C                G                          F
 Sita Ram Jai Jai Ram Sita Ram Jai Jai Ram (2x)
 F               Am              C                          G
