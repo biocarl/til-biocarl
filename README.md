@@ -25,9 +25,9 @@
 - Play with dedilhado
 
 ```jtab
-%X/X.X/X.2/1.X/X.X/X.3/3
-%X/X.X/X.3/2.2/1.X/X.X/X
-%X/X.3/2.2/1.X/X.X/X.X/X
+%X/X.X/X.2/1.0/0.0/0.3/3
+%X/X.X/X.3/2.2/1.0/0.0/0
+%X/X.3/2.2/1.0/0.0/0.0/0
 ```
 
 # 08.07.2023 music: mantra: Gayatri Mantra
