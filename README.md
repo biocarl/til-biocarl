@@ -21,6 +21,14 @@
 
 ---
 
+# 10.07.2023 music: melodies: Modern melancholy
+- Play with dedilhado
+
+```jtab
+%X/X.X/X.2/1.X/X.X/X.3/3
+%X/X.X/X.3/2.2/1.X/X.X/X
+%X/X.3/2.2/1.X/X.X/X.X/X
+```
 
 # 08.07.2023 music: mantra: Gayatri Mantra
 
