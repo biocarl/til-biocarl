@@ -38,6 +38,7 @@ Em G %0/0.3/2.2/1.3/3.0/0.0/0 %0/0.2/2.1/1.2/3.0/0.0/0
 C G Dm Am
 ```
 
+```plaintext
 Vendo o vento
 Sendo o frio
 O gelo quebra
@@ -55,6 +56,7 @@ Olha o que cheeeira
 
 As abelhinhas flirtando
 com o novo surgindo
+```
 
 # 10.07.2023 music: melodies: Modern melancholy
 - Play with dedilhado
