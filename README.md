@@ -21,6 +21,30 @@
 
 ---
 
+10.07.2023 music: portuguese: A primavera 🌱
+
+```jtab
+C G Dm Am
+```
+
+Vendo o vento
+Sendo o frio
+O gelo quebra
+o povo celebra
+
+O sol, o sol está chegando
+O verde, a planta já está brotando
+O escuro vazio volta pra o canto
+O raro, a luz me abraça tanto
+
+Mirando no ceu, celebrando o calor
+só se não se for
+A prima prima veraaa,
+Olha o que cheeeira
+
+As abelhinhas flirtando
+com o novo surgindo
+
 # 10.07.2023 music: melodies: Modern melancholy
 - Play with dedilhado
 - [Audio](https://recorder.google.com/c1e09434-de0f-404b-bcb8-11430a1e2795)
