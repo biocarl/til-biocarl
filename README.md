@@ -21,6 +21,28 @@
 
 ---
 
+# 10.07.2023 music: portuguese: O tempo é pra mim
+
+```jtab
+B7 Cmaj7 Am7 Em
+```
+
+```plaintext
+O tempo é pra mim
+
+a vida corrida, a corrida na vida
+todo mundo corre, mas você é que lida
+
+escuta aí, o que tá rolando
+no fundo do meu ser, será que eu mando?
+
+O tempo, o tempo, o tempo é pra mim
+Eu penso, eu canto, os sonhos não tem fim
+
+O tempo abraça sua expressão,
+te dando asas, não voa em vão
+```
+
 # 10.07.2023 music: melodies: Rocky idea
 
 **1st Capo**
