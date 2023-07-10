@@ -23,6 +23,7 @@
 
 # 10.07.2023 music: melodies: Modern melancholy
 - Play with dedilhado
+- [Audio](https://recorder.google.com/c1e09434-de0f-404b-bcb8-11430a1e2795)
 
 ```jtab
 %X/X.X/X.2/1.0/0.0/0.3/3
