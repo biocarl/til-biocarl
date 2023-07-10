@@ -21,6 +21,13 @@
 
 ---
 
+10.07.2023 music: melodies: Rocky idea
+
+```jtab
+Am G %0/0.3/2.2/1.3/3.0/0.0/0 %0/0.2/2.1/1.2/3.0/0.0/0
+```
+- [Play](https://recorder.google.com/69b1b2cb-d853-4e49-844d-f6383302bf07)
+
 10.07.2023 music: portuguese: A primavera 🌱
 
 **5rd Capo**
