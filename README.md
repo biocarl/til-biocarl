@@ -21,6 +21,35 @@
 
 ---
 
+# 12.07.2023 music: mantra: Om Mata Kali
+
+```jtab
+Am G Dm
+```
+
+```plaintext
+// 2nd Capo 
+
+Am
+Om Mata Kali
+G             Am
+Om Mata Durge
+Am
+Om Mata Kali
+G             Am
+Om Mata Durge
+Am            G              Am
+Kali Durge Namo Namah
+Am            G              Am
+Kali Durge Namo Namah
+Dm            Am
+Kali Durge Namo Namah
+Dm            Am
+Kali Durge Namo Namah
+Am            G              Am
+Kali Durge Namo Namah
+```
+
 # 10.07.2023 music: portuguese: O tempo é pra mim
 
 ```jtab
