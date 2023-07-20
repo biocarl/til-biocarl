@@ -21,6 +21,10 @@
 
 ---
 
+
+# 20.07.2023 obsidian: How to hide the file name when opening a note?
+- You can toggle this under `Settings/Appearance/Show inline titles`
+
 # 12.07.2023 music: mantra: Om Mata Kali
 
 ```jtab
